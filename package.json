@@ -2,6 +2,9 @@
   "name": "thinkverse-next",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.14.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
