@@ -1,4 +1,7 @@
 import { useSession } from "next-auth/react"
+
+import Image from 'next/image'
+
 import Navbar from '../components/Navbar.js'
 import Demo from '../components/Demo.js'
 
@@ -8,6 +11,7 @@ export default function Home() {
     return <>
       <Navbar></Navbar>
       <h1>Hello {session.user.name}</h1>
+      <img src={session.user.image} ></img>
     </>
   }
   return <div>
