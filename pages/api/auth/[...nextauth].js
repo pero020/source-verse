@@ -1,5 +1,8 @@
 import NextAuth from "next-auth"
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import GoogleProvider from "next-auth/providers/google";
+import clientPromise from "/lib/mongodb"
+import addUser from "./addUser";
 
 export default NextAuth({
   providers: [
@@ -15,11 +18,12 @@ export default NextAuth({
       if (account) {
         token.accessToken = account.access_token
       }
+      account && addUser(token);
       return token
     },
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
-      session.accessToken = token.accessToken
+      session.accessToken = token.accessToken;
       return session
     },
     async redirect({ url, baseUrl }) {

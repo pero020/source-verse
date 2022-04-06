@@ -13,7 +13,6 @@ export default function Demo (handleSubmit) {
   const [currentScene, setCurrentScene] = useState()
 
   useEffect(() => {
-    console.log(1)
     updateScene()
   }, [demoState])
 
