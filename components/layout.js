@@ -7,9 +7,9 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 
 export default function Layout({ children }) {
-  const { data: session } = useSession()
+  const { status } = useSession()
 
-  if (!session) {
+  if (status==="loading") {
     return <>
     <div style={{width: 100}}></div>
     <LinearProgress />

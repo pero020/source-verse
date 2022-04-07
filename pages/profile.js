@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react"
 import Avatar from '@mui/material/Avatar';
 
 export default function Profile() {
-  const { data: session } = useSession()
+  const { data: status } = useSession()
 
   if (!session) {
     return <>
