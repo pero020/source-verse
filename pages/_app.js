@@ -26,7 +26,7 @@ export default function App({
         <SessionProvider session={session}>
         <CssBaseline />
           <Layout>
-          <Component {...pageProps} />
+            <Component {...pageProps} />
           </Layout>
         </SessionProvider>
       </ThemeProvider>
