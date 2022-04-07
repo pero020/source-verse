@@ -50,7 +50,7 @@ const ResponsiveAppBar = () => {
   let settings = [
     {
       "name": "Sign in",
-      "link": "login"
+      "link": "/login"
     }];
   let user = {
     "name": "",
@@ -61,11 +61,11 @@ const ResponsiveAppBar = () => {
     settings = [
     {
       "name": "Profile",
-      "link": "index"
+      "link": "/profile"
     },
     {
       "name": "Sign out",
-      "link": "login"
+      "link": "/login"
     }]
     user = {
       "name": "",
@@ -78,6 +78,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <Link href="/">
           <Typography
             variant="h6"
             noWrap
@@ -86,6 +87,7 @@ const ResponsiveAppBar = () => {
           >
             Sourced info
           </Typography>
+        </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -125,6 +127,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+          <Link href="/">
           <Typography
             variant="h6"
             noWrap
@@ -133,6 +136,7 @@ const ResponsiveAppBar = () => {
           >
             Sourced info
           </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link href={page.link} key={page.name}>
