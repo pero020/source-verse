@@ -8,8 +8,6 @@ export default async function addUser(token) {
 
   let userExists = await db.collection("users").findOne({sub: token.sub});
 
-  console.log("pokuso je")
-
   if (userExists) {
     return "User exists";
   } else {
