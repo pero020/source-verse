@@ -1,6 +1,6 @@
-#Thinkverse-next
+#Sourced Info
 
-Version built with next.js
+Built with next.js
 
 Deployment link:
 https://thinkverse-next.herokuapp.com/
