@@ -3,4 +3,4 @@
 Built with next.js
 
 Deployment link:
-https://thinkverse-next.herokuapp.com/
+https://sourced-info.herokuapp.com/
