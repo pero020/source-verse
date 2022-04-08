@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import { useSession } from "next-auth/react";
 import Link from 'next/link'
@@ -54,7 +55,7 @@ const ResponsiveAppBar = () => {
     }];
   let user = {
     "name": "",
-    "img": "/static/images/avatar/1.jpg"
+    "img": "/static/images/avatar/2.jpg"
   }
 
   if (status === "authenticated") {
@@ -153,7 +154,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt={user.name} src={user.img} />
+                {user.name ? <Avatar alt={user.name} src={user.img} /> : <Avatar alt={user.name} /> }
               </IconButton>
             </Tooltip>
             <Menu
