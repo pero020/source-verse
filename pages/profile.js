@@ -1,6 +1,5 @@
 import { useState, useEffect} from "react"
 import { useSession } from "next-auth/react"
-import { NextResponse, NextRequest } from 'next/server'
 
 import LinearProgress from '@mui/material/LinearProgress';
 import Avatar from '@mui/material/Avatar';
