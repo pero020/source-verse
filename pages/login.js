@@ -1,5 +1,4 @@
 import { useSession, signIn, signOut } from "next-auth/react"
-import ResponsiveAppBar from "../components/ResponsiveAppBar.js"
 
 import Image from "next/image"
 

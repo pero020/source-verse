@@ -1,9 +1,5 @@
 import { useSession } from "next-auth/react"
 
-import Image from 'next/image'
-
-import ResponsiveAppBar from "../components/ResponsiveAppBar.js"
-import Demo from '../components/Demo.js'
 
 export default function Home() {
   const { data: session, status } = useSession();
