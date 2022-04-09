@@ -6,9 +6,13 @@ export default async function handler (req, res) {
   const db = client.db(process.env.MONGODB_DB);
 
   const email = req.query.email;
+  try {
 
-  let userData = await db.collection("users").findOne({email: email});
+    let posts = await db.collection("posts").find({ author:email }).toArray();
+    res.json(posts)
 
-  res.json(userData);
+  } catch (e) {
+    res.send(e);
+  }
   
 }

@@ -45,7 +45,7 @@ const ResponsiveAppBar = () => {
     },
     {
       "name": "Q&A",
-      "link": "/forum"
+      "link": "/q&a"
     },
   ];
   let settings = [
@@ -55,7 +55,7 @@ const ResponsiveAppBar = () => {
     }];
   let user = {
     "name": "",
-    "img": "/static/images/avatar/2.jpg"
+    "img": ""
   }
 
   if (status === "authenticated") {
@@ -154,7 +154,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {user.name ? <Avatar alt={user.name} src={user.img} /> : <Avatar alt={user.name} /> }
+              <Avatar alt={user.name} src={user.img} />
               </IconButton>
             </Tooltip>
             <Menu
