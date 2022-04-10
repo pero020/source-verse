@@ -21,6 +21,7 @@ export default function App({
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <title>Sourced Info</title>
       </Head>
       <ThemeProvider theme={lightTheme}>
         <SessionProvider session={session}>
