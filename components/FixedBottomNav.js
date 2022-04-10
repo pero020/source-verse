@@ -35,7 +35,6 @@ export default function FixedBottomNavigation() {
 
   return (
     <Box sx={{ pb: 7 }} ref={ref}>
-      <CssBaseline />
       
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
@@ -55,5 +54,5 @@ export default function FixedBottomNavigation() {
 }
 
 const messageExamples = [
- 
+
 ];

@@ -46,7 +46,7 @@ export default function DraggableDialog() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Here is a list of all achievements that are avaible:<br/>
+            Here is a list of all achievements that are available:<br/>
             <Image src="/Achievements/Welcome.png" width="100" height="100" title="Welcome to Community!"></Image>
             <Image src="/Achievements/Certified.png" width="100" height="100" title="Hurray! You are certified."></Image>
             <Image src="/Achievements/FirstInteraction.png" width="100" height="100" title="First Interaction"></Image>

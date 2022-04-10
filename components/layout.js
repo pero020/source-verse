@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react"
 import LinearProgress from '@mui/material/LinearProgress';
 
 
-
 export default function Layout({ children }) {
   const { status } = useSession()
 

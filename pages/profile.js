@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
 import FixedBottomNavigation from "../components/FixedBottomNav";
-import { BottomNavigation } from "@mui/material";
+import Container from '@mui/material/Container';
 
 export default function Profile() {
   const { data: session } = useSession()
@@ -31,6 +31,7 @@ export default function Profile() {
     if (session) {
       getProfileData()
       getPosts()
+      console.log(userPosts)
     }
   }, [])
 
@@ -45,17 +46,24 @@ export default function Profile() {
     </>
   }
 
-  return <>
-    <Avatar alt="Remy Sharp" src={userData.image} />
-    <h2>User: {userData.name}</h2>
-    <h2>Email: {userData.email}</h2>
-    <div>
-      <h2>Your Posts</h2>
-      {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
-      <FixedBottomNavigation></FixedBottomNavigation>
-    </div>
-    <DraggableDialog></DraggableDialog>
-    
+  return <>      
+    <Container maxWidth="xl">
+      <Grid container spacing={2}>
+        <Grid item sm={12} md={6}>
+          <Avatar alt="Remy Sharp" src={userData.image} />
+          <h2>User: {userData.name}</h2>
+          <h2>Email: {userData.email}</h2>
+          <DraggableDialog></DraggableDialog>
+        </Grid>
+        <Grid item sm={12} md={6}>
+          <h2>Your Posts</h2>
+          {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
+          {Array.isArray(userPosts) && userPosts.length === 0 && <h2>You don't have any posts yet!</h2> }
+        </Grid>
+      </Grid>
+    </Container>
+
+    <FixedBottomNavigation></FixedBottomNavigation>
     
   </>
 };
