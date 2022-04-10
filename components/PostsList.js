@@ -11,12 +11,13 @@ const style = {
 
 export default function PostsList(props) {
   const posts = props.posts
+  console.log(posts)
   return (
     <List sx={style} component="nav" aria-label="mailbox folders">
       {posts.map((post) => (
         <div key={post._id}>
         <ListItem button>
-          <ListItemText primary={post.title} secondary={post.author} />
+          <ListItemText primary={post.title} secondary={post.author.name} />
         </ListItem>
         <Divider />
         </div>

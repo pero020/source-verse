@@ -8,7 +8,7 @@ export default async function handler (req, res) {
   const email = req.query.email;
   try {
 
-    let posts = await db.collection("posts").find({ author:email }).toArray();
+    let posts = await db.collection("posts").find({ "author.email": email }).toArray();
     res.json(posts)
 
   } catch (e) {
