@@ -8,7 +8,6 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
 import FixedBottomNavigation from "../components/FixedBottomNav";
-import Container from '@mui/material/Container';
 
 export default function Profile() {
   const { data: session } = useSession()
@@ -42,15 +41,14 @@ export default function Profile() {
   }
   if (isLoading) {
     return <>
-      <LinearProgress />
+      {/* <LinearProgress></LinearProgress> */}
     </>
   }
 
-  return <>      
-    <Container maxWidth="xl">
+  return <>
       <Grid container spacing={2}>
         <Grid item sm={12} md={6}>
-          <Avatar alt="Remy Sharp" src={userData.image} />
+          <Avatar alt="" src={userData.image} />
           <h2>User: {userData.name}</h2>
           <h2>Email: {userData.email}</h2>
           <DraggableDialog></DraggableDialog>
@@ -61,7 +59,6 @@ export default function Profile() {
           {Array.isArray(userPosts) && userPosts.length === 0 && <h2>You don't have any posts yet!</h2> }
         </Grid>
       </Grid>
-    </Container>
 
     <FixedBottomNavigation></FixedBottomNavigation>
     
