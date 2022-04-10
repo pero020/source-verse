@@ -1,13 +1,14 @@
 import { useState, useEffect} from "react"
 import { useSession } from "next-auth/react"
-
+import Image from "next/image";
 import CircularProgress from '@mui/material/CircularProgress';
 import LinearProgress from '@mui/material/LinearProgress';
-
+import DraggableDialog from "../components/Dialog";
 import Avatar from '@mui/material/Avatar';
-
+import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
-
+import FixedBottomNavigation from "../components/FixedBottomNav";
+import { BottomNavigation } from "@mui/material";
 
 export default function Profile() {
   const { data: session } = useSession()
@@ -51,6 +52,10 @@ export default function Profile() {
     <div>
       <h2>Your Posts</h2>
       {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
+      <FixedBottomNavigation></FixedBottomNavigation>
     </div>
+    <DraggableDialog></DraggableDialog>
+    
+    
   </>
 };
