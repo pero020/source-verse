@@ -1,7 +1,9 @@
 import { useState, useEffect} from "react"
 import { useSession } from "next-auth/react"
 
+import CircularProgress from '@mui/material/CircularProgress';
 import LinearProgress from '@mui/material/LinearProgress';
+
 import Avatar from '@mui/material/Avatar';
 
 import PostsList from "/components/PostsList"
@@ -48,7 +50,7 @@ export default function Profile() {
     <h2>Email: {userData.email}</h2>
     <div>
       <h2>Your Posts</h2>
-      {userPosts ? <PostsList posts={userPosts} />: <LinearProgress />}
+      {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
     </div>
   </>
 };
