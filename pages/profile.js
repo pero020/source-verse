@@ -45,7 +45,7 @@ export default function Profile() {
   return <>
     <Avatar alt="Remy Sharp" src={userData.image} />
     <h2>User: {userData.name}</h2>
-    <h2>User: {userData.email}</h2>
+    <h2>Email: {userData.email}</h2>
     <div>
       <h2>Your Posts</h2>
       {userPosts ? <PostsList posts={userPosts} />: <LinearProgress />}
