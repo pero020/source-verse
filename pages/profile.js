@@ -24,6 +24,9 @@ export default function Profile() {
     }
     async function getPosts() {
       const res = await fetch("api/posts/allFromUser/" + session.user.email);
+      if (!res.ok) {
+        return 1
+      }
       const data = await res.json();
       setUserPosts(data)
     }
