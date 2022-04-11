@@ -49,9 +49,14 @@ export default function Profile() {
   }
 
   return <>
+  <br/><br/><br/>
       <Grid container spacing={2}>
-        <Grid item sm={12} md={6}>
-          <Avatar alt="" src={userData.image} />
+        <Grid 
+        container item sm={12} md={6} 
+        alignItems="center"
+  justifyContent="center"
+  direction="column">
+          <Avatar alt="" src={userData.image} sx={{ width: 200, height: 200 }}/><br/>
           <h2>User: {userData.name}</h2>
           <h2>Email: {userData.email}</h2>
           <AchievementsDialog></AchievementsDialog>

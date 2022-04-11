@@ -51,6 +51,8 @@ export default function DraggableDialog() {
             <Image src="/Achievements/Certified.png" width="100" height="100" title="Hurray! You are certified."></Image>
             <Image src="/Achievements/FirstInteraction.png" width="100" height="100" title="First Interaction"></Image>
             <Image src="/Achievements/100th.png" width="100" height="100" title="100th Interaction"></Image>
+            <Image src="/Achievements/Admin.png" width="100" height="100" title="Admin"></Image>
+            <Image src="/Achievements/Veteran.png" width="100" height="100" title="Veteran"></Image>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
