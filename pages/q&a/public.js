@@ -12,19 +12,20 @@ export default function Public() {
   const [isLoading, setIsLoading] = useState(true)
   const [postsData, setPostsData] = useState(null)
 
+  async function getAllPosts() {
+    const res = await fetch("/api/posts/getAllPosts");
+    const data = await res.json();
+    setPostsData(data)
+    setIsLoading(false)
+  }
+
   useEffect(()=> {
-    async function getAllPosts() {
-      const res = await fetch("/api/posts/getAllPosts");
-      const data = await res.json();
-      setPostsData(data)
-      setIsLoading(false)
-    }
     getAllPosts()
   }, [])
 
   return <>
 
-    {session && <NewQuestionDialog />}
+    {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
 
     <Typography variant="h3">Questions list</Typography>
 

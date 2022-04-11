@@ -16,7 +16,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 
-export default function NewQuestionDialog() {
+export default function NewQuestionDialog(props) {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -61,6 +61,7 @@ export default function NewQuestionDialog() {
     if (!res.ok) {
       return 1
     } else {
+      props.getAllPosts();
       setOpen(false);
     }
   }
