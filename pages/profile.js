@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react"
 import Image from "next/image";
 import CircularProgress from '@mui/material/CircularProgress';
 import LinearProgress from '@mui/material/LinearProgress';
-import DraggableDialog from "../components/Dialog";
+import AchievementsDialog from "../components/AchievementsDialog";
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
@@ -54,7 +54,7 @@ export default function Profile() {
           <Avatar alt="" src={userData.image} />
           <h2>User: {userData.name}</h2>
           <h2>Email: {userData.email}</h2>
-          <DraggableDialog></DraggableDialog>
+          <AchievementsDialog></AchievementsDialog>
         </Grid>
         <Grid item sm={12} md={6}>
           <h2>Your Posts</h2>
@@ -63,7 +63,7 @@ export default function Profile() {
         </Grid>
       </Grid>
 
-    <FixedBottomNavigation></FixedBottomNavigation>
+    {/* <FixedBottomNavigation></FixedBottomNavigation> */}
     
   </>
 };
