@@ -20,7 +20,7 @@ export default function App({
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta name="viewport" content="initial-scale=1, width=device-width user-scalable=no" />
         <title>Sourced Info</title>
       </Head>
       <ThemeProvider theme={lightTheme}>

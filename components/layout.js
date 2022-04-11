@@ -18,7 +18,7 @@ export default function Layout({ children }) {
   return (
     <>    
       <ResponsiveAppBar></ResponsiveAppBar>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{mt:2}} >
         <main>{children}</main>
       </Container>
     </>
