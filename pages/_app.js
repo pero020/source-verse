@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import createEmotionCache from '../utility/createEmotionCache';
-import lightTheme from '../styles/theme/lightTheme';
+import theme from '../styles/theme/theme';
 
 import { SessionProvider } from "next-auth/react"
 import { CacheProvider } from '@emotion/react';
@@ -23,7 +23,7 @@ export default function App({
         <meta name="viewport" content="initial-scale=1, width=device-width user-scalable=no" />
         <title>Sourced Info</title>
       </Head>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={theme}>
         <SessionProvider session={session}>
         <CssBaseline />
           <Layout>
