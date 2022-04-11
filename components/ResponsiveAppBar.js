@@ -66,7 +66,7 @@ const ResponsiveAppBar = () => {
     },
     {
       "name": "Sign out",
-      "link": "api/auth/signout"
+      "link": "/api/auth/signout"
     }]
     user = {
       "name": "",
