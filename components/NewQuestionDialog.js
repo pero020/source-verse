@@ -68,7 +68,7 @@ export default function NewQuestionDialog(props) {
 
   return (
     <div>
-      <Fab color="primary" aria-label="add" onClick={handleClickOpen}>
+      <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
         <AddIcon />
       </Fab>
       <Dialog
@@ -125,7 +125,7 @@ export default function NewQuestionDialog(props) {
           <Button variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
             Discard
           </Button>
-          <Button variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>
+          <Button color="secondary" variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>
             Add
           </Button>
         </DialogActions>
