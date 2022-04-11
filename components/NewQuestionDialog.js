@@ -62,7 +62,7 @@ export default function NewQuestionDialog(props) {
       return 1
     } else {
       props.getAllPosts();
-      setOpen(false);
+      handleClose();
     }
   }
 
@@ -92,9 +92,13 @@ export default function NewQuestionDialog(props) {
               name="category"
               options={categories}
               sx={{width: {md: 500}, mt: 1}}
-              value={formData.category}
-              onChange={handleChange}
-              renderInput={(params) => <TextField {...params} label="Category" />}
+              onChange={(event, value) => {
+                setFormData({
+                ...formData,
+                "category": value.label
+                })
+              }}
+              renderInput={(params) => <TextField {...params} label="Category" value={formData.title} />}
             />
             <TextField 
               required

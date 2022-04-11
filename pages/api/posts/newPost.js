@@ -5,7 +5,6 @@ export default async function handler (req, res) {
   const session = await getSession({req})
 
   let formData = req.body
-  console.log(session)
 
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
@@ -21,6 +20,7 @@ export default async function handler (req, res) {
             "name": userData.name,
             "email": userData.email
         },
+        "creationDate": new Date(),
         "reportStatus": {
             "$numberInt": "0"
         },
