@@ -32,7 +32,7 @@ export default function DraggableDialog() {
 
   return (
     <div>
-      <Button sx={{mt: 2}} color="secondary" variant="contained" onClick={handleClickOpen}>
+      <Button sx={{mt: 2}} color="success" variant="contained" onClick={handleClickOpen}>
         Achievements
       </Button>
       <Dialog
