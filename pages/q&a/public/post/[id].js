@@ -1,8 +1,9 @@
-import { ListItemSecondaryAction, Typography } from '@mui/material'
+import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
 import AnswersList from "/components/AnswersList"
 import { CircularProgress} from "@mui/material"
+import { Grid } from '@mui/material'
 
 export default function Post () {
   const router = useRouter()
@@ -34,8 +35,18 @@ export default function Post () {
 
   return <>
     <Typography variant="h4">{postData.title}</Typography>
-    <Typography  variant="p">{postData.author.name + ", " + formatDate(postData.creationDate)}</Typography>
+    <br/>
+    <Grid container spacing = {1}>
+      <Grid item xs={2.5}>
+            <Typography  variant="h6">Asked on: {formatDate(postData.creationDate) + " by " + postData.author.name}</Typography>
+      </Grid>
+      <Grid item xs={4}>
+            <Avatar src="/slika_za_odgovor.jpg" width={20} height={20}></Avatar>
+      </Grid>
+    </Grid>
+    <br/><br/>
     <Typography variant="subtitle1">{postData.description}</Typography>
+    <br/><br/><br/>
     <Typography variant="h4">Answers:</Typography>
     <AnswersList answers={postData.answers}></AnswersList>
   </>

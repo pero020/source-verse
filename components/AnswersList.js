@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Image from 'next/image';
+
 
 const style = {
   width: '100%',
@@ -50,15 +52,19 @@ export default function PostsList(props) {
   }
 
   return (
+    
     <List sx={style} component="nav" aria-label="mailbox folders">
+      
       {answers.map((answer) => (
         <div key={answer._id}>
         <ListItem sx={{px: 0}}>
+          
           <Grid container alignItems={"center"} >
             <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
                   <ArrowDropUpIcon color="secondary" fontSize="large" />
+                  
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"} >
                   <Typography variant="body1">{countVotes(answer.votes)}</Typography>
@@ -73,6 +79,7 @@ export default function PostsList(props) {
 
             <Grid item xs={10}>
                 <ListItemText primary={answer.description} secondary={answer.author.name + ", " + formatDate(answer.creationDate)} />
+                
             </Grid>
 
             <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>

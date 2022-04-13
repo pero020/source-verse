@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from "react"
-
+import UploadImage from './InputImage';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -15,9 +15,24 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
+import { Grid } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import Draggable from 'react-draggable';
+
+function PaperComponent(props) {
+  return (
+    <Draggable
+      handle="#draggable-dialog-title"
+      cancel={'[class*="MuiDialogContent-root"]'}
+    >
+      <Paper {...props} />
+    </Draggable>
+  );
+}
 
 export default function NewQuestionDialog(props) {
-  const [open, setOpen] = useState(false);
+  
+  const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -75,9 +90,10 @@ export default function NewQuestionDialog(props) {
         fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
+        PaperComponent={PaperComponent}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title" gutterBottom="false">
+        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title" gutterBottom="false">
           Add a New Question:
         </DialogTitle>
         <DialogContent>
@@ -122,16 +138,29 @@ export default function NewQuestionDialog(props) {
               value={formData.description}
               onChange={handleChange}
             />
+            
 
           </DialogContentText>
         </DialogContent>
+              <Grid container
+              direction="row"
+              justifyContent="center"
+              alignItems="center">
+                
+          <UploadImage></UploadImage>
+          
+              </Grid>
+        
+
         <DialogActions>
+          
           <Button variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
             Discard
           </Button>
           <Button color="secondary" variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>
             Add
           </Button>
+          
         </DialogActions>
       </Dialog>
     </div>
