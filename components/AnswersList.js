@@ -17,7 +17,6 @@ const style = {
 
 export default function PostsList(props) {
   const answers = props.answers
-  console.log(answers)
 
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
@@ -45,7 +44,6 @@ export default function PostsList(props) {
   function countVotes(votes) {
     let sum = 0;
     votes.forEach(vote => {
-      console.log(vote)
       sum = sum + vote.vote;
     })
     return sum;
@@ -60,13 +58,13 @@ export default function PostsList(props) {
             <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-                  <ArrowDropUpIcon color="secondary" />
+                  <ArrowDropUpIcon color="secondary" fontSize="large" />
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"} >
-                  <Typography variant="caption">{countVotes(answer.votes)}</Typography>
+                  <Typography variant="body1">{countVotes(answer.votes)}</Typography>
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-                <ArrowDropDownIcon color="secondary" />
+                <ArrowDropDownIcon color="secondary" fontSize="large" />
                 </Grid>
               </Grid>
             </Grid>
@@ -74,7 +72,7 @@ export default function PostsList(props) {
             <Divider orientation={"vertical"}></Divider>
 
             <Grid item xs={10}>
-                <ListItemText nowrap={"true"} primary={answer.description} secondary={answer.author.name + ", " + formatDate(answer.creationDate)} />
+                <ListItemText primary={answer.description} secondary={answer.author.name + ", " + formatDate(answer.creationDate)} />
             </Grid>
 
             <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>
