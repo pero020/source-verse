@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react"
 import { useSession } from "next-auth/react"
+import { useState, useEffect } from "react"
 
-import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
-
+import Typography from '@mui/material/Typography';
 
 import PostsList from "/components/PostsList"
 import NewQuestionDialog from "/components/NewQuestionDialog"
@@ -28,7 +27,7 @@ export default function Public() {
 
     {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
 
-    <Typography variant="h3">Questions list</Typography>
+    <Typography variant="h4">Questions list</Typography>
 
     {isLoading ? <CircularProgress /> :  <PostsList posts={postsData}/> }
 
