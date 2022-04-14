@@ -2,7 +2,7 @@ import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
 import AnswersList from "/components/AnswersList"
-import NewAnswerDialog from "/components/newAnswerDialog"
+import NewAnswerDialog from "/components/NewAnswerDialog"
 import { CircularProgress} from "@mui/material"
 import { Grid } from '@mui/material'
 
