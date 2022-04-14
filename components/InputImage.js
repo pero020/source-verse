@@ -14,7 +14,7 @@ export default function UploadImage() {
     <Stack direction="row" alignItems="center" spacing={2}>
       <label htmlFor="contained-button-file">
         <Input accept="image/*" id="contained-button-file" multiple type="file" />
-        <Button variant="contained" component="span">
+        <Button variant="contained" component="span" sx={{mt: 1}}>
           Upload
         </Button>
       </label>

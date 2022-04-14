@@ -18,7 +18,8 @@ export default async function handler (req, res) {
         "description": formData.description,
         "author": {
             "name": userData.name,
-            "email": userData.email
+            "email": userData.email,
+            "image": userData.image
         },
         "creationDate": new Date(),
         "reportStatus": {

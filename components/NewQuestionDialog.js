@@ -93,7 +93,7 @@ export default function NewQuestionDialog(props) {
         PaperComponent={PaperComponent}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title" gutterBottom="false">
+        <DialogTitle gutterBottom="false">
           Add a New Question:
         </DialogTitle>
         <DialogContent>
@@ -138,21 +138,15 @@ export default function NewQuestionDialog(props) {
               value={formData.description}
               onChange={handleChange}
             />
+            {/* <UploadImage sx={{mt: 2}}></UploadImage> */}
             
 
           </DialogContentText>
         </DialogContent>
-              <Grid container
-              direction="row"
-              justifyContent="center"
-              alignItems="center">
-                
-          <UploadImage></UploadImage>
-          
-              </Grid>
         
 
         <DialogActions>
+
           
           <Button variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
             Discard

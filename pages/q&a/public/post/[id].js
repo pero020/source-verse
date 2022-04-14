@@ -41,7 +41,7 @@ export default function Post () {
             <Typography  variant="h6">Asked on: {formatDate(postData.creationDate) + " by " + postData.author.name}</Typography>
       </Grid>
       <Grid item xs={4}>
-            <Avatar src="/slika_za_odgovor.jpg" width={20} height={20}></Avatar>
+            <Avatar src={postData.author.image} width={20} height={20}></Avatar>
       </Grid>
     </Grid>
     <br/><br/>
@@ -50,7 +50,5 @@ export default function Post () {
     <Typography variant="h4">Answers:</Typography>
     <AnswersList answers={postData.answers}></AnswersList>
   </>
-
-  
   
 }
