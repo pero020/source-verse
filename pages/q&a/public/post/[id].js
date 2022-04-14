@@ -2,6 +2,7 @@ import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
 import AnswersList from "/components/AnswersList"
+import NewAnswerDialog from "/components/newAnswerDialog"
 import { CircularProgress} from "@mui/material"
 import { Grid } from '@mui/material'
 
@@ -14,7 +15,6 @@ export default function Post () {
   async function getPosts() {
     const res = await fetch("/api/posts/getOnePost/" + id);
     const data = await res.json();
-    console.log(data)
     setPostData(data)
   }
 
@@ -47,6 +47,7 @@ export default function Post () {
     <br/><br/>
     <Typography variant="subtitle1">{postData.description}</Typography>
     <br/><br/><br/>
+    <NewAnswerDialog getPosts={getPosts} postId={postData._id}></NewAnswerDialog>
     <Typography variant="h4">Answers:</Typography>
     <AnswersList answers={postData.answers}></AnswersList>
   </>

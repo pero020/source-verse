@@ -31,16 +31,15 @@ function PaperComponent(props) {
 }
 
 export default function NewQuestionDialog(props) {
-  
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-  const [formData, setFormData] = useState({
-    category: "General",
-    title: "",
-    description: ""
+  const postId = props.postId;
 
+  const [formData, setFormData] = useState({
+    description: "",
+    url: ""
   });
 
   const handleClickOpen = () => {
@@ -49,9 +48,8 @@ export default function NewQuestionDialog(props) {
 
   const handleClose = () => {
     setFormData({
-      category: "General",
-      title: "",
-      description: ""
+      description: "",
+      url: ""
     })
     setOpen(false);
   };
@@ -66,7 +64,7 @@ export default function NewQuestionDialog(props) {
   }
 
   const handleSubmit = async () => {
-    const res = await fetch("/api/posts/newPost", {
+    const res = await fetch("/api/posts/answers/newAnswer/" + postId, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -76,7 +74,7 @@ export default function NewQuestionDialog(props) {
     if (!res.ok) {
       return 1
     } else {
-      props.getAllPosts();
+      props.getPosts();
       handleClose();
     }
   }
@@ -94,52 +92,35 @@ export default function NewQuestionDialog(props) {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle gutterBottom={false}>
-          Add a New Question:
+          Add Your Answer:
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
 
-            <Autocomplete
-              autoHighlight
-              disableClear
-              fullWidth
-              required
-              id="category-input"
-              name="category"
-              options={categories}
-              sx={{width: {md: 500}, mt: 1}}
-              onChange={(event, value) => {
-                setFormData({
-                ...formData,
-                "category": value.label
-                })
-              }}
-              renderInput={(params) => <TextField {...params} label="Category" value={formData.title} />}
-            />
-            <TextField 
-              required
-              sx={{width: {md: 500}, mt: 2}} 
-              fullWidth label="Question title"
-              id="title-input"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-            />
-            <TextField
-              id="outlined-multiline-flexible"
+          <TextField
+              id="description-input"
               name="description"
-              label="Description"
+              label="Answer text"
               multiline
               fullWidth
               required
               maxRows={8}
               minRows={4}
-              sx={{width: {md: 500}, mt: 2}}
+              sx={{width: {md: 500}, mt: 1}}
               value={formData.description}
               onChange={handleChange}
             />
-            {/* <UploadImage sx={{mt: 2}}></UploadImage> */}
-            
+
+            <TextField 
+              required
+              sx={{width: {md: 500}, mt: 2}} 
+              fullWidth 
+              label="Source url"
+              id="url-input"
+              name="url"
+              value={formData.url}
+              onChange={handleChange}
+            />        
 
           </DialogContentText>
         </DialogContent>
@@ -160,10 +141,3 @@ export default function NewQuestionDialog(props) {
     </div>
   );
 }
-
-const categories = [
-  {label: "General"},
-  {label: "History"},
-  {label: "IT"},
-  {label: "Psychology"}
-]
