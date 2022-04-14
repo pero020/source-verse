@@ -5,6 +5,8 @@ import AnswersList from "/components/AnswersList"
 import NewAnswerDialog from "/components/NewAnswerDialog"
 import { CircularProgress} from "@mui/material"
 import { Grid } from '@mui/material'
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 export default function Post () {
   const router = useRouter()
@@ -36,14 +38,14 @@ export default function Post () {
   return <>
     <Typography variant="h4">{postData.title}</Typography>
     <br/>
-    <Grid container spacing = {1}>
-      <Grid item xs={2.5}>
-            <Typography  variant="h6">Asked on: {formatDate(postData.creationDate) + " by " + postData.author.name}</Typography>
-      </Grid>
-      <Grid item xs={4}>
-            <Avatar src={postData.author.image} width={20} height={20}></Avatar>
-      </Grid>
-    </Grid>
+    <Stack direction="row" spacing={1}>
+      <Chip
+        avatar={<Avatar alt={postData.author.name} src={postData.author.image} />}
+        label={postData.author.name}
+        variant="outlined"
+      />
+      <Chip label={formatDate(postData.creationDate)} color="secondary" />
+    </Stack>
     <br/><br/>
     <Typography variant="subtitle1">{postData.description}</Typography>
     <br/><br/><br/>
