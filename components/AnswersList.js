@@ -22,6 +22,8 @@ const style = {
 };
 
 export default function PostsList(props) {
+
+
   const answers = props.answers
 
   function detectMob() {
@@ -55,8 +57,12 @@ export default function PostsList(props) {
     return sum;
   }
 
+
+
   return (
     
+
+
     <List sx={style} component="nav" aria-label="mailbox folders">
       
       {answers.map((answer) => (
@@ -68,6 +74,7 @@ export default function PostsList(props) {
             <Grid item xs={1} sx={{mr: {xs:2, md:0 }}} alignItems="top" >
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
+               
                 <Button>
                   <ArrowCircleUpIcon color="secondary" fontSize="large" />
                 </Button>
@@ -79,7 +86,7 @@ export default function PostsList(props) {
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
               <Button>
-                <ArrowCircleDownIcon color="secondary" fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
+                <ArrowCircleUpIcon color="secondary" fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
               </Button>
                 
 
@@ -120,5 +127,8 @@ export default function PostsList(props) {
         </div>
       ))} 
     </List>
+
+
+
   );
 }

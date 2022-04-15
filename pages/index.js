@@ -1,5 +1,8 @@
+import { LogoDev } from "@mui/icons-material";
 import { useSession } from "next-auth/react"
-
+import Image from "next/image";
+import { Grid } from "@mui/material";
+import { Typography } from "@mui/material";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -13,8 +16,21 @@ export default function Home() {
     </>
   }
   return <>
-    {/* <Demo></Demo> */}
+    {/* <Demo></Demo> 
     <h1>Home page</h1>
+    */}
+   
+    <Grid
+    container
+    spacing={0}
+    direction="column"
+    alignItems="center"
+    justifyContent="center"
+    >
+       <h1>Welcome to</h1>
+      <Image src="/logo.svg" width="500" height="300"></Image>
+    </Grid>
+    
   </>
 
 }
