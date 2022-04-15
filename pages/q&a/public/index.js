@@ -26,9 +26,7 @@ export default function Public() {
   return <>
 
     {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
-
     <Typography variant="h4">Questions list</Typography>
-
     {isLoading ? <CircularProgress sx={{color: "secondary.main"}} /> :  <PostsList getAllPosts={getAllPosts} posts={postsData}/> }
 
   </>

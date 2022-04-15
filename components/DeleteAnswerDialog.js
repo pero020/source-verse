@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 
-export default function DeleteItemDialog(props) {
+export default function DeletePostDialog(props) {
   const [open, setOpen] = React.useState(false);
   const postId = props.postId;
   const getAllPosts = props.getAllPosts;

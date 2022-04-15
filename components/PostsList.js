@@ -12,7 +12,7 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import DeleteItemDialog from "/components/DeleteItemDialog"
+import DeletePostDialog from "/components/DeletePostDialog"
 
 const style = {
   width: '100%',
@@ -56,13 +56,11 @@ export default function PostsList(props) {
           <Grid container alignItems={"center"} >
 
             <Grid item xs={12}>
+              <Link underline={"none"} href={"/q&a/public/post/" + post._id}>
                 <Stack direction="row" spacing={1} justifyContent="space-between">
-                  <Link underline={"none"} href={"/q&a/public/post/" + post._id}>
                     <ListItemText nowrap={"true"} primary={setLength(post.title )} />
-                  </Link>
-                  {session && session.user.email === post.author.email && 
-                    <DeleteItemDialog getAllPosts={getAllPosts} postId={post._id}/>}
                 </Stack>
+              </Link>
                 
                 <Stack direction="row" spacing={1} justifyContent="right">
                   <Chip
