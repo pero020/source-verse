@@ -9,6 +9,9 @@ import Grid from '@mui/material/Grid';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Image from 'next/image';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleUp';
+
 
 
 const style = {
@@ -63,14 +66,21 @@ export default function PostsList(props) {
             <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-                  <ArrowDropUpIcon color="secondary" fontSize="large" />
+                <Button>
+                  <ArrowCircleUpIcon color="secondary" fontSize="large" />
+                </Button>
+                  
                   
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"} >
                   <Typography variant="body1">{countVotes(answer.votes)}</Typography>
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-                <ArrowDropDownIcon color="secondary" fontSize="large" />
+              <Button>
+                <ArrowCircleDownIcon color="secondary" fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
+              </Button>
+                
+
                 </Grid>
               </Grid>
             </Grid>

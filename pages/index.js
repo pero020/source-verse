@@ -7,6 +7,9 @@ export default function Home() {
     return <>
       <h1>Hello {session.user.name}</h1>
       <img src={session.user.image} ></img>
+      
+      
+
     </>
   }
   return <>

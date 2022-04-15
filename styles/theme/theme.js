@@ -10,7 +10,13 @@ const theme = createTheme({
     },
     success: {
       main: "#00ED64",
-    }
+    },
+    upvote:{
+      main: "#0288d1"
+    },
+    downvote:{
+      main:"#d32f2f"
+    },
   },
 });
 
