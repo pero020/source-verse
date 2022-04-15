@@ -73,7 +73,7 @@ export default function NewQuestionDialog(props) {
     if (!res.ok) {
       return 1
     } else {
-      props.getPosts();
+      props.getPost();
       handleClose();
     }
   }

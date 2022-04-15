@@ -21,7 +21,7 @@ export default function Post () {
   const { data: session } = useSession()
   const [postData, setPostData] = useState(null)
 
-  async function getPosts() {
+  async function getPost() {
     try {
       const res = await fetch("/api/posts/getOnePost/" + id);
       const data = await res.json();
@@ -32,7 +32,7 @@ export default function Post () {
   }
 
   useEffect(()=> {
-    getPosts()
+    getPost()
   }, [])
 
   function formatDate(date) {
@@ -64,12 +64,12 @@ export default function Post () {
         <DeletePostDialog postId={postData._id}/>}
       </div>
     </Stack>
-    <br/><br/>
+    <br/>
     <Typography variant="subtitle1">{postData.description}</Typography>
-    <br/><br/><br/>
-    <NewAnswerDialog getPosts={getPosts} postId={postData._id}></NewAnswerDialog>
+    <br/><br/>
+    <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     <Typography variant="h4">Answers:</Typography>
-    <AnswersList answers={postData.answers}></AnswersList>
+    <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
   </>
   
 }

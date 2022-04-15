@@ -11,8 +11,8 @@ import Button from '@mui/material/Button';
 
 export default function DeletePostDialog(props) {
   const [open, setOpen] = React.useState(false);
-  const postId = props.postId;
-  const getAllPosts = props.getAllPosts;
+  const answerId = props.answerId;
+  // console.log(answerId)
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -23,10 +23,14 @@ export default function DeletePostDialog(props) {
   };
 
   const deleteItem = async () => {
-    const res = await fetch("/api/posts/deletePost/" + postId);
+    const res = await fetch("/api/posts/answers/deleteAnswer/" + answerId, 
+    {
+      method: "POST",
+      body: JSON.stringify({postId: props.postId})
+    });
     if (res.ok) {
       handleClose()
-      getAllPosts()
+      props.getPost()
     } else {
       return 1
     }

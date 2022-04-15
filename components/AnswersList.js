@@ -6,12 +6,13 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Image from 'next/image';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleUp';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
+import DeleteAnswerDialog from "/components/DeleteAnswerDialog"
 
 
 const style = {
@@ -60,10 +61,11 @@ export default function PostsList(props) {
       
       {answers.map((answer) => (
         <div key={answer._id}>
+        {console.log(answer._id)}
         <ListItem sx={{px: 0}}>
           
-          <Grid container alignItems={"center"} >
-            <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>
+          <Grid container alignItems={"top"} >
+            <Grid item xs={1} sx={{mr: {xs:2, md:0 }}} alignItems="top" >
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
                 <Button>
@@ -88,8 +90,17 @@ export default function PostsList(props) {
             <Divider orientation={"vertical"}></Divider>
 
             <Grid item xs={10}>
-                <ListItemText primary={answer.description} secondary={answer.author.name + ", " + formatDate(answer.creationDate)} />
-                
+              <ListItemText primary={answer.description} />
+              <Stack direction="row" spacing={1} justifyContent="right" alignItems="center">
+              
+                <Chip
+                  size="small"
+                  label={answer.author.name}
+                  variant="outlined"
+                />
+                <Chip size="small" label={formatDate(answer.creationDate)} color="secondary" />
+                <DeleteAnswerDialog getPost={props.getPost} answerId={answer._id} postId={props.postId}></DeleteAnswerDialog>
+              </Stack>
             </Grid>
 
             <Grid item xs={1} sx={{mr:{xs:1, md:0}}}>
@@ -97,7 +108,9 @@ export default function PostsList(props) {
             </Grid>
 
             <Grid item xs={8} justifyContent={"right"}>
-              <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
+              <Stack direction="row" spacing={1} justifyContent="space-between" alignItems="center">
+                <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
+              </Stack>
             </Grid>
 
           </Grid>

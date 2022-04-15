@@ -24,9 +24,7 @@ export default async function handler (req, res) {
                 "$numberInt": "0"
             },
             "votes": [],
-            "_id": {
-                "$oid": new ObjectId()
-            },
+            "_id": ObjectId(),
             "author": {
               "name": userData.name,
               "email": userData.email
