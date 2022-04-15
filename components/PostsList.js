@@ -1,13 +1,18 @@
+import { useSession } from "next-auth/react"
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+import DeleteItemDialog from "/components/DeleteItemDialog"
 
 const style = {
   width: '100%',
@@ -17,6 +22,8 @@ const style = {
 
 export default function PostsList(props) {
   const posts = props.posts
+  const getAllPosts = props.getAllPosts;
+  const { data: session } = useSession()
 
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
@@ -48,10 +55,23 @@ export default function PostsList(props) {
         <ListItem sx={{px: 0}}>
           <Grid container alignItems={"center"} >
 
-            <Grid item sm={12}>
-              <Link underline={"none"} href={"/q&a/public/post/" + post._id}>
-                <ListItemText nowrap={"true"} primary={setLength(post.title )} secondary={post.author.name + ", " + formatDate(post.creationDate)} />
-              </Link>
+            <Grid item xs={12}>
+                <Stack direction="row" spacing={1} justifyContent="space-between">
+                  <Link underline={"none"} href={"/q&a/public/post/" + post._id}>
+                    <ListItemText nowrap={"true"} primary={setLength(post.title )} />
+                  </Link>
+                  {session && session.user.email === post.author.email && 
+                    <DeleteItemDialog getAllPosts={getAllPosts} postId={post._id}/>}
+                </Stack>
+                
+                <Stack direction="row" spacing={1} justifyContent="right">
+                  <Chip
+                    size="small"
+                    label={post.author.name}
+                    variant="outlined"
+                  />
+                  <Chip size="small" label={formatDate(post.creationDate)} color="secondary" />
+                </Stack>
             </Grid>
 
           </Grid>
