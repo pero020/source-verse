@@ -28,7 +28,6 @@ export default async function handler (req, res) {
     let isDeleted = await db.collection("posts").update( 
       {"_id": ObjectId(postId)},
       { $pull: { "answers": { "_id": ObjectId(answerId) }}} );
-      console.log(isDeleted)
 
     res.status(200).send();
   } catch (e) {

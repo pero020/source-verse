@@ -1,5 +1,3 @@
-import { useSession } from "next-auth/react"
-
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -9,10 +7,6 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-
-import DeletePostDialog from "/components/DeletePostDialog"
 
 const style = {
   width: '100%',
@@ -22,8 +16,6 @@ const style = {
 
 export default function PostsList(props) {
   const posts = props.posts
-  const getAllPosts = props.getAllPosts;
-  const { data: session } = useSession()
 
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
