@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Router from 'next/router'
 
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -9,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 
-export default function DeleteItemDialog(props) {
+export default function DeletePostDialog(props) {
   const [open, setOpen] = React.useState(false);
   const postId = props.postId;
   const getAllPosts = props.getAllPosts;
@@ -26,7 +27,7 @@ export default function DeleteItemDialog(props) {
     const res = await fetch("/api/posts/deletePost/" + postId);
     if (res.ok) {
       handleClose()
-      getAllPosts()
+      Router.push('/q&a/public/')
     } else {
       return 1
     }
@@ -49,7 +50,7 @@ export default function DeleteItemDialog(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>Cancel</Button>
+          <Button onClick={handleClose} autoFocus>Cancle</Button>
           <Button onClick={deleteItem}>
             Delete
           </Button>
