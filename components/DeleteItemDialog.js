@@ -49,7 +49,7 @@ export default function DeleteItemDialog(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>Cancle</Button>
+          <Button onClick={handleClose} autoFocus>Cancel</Button>
           <Button onClick={deleteItem}>
             Delete
           </Button>
