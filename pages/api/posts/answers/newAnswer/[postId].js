@@ -13,7 +13,7 @@ export default async function handler (req, res) {
 
   try {
     let userData = await db.collection("users").findOne({"email": session.user.email});
-    await db.collection("posts").update(
+    await db.collection("posts").updateOne(
       {"_id": ObjectId(postId)},
       {
         $push: {
