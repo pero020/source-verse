@@ -29,7 +29,7 @@ export default function Public() {
 
     <Typography variant="h4">Questions list</Typography>
 
-    {isLoading ? <CircularProgress sx={{color: "secondary.main"}} /> :  <PostsList posts={postsData}/> }
+    {isLoading ? <CircularProgress sx={{color: "secondary.main"}} /> :  <PostsList getAllPosts={getAllPosts} posts={postsData}/> }
 
   </>
 }
