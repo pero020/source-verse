@@ -175,7 +175,7 @@ export default function PostsList(props) {
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
                 <Button onClick={() => handleUpVote(answer._id, index)}>
-                    <ArrowCircleUpIcon color="secondary" fontSize="large" />
+                    <ArrowCircleUpIcon color={votedList[index]===1 ? "secondary" : "primary"} fontSize="large" />
                 </Button>
                   
                   
@@ -185,7 +185,7 @@ export default function PostsList(props) {
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
               <Button onClick={() => handleDownVote(answer._id, index)}>
-                <ArrowCircleUpIcon color="secondary" fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
+                <ArrowCircleUpIcon color={votedList[index]===-1 ? "error" : "primary"} fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
               </Button>
                 
 
