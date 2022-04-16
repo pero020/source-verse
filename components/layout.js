@@ -1,9 +1,10 @@
 import ResponsiveAppBar from "./ResponsiveAppBar"
-
 import { useSession } from "next-auth/react"
-
+import { Paper } from "@mui/material";
 import LinearProgress from '@mui/material/LinearProgress';
 import Container from '@mui/material/Container';
+
+
 
 
 export default function Layout({ children }) {
@@ -16,11 +17,13 @@ export default function Layout({ children }) {
     </>
   }
   return (
-    <>    
+    <>   
+    
       <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
       <Container maxWidth="xl" sx={{mt:2}} >
         <main>{children}</main>
       </Container>
+      
     </>
   )
 }

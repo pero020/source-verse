@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react"
 import Router from 'next/router'
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
@@ -10,7 +10,7 @@ import { CircularProgress} from "@mui/material"
 import { Grid } from '@mui/material'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-
+import { Button } from "@mui/material";
 import DeletePostDialog from "/components/DeletePostDialog"
 
 
@@ -58,10 +58,16 @@ export default function Post () {
         sx={{mr:1}}
       />
       <Chip label={formatDate(postData.creationDate)} color="secondary" />
+      
+      <Button href="/q&a/public">
+       <ArrowBackIcon fontSize="large"></ArrowBackIcon> Go back
+      </Button>
       </div>
       <div>
+        
       {session && session.user.email === postData.author.email && 
         <DeletePostDialog postId={postData._id}/>}
+      
       </div>
     </Stack>
     <br/>

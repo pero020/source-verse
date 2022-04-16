@@ -12,10 +12,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
+import ForumIcon from '@mui/icons-material/Forum';
 import { useSession } from "next-auth/react";
 import Link from 'next/link'
-
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -149,9 +150,12 @@ const ResponsiveAppBar = () => {
               </Button>
               </Link>
             ))}
+            
           </Box>
-
+           
+          
           <Box sx={{ flexGrow: 0 }}>
+            
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt={user.name} src={user.img} />
