@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react"
+import { useState, useEffect } from "react"
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -25,8 +26,11 @@ const style = {
 
 export default function PostsList(props) {
   const { data: session } = useSession()
+  const [totalVotes, setTotalVotes] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [votedList, setVotedList] = useState([])
 
-  const answers = props.answers
+  const { answers, postId } = props
 
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
@@ -51,25 +55,116 @@ export default function PostsList(props) {
     return newText
   }
 
-  function countVotes(votes) {
-    let sum = 0;
-    votes.forEach(vote => {
-      sum = sum + vote.vote;
+  function setInitVotedList () {
+    let list = []
+    let userVote = 0
+    answers.map((answer, index) => {
+      userVote = 0
+      answer.votes.forEach((vote) => {
+        if (vote.email === session.user.email) {
+          userVote = vote.status;
+        }
+      })
+      list.push(userVote)
     })
-    return sum;
+    setVotedList(list)
+  }
+  
+
+  function countVotes() {
+    let sumsArray = []
+    let sum = 0;
+    answers.map((answer, index) => {
+      sum = 0
+      answer.votes.forEach(vote => {
+        if (vote.email != session.user.email) {
+          sum = sum + vote.status;
+        }
+      })
+      sum = sum + votedList[index]
+      sumsArray.push(sum)
+    })
+    setTotalVotes(sumsArray)
+  }
+
+  function handleUpVote(answerId, index) {
+    if (votedList[index] != 1) {
+      updateVoteDatabase(answerId, 1, index)
+      votedList[index] = 1
+      countVotes(answers)
+    } else if ( votedList[index] === 1) {
+      deleteVoteDatabase(index)
+      votedList[index] = 0
+      countVotes(answers)
+    }
+    
+  }
+
+  function handleDownVote(answerId, index) {
+    if (votedList[index] != -1) {
+      updateVoteDatabase(answerId, -1, index)
+      votedList[index] = -1
+      countVotes(answers)
+    } else if ( votedList[index] === -1) {
+      deleteVoteDatabase(index)
+      votedList[index] = 0
+      countVotes(answers)
+    }
+    
+  }
+
+  async function updateVoteDatabase(answerId, voteChange, index) {
+    const res = await fetch("/api/posts/answers/votes/updateVote/" + postId, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        answerId: answerId,
+        voteChange: voteChange,
+        index: index
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+    if (res.ok) {
+      return("db updated")
+    }
+  }
+
+  async function deleteVoteDatabase(index) {
+    const res = await fetch("/api/posts/answers/votes/deleteOne/" + postId, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        index: index
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+    if (res.ok) {
+      return("db updated")
+    }
+  }
+
+  useEffect(() => {
+    setInitVotedList()
+  }, [])
+
+  useEffect(() => {
+    countVotes()
+    setIsLoading(false)
+  }, [votedList])
+  
+
+  if (isNaN(totalVotes[answers.length-1])) {
+    return <></>
   }
 
 
-
   return (
-    
-
 
     <List sx={style} component="nav" aria-label="mailbox folders">
-      
-      {answers.map((answer) => (
+      {answers.map((answer, index) => (
         <div key={answer._id}>
-        {console.log(answer._id)}
         <ListItem sx={{px: 0}}>
           
           <Grid container alignItems={"top"} >
@@ -77,17 +172,17 @@ export default function PostsList(props) {
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
                
-                <Button>
+                <Button onClick={() => handleUpVote(answer._id, index)}>
                   <ArrowCircleUpIcon color="secondary" fontSize="large" />
                 </Button>
                   
                   
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"} >
-                  <Typography variant="body1">{countVotes(answer.votes)}</Typography>
+                  <Typography variant="body1">{totalVotes[index]}</Typography>
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-              <Button>
+              <Button onClick={() => handleDownVote(answer._id, index)}>
                 <ArrowCircleUpIcon color="secondary" fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
               </Button>
                 
