@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react"
 import { useState, useEffect } from "react"
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -105,6 +105,7 @@ export default function PostsList(props) {
     if (votedList[index] != -1) {
       updateVoteDatabase(answerId, -1, index)
       votedList[index] = -1
+    
       countVotes(answers)
     } else if ( votedList[index] === -1) {
       deleteVoteDatabase(index)
@@ -173,9 +174,8 @@ export default function PostsList(props) {
             <Grid item xs={1} sx={{mr: {xs:2, md:0 }}} alignItems="top" >
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-               
                 <Button onClick={() => handleUpVote(answer._id, index)}>
-                  <ArrowCircleUpIcon color="secondary" fontSize="large" />
+                    <ArrowCircleUpIcon color="secondary" fontSize="large" />
                 </Button>
                   
                   
