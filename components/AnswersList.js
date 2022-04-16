@@ -29,8 +29,9 @@ export default function PostsList(props) {
   const [totalVotes, setTotalVotes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [votedList, setVotedList] = useState([])
+  const [answers, setAnswers] = useState(props.answers)
 
-  const { answers, postId } = props
+  const { postId } = props
 
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
@@ -163,6 +164,7 @@ export default function PostsList(props) {
   return (
 
     <List sx={style} component="nav" aria-label="mailbox folders">
+    {console.log("rendering answers")}
       {answers.map((answer, index) => (
         <div key={answer._id}>
         <ListItem sx={{px: 0}}>

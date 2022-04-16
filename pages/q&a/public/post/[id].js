@@ -26,6 +26,7 @@ export default function Post () {
       const res = await fetch("/api/posts/getOnePost/" + id);
       const data = await res.json();
       setPostData(data)
+      
     } catch (e) {
       Router.push('/q&a/public/')
     }
