@@ -62,8 +62,10 @@ export default function PostsList(props) {
     answers.map((answer, index) => {
       userVote = 0
       answer.votes.forEach((vote) => {
-        if (vote.email === session.user.email) {
-          userVote = vote.status;
+        if (session) {
+          if (vote.email === session.user.email) {
+            userVote = vote.status;
+          }
         }
       })
       list.push(userVote)
@@ -78,9 +80,14 @@ export default function PostsList(props) {
     answers.map((answer, index) => {
       sum = 0
       answer.votes.forEach(vote => {
-        if (vote.email != session.user.email) {
+        if (session) {
+          if (vote.email != session.user.email) {
+            sum = sum + vote.status;
+          }
+        } else {
           sum = sum + vote.status;
         }
+        
       })
       sum = sum + votedList[index]
       sumsArray.push(sum)
@@ -89,6 +96,9 @@ export default function PostsList(props) {
   }
 
   function handleUpVote(answerId, index) {
+    if (!session) {
+      return 1
+    }
     if (votedList[index] != 1) {
       updateVoteDatabase(answerId, 1, index)
       votedList[index] = 1
@@ -102,6 +112,9 @@ export default function PostsList(props) {
   }
 
   function handleDownVote(answerId, index) {
+    if (!session) {
+      return 1
+    }
     if (votedList[index] != -1) {
       updateVoteDatabase(answerId, -1, index)
       votedList[index] = -1
