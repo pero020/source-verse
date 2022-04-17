@@ -57,7 +57,6 @@ export default function NewQuestionDialog(props) {
   };
 
   const handleChange = (e) => {
-    console.log(e.target)
     const { name, value } = e.target
     setFormData({
       ...formData,
@@ -66,6 +65,10 @@ export default function NewQuestionDialog(props) {
   }
 
   const handleSubmit = async () => {
+    if (formData.title === "" || formData.description === "") {
+      console.log("no data")
+      return "please fill all the fields"
+    }
     const res = await fetch("/api/posts/newPost", {
       method: 'POST',
       headers: {

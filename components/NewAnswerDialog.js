@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from "react"
+import { useSession } from "next-auth/react"
 import UploadImage from './InputImage';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -31,6 +32,7 @@ function PaperComponent(props) {
 }
 
 export default function NewQuestionDialog(props) {
+  const { data: session } = useSession()
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -43,7 +45,12 @@ export default function NewQuestionDialog(props) {
   });
 
   const handleClickOpen = () => {
-    setOpen(true);
+    if (session) {
+      setOpen(true);
+    } else {
+      return 1
+    }
+    
   };
 
   const handleClose = () => {
@@ -63,6 +70,14 @@ export default function NewQuestionDialog(props) {
   }
 
   const handleSubmit = async () => {
+    if (formData.description === "" || formData.url === "") {
+      console.log("no data")
+      return "please fill all the fields"
+    }
+    if (formData.url.slice(0, 4) != "http") {
+      console.log("url not valid")
+      return "pls provide a full and valid URL, including 'https://'"
+    }
     const res = await fetch("/api/posts/answers/newAnswer/" + postId, {
       method: 'POST',
       headers: {
