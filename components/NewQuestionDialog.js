@@ -65,7 +65,7 @@ export default function NewQuestionDialog(props) {
   }
 
   const handleSubmit = async () => {
-    if (formData.title === "" || formData.description === "") {
+    if (formData.title.replace(/\s/g,"") === "" || formData.description.replace(/\s/g,"") === "") {
       console.log("no data")
       return "please fill all the fields"
     }
