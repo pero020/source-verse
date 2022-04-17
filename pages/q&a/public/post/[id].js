@@ -80,7 +80,7 @@ export default function Post () {
     <Typography variant="subtitle1">{postData.description}</Typography>
     <br/>
     <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
-    <Typography variant="h4">Answers:</Typography>
+    <Typography variant="h5">Answers:</Typography>
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers.reverse()}></AnswersList>
   </>
   
