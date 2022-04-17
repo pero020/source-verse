@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState } from "react"
-import { useSession } from "next-auth/react"
 import UploadImage from './InputImage';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -31,32 +30,28 @@ function PaperComponent(props) {
   );
 }
 
-export default function NewAnswerDialog(props) {
-  const { data: session } = useSession()
+export default function demoquestion(props) {
+  
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-  const postId = props.postId;
-
   const [formData, setFormData] = useState({
-    description: "",
-    url: ""
+    category: "General",
+    title: "",
+    description: ""
+
   });
 
   const handleClickOpen = () => {
-    if (session) {
-      setOpen(true);
-    } else {
-      return 1
-    }
-    
+    setOpen(true);
   };
 
   const handleClose = () => {
     setFormData({
-      description: "",
-      url: ""
+      category: "General",
+      title: "",
+      description: ""
     })
     setOpen(false);
   };
@@ -69,30 +64,7 @@ export default function NewAnswerDialog(props) {
     })
   }
 
-  const handleSubmit = async () => {
-    if (formData.description.replace(/\s/g,"") === "" || formData.url.replace(/\s/g,"") === "") {
-      console.log("no data")
-      return "please fill all the fields"
-    }
-    if (formData.url.slice(0, 4) != "http") {
-      console.log("url not valid")
-      return "pls provide a full and valid URL, including 'https://'"
-    }
-    const res = await fetch("/api/posts/answers/newAnswer/" + postId, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    if (!res.ok) {
-      return 1
-    } else {
-      props.getPost();
-      handleClose();
-    }
-  }
-
+  
   return (
     <div>
       <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
@@ -106,35 +78,52 @@ export default function NewAnswerDialog(props) {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle gutterBottom={false}>
-          Add Your Answer:
+          Add a New Question:
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
 
-          <TextField
-              id="description-input"
+            <Autocomplete
+              autoHighlight
+              disableClearable
+              fullWidth
+              required
+              id="category-input"
+              name="category"
+              options={categories}
+              sx={{width: {md: 500}, mt: 1}}
+              onChange={(event, value) => {
+                setFormData({
+                ...formData,
+                "category": value.label
+                })
+              }}
+              renderInput={(params) => <TextField {...params} label="Category" value={formData.title} />}
+            />
+            <TextField 
+              required
+              sx={{width: {md: 500}, mt: 2}} 
+              fullWidth label="Question title"
+              id="title-input"
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+            />
+            <TextField
+              id="outlined-multiline-flexible"
               name="description"
-              label="Answer text"
+              label="Description"
               multiline
               fullWidth
               required
               maxRows={8}
               minRows={4}
-              sx={{width: {md: 500}, mt: 1}}
+              sx={{width: {md: 500}, mt: 2}}
               value={formData.description}
               onChange={handleChange}
             />
-
-            <TextField 
-              required
-              sx={{width: {md: 500}, mt: 2}} 
-              fullWidth 
-              label="Source url"
-              id="url-input"
-              name="url"
-              value={formData.url}
-              onChange={handleChange}
-            />        
+            {/* <UploadImage sx={{mt: 2}}></UploadImage> */}
+            
 
           </DialogContentText>
         </DialogContent>
@@ -155,3 +144,10 @@ export default function NewAnswerDialog(props) {
     </div>
   );
 }
+
+const categories = [
+  {label: "General"},
+  {label: "History"},
+  {label: "IT"},
+  {label: "Psychology"}
+]
