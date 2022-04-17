@@ -104,7 +104,7 @@ export default function NewQuestionDialog(props) {
 
             <Autocomplete
               autoHighlight
-              disableClear
+              disableClearable
               fullWidth
               required
               id="category-input"
