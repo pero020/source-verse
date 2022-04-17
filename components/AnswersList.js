@@ -134,7 +134,7 @@ export default function PostsList(props) {
       body: JSON.stringify({
         answerId: answerId,
         voteChange: voteChange,
-        index: index
+        index:  answers.length - index - 1
       }),
       headers: {
         'Content-type': 'application/json',
@@ -149,7 +149,7 @@ export default function PostsList(props) {
     const res = await fetch("/api/posts/answers/votes/deleteOne/" + postId, {
       method: 'PATCH',
       body: JSON.stringify({
-        index: index
+        index: answers.length - index - 1
       }),
       headers: {
         'Content-type': 'application/json',
@@ -169,7 +169,6 @@ export default function PostsList(props) {
     setIsLoading(false)
   }, [votedList])
   
-
   if (isNaN(totalVotes[answers.length-1])) {
     return <></>
   }
@@ -178,7 +177,6 @@ export default function PostsList(props) {
   return (
 
     <List sx={style} component="nav" aria-label="mailbox folders">
-    {console.log("rendering answers")}
       {answers.map((answer, index) => (
         <div key={answer._id}>
         <ListItem sx={{px: 0}}>
