@@ -70,7 +70,7 @@ export default function NewQuestionDialog(props) {
   }
 
   const handleSubmit = async () => {
-    if (formData.description === "" || formData.url === "") {
+    if (formData.description.replace(/\s/g,"") === "" || formData.url.replace(/\s/g,"") === "") {
       console.log("no data")
       return "please fill all the fields"
     }
