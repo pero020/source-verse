@@ -4,10 +4,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
-import NewAnswerDialog from './NewAnswerDialog';
-import NewQuestionDialog from './NewQuestionDialog';
+import AddIcon from '@mui/icons-material/Add';
+import NewAnswerDialog from '/components/NewAnswerDialog';
+import NewQuestionDialog from '/components/NewQuestionDialog';
 import Send from '@mui/icons-material/Send';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -44,7 +44,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function DemoProgressBar() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -54,10 +54,10 @@ export default function BasicTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Intro to our platform..." {...a11yProps(0)} />
-          <Tab label="Ask a question" {...a11yProps(1)} />
-          <Tab label="Answer a question" {...a11yProps(2)} />
+        <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs example">
+          <Tab label="Intro" {...a11yProps(0)} />
+          <Tab label="Ask" {...a11yProps(1)} />
+          <Tab label="Answer" {...a11yProps(2)} />
           <Tab label="End" {...a11yProps(3)} />
         </Tabs>
       </Box>
@@ -80,7 +80,7 @@ export default function BasicTabs() {
         In front of you is a green + button that opens a new "Add a New Question" dialog. 
         Here you can select which category question belongs to, e.g. general, IT, history and much more!
         Then, you need to choose your question title and description. After you are done just click <br/><Send></Send><br/>or if you want to trow it all to trash, click this<br/>
-         <DeleteIcon></DeleteIcon><br/><br/><br/><NewQuestionDialog></NewQuestionDialog>
+         <DeleteIcon></DeleteIcon><br/><br/><br/><Fab color="secondary"><AddIcon ></AddIcon></Fab>
         
       
       </TabPanel>

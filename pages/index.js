@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react"
 import Image from "next/image";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
+import Demo from "/components/indexDemo/Demo"
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -10,8 +11,6 @@ export default function Home() {
     return <>
       <h1>Hello {session.user.name}</h1>
       <img src={session.user.image} ></img>
-      
-      
 
     </>
   }
