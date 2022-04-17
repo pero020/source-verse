@@ -49,6 +49,11 @@ export default function Post () {
   }
 
   return <>
+    <Stack direction="row" spacing={1} justifyContent="space-between">  
+      <Button href="/q&a/public" sx={{mr: 1}}>
+       <ArrowBackIcon fontSize="large"></ArrowBackIcon>
+      </Button>
+    </Stack>
     <Typography variant="h4">{postData.title}</Typography>
     <br/>
     <Stack direction="row" spacing={1} justifyContent="space-between">
@@ -61,9 +66,9 @@ export default function Post () {
       />
       <Chip label={formatDate(postData.creationDate)} color="secondary" />
       
-      <Button href="/q&a/public">
+      {/* <Button href="/q&a/public">
        <ArrowBackIcon fontSize="large"></ArrowBackIcon> Go back
-      </Button>
+      </Button> */}
       </div>
       <div>
         
@@ -72,9 +77,8 @@ export default function Post () {
       
       </div>
     </Stack>
-    <br/>
     <Typography variant="subtitle1">{postData.description}</Typography>
-    <br/><br/>
+    <br/>
     <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     <Typography variant="h4">Answers:</Typography>
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers.reverse()}></AnswersList>
