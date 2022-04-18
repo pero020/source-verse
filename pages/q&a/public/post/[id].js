@@ -25,7 +25,7 @@ export default function Post () {
 
   async function getPost() {
     try {
-      setPostData(null)
+      // setPostData(null)
       const res = await fetch("/api/posts/getOnePost/" + id);
       const data = await res.json();
 
@@ -39,8 +39,6 @@ export default function Post () {
 
       if (sortParam === "date") {
         data.answers = await sortByDate(data.answers)
-        console.log("sorted by date")
-        console.log(data.answers)
       }
 
       setPostData(data)
@@ -126,6 +124,7 @@ export default function Post () {
     </Stack>
 
     <Typography variant="h5">Answers:</Typography>
+    {console.log(postData.answers)}
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
   </>
   

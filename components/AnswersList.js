@@ -100,7 +100,7 @@ export default function PostsList(props) {
       return 1
     }
     if (votedList[index] != 1) {
-      updateVoteDatabase(answerId, 1, index, databaseIndex)
+      updateVoteDatabase(answerId, 1, databaseIndex)
       votedList[index] = 1
       countVotes(answers)
     } else if ( votedList[index] === 1) {
@@ -140,9 +140,11 @@ export default function PostsList(props) {
         'Content-type': 'application/json',
       },
     })
+    console.log(res)
     if (res.ok) {
       return("db updated")
     }
+    
   }
 
   async function deleteVoteDatabase(databaseIndex) {
@@ -161,8 +163,13 @@ export default function PostsList(props) {
   }
 
   useEffect(() => {
+    setVotedList([])
+    setAnswers(props.answers)
+  }, [props.answers])
+
+  useEffect(() => {
     setInitVotedList()
-  }, [])
+  }, [answers])
 
   useEffect(() => {
     countVotes()
@@ -179,6 +186,7 @@ export default function PostsList(props) {
     <List sx={style} component="nav" aria-label="mailbox folders">
       {answers.map((answer, index) => (
         <div key={answer._id}>
+        {console.log(answer.databaseIndex)}
         <ListItem sx={{px: 0}}>
           
           <Grid container alignItems={"top"} >
