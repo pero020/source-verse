@@ -39,6 +39,8 @@ export default function Post () {
 
       if (sortParam === "date") {
         data.answers = await sortByDate(data.answers)
+        console.log("sorted by date")
+        console.log(data.answers)
       }
 
       setPostData(data)
@@ -72,7 +74,9 @@ export default function Post () {
 
   async function sortByDate(answers) {
     return answers.sort((a, b) => {
-      return b.creationDate - a.creationDate
+      let dateA = new Date(a.creationDate)
+      let dateB = new Date(b.creationDate)
+      return dateB.getTime() - dateA.getTime()
     })
   }
 
