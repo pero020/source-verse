@@ -15,9 +15,6 @@ export default function Home() {
     </>
   }
   return <>
-    {/* <Demo></Demo> 
-    <h1>Home page</h1>
-    */}
    
     <Grid
     container
@@ -29,7 +26,7 @@ export default function Home() {
        <h1>Welcome to</h1>
       <Image src="/logo.svg" width="500" height="300"></Image>
     </Grid>
-    
+
   </>
 
 }

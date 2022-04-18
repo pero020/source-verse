@@ -95,46 +95,46 @@ export default function PostsList(props) {
     setTotalVotes(sumsArray)
   }
 
-  function handleUpVote(answerId, index) {
+  function handleUpVote(answerId, index, databaseIndex) {
     if (!session) {
       return 1
     }
     if (votedList[index] != 1) {
-      updateVoteDatabase(answerId, 1, index)
+      updateVoteDatabase(answerId, 1, index, databaseIndex)
       votedList[index] = 1
       countVotes(answers)
     } else if ( votedList[index] === 1) {
-      deleteVoteDatabase(index)
+      deleteVoteDatabase(databaseIndex)
       votedList[index] = 0
       countVotes(answers)
     }
     
   }
 
-  function handleDownVote(answerId, index) {
+  function handleDownVote(answerId, index, databaseIndex) {
     if (!session) {
       return 1
     }
     if (votedList[index] != -1) {
-      updateVoteDatabase(answerId, -1, index)
+      updateVoteDatabase(answerId, -1, databaseIndex)
       votedList[index] = -1
     
       countVotes(answers)
     } else if ( votedList[index] === -1) {
-      deleteVoteDatabase(index)
+      deleteVoteDatabase(databaseIndex)
       votedList[index] = 0
       countVotes(answers)
     }
     
   }
 
-  async function updateVoteDatabase(answerId, voteChange, index) {
+  async function updateVoteDatabase(answerId, voteChange, databaseIndex) {
     const res = await fetch("/api/posts/answers/votes/updateVote/" + postId, {
       method: 'PATCH',
       body: JSON.stringify({
         answerId: answerId,
         voteChange: voteChange,
-        index:  answers.length - index - 1
+        index: databaseIndex
       }),
       headers: {
         'Content-type': 'application/json',
@@ -145,11 +145,11 @@ export default function PostsList(props) {
     }
   }
 
-  async function deleteVoteDatabase(index) {
+  async function deleteVoteDatabase(databaseIndex) {
     const res = await fetch("/api/posts/answers/votes/deleteOne/" + postId, {
       method: 'PATCH',
       body: JSON.stringify({
-        index: answers.length - index - 1
+        index: databaseIndex
       }),
       headers: {
         'Content-type': 'application/json',
@@ -185,7 +185,7 @@ export default function PostsList(props) {
             <Grid item xs={1} sx={{mr: {xs:2, md:0 }}} alignItems="top" >
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-                <Button onClick={() => handleUpVote(answer._id, index)}>
+                <Button onClick={() => handleUpVote(answer._id, index, answer.databaseIndex)}>
                     <ArrowCircleUpIcon color={votedList[index]===1 ? "secondary" : "primary"} fontSize="large" />
                 </Button>
                   
@@ -195,7 +195,7 @@ export default function PostsList(props) {
                   <Typography variant="body1">{totalVotes[index]}</Typography>
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
-              <Button onClick={() => handleDownVote(answer._id, index)}>
+              <Button onClick={() => handleDownVote(answer._id, index, answer.databaseIndex)}>
                 <ArrowCircleUpIcon color={votedList[index]===-1 ? "error" : "primary"} fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
               </Button>
                 

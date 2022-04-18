@@ -11,8 +11,9 @@ import { Grid } from '@mui/material'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Button } from "@mui/material";
-import DeletePostDialog from "/components/DeletePostDialog"
 
+import DeletePostDialog from "/components/DeletePostDialog"
+import AnswersSortInput from "/components/AnswersSortInput"
 
 export default function Post () {
   const router = useRouter()
@@ -20,27 +21,62 @@ export default function Post () {
 
   const { data: session } = useSession()
   const [postData, setPostData] = useState(null)
+  const [sortParam, setSortParam] = useState("votes")
 
   async function getPost() {
     try {
       setPostData(null)
       const res = await fetch("/api/posts/getOnePost/" + id);
       const data = await res.json();
-      setPostData(data)
+
+      data.answers.forEach((answer, index) => {
+        answer.databaseIndex = index
+      })
       
+      if (sortParam === "votes") {
+        data.answers = await sortByVotes(data.answers)
+      }
+
+      if (sortParam === "date") {
+        data.answers = await sortByDate(data.answers)
+      }
+
+      setPostData(data)
     } catch (e) {
+      console.log(e)
       Router.push('/q&a/public/')
     }
   }
 
   useEffect(()=> {
     getPost()
-  }, [])
+  }, [sortParam])
 
   function formatDate(date) {
     let formatedDate = date.split("T")[0]
     return(formatedDate)
   }
+  async function sortByVotes(answers) {
+    return answers.sort((a, b) => {
+      let votesA = 0
+      let votesB = 0
+      a.votes.forEach((vote) => { 
+        votesA = votesA + vote.status
+      })
+      b.votes.forEach((vote) => { 
+        votesB = votesB + vote.status
+      })
+      return votesB - votesA 
+    })
+  }
+
+  async function sortByDate(answers) {
+    return answers.sort((a, b) => {
+      return b.creationDate - a.creationDate
+    })
+  }
+
+
 
   if (!postData) {
     return <>
@@ -79,9 +115,14 @@ export default function Post () {
     </Stack>
     <Typography variant="subtitle1">{postData.description}</Typography>
     <br/>
-    <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
+
+    <Stack direction="row" justifyContent={"space-between"}>
+        <AnswersSortInput sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
+        <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
+    </Stack>
+
     <Typography variant="h5">Answers:</Typography>
-    <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers.reverse()}></AnswersList>
+    <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
   </>
   
 }
