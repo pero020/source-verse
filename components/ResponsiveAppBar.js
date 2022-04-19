@@ -11,12 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ForumIcon from '@mui/icons-material/Forum';
 import { useSession, useState } from "next-auth/react";
 import Link from 'next/link'
-import Badge from '@mui/material/Badge';
-import MailIcon from '@mui/icons-material/Mail';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
