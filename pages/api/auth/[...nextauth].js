@@ -3,6 +3,7 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import GoogleProvider from "next-auth/providers/google";
 import clientPromise from "/lib/mongodb"
 import addUser from "./addUser";
+import getUser from "../getUser/[email]"
 
 export default NextAuth({
   providers: [
@@ -22,9 +23,18 @@ export default NextAuth({
       return token
     },
     async session({ session, token, user }) {
+
+      const client = await clientPromise;
+      const db = client.db(process.env.MONGODB_DB);
+
+      const userData = await db.collection("users").findOne({email: token.email});
+      session.role = userData.role
+      session.user.name = userData.name
+
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken;
       session.sub = token.sub;
+      console.log(session)
       return session
     },
     async redirect({ url, baseUrl }) {

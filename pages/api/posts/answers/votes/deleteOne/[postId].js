@@ -16,7 +16,6 @@ export default async function handler (req, res) {
     let isDeleted = await db.collection("posts").updateOne( 
       {"_id": ObjectId(postId)},
       { $pull: { [`answers.${index}.votes`]: { "email": session.user.email }}} );
-    console.log(isDeleted);
 
     res.status(200).send();
   } catch (e) {

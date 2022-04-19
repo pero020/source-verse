@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ForumIcon from '@mui/icons-material/Forum';
-import { useSession } from "next-auth/react";
+import { useSession, useState } from "next-auth/react";
 import Link from 'next/link'
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
@@ -73,8 +73,26 @@ const ResponsiveAppBar = () => {
       "name": "",
       "img": session.user.image
     }
-  }
 
+    if (session.role==="admin") {
+      pages.push(
+        {
+          "name": "Admin",
+          "link": "/admin"
+        },
+      )
+    }
+    
+    if (session.role==="specialist") {
+      pages.push(
+        {
+          "name": "Domain Reviews",
+          "link": "/domainReview"
+        },
+      )
+    }
+
+  }
 
   return (
     <AppBar position="static">
