@@ -5,12 +5,13 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
 import Chip from '@mui/material/Chip';
+import { Container } from "@mui/material";
 
 import PostsList from "/components/PostsList"
 import NewQuestionDialog from "/components/NewQuestionDialog"
 import QuestionFilters from "/components/QuestionFilters"
 
-import { Container } from "@mui/material";
+
 
 export default function Public() {
   const { data: session } = useSession()
@@ -44,18 +45,18 @@ export default function Public() {
   }, [])
 
   return <>
-<Container maxWidth="xl" width="100%" sx={{mt:2}} >
-    <Stack justifyContent="space-between" alignItems="center" direction="row">
-      <Typography variant="h5">Questions list</Typography>
-      {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
-    </Stack>
+    <Container maxWidth="xl" sx={{mt:2, px:1}} >
+      <Stack justifyContent="space-between" alignItems="center" direction="row">
+        <Typography variant="h5">Questions list</Typography>
+        {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
+      </Stack>
 
-    <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>
-    <Stack direction="row" spacing={1}>
-      {filters && filters.map((filter, index) => {if (filter) {return <Chip key={index} label={filter} />}})}
-    </Stack>
-    
-    {postsData ? <PostsList getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
+      <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>
+      <Stack direction="row" spacing={1}>
+        {filters && filters.map((filter, index) => {if (filter) {return <Chip key={index} label={filter} />}})}
+      </Stack>
+      
+      {postsData ? <PostsList getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
     </Container>
   </>
 }

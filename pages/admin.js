@@ -6,15 +6,15 @@ export default function Admin() {
 
   if (session.role !== "admin") {
     return <>
-    <Container maxWidth="xl" width="100%" sx={{mt:2}} >
+    <Container maxWidth="xl" sx={{mt:2, px:1}} >
       <p>Access not allowed</p>
-      </Container>
+    </Container>
     </>
   }
 
   return <>
-  <Container maxWidth="xl" width="100%" sx={{mt:2}} >
+  <Container maxWidth="xl" sx={{mt:2, px:1}} >
     <h1>Admin Page</h1>
-    </Container>
+  </Container>
   </>
 };

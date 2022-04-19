@@ -14,31 +14,14 @@ export default function Layout({ children }) {
     <div style={{width: 100}}></div>
     <LinearProgress />
     </>
-
-  
-  }
-  if(window.location.href == "http://sourced-info.herokuapp.com/" || window.location.href == "http://localhost:3000/")
-  {
-    return <>
-    <Paper style={{background: "linear-gradient(#696363, #64e38d, #696363)"}} height="500">
-    <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
-      
-        <main>{children}</main>
-      
-      </Paper>
-    </>
   }
 
   return (
     <>   
-   <Paper style={{background: "linear-gradient(#696363, #64e38d)", minHeight: "100vh"}} >
-      
+
       <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
-      
-        <main>{children}</main>
-      
-      
-     </Paper>
+      <main>{children}</main>
+    
     </>
   )
 }

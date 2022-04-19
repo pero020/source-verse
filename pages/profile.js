@@ -6,7 +6,6 @@ import AchievementsDialog from "../components/AchievementsDialog";
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
-import FixedBottomNavigation from "../components/FixedBottomNav";
 import Typography from '@mui/material/Typography';
 import { Container } from "@mui/material";
 
@@ -50,27 +49,22 @@ export default function Profile() {
   }
 
   return <>
-  <br/><br/><br/>
-  <Container maxWidth="xl" width="100%" sx={{mt:2}} >
-      <Grid container spacing={2}>
+  <Container maxWidth="xl" sx={{mt:2, px:1}} >
+      <Grid container spacing={4} alignItems="center" justifyContent="center">
         <Grid 
-        container item sm={12} md={6} 
-        alignItems="center"
-        justifyContent="center"
-        direction="column">
+        container item xs={12} md={6} alignItems="center" direction="column">
           <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
           <Typography variant="h5">User: {userData.name}</Typography>
           <Typography variant="h5">Email: {userData.email}</Typography>
           <AchievementsDialog></AchievementsDialog>
         </Grid>
-        <Grid item sm={12} md={6}>
+        <Grid item xs={12} md={6}>
         <Typography variant="h5">Your posts</Typography>
           {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
           {Array.isArray(userPosts) && userPosts.length === 0 && <h2>You don't have any posts yet!</h2> }
         </Grid>
       </Grid>
 </Container>
-    {/* <FixedBottomNavigation></FixedBottomNavigation> */}
     
   </>
 };

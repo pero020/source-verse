@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 export default function Forum() {
 
   return <>
-  <Grid container columnSpacing={8} rowSpacing={6} >
+  <Grid container columnSpacing={2} rowSpacing={6} >
 
     <Grid item xs={12} md={6}>
       <Box textAlign='center'>
@@ -22,6 +22,7 @@ export default function Forum() {
               xs: 4,
               md: 28
             },
+            mx:2,
             "&:hover": {
               backgroundColor: 'secondary.dark',
             },
@@ -44,7 +45,8 @@ export default function Forum() {
             mt: {
               xs: 0,
               md: 28
-            }
+            },
+            mx:2,
           }}>
             <Typography variant="h2" color="#ffffff" align="center">Private Q&A</Typography>
           </Button>
