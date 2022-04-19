@@ -20,7 +20,7 @@ export default function Layout({ children }) {
     <>   
     
       <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
-      <Container maxWidth="xl" sx={{mt:2}} >
+      <Container maxWidth="xl" disableGutters sx={{mt:2, px:1}} >
         <main>{children}</main>
       </Container>
       
