@@ -34,7 +34,6 @@ export default NextAuth({
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken;
       session.sub = token.sub;
-      console.log(session)
       return session
     },
     async redirect({ url, baseUrl }) {
