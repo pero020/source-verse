@@ -10,6 +10,8 @@ import PostsList from "/components/PostsList"
 import NewQuestionDialog from "/components/NewQuestionDialog"
 import QuestionFilters from "/components/QuestionFilters"
 
+import { Container } from "@mui/material";
+
 export default function Public() {
   const { data: session } = useSession()
   const [isLoading, setIsLoading] = useState(true)
@@ -42,7 +44,7 @@ export default function Public() {
   }, [])
 
   return <>
-
+<Container maxWidth="xl" width="100%" sx={{mt:2}} >
     <Stack justifyContent="space-between" alignItems="center" direction="row">
       <Typography variant="h5">Questions list</Typography>
       {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
@@ -54,6 +56,6 @@ export default function Public() {
     </Stack>
     
     {postsData ? <PostsList getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
-    
+    </Container>
   </>
 }

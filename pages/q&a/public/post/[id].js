@@ -11,7 +11,7 @@ import { Grid } from '@mui/material'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Button } from "@mui/material";
-
+import { Container } from "@mui/material";
 import DeletePostDialog from "/components/DeletePostDialog"
 import AnswersSortInput from "/components/AnswersSortInput"
 
@@ -87,6 +87,7 @@ export default function Post () {
   }
 
   return <>
+  <Container maxWidth="xl" width="100%" sx={{mt:2}} >
     <Stack direction="row" spacing={1} justifyContent="space-between">  
       <Button href="/q&a/public" sx={{mr: 1}}>
        <ArrowBackIcon fontSize="large"></ArrowBackIcon>
@@ -126,6 +127,7 @@ export default function Post () {
     <Typography variant="h5">Answers:</Typography>
     {console.log(postData.answers)}
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
+    </Container>
   </>
   
 }

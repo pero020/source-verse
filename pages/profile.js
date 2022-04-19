@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
 import FixedBottomNavigation from "../components/FixedBottomNav";
 import Typography from '@mui/material/Typography';
-
+import { Container } from "@mui/material";
 
 export default function Profile() {
   const { data: session } = useSession()
@@ -51,6 +51,7 @@ export default function Profile() {
 
   return <>
   <br/><br/><br/>
+  <Container maxWidth="xl" width="100%" sx={{mt:2}} >
       <Grid container spacing={2}>
         <Grid 
         container item sm={12} md={6} 
@@ -68,7 +69,7 @@ export default function Profile() {
           {Array.isArray(userPosts) && userPosts.length === 0 && <h2>You don't have any posts yet!</h2> }
         </Grid>
       </Grid>
-
+</Container>
     {/* <FixedBottomNavigation></FixedBottomNavigation> */}
     
   </>
