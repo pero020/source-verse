@@ -16,17 +16,17 @@ export default async function handler (req, res) {
     }
 
     let userData
-    
+
     if (formData.role === "admin" || formData.role === "user") {
       userData = await db.collection("users").updateOne(
         {"email": formData.email},
         {$set : {
           "role": formData.role,
         },
-        // $unset: {
-        //   "answerCost": "",
-        //   "domainReviewsCount": ""
-        // }
+        $unset: {
+          "answerCost": "",
+          "domainReviewsCount": ""
+        }
       })
     } else {
       userData = await db.collection("users").updateOne(
