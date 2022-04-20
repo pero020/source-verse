@@ -1,6 +1,9 @@
 import { useSession } from "next-auth/react"
 import { Container } from "@mui/material"
 
+import Typography from '@mui/material/Typography';
+import ChangeUserRole from "/components/admin/ChangeUserRole"
+
 export default function Admin() {
   const { data: session } = useSession()
 
@@ -15,6 +18,8 @@ export default function Admin() {
   return <>
   <Container maxWidth="xl" sx={{mt:2, px:1}} >
     <h1>Admin Page</h1>
+    <ChangeUserRole></ChangeUserRole>
+
   </Container>
   </>
 };
