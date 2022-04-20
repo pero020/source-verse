@@ -12,13 +12,13 @@ import { ButtonBase } from "@mui/material";
 
 const images = [
   {
-    url: '/public.png',
+    url: '/backgrounds/green.png',
     title: 'Public Q&A',
     width: '50%',
     link: '/q&a/public'
   },
   {
-    url: '/grey.png',
+    url: '/backgrounds/grey.png',
     title: 'Private Q&A',
     width: '50%',
     link: '/q&a/private'
