@@ -49,7 +49,7 @@ const ResponsiveAppBar = () => {
       "link": "/faq"
     },
     {
-      "name":"Development Blog",
+      "name":"Dev Blog",
       "link":"/development"
     },
   ];
@@ -166,7 +166,7 @@ const ResponsiveAppBar = () => {
               <Link href={page.link} key={page.name}>
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ color: 'white', display: 'block' }}
               >
                 {page.name}
               </Button>

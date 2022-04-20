@@ -21,22 +21,22 @@ const images = [
     url: '/grey.png',
     title: 'Private Q&A',
     width: '50%',
-    link: '/q&a/private.js'
+    link: '/q&a/private'
   },
  
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
-  height: 868,
+  height: window.innerHeight - 64,
   [theme.breakpoints.down('sm')]: {
     width: '100% !important', // Overrides inline-style
-    height: 100,
+    height: (window.innerHeight - 56)/2,
   },
   '&:hover, &.Mui-focusVisible': {
     zIndex: 1,
     '& .MuiImageBackdrop-root': {
-      opacity: 0.15,
+      opacity: 0.1,
     },
     '& .MuiImageMarked-root': {
       opacity: 0,
@@ -76,12 +76,12 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
   top: 0,
   bottom: 0,
   backgroundColor: theme.palette.common.black,
-  opacity: 0.4,
+  opacity: 0.3,
   transition: theme.transitions.create('opacity'),
 }));
 
 const ImageMarked = styled('span')(({ theme }) => ({
-  height: 3,
+  height: 0,
   width: 18,
   backgroundColor: theme.palette.common.white,
   position: 'absolute',
@@ -135,7 +135,7 @@ if(isMobile)
   </>
 }else{
   return <>
-  <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+  <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 150, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
           focusRipple
