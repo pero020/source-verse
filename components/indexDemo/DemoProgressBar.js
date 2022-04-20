@@ -81,11 +81,23 @@ export default function DemoProgressBar() {
         Here you can select which category question belongs to, e.g. general, IT, history and much more!
         Then, you need to choose your question title and description. After you are done just click <br/><Send></Send><br/>or if you want to trow it all to trash, click this<br/>
          <DeleteIcon></DeleteIcon><br/><br/><br/><Fab color="secondary"><AddIcon ></AddIcon></Fab>
-        
-      
       </TabPanel>
+
       <TabPanel value={value} index={2}>
-        Item Three
+        Great! Now that you got a handle on posting questions, it's time to learn how 
+        to answer them. To answer a question, simply press green + button. 
+        New dialog will open and you can type your answer along with verified link. When you're
+        done, simply press "ADD".<br/><br/>
+        Another really cool feature is the voting system. Every answer can be 
+        upvoted or downvoted, and current answer's score is displayed between voting 
+        icons.
+        
+      </TabPanel>
+
+      <TabPanel value={value} index={3}>
+       Now that you've mastered the art of posting and answering questions, it's time to
+      dive into amazing Sourced Info platform. If you have any questions, make sure to check out 
+      our FAQ section.       
       </TabPanel>
     </Box>
   );

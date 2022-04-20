@@ -44,6 +44,14 @@ const ResponsiveAppBar = () => {
       "name": "Q&A",
       "link": "/q&a"
     },
+    {
+      "name": "FAQ",
+      "link": "/faq"
+    },
+    {
+      "name":"Development Blog",
+      "link":"/development"
+    },
   ];
   let settings = [
     {

@@ -26,7 +26,7 @@ export default function Home() {
        <Typography variant="h2">Welcome to</Typography>
       <Image src="/logo.png" width="500" height="200"></Image>
 
-     
+      <Typography>Check out "Learn" and "FAQ" sections for more information.</Typography>
 
       
     </Grid>
