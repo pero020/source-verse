@@ -105,9 +105,6 @@ export default function Post () {
       />
       <Chip label={formatDate(postData.creationDate)} color="secondary" />
       
-      {/* <Button href="/q&a/public">
-       <ArrowBackIcon fontSize="large"></ArrowBackIcon> Go back
-      </Button> */}
       </div>
       <div>
         
@@ -119,12 +116,11 @@ export default function Post () {
     <Typography variant="subtitle1">{postData.description}</Typography>
     <br/>
 
-    <Stack direction="row" justifyContent={"space-between"}>
+    <Stack direction="row" justifyContent="space-between" alignItems="baseLine">
         <AnswersSortInput sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
         <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     </Stack>
 
-    <Typography variant="h5">Answers:</Typography>
     {console.log(postData.answers)}
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
     </Container>

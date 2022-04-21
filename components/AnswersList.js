@@ -244,16 +244,6 @@ export default function PostsList(props) {
               
             </Grid>
 
-            {/* <Grid item xs={1} sx={{mr:{xs:2, md:0}}}>
-
-            </Grid>
-
-            <Grid item xs={8} justifyContent={"right"}>
-              <Stack direction="row" spacing={1} justifyContent="space-between" alignItems="center">
-                <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
-              </Stack>
-            </Grid> */}
-
           </Grid>
           
         </ListItem>
