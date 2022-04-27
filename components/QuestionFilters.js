@@ -36,7 +36,7 @@ export default function QuestionFilters(props) {
   return <>
 
 
-  <Accordion sx={{boxShadow: "none", mt: 6, mb: 1}}>
+  <Accordion sx={{boxShadow: "none", mt: 6, mb: 1, borderRadius: '16px',maxWidth:'80%'}}>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"

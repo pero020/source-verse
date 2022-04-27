@@ -16,6 +16,15 @@ import DeletePostDialog from "/components/DeletePostDialog"
 import AnswersSortInput from "/components/AnswersSortInput"
 
 export default function Post () {
+  const style = {
+    width: '100%',
+    maxWidth: "md",
+    bgcolor: 'background.paper',
+    borderRadius: '10px',
+    p: 3
+  };
+
+
   const router = useRouter()
   const { id } = router.query
 
@@ -101,7 +110,7 @@ export default function Post () {
         avatar={<Avatar alt={postData.author.name} src={postData.author.image} />}
         label={postData.author.name}
         variant="outlined"
-        sx={{mr:1}}
+        sx={{mr:1,bgcolor: 'background.paper'}}
       />
       <Chip label={formatDate(postData.creationDate)} color="secondary" />
       
@@ -120,7 +129,7 @@ export default function Post () {
     <br/>
 
     <Stack direction="row" justifyContent={"space-between"}>
-        <AnswersSortInput sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
+        <AnswersSortInput sortParam={sortParam} setSortParam={setSortParam}></AnswersSortInput>
         <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     </Stack>
 

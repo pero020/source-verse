@@ -22,6 +22,8 @@ const style = {
   width: '100%',
   maxWidth: "md",
   bgcolor: 'background.paper',
+  borderRadius: '15px',
+  p:1
 };
 
 export default function PostsList(props) {

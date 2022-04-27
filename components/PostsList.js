@@ -8,10 +8,14 @@ import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
+
+
 const style = {
   width: '100%',
   maxWidth: "md",
   bgcolor: 'background.paper',
+  borderRadius: '10px',
+  p: 3
 };
 
 export default function PostsList(props) {
@@ -41,7 +45,7 @@ export default function PostsList(props) {
   }
 
   return (
-    <List sx={style} component="nav" aria-label="mailbox folders">
+    <List sx={style} component="nav" aria-label="mailbox folders" >
       {posts.map((post) => (
         <div key={post._id}>
         <ListItem sx={{px: 0}}>
@@ -67,7 +71,7 @@ export default function PostsList(props) {
           </Grid>
           
         </ListItem>
-        <Divider />
+        <Divider light/>
         </div>
       ))} 
     </List>
