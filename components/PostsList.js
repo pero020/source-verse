@@ -15,7 +15,7 @@ const style = {
   maxWidth: "md",
   bgcolor: 'background.paper',
   borderRadius: '8px',
-  p: 3
+  px: 3
 };
 
 export default function PostsList(props) {
@@ -45,7 +45,7 @@ export default function PostsList(props) {
   }
 
   return (
-    <List sx={style} component="nav" aria-label="mailbox folders" >
+    <List sx={style} component="nav" aria-label="mailbox folders">
       {posts.map((post) => (
         <div key={post._id}>
         <ListItem sx={{px: 0}}>

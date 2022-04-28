@@ -18,12 +18,10 @@ export default function Layout({ children }) {
   }
   return (
     <>   
-      <Box style={{width: '100%', minHeight:'100vh', background: `linear-gradient(to right, #00C0A1,  #52D17B)`}}>
-        <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
-        <main>{children}</main>
-        <div style={{height: "64px", width: '100%'}}></div> 
-        {/* div je placeholder za buduci footer */}
-      </Box>
+      <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
+      <main>{children}</main>
+      <div style={{height: "64px", width: '100%'}}></div> 
+      {/* div je placeholder za buduci footer */}
     </>
   )
 }

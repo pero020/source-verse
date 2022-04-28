@@ -15,7 +15,8 @@ const theme = createTheme({
       main: "#00ED64",
     },
     background: {
-      container: alpha("#fff", 0.85)
+      container: alpha("#fff", 0.85),
+      default: "#52d17b"
     }
   },
 });
