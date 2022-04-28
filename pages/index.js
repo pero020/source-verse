@@ -7,6 +7,7 @@ import Demo from "/components/indexDemo/Demo"
 import React from 'react';
 import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
+import { Chip } from "@mui/material";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -20,7 +21,7 @@ export default function Home() {
   }
   return <>
 
-    
+
 <Container maxWidth="xl" sx={{mt:2, px:1}} >
     <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
        <Typography variant="h2">Welcome to</Typography>
@@ -31,7 +32,7 @@ export default function Home() {
       
     </Grid>
   </Container>
-    
+ 
     
   </>
 

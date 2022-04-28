@@ -99,7 +99,8 @@ const ResponsiveAppBar = () => {
   }
 
   return (
-    <AppBar position="static">
+    
+    <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
         <Link href="/">
