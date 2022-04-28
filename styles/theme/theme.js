@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import React from 'react';
+import { alpha } from "@mui/material";
 
 const theme = createTheme({
 
@@ -14,15 +14,11 @@ const theme = createTheme({
     success: {
       main: "#00ED64",
     },
-    upvote:{
-      main: "#0288d1"
-    },
-    downvote:{
-      main:"#d32f2f"
-    },
+    background: {
+      container: alpha("#fff", 0.85)
     }
   },
-);
+});
 
 
 export default theme;

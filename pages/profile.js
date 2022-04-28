@@ -49,22 +49,22 @@ export default function Profile() {
   }
 
   return <>
-  <Container maxWidth="xl" sx={{mt:2, px:1}} >
-      <Grid container spacing={4} alignItems="center" justifyContent="center">
-        <Grid 
-        container item xs={12} md={6} alignItems="center" direction="column">
-          <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
-          <Typography variant="h5">User: {userData.name}</Typography>
-          <Typography variant="h5">Email: {userData.email}</Typography>
-          <AchievementsDialog></AchievementsDialog>
-        </Grid>
-        <Grid item xs={12} md={6}>
-        <Typography variant="h5">Your posts</Typography>
-          {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
-          {Array.isArray(userPosts) && userPosts.length === 0 && <h2>You don't have any posts yet!</h2> }
-        </Grid>
+  <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
+    <Grid container spacing={4} alignItems="center" justifyContent="center">
+      <Grid 
+      container item xs={12} md={6} alignItems="center" direction="column">
+        <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
+        <Typography variant="h5">User: {userData.name}</Typography>
+        <Typography variant="h5">Email: {userData.email}</Typography>
+        <AchievementsDialog></AchievementsDialog>
       </Grid>
-</Container>
+      <Grid item xs={12} md={6}>
+      <Typography variant="h5">Your posts</Typography>
+        {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
+        {Array.isArray(userPosts) && userPosts.length === 0 && <h2>You don't have any posts yet!</h2> }
+      </Grid>
+    </Grid>
+  </Container>
     
   </>
 };

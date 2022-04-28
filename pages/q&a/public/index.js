@@ -45,7 +45,7 @@ export default function Public() {
   }, [])
 
   return <>
-    <Container maxWidth="xl" sx={{mt:2, px:1}} >
+    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
       <Stack justifyContent="space-between" alignItems="center" direction="row">
         <Typography variant="h5">Questions list</Typography>
         {session && <NewQuestionDialog getAllPosts={getAllPosts} />}

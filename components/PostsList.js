@@ -14,7 +14,7 @@ const style = {
   width: '100%',
   maxWidth: "md",
   bgcolor: 'background.paper',
-  borderRadius: '10px',
+  borderRadius: '8px',
   p: 3
 };
 

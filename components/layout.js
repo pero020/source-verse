@@ -13,15 +13,16 @@ export default function Layout({ children }) {
 
   if (status==="loading") {
     return <>
-    <div style={{width: 100}}></div>
     <LinearProgress />
     </>
   }
   return (
     <>   
-<Box style={{width: '100%',height:'100vh', background: 'linear-gradient(to right,  #00C0A1, #52D17B)'}}>
-      <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
-      <main>{children}</main>
+      <Box style={{width: '100%', minHeight:'100vh', background: `linear-gradient(to right, #00C0A1,  #52D17B)`}}>
+        <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
+        <main>{children}</main>
+        <div style={{height: "64px", width: '100%'}}></div> 
+        {/* div je placeholder za buduci footer */}
       </Box>
     </>
   )

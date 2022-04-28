@@ -20,8 +20,8 @@ export default function OppositeContentTimeline() {
             April 3, 2022
           </TimelineOppositeContent>
 
-          <TimelineSeparator>
-            <TimelineDot />
+          <TimelineSeparator >
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -36,7 +36,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -52,7 +52,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -68,7 +68,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -84,7 +84,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -99,7 +99,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -114,7 +114,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -129,7 +129,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             <TimelineConnector />
           </TimelineSeparator>
@@ -144,7 +144,7 @@ export default function OppositeContentTimeline() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot color="secondary" />
             
             
           </TimelineSeparator>
