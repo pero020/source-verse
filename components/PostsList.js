@@ -46,6 +46,7 @@ export default function PostsList(props) {
 
   return (
     <List sx={style} component="nav" aria-label="mailbox folders">
+    {posts.length === 0 && <Typography>No results</Typography>}
       {posts.map((post) => (
         <div key={post._id}>
         <ListItem sx={{px: 0}}>
