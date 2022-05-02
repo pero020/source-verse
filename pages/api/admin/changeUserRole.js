@@ -8,6 +8,7 @@ export default async function handler (req, res) {
 
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
+  const Double = require("mongodb").Double;
 
   try {
 
@@ -34,7 +35,10 @@ export default async function handler (req, res) {
         {$set : {
           "role": formData.role,
           "answerCost": 1,
-          "domainReviewsCount": 0
+          "domainReviewsScore": Double(0),
+          "title": "Example Title for a Specialist",
+          "reviewsScore": Double(0),
+          "category": "General"
         }
       })
     }
