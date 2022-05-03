@@ -7,7 +7,9 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
 
 
 const style = {
@@ -20,7 +22,7 @@ const style = {
 
 export default function specialistsList(props) {
   const specialists = props.specialists
-
+  const [value, setValue] = React.useState(2);
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
   }
@@ -65,8 +67,13 @@ export default function specialistsList(props) {
                     label={specialist.name}
                     variant="outlined"
                   />
+                  
                   <Chip size="small" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " coins"} />
-                  <Chip size="small" label={specialist.reviewsScore} color="secondary" />
+                  <Box sx={{'& > legend': { mt: 2 },}}>
+                    <Rating name="half-read-only" precision={0.5} value={specialist.reviewsScore} readOnly />
+                  </Box>
+                  <Chip size="small" label={specialist.reviewsScore} color="secondary"/>
+                    
                 </Stack>
             </Grid>
 

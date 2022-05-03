@@ -13,12 +13,15 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useSession, useState } from "next-auth/react";
 import Link from 'next/link'
+import { Grid } from '@mui/material';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const { data: session, status } = useSession();
+
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -52,6 +55,8 @@ const ResponsiveAppBar = () => {
       "name":"Dev Blog",
       "link":"/development"
     },
+    
+   
   ];
   let settings = [
     {
@@ -64,6 +69,9 @@ const ResponsiveAppBar = () => {
   }
 
   if (status === "authenticated") {
+
+  
+
     settings = [
     {
       "name": "Profile",
@@ -72,11 +80,15 @@ const ResponsiveAppBar = () => {
     {
       "name": "Sign out",
       "link": "/api/auth/signout"
-    }]
+    },
+    
+  ]
     user = {
       "name": "",
       "img": session.user.image
     }
+
+
 
     if (session.role==="admin") {
       pages.push(
@@ -95,7 +107,7 @@ const ResponsiveAppBar = () => {
         },
       )
     }
-
+      
   }
 
   return (
@@ -113,7 +125,7 @@ const ResponsiveAppBar = () => {
             Sourced info
           </Typography>
         </Link>
-
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -173,10 +185,14 @@ const ResponsiveAppBar = () => {
               </Button>
               </Link>
             ))}
-            
+             
           </Box>
-           
+         
           
+ <Button sx={{borderRadius: 9}} variant="contained" size="large">Buy Coins</Button>
+        
+         
+
           <Box sx={{ flexGrow: 0 }}>
             
             <Tooltip title="Open settings">
@@ -209,6 +225,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+         
         </Toolbar>
       </Container>
     </AppBar>

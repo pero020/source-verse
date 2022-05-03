@@ -8,6 +8,8 @@ import React from 'react';
 import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
 import { Chip } from "@mui/material";
+import Lottie from 'react-lottie'
+
 
 export default function Home() {
   const { data: session, status } = useSession();

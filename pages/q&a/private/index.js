@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react"
 import { useState, useEffect } from "react"
-
+import { Grid } from "@mui/material";
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
@@ -30,10 +30,23 @@ export default function Public() {
   return <>
     <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
       <Stack justifyContent="space-between" alignItems="center" direction="row">
-        <Typography variant="h5">Specialists</Typography>
+        
       </Stack>
+      <Grid
+  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justifyContent="center"
+  
+>
 
+<Typography variant="h5">Specialists</Typography>
       {specialistsData ? <SpecialistsList  getAllSpecialists={getAllSpecialists} specialists={specialistsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
+   
+   </Grid>
+   
+   
     </Container>
   </>
 }
