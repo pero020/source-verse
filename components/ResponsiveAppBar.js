@@ -187,17 +187,12 @@ const ResponsiveAppBar = () => {
             ))}
              
           </Box>
-         
-          
- <Button sx={{borderRadius: 9}} variant="contained" size="large">Buy Coins</Button>
-        
-         
 
           <Box sx={{ flexGrow: 0 }}>
             
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt={user.name} src={user.img} />
+              {session ? <Avatar alt={user.name} src={user.img} /> : <Avatar sx={{ bgcolor: "#ffffff" }} /> }
               </IconButton>
             </Tooltip>
             <Menu

@@ -45,11 +45,11 @@ export default function Specialist (props) {
       <Grid 
       container item xs={12} md={6} alignItems="center" direction="column">
 
-        <Avatar src={specialistData.image} sx={{ width: 200, height: 200 }}></Avatar>
+        <Avatar src={specialistData.image} sx={{ width: 175, height: 175 }}></Avatar>
         <Typography variant="h5">{specialistData.name}</Typography>
         <Typography>{specialistData.category}</Typography>
-        <Box sx={{'& > legend': { mt: 2 },}}>
-                    <Rating name="half-read-only" precision={0.5} value={specialistData.reviewsScore} readOnly />
+        <Box sx={{mt: 2}}>
+          <Rating name="half-read-only" precision={0.2} value={specialistData.reviewsScore} readOnly />
         </Box>
       </Grid>
       </Grid>

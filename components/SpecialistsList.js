@@ -57,7 +57,7 @@ export default function specialistsList(props) {
             <Grid item xs={12}>
               <Link underline={"none"} href={"/q&a/private/specialist/" + specialist._id}>
                 <Stack direction="row" spacing={1} justifyContent="space-between">
-                    <ListItemText nowrap={"true"} primary={specialist.title} secondary={specialist.category} />
+                  <ListItemText nowrap={"true"} primary={specialist.title} secondary={specialist.category} />
                 </Stack>
               </Link>
                 
@@ -68,9 +68,9 @@ export default function specialistsList(props) {
                     variant="outlined"
                   />
                   
-                  <Chip size="small" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " coins"} />
-                  <Box sx={{'& > legend': { mt: 2 },}}>
-                    <Rating name="half-read-only" precision={0.5} value={specialist.reviewsScore} readOnly />
+                  <Chip size="small" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " Coins"} />
+                  <Box sx={{ mt: 2 }}>
+                    <Rating name="half-read-only" precision={0.2} value={specialist.reviewsScore} readOnly />
                   </Box>
                   <Chip size="small" label={specialist.reviewsScore} color="secondary"/>
                     

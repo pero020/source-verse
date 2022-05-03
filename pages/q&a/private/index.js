@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { Container } from "@mui/material";
+import { Button } from "@mui/material";
 
 import SpecialistsList from "/components/SpecialistsList"
 
@@ -29,24 +30,19 @@ export default function Public() {
 
   return <>
     <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-      <Stack justifyContent="space-between" alignItems="center" direction="row">
-        
-      </Stack>
-      <Grid
-  container
-  spacing={0}
-  direction="column"
-  alignItems="center"
-  justifyContent="center"
-  
->
 
-<Typography variant="h5">Specialists</Typography>
-      {specialistsData ? <SpecialistsList  getAllSpecialists={getAllSpecialists} specialists={specialistsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
-   
-   </Grid>
-   
-   
+    
+      <Stack direction="column" >
+        <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
+          <Typography variant="h5">Specialists</Typography>
+          {session && <Button sx={{borderRadius: 2}} variant="contained" size="large">Buy Coins</Button> }
+        </Stack>
+        <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
+          {specialistsData ? <SpecialistsList  getAllSpecialists={getAllSpecialists} specialists={specialistsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
+        </Stack>
+      </Stack>
+
+      
     </Container>
   </>
 }
