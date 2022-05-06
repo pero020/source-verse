@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import * as React from 'react';
+import { useState } from "react"
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
@@ -22,7 +22,6 @@ const style = {
 
 export default function specialistsList(props) {
   const specialists = props.specialists
-  const [value, setValue] = React.useState(2);
  
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
