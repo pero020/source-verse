@@ -15,7 +15,7 @@ const theme = createTheme({
     },
     background: {
       container: alpha("#fff", 0.85),
-      default: "#52d17b"
+      default: "#2b2b2b"
     }
   },
 });
