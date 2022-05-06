@@ -15,7 +15,8 @@ const theme = createTheme({
     },
     background: {
       container: alpha("#fff", 0.85),
-      default: "#2b2b2b"
+      default: "#2b2b2b",
+      contrastColor:"#ffffff"
     }
   },
 });

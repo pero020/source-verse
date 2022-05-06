@@ -45,7 +45,7 @@ export default function Home() {
       sx={{mt:25}}
       >
         <Box>
-          <Typography variant="h2" sx={{color:'white'}}>We authenticate solutions to <Typography variant="h2" sx={{color:'white', textDecoration:'underline', textDecorationColor:'#52D17B', display:'inline'}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Your problems</Typography>.</Typography>
         </Box>
         <Box sx={{maxWidth:"25%"}}>
           <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: exampleAnimationData,}}/>
@@ -57,7 +57,7 @@ export default function Home() {
       alignItems="center"
       sx={{mt:55}}
       >
-        <Typography variant="h2" sx={{color:'white', textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
       </Stack>
 
       <Stack
@@ -71,8 +71,8 @@ export default function Home() {
           <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
-          <Typography variant="h4" sx={{color:'white', maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
-          <Typography variant="h4" sx={{color:'white',maxWidth:'400px'}}><Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
+          <Typography variant="h4" sx={{color:"background.contrastColor",maxWidth:'400px'}}><Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
@@ -86,7 +86,7 @@ export default function Home() {
       sx={{mt:55}}
       >
 
-        <Typography variant="h2" sx={{color:'white', textDecoration:'underline', textDecorationColor:'#52D17B'}}>Get feedback from Specialists.</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Get feedback from Specialists.</Typography>
         
       </Stack>
         
@@ -97,7 +97,7 @@ export default function Home() {
       sx={{mt:10}}
       >
         <Box>
-          <Typography variant="h4" sx={{color:'white', maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
+          <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
         <Box sx={{maxWidth:"25%"}}>
           <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
@@ -116,7 +116,7 @@ export default function Home() {
         alignItems="center"
         sx={{mt:55}}
         >
-          <Typography variant="h2" sx={{color:'white', textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
+          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
         </Stack>
 
         <Stack
@@ -126,7 +126,7 @@ export default function Home() {
         sx={{mt:10}}
         >
           <Box>
-            <Typography variant="h4" sx={{color:'white', maxWidth:'720px'}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>  
+            <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'720px'}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>  
           </Box>
           <Box sx={{maxWidth:"25%"}}>
             <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
@@ -142,7 +142,7 @@ export default function Home() {
   sx={{mt:55, ml:2}}
  
   >
-    <Typography variant="h2" sx={{color:'white', textDecoration:'underline', textDecorationColor:'#52D17B'}}>FAQ</Typography>
+    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>FAQ</Typography>
   </Stack>
 
   <Stack
@@ -159,8 +159,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:'white'}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:'white'}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
+      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -169,8 +169,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:'white'}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:'white'}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
+      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -179,8 +179,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:'white'}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:'white'}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
+      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -189,8 +189,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:'white'}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:'white'}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
+      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -199,8 +199,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:'white'}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:'white'}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
+      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
   </Stack>
 
