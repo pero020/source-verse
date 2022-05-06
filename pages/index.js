@@ -38,8 +38,6 @@ export default function Home() {
 
 
     return <>
-
-    
       <Stack
       direction="row"
       justifyContent="space-evenly"
@@ -55,7 +53,7 @@ export default function Home() {
       </Stack>
       <Stack
       direction="row"
-      justifyContent="space-evenly"
+      justifyContent="center"
       alignItems="center"
       sx={{mt:55}}
       >
@@ -138,10 +136,10 @@ export default function Home() {
   </Stack>
   
   <Stack
-  direction="column"
-  justifyContent="center"
+  direction="row"
+  justifyContent="flex-start"
   alignItems="flex-start"
-  sx={{mt:55}}
+  sx={{mt:55, ml:2}}
  
   >
     <Typography variant="h2" sx={{color:'white', textDecoration:'underline', textDecorationColor:'#52D17B'}}>FAQ</Typography>
@@ -150,9 +148,9 @@ export default function Home() {
   <Stack
   direction="column"
   justifyContent="flex-start"
-  alignItems="center"
+  alignItems="flex-start"
   spacing={5}
-  sx={{mt:5}}
+  sx={{mt:5, ml:2}}
   >
     <Stack
     direction="column"
@@ -206,7 +204,7 @@ export default function Home() {
     </Stack>
   </Stack>
 
-    </>
+  </>
   }
 
  
