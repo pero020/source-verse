@@ -3,7 +3,6 @@ import { alpha } from "@mui/material";
 
 const theme = createTheme({
 
-  
   palette: {
     primary: {
       main: '#333333',
