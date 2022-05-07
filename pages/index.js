@@ -17,6 +17,7 @@ import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import { positions } from '@mui/system';
 import { BottomNavigation } from "@mui/material";
+import { Button } from "@mui/material";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -39,35 +40,53 @@ export default function Home() {
 
     return <>
       <Stack
-      direction="row"
+      direction={{md:'row', xs:'column'}}
       justifyContent="space-evenly"
       alignItems="center"
       sx={{mt:25}}
+      ml={{xs:3}}
       >
         <Box>
           <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Your problems</Typography>.</Typography>
         </Box>
-        <Box sx={{maxWidth:"25%"}}>
+        
+        <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
           <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: exampleAnimationData,}}/>
         </Box>
+        
       </Stack>
+
+      <Stack
+      direction="row"
+      justifyContent="flex-start"
+      alignItems="center"
+      ml={{md:85, xs:20}}
+      mt={{xs:10}}>
+
+          <Button variant="contained" color="success" size="large">
+            Explore
+          </Button>
+      
+      </Stack>
+
       <Stack
       direction="row"
       justifyContent="center"
       alignItems="center"
       sx={{mt:55}}
+      ml={{xs:5}}
       >
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
       </Stack>
 
       <Stack
-      direction="row"
+      direction={{xs:'column', md:'row'}}
       justifyContent="space-evenly"
       alignItems="center"
       sx={{mt:10}}
       >
 
-        <Box sx={{mb:5, maxWidth:"25%"}}>
+        <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
           <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
@@ -84,6 +103,7 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
       sx={{mt:55}}
+      ml={{xs:5}}
       >
 
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Get feedback from Specialists.</Typography>
@@ -91,19 +111,33 @@ export default function Home() {
       </Stack>
         
       <Stack
-      direction="row"
+      direction={{md:'row', xs:'column'}}
       justifyContent="space-evenly"
       alignItems="center"
       sx={{mt:10}}
+      ml={{xs:5}}
       >
         <Box>
           <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
-        <Box sx={{maxWidth:"25%"}}>
+        <Box maxWidth={{md:'25%', xs:'100%'}}>
           <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
         </Box>
-      </Stack>
 
+        
+      </Stack>
+      <Stack
+      direction="row"
+      justifyContent="flex-start"
+      alignItems="center"
+      ml={{md:35, xs:20}}
+      mt={{xs:10}}>
+
+          <Button variant="contained" color="success" size="large">
+            Connect
+          </Button>
+      
+      </Stack>
       <Stack
       direction="column"
       justifyContent="center"
@@ -115,32 +149,46 @@ export default function Home() {
         justifyContent="center"
         alignItems="center"
         sx={{mt:55}}
+        ml={{xs:4}}
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
         </Stack>
 
         <Stack
-        direction="row"
+        direction={{md:'row', xs:'column'}}
         justifyContent="space-evenly"
         alignItems="center"
         sx={{mt:10}}
+        ml={{xs:4}}
         >
           <Box>
-            <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'720px'}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>  
+            <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
-          <Box sx={{maxWidth:"25%"}}>
+          <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-7}}>
             <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
           </Box>
         </Stack>
 
   </Stack>
-  
+  <Stack
+      direction="row"
+      justifyContent="flex-start"
+      alignItems="center"
+      ml={{md:45, xs:20}}
+      mt={{xs:1}}>
+
+          <Button variant="contained" color="success" size="large">
+            Guide
+          </Button>
+      
+      </Stack>
   <Stack
   direction="row"
-  justifyContent="flex-start"
+  justifyContent={{md:'center', xs:'center'}}
   alignItems="flex-start"
-  sx={{mt:55, ml:2}}
- 
+  mt={{md:55, xs:20}}
+  
+  
   >
     <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>FAQ</Typography>
   </Stack>
@@ -148,7 +196,7 @@ export default function Home() {
   <Stack
   direction="column"
   justifyContent="flex-start"
-  alignItems="flex-start"
+  alignItems="center"
   spacing={5}
   sx={{mt:5, ml:2}}
   >
