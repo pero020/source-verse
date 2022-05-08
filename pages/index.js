@@ -43,8 +43,8 @@ export default function Home() {
       direction={{md:'row', xs:'column'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{mt:25}}
-      ml={{xs:3}}
+      sx={{mt:{xs: 5, md: 25}}}
+      mx={{xs:2}}
       >
         <Box>
           <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Your problems</Typography>.</Typography>
@@ -58,9 +58,8 @@ export default function Home() {
 
       <Stack
       direction="row"
-      justifyContent="flex-start"
+      justifyContent="center"
       alignItems="center"
-      ml={{md:85, xs:20}}
       mt={{xs:10}}>
 
           <Button variant="contained" color="success" size="large">
@@ -74,7 +73,7 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
       sx={{mt:55}}
-      ml={{xs:5}}
+      mx={{xs:2}}
       >
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
       </Stack>
@@ -83,7 +82,8 @@ export default function Home() {
       direction={{xs:'column', md:'row'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{mt:10}}
+      sx={{mt:{xs: 0, md: 10}}}
+      mx={{xs:2}}
       >
 
         <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
@@ -103,7 +103,7 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
       sx={{mt:55}}
-      ml={{xs:5}}
+      mx={{xs:2}}
       >
 
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Get feedback from Specialists.</Typography>
@@ -115,7 +115,7 @@ export default function Home() {
       justifyContent="space-evenly"
       alignItems="center"
       sx={{mt:10}}
-      ml={{xs:5}}
+      mx={{xs:2}}
       >
         <Box>
           <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
@@ -128,9 +128,8 @@ export default function Home() {
       </Stack>
       <Stack
       direction="row"
-      justifyContent="flex-start"
+      justifyContent="center"
       alignItems="center"
-      ml={{md:35, xs:20}}
       mt={{xs:10}}>
 
           <Button variant="contained" color="success" size="large">
@@ -149,7 +148,7 @@ export default function Home() {
         justifyContent="center"
         alignItems="center"
         sx={{mt:55}}
-        ml={{xs:4}}
+        mx={{xs:2}}
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
         </Stack>
@@ -159,12 +158,12 @@ export default function Home() {
         justifyContent="space-evenly"
         alignItems="center"
         sx={{mt:10}}
-        ml={{xs:4}}
+        mx={{xs:2}}
         >
           <Box>
             <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
-          <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-7}}>
+          <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
             <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
           </Box>
         </Stack>
@@ -172,10 +171,9 @@ export default function Home() {
   </Stack>
   <Stack
       direction="row"
-      justifyContent="flex-start"
+      justifyContent="center"
       alignItems="center"
-      ml={{md:45, xs:20}}
-      mt={{xs:1}}>
+      mt={{xs:10}}>
 
           <Button variant="contained" color="success" size="large">
             Guide
