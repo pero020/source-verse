@@ -55,6 +55,10 @@ const ResponsiveAppBar = () => {
       "name":"Dev Blog",
       "link":"/development"
     },
+    {
+      "name":"About Us",
+      "link":"/aboutUs"
+    },
     
    
   ];
