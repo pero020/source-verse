@@ -48,8 +48,8 @@ export default function Specialist (props) {
     <Stack
 direction={{xs:'column', md:'row'}}
 justifyContent="flex-start"
-alignItems="center"
-sx={{mt:{xs:10}}}
+alignItems={{xs:'center', md:'flex-start'}}
+sx={{mt:{xs:25}, mx: {xs: 2, md: 30}}}
 spacing={30}
 >
 
@@ -58,9 +58,9 @@ spacing={30}
       justifyContent="center"
       alignItems="center"
       spacing={3}
-      sx={{ml: {xs: 2, md: 30} }}>
+      >
 
-          <Box sx={{mt:{md:20}}}>
+          <Box>
             <Avatar alt="" src={specialistData.image} sx={{ width: 175, height: 175 }}/>
           </Box>
           <Box>
@@ -71,7 +71,7 @@ spacing={30}
           <Rating name="half-read-only" precision={0.2} value={specialistData.reviewsScore} readOnly />
         </Box>
 
-          <Button variant="contained" color="success" size="large" sx={{color:"background.contrastColor"}}>
+          <Button variant="contained" color="secondary" size="large" sx={{color:"background.contrastColor"}}>
               Ask me!
           </Button>
 
@@ -84,20 +84,9 @@ spacing={30}
       spacing={5}
       >
 
-          <Box sx={{mb:{md:30}}}>
-            <Typography variant="h4" sx={{color:"background.contrastColor",textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Specialist in:</Typography>
-          </Box>
-
-      </Stack>
-
-      <Stack
-      direction="column"
-      justifyContent="center"
-      alignItems="flex-start"
-      spacing={5}>
-
-          <Box sx={{mb:{md:30}}}>
-            <Typography variant="h4" sx={{color:"background.contrastColor",textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>My Top Achievements:</Typography>
+          <Box sx={{mb:{xs :30, md:0}}}>
+            <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Specialist in: </Typography>
+            <Typography variant="h4" sx={{color:"background.contrastColor"}}>{specialistData.category}</Typography>
           </Box>
 
       </Stack>
