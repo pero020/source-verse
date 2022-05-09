@@ -10,6 +10,8 @@ import { Avatar } from '@mui/material';
 import { Rating } from '@mui/material';
 import { Box } from '@mui/system';
 import * as React from 'react';
+import { Stack } from '@mui/material';
+import { Button } from '@mui/material';
 
 export default function Specialist (props) {
   const [specialistData, setSpecialistData] = useState(null)
@@ -37,31 +39,76 @@ export default function Specialist (props) {
   }, [])
 
   return ( <>
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
+    
+    
       {specialistData ?
       <>
-<Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-    <Grid container spacing={4} alignItems="center" justifyContent="center">
-      <Grid 
-      container item xs={12} md={6} alignItems="center" direction="column">
 
-        <Avatar src={specialistData.image} sx={{ width: 175, height: 175 }}></Avatar>
-        <Typography variant="h5">{specialistData.name}</Typography>
-        <Typography>{specialistData.category}</Typography>
-        <Box sx={{mt: 2}}>
+
+    <Stack
+direction={{xs:'column', md:'row'}}
+justifyContent="flex-start"
+alignItems="center"
+sx={{mt:{xs:10}}}
+spacing={30}
+>
+
+      <Stack
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      spacing={3}
+      sx={{ml: {xs: 2, md: 30} }}>
+
+          <Box sx={{mt:{md:20}}}>
+            <Avatar alt="" src={specialistData.image} sx={{ width: 175, height: 175 }}/>
+          </Box>
+          <Box>
+            <Typography variant="h4" sx={{color:"background.contrastColor"}}>{specialistData.name}</Typography>
+          </Box>
+
+          <Box sx={{mt: 2}}>
           <Rating name="half-read-only" precision={0.2} value={specialistData.reviewsScore} readOnly />
         </Box>
-      </Grid>
-      </Grid>
-      </Container>
+
+          <Button variant="contained" color="success" size="large" sx={{color:"background.contrastColor"}}>
+              Ask me!
+          </Button>
+
+      </Stack>
+
+      <Stack
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      spacing={5}
+      >
+
+          <Box sx={{mb:{md:30}}}>
+            <Typography variant="h4" sx={{color:"background.contrastColor",textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Specialist in:</Typography>
+          </Box>
+
+      </Stack>
+
+      <Stack
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      spacing={5}>
+
+          <Box sx={{mb:{md:30}}}>
+            <Typography variant="h4" sx={{color:"background.contrastColor",textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>My Top Achievements:</Typography>
+          </Box>
+
+      </Stack>
 
 
-     
-      </>
-      :
-      <CircularProgress sx={{color: "secondary.main"}}></CircularProgress>
+</Stack>
+
+    </>
+    :
+    <CircularProgress sx={{color: "secondary.main"}}></CircularProgress>
       }
-    </Container>
-  </>)
-
+      
+      </>)
 }

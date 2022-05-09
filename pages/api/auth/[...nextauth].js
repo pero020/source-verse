@@ -39,5 +39,9 @@ export default NextAuth({
     async redirect({ url, baseUrl }) {
       return baseUrl
     },
+  },
+  pages:
+  {
+    error:'/pages/error'
   }
 })

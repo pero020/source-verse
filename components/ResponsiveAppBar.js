@@ -126,7 +126,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            Sourced info
+            Resourceum
           </Typography>
         </Link>
           
