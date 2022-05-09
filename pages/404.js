@@ -6,13 +6,14 @@ import Button from '@mui/material/Button';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import { ButtonBase } from "@mui/material";
+import { BackupRounded } from "@mui/icons-material";
 
 
-export default function Forum() {
+export default function Custom404() {
 
   return <>
         <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
-          <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
+          <Typography color="background.contrastColor">404 - Page Not Found</Typography>
         </Box>
   </>
 
