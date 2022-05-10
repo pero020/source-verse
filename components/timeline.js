@@ -16,7 +16,7 @@ export default function OppositeContentTimeline() {
 
         <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent  color="background.contrastColor">
             April 3, 2022
           </TimelineOppositeContent>
 
@@ -25,13 +25,13 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Created Website</TimelineContent>
+          <TimelineContent  color="background.contrastColor">Created Website</TimelineContent>
 
         </TimelineItem>
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent  color="background.contrastColor">
             April 5, 2022
           </TimelineOppositeContent>
 
@@ -40,14 +40,14 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Google auth added</TimelineContent>
+          <TimelineContent  color="background.contrastColor">Google auth added</TimelineContent>
 
 </TimelineItem>
 
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 7, 2022
           </TimelineOppositeContent>
 
@@ -56,14 +56,14 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Database initialized</TimelineContent>
+          <TimelineContent color="background.contrastColor">Database initialized</TimelineContent>
 
 </TimelineItem>
 
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 9, 2022
           </TimelineOppositeContent>
 
@@ -72,14 +72,14 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Added Q&A section</TimelineContent>
+          <TimelineContent color="background.contrastColor">Added Q&A section</TimelineContent>
 
 </TimelineItem>
 
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 11, 2022
           </TimelineOppositeContent>
 
@@ -88,13 +88,13 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>First added question</TimelineContent>
+          <TimelineContent color="background.contrastColor">First added question</TimelineContent>
 
 </TimelineItem>
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 13, 2022
           </TimelineOppositeContent>
 
@@ -103,13 +103,13 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Improved website layout</TimelineContent>
+          <TimelineContent color="background.contrastColor">Improved website layout</TimelineContent>
 
 </TimelineItem>
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 16, 2022
           </TimelineOppositeContent>
 
@@ -118,13 +118,13 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Voting system</TimelineContent>
+          <TimelineContent color="background.contrastColor">Voting system</TimelineContent>
 
 </TimelineItem>
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 15, 2022
           </TimelineOppositeContent>
 
@@ -133,13 +133,13 @@ export default function OppositeContentTimeline() {
             
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Questions are deletable</TimelineContent>
+          <TimelineContent color="background.contrastColor">Questions are deletable</TimelineContent>
 
 </TimelineItem>
 
 <TimelineItem>
 
-          <TimelineOppositeContent color="text.secondary">
+          <TimelineOppositeContent color="background.contrastColor">
             April 19, 2022
           </TimelineOppositeContent>
 
@@ -148,7 +148,7 @@ export default function OppositeContentTimeline() {
             
             
           </TimelineSeparator>
-          <TimelineContent>Roles added</TimelineContent>
+          <TimelineContent color="background.contrastColor">Roles added</TimelineContent>
 
 </TimelineItem>
 

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useSession } from "next-auth/react"
+import { useRouter } from 'next/router'
 
 import { TextField } from "@mui/material"
 import Slider from '@mui/material/Slider';
@@ -13,6 +14,7 @@ export default function NewDomainReviewForm() {
     description: "",
     score: 3
   })
+  const router = useRouter()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -47,6 +49,7 @@ export default function NewDomainReviewForm() {
      return 1;
    }
    console.log("Success");
+   router.push("/profile")
    return 0;
   }
 

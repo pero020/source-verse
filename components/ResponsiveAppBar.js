@@ -48,14 +48,6 @@ const ResponsiveAppBar = () => {
       "link": "/q&a"
     },
     {
-      "name": "FAQ",
-      "link": "/faq"
-    },
-    {
-      "name":"Dev Blog",
-      "link":"/development"
-    },
-    {
       "name":"About Us",
       "link":"/aboutUs"
     },
@@ -126,7 +118,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            Resourceum
+            SourceVerse
           </Typography>
         </Link>
           

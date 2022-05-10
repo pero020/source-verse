@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import { Typography } from '@mui/material';
 import { Stack } from '@mui/material';
 import { Box } from '@mui/material';
+import { Divider } from '@mui/material';
 import Fab from '@mui/material/Fab';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
@@ -61,11 +62,12 @@ export default function DomainSearch() {
     <>
     <Typography sx={{mb:5}}>Total score: {domainData.score}</Typography>
     {domainData.reviews.map(review => (
-      <>
+      <div key={review._id}>
       <Typography>{review.description}</Typography>
       <Typography>{review.score}</Typography>
       <Typography>{review.author.name}</Typography>
-      </>
+      <Divider/>
+      </div>
     ))}
     </>
     }

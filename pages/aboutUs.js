@@ -19,7 +19,7 @@ import { positions } from '@mui/system';
 import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Divider } from "@mui/material";
-
+import ColorsTimeline from "../components/timeline"
 
 
 
@@ -208,5 +208,7 @@ export default function Learn() {
       </Stack>
 
     </Stack>
+    <Typography align="center" variant="h5" color="background.contrastColor">This is a timeline that shows our development progress</Typography>
+    <ColorsTimeline></ColorsTimeline>
   </>
 };

@@ -15,10 +15,11 @@ export default async function handler (req, res) {
     if (session.role !== "specialist") {
       res.status(403).send("forbidden");
     }
+    formData.url = formData.url.toLowerCase();
 
     const prevData = await db.collection("domains").findOne({"url": formData.url})
 
-    if ( prevData && prevData.reviews.length !== 0) {
+    if ( prevData ) {
 
       prevData.reviews.forEach(review => {
         if (review.author.email === session.user.email) {

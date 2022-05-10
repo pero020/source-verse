@@ -14,6 +14,7 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleUp';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { Rating } from '@mui/material';
 
 import DeleteAnswerDialog from "/components/DeleteAnswerDialog"
 
@@ -218,8 +219,13 @@ export default function PostsList(props) {
 
             <Grid item xs={10}>
               <ListItemText primary={answer.description} />
+              <Stack direction="row" spacing={1} alignItems="flex-start">
               <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
-
+              {answer.sourceScore ? 
+              <Rating name="half-read-only" precision={0.2} value={answer.sourceScore} size="small" readOnly /> : 
+              <Rating name="half-read-only" precision={0.2} value={0} size="small" readOnly />}
+              </Stack>
+              
               {isMobile ? 
               <Stack direction="row" spacing={1} alignItems="center" sx={{mt:1}}>
                 <Chip
