@@ -2,11 +2,7 @@ import Link from "next/link"
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { ButtonBase } from "@mui/material";
-import { BackupRounded } from "@mui/icons-material";
+import Button from '@mui/material/Button'
 
 
 export default function Custom404() {
