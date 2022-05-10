@@ -11,7 +11,7 @@ export default async function handler (req, res) {
 
   let userData = await db.collection("users").findOne({email: email});
 
-  if (userData.sub === session.sub) {
+  if (userData.email === session.email) {
     res.status(200).json(userData);
   } else {
     res.status(403).send("Forbidden")

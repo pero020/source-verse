@@ -10,6 +10,7 @@ import NewAnswerDialog from '/components/NewAnswerDialog';
 import NewQuestionDialog from '/components/NewQuestionDialog';
 import Send from '@mui/icons-material/Send';
 import DeleteIcon from '@mui/icons-material/Delete';
+import DomainSearch from "./DomainSearch"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -55,10 +56,9 @@ export default function DemoProgressBar() {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs example">
-          <Tab label="Intro" {...a11yProps(0)} />
-          <Tab label="Ask" {...a11yProps(1)} />
-          <Tab label="Answer" {...a11yProps(2)} />
-          <Tab label="End" {...a11yProps(3)} />
+          <Tab label="Trustworthiness" {...a11yProps(0)} />
+          <Tab label="Security" {...a11yProps(1)} />
+          <Tab label="Domain Reviews" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -84,20 +84,7 @@ export default function DemoProgressBar() {
       </TabPanel>
 
       <TabPanel value={value} index={2}>
-        Great! Now that you got a handle on posting questions, it's time to learn how 
-        to answer them. To answer a question, simply press green + button. 
-        New dialog will open and you can type your answer along with verified link. When you're
-        done, simply press "ADD".<br/><br/>
-        Another really cool feature is the voting system. Every answer can be 
-        upvoted or downvoted, and current answer's score is displayed between voting 
-        icons.
-        
-      </TabPanel>
-
-      <TabPanel value={value} index={3}>
-       Now that you've mastered the art of posting and answering questions, it's time to
-      dive into amazing Sourced Info platform. If you have any questions, make sure to check out 
-      our FAQ section.       
+        <DomainSearch></DomainSearch>
       </TabPanel>
     </Box>
   );

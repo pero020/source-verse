@@ -38,7 +38,8 @@ export default async function handler (req, res) {
           "domainReviewsScore": Double(0),
           "title": "Example Title for a Specialist",
           "reviewsScore": Double(0),
-          "category": "General"
+          "category": "General",
+          "domainReviews": []
         }
       })
     }
