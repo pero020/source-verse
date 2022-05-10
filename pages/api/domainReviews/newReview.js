@@ -20,13 +20,16 @@ export default async function handler (req, res) {
     const prevData = await db.collection("domains").findOne({"url": formData.url})
 
     if ( prevData ) {
-
+      let foundMatch = null;
       prevData.reviews.forEach(review => {
         if (review.author.email === session.user.email) {
-          res.status(403).send();
-          return 1;
+          foundMatch = 1
         }
       })
+      if (foundMatch) {
+        res.status(403).send()
+        return 1;
+      }
 
       let newScore = 0;
       prevData.reviews.forEach(review => {

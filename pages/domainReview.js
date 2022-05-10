@@ -1,5 +1,7 @@
 import { useSession } from "next-auth/react"
 import { Container } from "@mui/material";
+import { Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import NewDomainReviewForm from "/components/NewDomainReviewForm"
 
 export default function Admin() {
@@ -15,8 +17,10 @@ export default function Admin() {
 
   return <>
   <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-    <h1>New Domain Review</h1>
+  <Stack alignItems="center">
+    <Typography variant="h3" >New Domain Review</Typography>
     <NewDomainReviewForm></NewDomainReviewForm>
+  </Stack>
   </Container>
   </>
 };

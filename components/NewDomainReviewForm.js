@@ -26,7 +26,12 @@ export default function NewDomainReviewForm() {
 
   const checkDataValidity = () => {
     if (!formData.url || !formData.description || !formData.score) {
-      return "Please provide all required information"
+      console.log("Please only provide the top level domain name, example: 'facebook.com' ")
+      return 1
+    }
+    if (formData.url.includes("/")) {
+      console.log("Please only provide the top level domain name, example: 'facebook.com' ")
+      return 1
     }
     return 0;
   }
@@ -61,7 +66,7 @@ export default function NewDomainReviewForm() {
   required
   sx={{width: {md: 500}, mt: 2}} 
   fullWidth 
-  label="Domain url"
+  label="Domain URL"
   id="url"
   name="url"
   value={formData.url}
