@@ -28,6 +28,9 @@ export default function NewDomainReviewForm() {
     if (!formData.url || !formData.description || !formData.score) {
       return "Please provide all required information"
     }
+    if (formData.url.includes("/")) {
+      return "Please only provide the top level domain name, example: 'facebook.com' "
+    }
     return 0;
   }
 
