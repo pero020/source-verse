@@ -49,9 +49,9 @@ export default function Learn() {
     mx={{xs:2,md:15}}
     >
       <Box>
-        <Typography variant="h5" maxWidth={{md:1050}} sx={{color:"background.contrastColor"}}>We are a humble team of 3 software engineering students based in Zagreb, Croatia.</Typography>
-        <Typography variant="h5" mt={{md:7, xs:5}} maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}> Everything started back in March, 2022 when we saw an Instagram post about this college hosted event called "TVZ Mc2", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
-        <Typography variant="h5" mt={{md:3, xs:5}} maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}>Little did we know it would soon become an inception of a great partnership and even greater friendship.</Typography>
+        <Typography variant="h5" maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}>We are a humble team of 3 software engineering students based in Zagreb, Croatia.</Typography>
+        <Typography variant="h5" mt={{md:7, xs:5}} maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}> Everything started back in March, 2022 when we entered the "TVZ Mc2", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
+        <Typography variant="h5" mt={{md:3, xs:5}} maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}>Little did we know it would be a start of a great partnership and an even greater friendship.</Typography>
         <Typography variant="h5" mt={{md:3, xs:3}} sx={{color:"background.contrastColor"}}>We named ourselves after the goal of our idea.</Typography>
       </Box>
       
@@ -208,7 +208,7 @@ export default function Learn() {
       </Stack>
 
     </Stack>
-    <Typography align="center" variant="h5" color="background.contrastColor">This is a timeline that shows our development progress</Typography>
+    <Typography align="center" variant="h4" color="background.contrastColor" sx={{mt: 10, mb:5}}>Development Timeline</Typography>
     <ColorsTimeline></ColorsTimeline>
   </>
 };

@@ -7,6 +7,8 @@ import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 
+import Footer from "/components/Footer"
+
 
 export default function Layout({ children }) {
   const { status } = useSession()
@@ -18,19 +20,11 @@ export default function Layout({ children }) {
   }
   return (
     <>   
+    <Box sx={{minHeight: "85vh"}}>
       <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
       <main>{children}</main>
-      
-      {/* <div style={{height: "40px", width: '100%',backgroundColor:'black'}}>
-      <Stack direction="row"
-      justifyContent="center"
-      alignItems="flex-end"
-      sx={{mt:10}}>
-        <Typography sx={{color:"background.contrastColor", mt:1}}>
-          Copyright © 2022 Team Vision All rights reserved.
-        </Typography>
-        </Stack>
-        </div> */}
+    </Box>
+    <Footer></Footer>
     </>
   )
 }
