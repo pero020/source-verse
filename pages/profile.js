@@ -102,7 +102,8 @@ export default function Profile(props) {
 
           </Grid>
           <Grid item xs={12} md={6}>
-          {session.role === "user" || session.role === "admin" &&
+          {console.log(session.role)}
+          {(session.role === "user" || session.role === "admin") &&
             <Box>
               <Box>
                 <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Your Achievements: </Typography>

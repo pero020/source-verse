@@ -1,5 +1,3 @@
-import { PostAdd } from "@mui/icons-material";
-
 export default async function checkScore(score, currBadge) {
   let newBadge = null;
   if (score < 5) {
