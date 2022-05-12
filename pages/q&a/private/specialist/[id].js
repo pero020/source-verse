@@ -12,6 +12,7 @@ import { Box } from '@mui/system';
 import * as React from 'react';
 import { Stack } from '@mui/material';
 import { Button } from '@mui/material';
+import ReviewsList from "/components/ReviewsList"
 
 export default function Specialist (props) {
   const [specialistData, setSpecialistData] = useState(null)
@@ -50,7 +51,7 @@ direction={{xs:'column', md:'row'}}
 justifyContent="flex-start"
 alignItems={{xs:'center', md:'flex-start'}}
 sx={{mt:{xs:25}, mx: {xs: 2, md: 30}}}
-spacing={30}
+spacing={15}
 >
 
       <Stack
@@ -84,13 +85,13 @@ spacing={30}
       spacing={5}
       >
 
-          <Box sx={{mb:{xs :30, md:0}}}>
+          <Box>
             <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Specialist in: </Typography>
             <Typography variant="h4" sx={{color:"background.contrastColor"}}>{specialistData.category}</Typography>
           </Box>
           <Box>
             <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Domain Reviews: </Typography>
-            <ReviewsList reviews={specialistData.category}></ReviewsList>
+            <ReviewsList reviews={specialistData.domainReviews}></ReviewsList>
           </Box>
 
       </Stack>
