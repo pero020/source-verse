@@ -74,7 +74,7 @@ export default function NewAnswerDialog(props) {
       console.log("no data")
       return "please fill all the fields"
     }
-    if (formData.url.slice(0, 4) != "http") {
+    if (formData.url.slice(0, 4) != "http" || !formData.url.includes("//")) {
       console.log("url not valid")
       return "pls provide a full and valid URL, including 'https://'"
     }

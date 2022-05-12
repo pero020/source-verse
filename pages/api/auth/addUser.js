@@ -5,6 +5,7 @@ import clientPromise from "/lib/mongodb"
 export default async function addUser(token) {
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
+  const Double = require("mongodb").Double;
 
   let userExists = await db.collection("users").findOne({sub: token.sub});
 
@@ -23,7 +24,8 @@ export default async function addUser(token) {
         upvotes: 0,
         answersNum: 0,
         postsNum: 0,
-        score: 0
+        averageSourceScore: 0,
+        score: Double(0)
       },
       badge: "bronce1"
     }

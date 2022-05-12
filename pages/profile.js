@@ -2,7 +2,7 @@ import { useState, useEffect} from "react"
 import { useSession } from "next-auth/react"
 import Image from "next/image";
 import CircularProgress from '@mui/material/CircularProgress';
-import AchievementsDialog from "../components/AchievementsDialog";
+import StatsDialog from "/components/StatsDialog";
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
@@ -15,6 +15,7 @@ import ReviewsList from "/components/ReviewsList"
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress'
+import { Chip } from '@mui/material'
 
 export default function Profile(props) {
   const { data: session } = useSession()
@@ -96,7 +97,9 @@ export default function Profile(props) {
             <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
             <Typography variant="h5" color="background.contrastColor">{userData.name}</Typography>
             <Typography variant="h5" color="background.contrastColor">{userData.email}</Typography>
-            {/* <AchievementsDialog></AchievementsDialog> */}
+            <Typography variant="h5" color="background.contrastColor">Score: {userData.stats.score}</Typography>
+            <StatsDialog userData={userData}></StatsDialog>
+
           </Grid>
           <Grid item xs={12} md={6}>
           {session.role === "user" || session.role === "admin" &&
@@ -124,7 +127,7 @@ export default function Profile(props) {
           }
           <Typography variant="h4" color="background.contrastColor" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}}>Your posts</Typography>
             {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
-            {Array.isArray(userPosts) && userPosts.length === 0 && <Typography variant="h5">You don't have any posts yet!</Typography> }
+            {/* {Array.isArray(userPosts) && userPosts.length === 0 && <Typography variant="h5">You don't have any posts yet!</Typography> } */}
             {session.role === "specialist" ?
               userData.domainReviews.length !== 0 ?
               <Box>

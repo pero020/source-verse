@@ -221,7 +221,7 @@ export default function PostsList(props) {
 
             <Grid item xs={10}>
               <ListItemText primary={answer.description} />
-              <Stack direction="row" spacing={1} alignItems="flex-start">
+              <Stack direction={{xs: "column", md: "row"}} spacing={1} alignItems="flex-start">
               <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
               {answer.sourceScore ? 
               <Rating name="half-read-only" precision={0.2} value={answer.sourceScore} size="small" readOnly /> : 

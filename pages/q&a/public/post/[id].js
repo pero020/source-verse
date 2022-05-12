@@ -130,7 +130,6 @@ export default function Post () {
         <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     </Stack>
 
-    {console.log(postData.answers)}
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
     </Container>
   </>
