@@ -33,6 +33,11 @@ export default function Profile(props) {
     setIsLoading(false)
   }
 
+  const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 10,
+    borderRadius: 5,
+  }));
+
   const styles = {
     root: {
       flexGrow: 1
@@ -166,7 +171,7 @@ export default function Profile(props) {
               
             </Stack>
             <Box sx={{ width: '70%' }}>
-                <LinearProgress sx={{mb:1}} color="secondary" variant="determinate" value={updateMax()}/>
+                <BorderLinearProgress size={10} sx={{mb:1}} color="secondary" variant="determinate" value={updateMax()}/>
               </Box>
               <Box>
                 <Typography color="background.contrastColor">{leftToGo()} point(s) until next rank!</Typography>
