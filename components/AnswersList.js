@@ -144,7 +144,6 @@ export default function PostsList(props) {
         'Content-type': 'application/json',
       },
     })
-    console.log(res)
     if (res.ok) {
       return("db updated")
     }

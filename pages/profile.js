@@ -104,35 +104,45 @@ export default function Profile(props) {
 
   function leftToGo()
   {
-    return novimax-current+1;
+    return novimax-current;
   }
 
   function updateMax()
   {
-    
+    let lastLvl = null;
 
-     if(current>=250)
-     {
-       novimax=current; {/*maximalni level */}
-     }
-     else 
-     if(current >= 150)
-     {
-       novimax=250;
-     }else if(current >= 100)
-     {
-       novimax=150;
-     }else if(current >= 50)
-     {
-        novimax=100;
-     }else if(current >= 10)
-     {
-       novimax=25;
-     }else
-     {
-       novimax=10;
-     }
-     return current/novimax*100;
+    if(current>=250)
+    {
+      novimax=999999; {/*maximalni level */}
+      lastLvl = 250;
+    }
+    else 
+    if(current >= 150)
+    {
+      lastLvl = 150;
+      novimax=250;
+    }else if(current >= 100)
+    {
+      lastLvl = 100;
+      novimax=150;
+    }else if(current >= 50)
+    {
+      lastLvl = 50;
+      novimax=100;
+    }else if(current >= 25)
+    {
+      lastLvl = 25;
+      novimax=50;
+    }else if(current >= 10)
+    {
+      lastLvl = 10;
+      novimax=25;
+    }else
+    {
+      lastLvl = 0;
+      novimax=10;
+    }
+    return (current-lastLvl)/(novimax-lastLvl)*100;
   }
 
 
@@ -156,7 +166,7 @@ export default function Profile(props) {
               
             </Stack>
             <Box sx={{ width: '70%' }}>
-                <LinearProgress  sx={{color:'success.main'}} variant="determinate" value={updateMax()}/>
+                <LinearProgress sx={{mb:1}} color="secondary" variant="determinate" value={updateMax()}/>
               </Box>
               <Box>
                 <Typography color="background.contrastColor">{leftToGo()} point(s) until next rank!</Typography>

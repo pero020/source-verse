@@ -36,7 +36,7 @@ export default function Learn() {
     mx={{xs:2,md:15}}
     >
       <Box>
-        <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Who? Why? When? Where?</Typography>
+        <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Who? Why?</Typography>
       </Box>
       
     </Stack>
