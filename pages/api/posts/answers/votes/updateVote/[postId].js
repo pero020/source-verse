@@ -27,7 +27,8 @@ export default async function handler (req, res) {
       {"email": postData.answers[index].author.email},
       {
         $inc: {
-          "stats.upvotes": voteChange - prevVote
+          "stats.upvotes": voteChange - prevVote,
+          "stats.score": voteChange - prevVote
         }
       }
     )

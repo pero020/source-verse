@@ -21,11 +21,12 @@ export default async function handler (req, res) {
       { $pull: { [`answers.${index}.votes`]: { "email": session.user.email }}} 
     );
 
-    let updatedPostScore = await db.collection("posts").updateOne(
-      {"email": postData.author.email},
+    let updatedPostScore = await db.collection("users").updateOne(
+      {"email": postData.answers[index].author.email},
       {
         $inc: {
-          "stats.upvotes": voteChange
+          "stats.upvotes": voteChange,
+          "stats.score": voteChange
         }
       }
     )
