@@ -103,11 +103,11 @@ export default function PostsList(props) {
       return 1
     }
     if (votedList[index] != 1) {
-      updateVoteDatabase(answerId, 1, databaseIndex)
+      updateVoteDatabase(answerId, 1, databaseIndex, votedList[index])
       votedList[index] = 1
       countVotes(answers)
     } else if ( votedList[index] === 1) {
-      deleteVoteDatabase(databaseIndex)
+      deleteVoteDatabase(databaseIndex, -1)
       votedList[index] = 0
       countVotes(answers)
     }
@@ -119,25 +119,26 @@ export default function PostsList(props) {
       return 1
     }
     if (votedList[index] != -1) {
-      updateVoteDatabase(answerId, -1, databaseIndex)
+      updateVoteDatabase(answerId, -1, databaseIndex, votedList[index])
       votedList[index] = -1
     
       countVotes(answers)
     } else if ( votedList[index] === -1) {
-      deleteVoteDatabase(databaseIndex)
+      deleteVoteDatabase(databaseIndex, 1)
       votedList[index] = 0
       countVotes(answers)
     }
     
   }
 
-  async function updateVoteDatabase(answerId, voteChange, databaseIndex) {
+  async function updateVoteDatabase(answerId, voteChange, databaseIndex, prevVote) {
     const res = await fetch("/api/posts/answers/votes/updateVote/" + postId, {
       method: 'PATCH',
       body: JSON.stringify({
         answerId: answerId,
         voteChange: voteChange,
-        index: databaseIndex
+        index: databaseIndex,
+        prevVote: prevVote
       }),
       headers: {
         'Content-type': 'application/json',
@@ -150,11 +151,12 @@ export default function PostsList(props) {
     
   }
 
-  async function deleteVoteDatabase(databaseIndex) {
+  async function deleteVoteDatabase(databaseIndex, voteChange) {
     const res = await fetch("/api/posts/answers/votes/deleteOne/" + postId, {
       method: 'PATCH',
       body: JSON.stringify({
-        index: databaseIndex
+        index: databaseIndex,
+        voteChange: voteChange
       }),
       headers: {
         'Content-type': 'application/json',

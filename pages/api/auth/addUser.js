@@ -18,7 +18,14 @@ export default async function addUser(token) {
       email: token.email,
       image: token.picture,
       reportStatus: 0,
-      role: "user"
+      role: "user",
+      stats: {
+        upvotes: 0,
+        answersNum: 0,
+        postsNum: 0,
+        score: 0
+      },
+      badge: "bronce1"
     }
   
     let addedUser = await db.collection("users").insertOne(userData);
