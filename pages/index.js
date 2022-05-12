@@ -18,6 +18,7 @@ import { Box } from "@mui/system";
 import { positions } from '@mui/system';
 import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
+import { Avatar } from "@mui/material";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -30,9 +31,14 @@ export default function Home() {
   if (status === "authenticated") {
     return <>
     <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-      <h1>Hello {session.user.name}</h1>
-      <img src={session.user.image} ></img>
+      
+          <h1>Hello {session.user.name}</h1>
+          <Avatar src={session.user.image} sx={{width:'20%', height:'20%'}}></Avatar>
+      
+      
       <Lottie options={{loop: true, autoplay: true, animationData: exampleAnimationData,}} height={100} width={200}/>
+      
+      
       </Container>
     </>
   }

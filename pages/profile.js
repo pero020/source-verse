@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
 import Typography from '@mui/material/Typography';
-import { Container } from "@mui/material";
+import { Container, ListItemSecondaryAction } from "@mui/material";
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
@@ -16,6 +16,9 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress'
 import { Chip } from '@mui/material'
+import styled from "@emotion/styled";
+
+
 
 export default function Profile(props) {
   const { data: session } = useSession()
@@ -29,6 +32,15 @@ export default function Profile(props) {
     setUserData(data)
     setIsLoading(false)
   }
+
+  const styles = {
+    root: {
+      flexGrow: 1
+    },
+    colorPrimary: {
+      background: 'green'
+    }
+  };
 
   async function getPosts() {
     const res = await fetch("api/posts/allFromUser/" + session.user.email);
@@ -85,7 +97,43 @@ export default function Profile(props) {
     </>
   }
 
+  let current = userData.stats.score;
+  let novimax = null;
 
+
+
+  function leftToGo()
+  {
+    return novimax-current+1;
+  }
+
+  function updateMax()
+  {
+    
+
+     if(current>=250)
+     {
+       novimax=current; {/*maximalni level */}
+     }
+     else 
+     if(current >= 150)
+     {
+       novimax=250;
+     }else if(current >= 100)
+     {
+       novimax=150;
+     }else if(current >= 50)
+     {
+        novimax=100;
+     }else if(current >= 10)
+     {
+       novimax=25;
+     }else
+     {
+       novimax=10;
+     }
+     return current/novimax*100;
+  }
 
 
   return <>
@@ -107,8 +155,15 @@ export default function Profile(props) {
               </Box>
               
             </Stack>
+            <Box sx={{ width: '70%' }}>
+                <LinearProgress  sx={{color:'success.main'}} variant="determinate" value={updateMax()}/>
+              </Box>
+              <Box>
+                <Typography color="background.contrastColor">{leftToGo()} point(s) until next rank!</Typography>
+              </Box>
+              
             <StatsDialog userData={userData}></StatsDialog>
-
+            
           </Grid>
           <Grid item xs={12} md={6}>
           {(session.role === "user" || session.role === "admin") &&
