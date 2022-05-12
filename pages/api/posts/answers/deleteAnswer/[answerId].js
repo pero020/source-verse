@@ -25,9 +25,19 @@ export default async function handler (req, res) {
       }
     }
     
-    let isDeleted = await db.collection("posts").update( 
+    let isDeleted = await db.collection("posts").updateOne( 
       {"_id": ObjectId(postId)},
       { $pull: { "answers": { "_id": ObjectId(answerId) }}} );
+
+    let updatedStats = await db.collection("users").updateOne(
+      { "email": session.user.email },
+      {
+        $inc: {
+          "stats.answersNum": -1,
+          "stats.score": -5
+        }
+      }
+    )
 
     res.status(200).send();
   } catch (e) {

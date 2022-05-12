@@ -34,6 +34,17 @@ export default async function handler (req, res) {
         }
       }
     );
+
+    let updatedStats = await db.collection("users").updateOne(
+      { "email": session.user.email },
+      {
+        $inc: {
+          "stats.answersNum": 1,
+          "stats.score": 5
+        }
+      }
+    )
+
     res.status(200).send();
   } catch (e) {
     res.status(500).send(e);
