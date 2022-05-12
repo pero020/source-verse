@@ -98,11 +98,19 @@ export default function Profile(props) {
             <Typography variant="h5" color="background.contrastColor">{userData.name}</Typography>
             <Typography variant="h5" color="background.contrastColor">{userData.email}</Typography>
             <Typography variant="h5" color="background.contrastColor">Score: {userData.stats.score}</Typography>
+            <Stack direction="row" alignItems="center" spacing={1}>
+              <Box>
+                <Typography variant="h5" color="background.contrastColor">Rank: {userData.rank.name}</Typography>
+              </Box>
+              <Box>
+                <Image src={"/badges/" + userData.rank.badge + ".png"} width="50" height="50"></Image>
+              </Box>
+              
+            </Stack>
             <StatsDialog userData={userData}></StatsDialog>
 
           </Grid>
           <Grid item xs={12} md={6}>
-          {console.log(session.role)}
           {(session.role === "user" || session.role === "admin") &&
             <Box>
               <Box>

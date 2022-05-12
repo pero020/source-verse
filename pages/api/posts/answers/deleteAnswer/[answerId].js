@@ -1,5 +1,6 @@
 import clientPromise from "/lib/mongodb"
 import { getSession } from "next-auth/react";
+import updateRank from "/utility/updateRank"
 
 export default async function handler (req, res) {
   const session = await getSession({req})
@@ -87,6 +88,8 @@ export default async function handler (req, res) {
         }
       }
     )
+
+    updateRank(userData.stats.score - 5, userData.rank.badge, session)
 
     res.status(200).send();
   } catch (e) {
