@@ -174,7 +174,7 @@ export default function Profile(props) {
                 <BorderLinearProgress size={10} sx={{mb:1}} color="secondary" variant="determinate" value={updateMax()}/>
               </Box>
               <Box>
-                <Typography color="background.contrastColor">{leftToGo()} point(s) until next rank!</Typography>
+                <Typography color="background.contrastColor">{leftToGo() === 1 ? leftToGo() + " point until the next rank!" : leftToGo() + " points until the next rank!"}</Typography>
               </Box>
               
             <StatsDialog userData={userData}></StatsDialog>
