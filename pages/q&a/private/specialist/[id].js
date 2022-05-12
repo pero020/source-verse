@@ -88,6 +88,10 @@ spacing={30}
             <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Specialist in: </Typography>
             <Typography variant="h4" sx={{color:"background.contrastColor"}}>{specialistData.category}</Typography>
           </Box>
+          <Box>
+            <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Domain Reviews: </Typography>
+            <ReviewsList reviews={specialistData.category}></ReviewsList>
+          </Box>
 
       </Stack>
 
