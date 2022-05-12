@@ -17,6 +17,15 @@ export default async function handler (req, res) {
     }
     let isDeleted = await db.collection("posts").deleteOne( {"_id": ObjectId(id)} );
 
+    let updatedStats = await db.collection("users").updateOne(
+      { "email": session.user.email },
+      {
+        $inc: {
+          "stats.postsNum": -1,
+        }
+      }
+    )
+
     res.status(200).send();
   } catch (e) {
     console.log(e)

@@ -10,6 +10,12 @@ export default async function handler (req, res) {
   const db = client.db(process.env.MONGODB_DB);
 
   try {
+
+    if (!session) {
+      res.status(403).send()
+      return 1;
+    }
+
     let userData = await db.collection("users").findOne({"email": session.user.email});
     await db.collection("posts").insertOne(
       {
@@ -31,6 +37,16 @@ export default async function handler (req, res) {
         "answers": []
     }
     );
+
+    let updatedStats = await db.collection("users").updateOne(
+      { "email": session.user.email },
+      {
+        $inc: {
+          "stats.postsNum": 1,
+        }
+      }
+    )
+
     res.status(200).send();
   } catch (e) {
     res.status(500).send(e);
