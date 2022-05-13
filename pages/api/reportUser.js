@@ -9,8 +9,6 @@ export default async function handler (req, res) {
   const db = client.db(process.env.MONGODB_DB);
 
   const { reportEmail } = req.body
-  console.log(req.body)
-  console.log(reportEmail)
   
   try {
 

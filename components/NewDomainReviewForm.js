@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, forwardRef } from "react"
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
 
@@ -6,6 +6,8 @@ import { TextField } from "@mui/material"
 import Slider from '@mui/material/Slider';
 import { Stack, Button } from "@mui/material"
 import SendIcon from '@mui/icons-material/Send';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 export default function NewDomainReviewForm() {
   const { data: session } = useSession()
@@ -14,7 +16,13 @@ export default function NewDomainReviewForm() {
     description: "",
     score: 3
   })
+  const [snackbarMissOpen, setSnackbarMissOpen] = useState(false);
+  const [snackbarUrlOpen, setSnackbarUrlOpen] = useState(false);
   const router = useRouter()
+
+  const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -24,13 +32,28 @@ export default function NewDomainReviewForm() {
     })
   }
 
+  const handleSnackbarMissClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarMissOpen(false);
+  };
+  const handleSnackbarUrlClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarUrlOpen(false);
+  };
+
   const checkDataValidity = () => {
     if (!formData.url || !formData.description || !formData.score) {
-      console.log("Please only provide the top level domain name, example: 'facebook.com' ")
+      setSnackbarMissOpen(true)
       return 1
     }
     if (formData.url.includes("/")) {
-      console.log("Please only provide the top level domain name, example: 'facebook.com' ")
+      setSnackbarUrlOpen(true)
       return 1
     }
     return 0;
@@ -110,6 +133,17 @@ export default function NewDomainReviewForm() {
     Post
   </Button>
   </Stack>
+
+  <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+    <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
+      Please provide all of the required informaion
+    </Alert>
+  </Snackbar>
+  <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose}>
+    <Alert onClose={handleSnackbarUrlClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
+    Please only provide the top level domain name, example: "facebook.com"
+    </Alert>
+  </Snackbar>
   </>)
   
 

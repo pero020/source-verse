@@ -19,6 +19,8 @@ import SendIcon from '@mui/icons-material/Send';
 import { Grid } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 function PaperComponent(props) {
   return (
@@ -36,12 +38,17 @@ export default function NewAnswerDialog(props) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
+  const [snackbarMissOpen, setSnackbarMissOpen] = React.useState(false);
+  const [snackbarUrlOpen, setSnackbarUrlOpen] = React.useState(false);
   const postId = props.postId;
 
   const [formData, setFormData] = useState({
     description: "",
     url: ""
+  });
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
   const handleClickOpen = () => {
@@ -69,14 +76,29 @@ export default function NewAnswerDialog(props) {
     })
   }
 
+  const handleSnackbarMissClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarMissOpen(false);
+  };
+  const handleSnackbarUrlClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarUrlOpen(false);
+  };
+
   const handleSubmit = async () => {
     if (formData.description.replace(/\s/g,"") === "" || formData.url.replace(/\s/g,"") === "") {
-      console.log("no data")
-      return "please fill all the fields"
+      setSnackbarMissOpen(true);
+      return 1;
     }
     if (formData.url.slice(0, 4) != "http" || !formData.url.includes("//")) {
-      console.log("url not valid")
-      return "pls provide a full and valid URL, including 'https://'"
+      setSnackbarUrlOpen(true);
+      return 1;
     }
     const res = await fetch("/api/posts/answers/newAnswer/" + postId, {
       method: 'POST',
@@ -152,6 +174,17 @@ export default function NewAnswerDialog(props) {
           
         </DialogActions>
       </Dialog>
+
+      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+        <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
+          Please provide all of the required informaion
+        </Alert>
+      </Snackbar>
+      <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose}>
+        <Alert onClose={handleSnackbarUrlClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
+        Please provide a full URL, including "https://"
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

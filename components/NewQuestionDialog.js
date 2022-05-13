@@ -18,6 +18,8 @@ import SendIcon from '@mui/icons-material/Send';
 import { Grid } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 function PaperComponent(props) {
   return (
@@ -35,6 +37,7 @@ export default function NewQuestionDialog(props) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const [snackbarMissOpen, setSnackbarMissOpen] = React.useState(false);
 
   const [formData, setFormData] = useState({
     category: "General",
@@ -42,6 +45,11 @@ export default function NewQuestionDialog(props) {
     description: ""
 
   });
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -64,10 +72,18 @@ export default function NewQuestionDialog(props) {
     })
   }
 
+  const handleSnackbarMissClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarMissOpen(false);
+  };
+
   const handleSubmit = async () => {
     if (formData.title.replace(/\s/g,"") === "" || formData.description.replace(/\s/g,"") === "") {
-      console.log("no data")
-      return "please fill all the fields"
+      setSnackbarMissOpen(true);
+      return 1
     }
     const res = await fetch("/api/posts/newPost", {
       method: 'POST',
@@ -160,6 +176,12 @@ export default function NewQuestionDialog(props) {
           
         </DialogActions>
       </Dialog>
+
+      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+        <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
+          Please provide all of the required informaion
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
