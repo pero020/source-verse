@@ -31,7 +31,8 @@ export default async function addUser(token) {
       rank: {
         badge: "bronce1",
         name: "Bronce 1"
-      }
+      },
+      coins: 0
     }
   
     let addedUser = await db.collection("users").insertOne(userData);

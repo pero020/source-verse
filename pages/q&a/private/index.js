@@ -35,7 +35,7 @@ export default function Public() {
       <Stack direction="column" >
         <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
           <Typography variant="h5">Specialists</Typography>
-          {session && <Button sx={{borderRadius: 2}} variant="contained" size="large">Buy Coins</Button> }
+          {session && <Button href="/getCoins" sx={{borderRadius: 2}} variant="contained" size="large">Buy Coins</Button> }
         </Stack>
         <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
           {specialistsData ? <SpecialistsList  getAllSpecialists={getAllSpecialists} specialists={specialistsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
