@@ -1,4 +1,4 @@
-
+import { Avatar } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -60,6 +60,7 @@ export default function PostsList(props) {
                 
                 <Stack direction="row" spacing={1} justifyContent="right" alignItems="center">
                   <Chip
+                    avatar={<Avatar alt={post.author.name} src={"/badges/" + post.author.badge + ".png"} />}
                     size="small"
                     label={post.author.name}
                     variant="outlined"

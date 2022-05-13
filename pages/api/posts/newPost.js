@@ -25,7 +25,8 @@ export default async function handler (req, res) {
         "author": {
             "name": userData.name,
             "email": userData.email,
-            "image": userData.image
+            "image": userData.image,
+            "badge": userData.rank.badge
         },
         "creationDate": new Date(),
         "reportStatus": {

@@ -43,7 +43,8 @@ export default async function handler (req, res) {
             "_id": ObjectId(),
             "author": {
               "name": userData.name,
-              "email": userData.email
+              "email": userData.email,
+              "badge": userData.rank.badge
             },
             "creationDate": new Date(),
             "reports": []

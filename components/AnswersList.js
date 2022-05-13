@@ -15,6 +15,7 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleUp';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Rating } from '@mui/material';
+import { Avatar } from '@mui/material';
 
 import DeleteAnswerDialog from "/components/DeleteAnswerDialog"
 import ReportDialog from "/components/ReportDialog"
@@ -230,6 +231,7 @@ export default function PostsList(props) {
               {isMobile ? 
               <Stack direction="row" spacing={1} alignItems="center" sx={{mt:1}}>
                 <Chip
+                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".png"} />}
                   size="medium"
                   label={answer.author.name}
                   variant="outlined"
@@ -243,6 +245,7 @@ export default function PostsList(props) {
               :
               <Stack direction="row" spacing={1} justifyContent="right" alignItems="center" sx={{mt:1}}>
                 <Chip
+                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".png"} />}
                   size="medium"
                   label={answer.author.name}
                   variant="outlined"
