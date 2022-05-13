@@ -102,9 +102,9 @@ export default function Post () {
   return <>
   <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
     <Stack direction="row" spacing={1} justifyContent="space-between">  
-      <Button href="/q&a/public" sx={{mr: 1}}>
+      {/* <Button href="/q&a/public" sx={{mr: 1}}>
        <ArrowBackIcon fontSize="large"></ArrowBackIcon>
-      </Button>
+      </Button> */}
     </Stack>
     <Typography variant="h4">{postData.title}</Typography>
     <br/>

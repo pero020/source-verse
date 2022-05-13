@@ -1,7 +1,7 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { alpha } from "@mui/material";
 
-const theme = createTheme({
+let theme = createTheme({
 
   palette: {
     primary: {
@@ -20,9 +20,14 @@ const theme = createTheme({
       container: alpha("#fff", 0.9),
       default: "#2b2b2b",
       contrastColor:"#ffffff"
+    },
+    text: {
+      softWhite: alpha("#fff", 0.9)
     }
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 
 export default theme;

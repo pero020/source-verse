@@ -100,8 +100,8 @@ export default function Home() {
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
-          <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
-          <Typography variant="h4" sx={{color:"background.contrastColor",maxWidth:'400px'}}><Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
@@ -128,7 +128,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
         <Box maxWidth={{md:'25%', xs:'100%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
@@ -171,7 +171,7 @@ export default function Home() {
         mx={{xs:2}}
         >
           <Box>
-            <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
+            <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
           <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
             <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
@@ -216,7 +216,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -226,7 +226,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -236,7 +236,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -246,7 +246,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -256,7 +256,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"background.contrastColor"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
   </Stack>
 

@@ -49,10 +49,10 @@ export default function Learn() {
     mx={{xs:2,md:15}}
     >
       <Box>
-        <Typography variant="h5" maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}>We are a humble team of 3 software engineering students based in Zagreb, Croatia.</Typography>
-        <Typography variant="h5" mt={{md:7, xs:5}} maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}> Everything started back in March, 2022 when we entered the "TVZ Mc2", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
-        <Typography variant="h5" mt={{md:3, xs:5}} maxWidth={{md:1300}} sx={{color:"background.contrastColor"}}>Little did we know it would be a start of a great partnership and an even greater friendship.</Typography>
-        <Typography variant="h5" mt={{md:3, xs:3}} sx={{color:"background.contrastColor"}}>We named ourselves after the goal of our idea.</Typography>
+        <Typography variant="h5" maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>We are a humble team of 3 software engineering students based in Zagreb, Croatia.</Typography>
+        <Typography variant="h5" mt={{md:7, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}> Everything started back in March, 2022 when we entered the "TVZ Mc2", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
+        <Typography variant="h5" mt={{md:3, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>Little did we know it would be a start of a great partnership and an even greater friendship.</Typography>
+        <Typography variant="h5" mt={{md:3, xs:3}} sx={{color:"text.softWhite"}}>We named ourselves after the goal of our idea.</Typography>
       </Box>
       
     </Stack>
@@ -91,7 +91,7 @@ export default function Learn() {
 
             <Box>
             <Typography variant="h4" mt={{md:-2, xs:5}} ml={{md:10, xs:5}} sx={{color:"background.contrastColor"}}>Petar Pržić</Typography>
-            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"background.contrastColor"}}>Back-End Development</Typography>
+            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Back-End Development</Typography>
             </Box>
 
       </Stack>
@@ -137,7 +137,7 @@ export default function Learn() {
 
             <Box>
             <Typography variant="h4" mt={{md:-2, xs:5}} ml={{md:10, xs:5}} sx={{color:"background.contrastColor"}}>Renato Rak</Typography>
-            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"background.contrastColor"}}>Front-End Development</Typography>
+            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Front-End Development</Typography>
             </Box>
 
       </Stack>
@@ -182,7 +182,7 @@ export default function Learn() {
 
             <Box>
             <Typography variant="h4" mt={{md:-2, xs:5}} ml={{md:10, xs:9}} sx={{color:"background.contrastColor"}}>Ivan Kulić</Typography>
-            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"background.contrastColor"}}>Design, Marketing, UI & UX</Typography>
+            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Design, Marketing, UI & UX</Typography>
             </Box>
 
       </Stack>
