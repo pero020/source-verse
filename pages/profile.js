@@ -161,7 +161,7 @@ export default function Profile(props) {
             <Typography variant="h5" color="background.contrastColor">{userData.name}</Typography>
             <Typography variant="h5" color="background.contrastColor">{userData.email}</Typography>
             <Typography variant="h5" color="background.contrastColor">Score: {userData.stats.score}</Typography>
-            <Stack direction="row" alignItems="center" spacing={1}>
+            <Stack direction="row" alignItems="center" spacing={1} sx={{mt:5}}>
               <Box>
                 <Typography variant="h5" color="background.contrastColor">Rank: {userData.rank.name}</Typography>
               </Box>

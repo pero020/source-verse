@@ -14,6 +14,7 @@ import { Button } from "@mui/material";
 import { Container } from "@mui/material";
 import DeletePostDialog from "/components/DeletePostDialog"
 import AnswersSortInput from "/components/AnswersSortInput"
+import { Box } from "@mui/system";
 
 export default function Post () {
   const style = {
@@ -23,6 +24,7 @@ export default function Post () {
     borderRadius: '10px',
     p: 3
   };
+
 
 
   const router = useRouter()
@@ -126,10 +128,11 @@ export default function Post () {
     <br/>
 
     <Stack direction="row" justifyContent="space-between" alignItems="baseLine">
-        <AnswersSortInput sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
+        <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
         <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     </Stack>
 
+    {console.log(postData.answers)}
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
     </Container>
   </>

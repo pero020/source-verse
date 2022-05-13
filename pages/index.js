@@ -20,6 +20,7 @@ import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
 
+
 export default function Home() {
   const { data: session, status } = useSession();
 
@@ -28,28 +29,34 @@ export default function Home() {
   }
   const isMobile = detectMob()
 
-  if (status === "authenticated") {
+ 
+ 
     return <>
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
+    {status === "authenticated" ? <Stack
+    direction={{xs:'column', md:'row'}}
+    justifyContent="center"
+    alignItems="center"
+    spacing={5}
+    sx={{mt:5}}>
+      <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}<br></br><Button sx={{ml:{xs: 10, md: 20}}}variant="contained" color="success" size="large" href="/profile">
+          Profile
+        </Button></Typography>
+          
+          <Avatar src={session.user.image} sx={{width:{xs: '30%', md:'10%'}, height:{xs:'30%', md:'10%'}}}></Avatar>
+          
       
-          <h1>Hello {session.user.name}</h1>
-          <Avatar src={session.user.image} sx={{width:'20%', height:'20%'}}></Avatar>
-      
-      
-      <Lottie options={{loop: true, autoplay: true, animationData: exampleAnimationData,}} height={100} width={200}/>
-      
-      
-      </Container>
-    </>
+
+          </Stack> 
+          
+          : null
+            
   }
 
-
-    return <>
       <Stack
       direction={{md:'row', xs:'column'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{mt:{xs: 5, md: 25}}}
+      sx={{mt:{xs: 5, md: 15}}}
       mx={{xs:2}}
       >
         <Box>
@@ -57,7 +64,7 @@ export default function Home() {
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
-          <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: exampleAnimationData,}}/>
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: exampleAnimationData,}}/>
         </Box>
         
       </Stack>
@@ -66,22 +73,22 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:10}}>
+      mt={{xs:10, md:0}}>
 
-          <Button variant="contained" color="success" size="large">
+          <Button variant="contained" color="success" size="large" href="#explore">
             Explore
           </Button>
       
       </Stack>
-
+<Box id="explore"></Box>
       <Stack
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{mt:55}}
+      sx={{mt:35}}
       mx={{xs:2}}
       >
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
+        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
       </Stack>
 
       <Stack
@@ -93,7 +100,7 @@ export default function Home() {
       >
 
         <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
-          <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
           <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
@@ -127,7 +134,7 @@ export default function Home() {
           <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
         <Box maxWidth={{md:'25%', xs:'100%'}}>
-          <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
         </Box>
 
         
@@ -138,7 +145,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10}}>
 
-          <Button variant="contained" color="success" size="large">
+          <Button variant="contained" color="success" size="large" href="/q&a/private">
             Connect
           </Button>
       
@@ -170,7 +177,7 @@ export default function Home() {
             <Typography variant="h4" sx={{color:"background.contrastColor", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
           <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
-            <Lottie options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
+            <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
           </Box>
         </Stack>
 
@@ -181,7 +188,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10}}>
 
-          <Button variant="contained" color="success" size="large">
+          <Button variant="contained" color="success" size="large" href="/learn">
             Guide
           </Button>
       
