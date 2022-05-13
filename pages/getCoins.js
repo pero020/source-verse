@@ -27,7 +27,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-export default function getCoins() {
+export default function GetCoins() {
   const [coinsNum, setCoinsNum] = useState(5)
   const [coinCost, setCoinCost] = useState(0.8)
   const [snackbarAddedOpen, setSnackbarAddedOpen] = useState(false)
