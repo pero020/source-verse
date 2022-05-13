@@ -17,7 +17,7 @@ import Stack from '@mui/material/Stack';
 import { Rating } from '@mui/material';
 
 import DeleteAnswerDialog from "/components/DeleteAnswerDialog"
-
+import ReportDialog from "/components/ReportDialog"
 
 const style = {
   width: '100%',
@@ -193,7 +193,7 @@ export default function PostsList(props) {
         {console.log(answer.databaseIndex)}
         <ListItem sx={{px: 0}}>
           
-          <Grid container alignItems={"top"} >
+          <Grid container >
             <Grid item xs={1} sx={{mr: {xs:2, md:0 }}} alignItems="top" >
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
@@ -237,6 +237,8 @@ export default function PostsList(props) {
                 <Chip size="medium" label={formatDate(answer.creationDate)} color="secondary" />
                 {session && session.user.email === answer.author.email && 
                   <DeleteAnswerDialog getPost={props.getPost} answerId={answer._id} postId={props.postId}></DeleteAnswerDialog>}
+                  {session.user.email !== answer.author.email && 
+                  <ReportDialog reportEmail={answer.author.email}></ReportDialog> }
               </Stack>
               :
               <Stack direction="row" spacing={1} justifyContent="right" alignItems="center" sx={{mt:1}}>
@@ -248,6 +250,8 @@ export default function PostsList(props) {
                 <Chip size="medium" label={formatDate(answer.creationDate)} color="secondary" />
                 {session && session.user.email === answer.author.email && 
                   <DeleteAnswerDialog getPost={props.getPost} answerId={answer._id} postId={props.postId}></DeleteAnswerDialog>}
+                {session.user.email !== answer.author.email && 
+                  <ReportDialog reportEmail={answer.author.email}></ReportDialog> }
               </Stack>
               }
               

@@ -4,17 +4,19 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
-import AnswersList from "/components/AnswersList"
-import NewAnswerDialog from "/components/NewAnswerDialog"
 import { CircularProgress} from "@mui/material"
 import { Grid } from '@mui/material'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Button } from "@mui/material";
 import { Container } from "@mui/material";
+import { Box } from "@mui/system";
+
+import AnswersList from "/components/AnswersList"
+import NewAnswerDialog from "/components/NewAnswerDialog"
 import DeletePostDialog from "/components/DeletePostDialog"
 import AnswersSortInput from "/components/AnswersSortInput"
-import { Box } from "@mui/system";
+import ReportDialog from "/components/ReportDialog"
 
 export default function Post () {
   const style = {
@@ -106,7 +108,7 @@ export default function Post () {
     </Stack>
     <Typography variant="h4">{postData.title}</Typography>
     <br/>
-    <Stack direction="row" spacing={1} justifyContent="space-between">
+    <Stack direction="row" spacing={1} justifyContent="left" alignItems="center">
       <div>
       <Chip
         avatar={<Avatar alt={postData.author.name} src={postData.author.image} />}
@@ -119,8 +121,10 @@ export default function Post () {
       </div>
       <div>
         
-      {session && session.user.email === postData.author.email && 
-        <DeletePostDialog postId={postData._id}/>}
+      {session && session.user.email === postData.author.email ?
+        <DeletePostDialog postId={postData._id}/> : 
+        <ReportDialog reportEmail={postData.author.email}></ReportDialog>
+      }
       
       </div>
     </Stack>

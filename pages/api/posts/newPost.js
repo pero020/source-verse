@@ -34,7 +34,8 @@ export default async function handler (req, res) {
         "answeredStatus": {
             "$numberInt": "0"
         },
-        "answers": []
+        "answers": [],
+        "reports": []
     }
     );
 

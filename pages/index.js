@@ -33,17 +33,14 @@ export default function Home() {
  
     return <>
     {status === "authenticated" ? <Stack
-    direction={{xs:'column', md:'row'}}
     justifyContent="center"
     alignItems="center"
     spacing={5}
-    sx={{mt:5}}>
-      <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}<br></br><Button sx={{ml:{xs: 10, md: 20}}}variant="contained" color="success" size="large" href="/profile">
-          Profile
-        </Button></Typography>
-          
-          <Avatar src={session.user.image} sx={{width:{xs: '30%', md:'10%'}, height:{xs:'30%', md:'10%'}}}></Avatar>
-          
+    sx={{my:10}}>
+      <Avatar src={session.user.image} sx={{width: 150, height: 150}}></Avatar>
+      <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}</Typography>
+      <Button variant="contained" color="success" size="large" href="/profile">Profile</Button> 
+      
       
 
           </Stack> 
@@ -85,7 +82,7 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{mt:35}}
+      sx={{mt: {md:55, xs:20}}}
       mx={{xs:2}}
       >
         <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
@@ -115,7 +112,7 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{mt:55}}
+      sx={{mt: {md:55, xs:20}}}
       mx={{xs:2}}
       >
 
@@ -160,7 +157,7 @@ export default function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{mt:55}}
+        sx={{mt: {md:55, xs:25}}}
         mx={{xs:2}}
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
@@ -186,7 +183,7 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:10}}>
+      mt={{xs:0, md:10}}>
 
           <Button variant="contained" color="success" size="large" href="/learn">
             Guide
@@ -197,7 +194,7 @@ export default function Home() {
   direction="row"
   justifyContent={{md:'center', xs:'center'}}
   alignItems="flex-start"
-  mt={{md:55, xs:20}}
+  sx={{mt: {md:55, xs:25}}}
   
   
   >

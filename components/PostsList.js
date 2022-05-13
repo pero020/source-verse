@@ -1,3 +1,4 @@
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -7,8 +8,6 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-
-
 
 const style = {
   width: '100%',
@@ -59,7 +58,7 @@ export default function PostsList(props) {
                 </Stack>
               </Link>
                 
-                <Stack direction="row" spacing={1} justifyContent="right">
+                <Stack direction="row" spacing={1} justifyContent="right" alignItems="center">
                   <Chip
                     size="small"
                     label={post.author.name}

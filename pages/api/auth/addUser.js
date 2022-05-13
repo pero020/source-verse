@@ -19,6 +19,7 @@ export default async function addUser(token) {
       email: token.email,
       image: token.picture,
       reportStatus: 0,
+      reports: [],
       role: "user",
       stats: {
         upvotes: 0,

@@ -45,7 +45,8 @@ export default async function handler (req, res) {
               "name": userData.name,
               "email": userData.email
             },
-            "creationDate": new Date()
+            "creationDate": new Date(),
+            "reports": []
           }
         }
       }

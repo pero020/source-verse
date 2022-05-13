@@ -13,8 +13,11 @@ const theme = createTheme({
     success: {
       main: "#00ED64",
     },
+    error: {
+      main: "#DC143C",
+    },
     background: {
-      container: alpha("#fff", 0.85),
+      container: alpha("#fff", 0.9),
       default: "#2b2b2b",
       contrastColor:"#ffffff"
     }
