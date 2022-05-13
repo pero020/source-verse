@@ -14,12 +14,33 @@ export default NextAuth({
   ],
   secret: process.env.secret,
   callbacks: {
+    async signIn({ account, profile }) {
+      const client = await clientPromise;
+      const db = client.db(process.env.MONGODB_DB);
+
+      try {
+        if (account.provider === "google") {
+          let blacklist = await db.collection("blacklist").find().toArray();
+          for (const user of blacklist) {
+            if (user.email === profile.email) {
+              return false
+            }
+          }
+          return true
+        }
+        return true
+      } catch (e) {
+        console.log(e)
+      }
+      
+    },
     async jwt({ token, account }) {
-      // Persist the OAuth access_token to the token right after signin
       if (account) {
         token.accessToken = account.access_token
       }
-      account && addUser(token);
+      
+      account && addUser(token)
+      
       return token
     },
     async session({ session, token, user }) {
@@ -42,6 +63,6 @@ export default NextAuth({
   },
   pages:
   {
-    error:'/pages/error'
+    error:'/loginError'
   }
 })

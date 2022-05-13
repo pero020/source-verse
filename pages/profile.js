@@ -181,29 +181,6 @@ export default function Profile(props) {
             
           </Grid>
           <Grid item xs={12} md={6}>
-          {(session.role === "user" || session.role === "admin") &&
-            <Box>
-              <Box>
-                <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Your Achievements: </Typography>
-              </Box>
-              <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-              spacing={5}
-              >
-              <Box>
-                <Image src="/Achievements/a1.png" width="100" height="100"></Image>
-              </Box>
-              <Box>
-                <Image src="/Achievements/a1.png" width="100" height="100"></Image>
-              </Box>
-              <Box>
-                <Image src="/Achievements/a1.png" width="100" height="100"></Image>
-              </Box>
-              </Stack>
-            </Box>
-          }
           <Typography variant="h4" color="background.contrastColor" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}}>Your posts</Typography>
             {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
             {/* {Array.isArray(userPosts) && userPosts.length === 0 && <Typography variant="h5">You don't have any posts yet!</Typography> } */}

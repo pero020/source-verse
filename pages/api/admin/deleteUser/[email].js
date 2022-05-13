@@ -18,8 +18,7 @@ export default async function handler (req, res) {
     let usersData = await db.collection("users").deleteOne({"email": email});
     let userPosts = await db.collection("posts").deleteMany({"author.email": email})
     let userAnswers = await db.collection("posts").updateMany({}, {$pull: {"answers": {"author.email": email} }})
-    console.log(userPosts)
-    console.log(userAnswers)
+    let isBlacklisted = await db.collection("blacklist").insertOne({"email": email})
 
     res.status(200).json(usersData);
   } catch (e) {
