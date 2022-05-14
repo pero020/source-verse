@@ -56,12 +56,15 @@ export default function Public() {
         {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
       </Stack>
 
-      <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>
-      <Stack direction="row" spacing={1}>
-        {filters && filters.map((filter, index) => {if (filter) {return <Chip key={index} label={filter} />}})}
+      <Stack alignItems="center">
+        <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>
+        <Stack direction="row" spacing={1}>
+          {filters && filters.map((filter, index) => {if (filter) {return <Chip key={index} label={filter} />}})}
+        </Stack>
+        {console.log(postsData)}
+        {postsData ? <PostsList  getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
       </Stack>
-      {console.log(postsData)}
-      {postsData ? <PostsList  getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
+      
     </Container>
   </>
 }
