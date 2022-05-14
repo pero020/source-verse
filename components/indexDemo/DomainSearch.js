@@ -8,6 +8,8 @@ import { Divider } from '@mui/material';
 import Fab from '@mui/material/Fab';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
+import ReviewsList from "./ReviewsList"
+
 
 export default function DomainSearch() {
   const [domainData, setDomainData] = useState(null);
@@ -61,14 +63,7 @@ export default function DomainSearch() {
     {domainData && domainData.reviews.length !== 0 && 
     <>
     <Typography sx={{mb:5}}>Total score: {domainData.score}</Typography>
-    {domainData.reviews.map(review => (
-      <div key={review._id}>
-      <Typography>{review.description}</Typography>
-      <Typography>{review.score}</Typography>
-      <Typography>{review.author.name}</Typography>
-      <Divider/>
-      </div>
-    ))}
+    <ReviewsList reviews={domainData.reviews}></ReviewsList>
     </>
     }
   </>

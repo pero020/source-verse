@@ -11,6 +11,9 @@ import NewQuestionDialog from '/components/NewQuestionDialog';
 import Send from '@mui/icons-material/Send';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DomainSearch from "./DomainSearch"
+import { List, ListItem } from '@mui/material';
+import Link from 'next/link'
+import Button from '@mui/material/Button';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,19 +65,39 @@ export default function DemoProgressBar() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit velit ut urna fermentum ultrices. 
-      Fusce in nibh euismod, fringilla sapien et, faucibus mi. Praesent ornare, lacus vel ullamcorper elementum, diam est pellentesque ligula, ut accumsan purus tellus vel tellus. 
-      Nullam arcu urna, imperdiet vel porta sed, consequat semper sem. Proin efficitur sem erat, sit amet faucibus turpis placerat eu. Aenean dignissim mi nec arcu varius dictum. 
-      Phasellus viverra turpis eros, et faucibus dolor porta a.
-     Duis lacinia neque eget ante vehicula euismod. 
-     Sed fringilla sodales nisi sit amet consequat. 
-     Vivamus sollicitudin lacus ac lacus faucibus, ut dapibus mauris fermentum. 
-     Donec id ligula eget sapien sollicitudin vestibulum. 
-     Maecenas lacus odio, malesuada eu laoreet ac, porta laoreet enim. 
-     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-     Cras eu dapibus quam. Praesent non orci vel enim sollicitudin vehicula. Vivamus accumsan convallis luctus. 
-     Vestibulum sollicitudin nulla vel nibh tincidunt hendrerit. Donec rhoncus, metus vitae placerat convallis, tortor augue dictum ipsum, id sollicitudin ex lectus eget neque. 
-     Integer sagittis felis ex, lobortis facilisis justo mollis vitae. Sed et justo sit amet est vestibulum convallis et et est.
+      <Typography sx={{mb:2}} variant="body1">What it means for a source to be credible/reliable can vary depending on the context of its use. Generally, a credible or reliable source is one that experts in your subject domain would agree is valid for your purposes. This can vary, so it is best to use one of the source evaluation methods that best fits your needs. Do remember that credibility is contextual!</Typography>
+      <Typography sx={{mb:2}} variant="body1">It is important to critically evaluate sources because using credible/reliable sources makes you a more informed writer. Think about unreliable sources as pollutants to your credibility, if you include unreliable sources in your work, your work could lose credibility as a resul</Typography>
+      <Typography sx={{mb:2}} variant="body1">There are certain frameworks that information professionals have put together to help people think critically about the information provided. </Typography>
+
+      <Typography variant="body1"><a style={{color: "#42a862", textDecoration: "none"}} href="http://guides.lib.uw.edu/research/evaluate/5ws">5 W Questions (5Ws):</a> This method means thinking critically about each of your sources by answering five questions to determine if the source is credible/reliable. The acceptable answers to these questions will vary depending on your needs. The questions are: </Typography>
+      <List sx={{ listStyleType: 'disc', ml: 4, mb: 2 }}>
+        <ListItem sx={{ display: 'list-item' }}>Who is the author? (Authority)</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>What is the purpose of the content? (Accuracy)</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Where is the content from? (Publisher)</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Why does the source exist? (Purpose and Objectivity)</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>How does this source compare to others? (Determining What's What)</ListItem>
+      </List>
+      <Typography variant="body1"><a style={{color: "#42a862", textDecoration: "none"}} href="http://guides.lib.uw.edu/research/evaluate/smart">SMART Check:</a> This method is particularly good at evaluating newspaper sources. Like the 5Ws method it also involves answering critical questions about your source. The criteria are:</Typography>
+      <List sx={{ listStyleType: 'disc', ml: 4, mb: 2 }}>
+        <ListItem sx={{ display: 'list-item' }}>Source: Who or what is the source?</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Motive: Why do they say what they do?</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Authority: Who wrote the story?</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Review: Is there anything included that jumps out as potentially untrue?</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Two-Source Test: How does it compare to another source?</ListItem>
+      </List>
+      <Typography variant="body1"><a style={{color: "#42a862", textDecoration: "none"}} href="http://guides.lib.uw.edu/research/evaluate/craap">CRAAP Test:</a> This method provides you with a set of criteria that make a source more or less credible. The criteria are:</Typography>
+      <List sx={{ listStyleType: 'disc', ml: 4, mb: 4 }}>
+        <ListItem sx={{ display: 'list-item' }}>Currency: Timeliness of the information</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Relevance: Importance of the information for your needs</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Authority: Source of the information</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Accuracy: Truthfulness and correctness of the information</ListItem>
+        <ListItem sx={{ display: 'list-item' }}>Purpose: Reason the information exists</ListItem>
+      </List>
+      <Typography sx={{mb:2}} variant="body1">Source: <a style={{color: "#42a862", textDecoration: "none"}} href="https://guides.lib.uw.edu/research/faq/reliable">University of Washington</a></Typography>
+      <Typography variant="h6">Need more help? Contact our
+      <Button sx={{ml:2}} href="q&a/private/" variant="contained" color="primary">
+        Specialists
+      </Button></Typography>
       </TabPanel>
       <TabPanel value={value} index={1}>
         In front of you is a green + button that opens a new "Add a New Question" dialog. 
