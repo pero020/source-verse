@@ -58,7 +58,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:"10px"}}>Your problems</Typography>.</Typography>
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
@@ -86,7 +86,7 @@ export default function Home() {
       sx={{mt: {md:55, xs:20}}}
       mx={{xs:2}}
       >
-        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
+        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px"}}>Ask, Answer, Achieve!</Typography>
       </Stack>
 
       <Stack
@@ -117,7 +117,7 @@ export default function Home() {
       mx={{xs:2}}
       >
 
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Get feedback from Specialists.</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px"}}>Get feedback from Specialists.</Typography>
         
       </Stack>
         
@@ -161,7 +161,7 @@ export default function Home() {
         sx={{mt: {md:55, xs:25}}}
         mx={{xs:2}}
         >
-          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
+          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px"}}>Improve Your digital literacy.</Typography>
         </Stack>
 
         <Stack
