@@ -208,7 +208,8 @@ export default function Learn() {
       </Stack>
 
     </Stack>
-    <Typography align="center" variant="h4" color="background.contrastColor" sx={{mt: 10, mb:5}}>Development Timeline</Typography>
+
+    <Typography align="center" variant="h4" color="background.contrastColor" sx={{mt: 10, mb:5,textDecoration:'underline', textDecorationColor:'#52D17B',textUnderlineOffset:'5px'}}>Development Timeline</Typography>
     <ColorsTimeline></ColorsTimeline>
   </>
 };

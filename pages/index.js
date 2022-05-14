@@ -56,8 +56,8 @@ export default function Home() {
       sx={{mt:{xs: 5, md: 15}}}
       mx={{xs:2}}
       >
-        <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Your problems</Typography>.</Typography>
+        <Box sx={{ml:{xs:7}}}>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b",  textUnderlineOffset:'10px', textUnderlinePosition:'below'}}>Your problems.</Typography></Typography>
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
@@ -70,9 +70,10 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:10, md:0}}>
+      mt={{xs:10, md:-10}}
+      mr={{md:150}}>
 
-          <Button variant="contained" color="success" size="large" href="#explore">
+          <Button variant="contained" color="success" size="large" href="/q&a/private">
             Explore
           </Button>
       
@@ -82,10 +83,10 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{mt: {md:55, xs:20}}}
+      sx={{mt: {md:30, xs:20}}}
       mx={{xs:2}}
       >
-        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Ask, Answer, Achieve!</Typography>
+        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:'7px'}}>Ask, Answer, Achieve!</Typography>
       </Stack>
 
       <Stack
@@ -94,6 +95,7 @@ export default function Home() {
       alignItems="center"
       sx={{mt:{xs: 0, md: 10}}}
       mx={{xs:2}}
+      spacing={{xs:0, md:-25}}
       >
 
         <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
@@ -101,7 +103,7 @@ export default function Home() {
         </Box>
         <Box>
           <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
-          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
@@ -112,11 +114,11 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={{mt: {md:55, xs:20}}}
+      sx={{mt: {md:35, xs:20}}}
       mx={{xs:2}}
       >
 
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Get feedback from Specialists.</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:'10px'}}>Get feedback from Specialists.</Typography>
         
       </Stack>
         
@@ -126,11 +128,12 @@ export default function Home() {
       alignItems="center"
       sx={{mt:10}}
       mx={{xs:2}}
+      spacing={{xs:0, md:-40}}
       >
         <Box>
-          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
-        <Box maxWidth={{md:'25%', xs:'100%'}}>
+        <Box maxWidth={{md:'35%', xs:'100%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
         </Box>
 
@@ -140,7 +143,8 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:10}}>
+      mt={{xs:10, md:-22}}
+      mr={{md:150}}>
 
           <Button variant="contained" color="success" size="large" href="/q&a/private">
             Connect
@@ -157,23 +161,23 @@ export default function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{mt: {md:55, xs:25}}}
+        sx={{mt: {md:35, xs:25}}}
         mx={{xs:2}}
         >
-          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>Improve Your digital literacy.</Typography>
+          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:'10px'}}>Improve Your digital literacy.</Typography>
         </Stack>
 
         <Stack
         direction={{md:'row', xs:'column'}}
         justifyContent="space-evenly"
         alignItems="center"
-        sx={{mt:10}}
+        sx={{mt:2}}
         mx={{xs:2}}
         >
           <Box>
-            <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
+            <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
-          <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
+          <Box maxWidth={{md:'30%', xs:'100%'}} mr={{xs: 2}}>
             <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
           </Box>
         </Stack>
@@ -183,7 +187,8 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:0, md:10}}>
+      mt={{xs:0, md:-22}}
+      mr={{md:165}}>
 
           <Button variant="contained" color="success" size="large" href="/learn">
             Guide
