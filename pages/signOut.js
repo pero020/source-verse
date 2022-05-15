@@ -15,7 +15,7 @@ export default function SignIn({ providers }) {
       <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px", mb: 5}}>See you soon!</Typography>
 
       <Button color="success" variant="contained" onClick={() => signOut(google.id)}>
-        Leave for today
+        Leave for now
       </Button>
       </Stack>
     </Container>

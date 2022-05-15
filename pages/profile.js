@@ -20,6 +20,7 @@ import styled from "@emotion/styled";
 import EditIcon from '@mui/icons-material/Edit';
 
 import EditUsernameDialog from "/components/profile/EditUsernameDialog"
+import SpecialistQuestionsList from "/components/SpecialistQuestionsList"
 
 
 
@@ -28,6 +29,7 @@ export default function Profile(props) {
   const [userData, setUserData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [userPosts, setUserPosts] = useState(null)
+  const[specialistQuestions, setSpecialistQuestions] = useState(null)
 
   const getProfileData = async () => {
     const res = await fetch("api/getUser/" + session.user.email);
@@ -59,10 +61,33 @@ export default function Profile(props) {
       setUserPosts(data)
   }
 
+  async function getSpecialistQuestionsSpecialist() {
+    const res = await fetch("api/specialists/getUserQuestions/");
+    if (!res.ok) {
+      return 1
+    }
+    const data = await res.json();
+      setSpecialistQuestions(data)
+  }
+
+  async function getSpecialistQuestionsUser() {
+    const res = await fetch("api/specialists/getUserQuestions/");
+    if (!res.ok) {
+      return 1
+    }
+    const data = await res.json();
+      setSpecialistQuestions(data)
+  }
+
   useEffect(() => {
     if (session) {
       getProfileData()
       getPosts()
+      if (session.role === "specialist") {
+        getSpecialistQuestionsSpecialist()
+      } else {
+        getSpecialistQuestionsUser()
+      }
     }
   }, [])
 
@@ -170,15 +195,32 @@ export default function Profile(props) {
       <Typography variant="h4" color="background.contrastColor" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}}>Your posts</Typography>
         {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
         {/* {Array.isArray(userPosts) && userPosts.length === 0 && <Typography variant="h5">You don't have any posts yet!</Typography> } */}
-        {session.role === "specialist" ?
-          userData.domainReviews.length !== 0 ?
-          <Box>
-            <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Your Domain Reviews</Typography>
-            <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList> : 
-          </Box> :
-          <Typography variant="h5" color="backgound.contrastColor">You don't have any Reviews yet!</Typography>
-        :
-        null
+        {session.role === "specialist" &&
+        ( userData.domainReviews.length !== 0 ?
+        <Box>
+          <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Your Domain Reviews</Typography>
+          <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList> : 
+        </Box> :
+        <Typography variant="h5" color="background.contrastColor">You don't have any Reviews yet!</Typography>
+        )
+        }
+        {specialistQuestions && session.role === "specialist" &&
+        ( userData.mySpecialistQuestions.length !== 0 ?
+        <Box>
+          <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Specialist Questions to answer</Typography>
+          <SpecialistQuestionsList questions={specialistQuestions.filter(question => !question.answered)}></SpecialistQuestionsList>
+        </Box> :
+        <Typography variant="h5" color="background.contrastColor">No Specialist Questions yet!</Typography>
+        )
+        }
+        {specialistQuestions && session.role !== "specialist" &&
+        ( specialistQuestions.length !== 0 ?
+        <Box>
+          <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Specialist Questions</Typography>
+          <SpecialistQuestionsList questions={specialistQuestions}></SpecialistQuestionsList>
+        </Box> :
+        <Typography variant="h5" color="background.contrastColor">No Specialist Questions yet!</Typography>
+        )
         }
       </Grid>
     </Grid>

@@ -58,10 +58,9 @@ export default function Public() {
 
       <Stack alignItems="center">
         <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>
-        <Stack direction="row" spacing={1}>
+        <Stack sx={{mb: 2}} direction="row" spacing={1}>
           {filters && filters.map((filter, index) => {if (filter) {return <Chip key={index} label={filter} />}})}
         </Stack>
-        {console.log(postsData)}
         {postsData ? <PostsList  getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
       </Stack>
       

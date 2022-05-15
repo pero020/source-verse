@@ -11,7 +11,7 @@ import DeleteReviewDialog from "/components/DeleteReviewDialog"
   
 const style = {
   width: '100%',
-  maxWidth: "md",
+  maxWidth: "lg",
   bgcolor: 'background.paper',
   borderRadius: '8px',
   px: 3

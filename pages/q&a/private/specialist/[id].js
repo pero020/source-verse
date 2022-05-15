@@ -13,6 +13,7 @@ import * as React from 'react';
 import { Stack } from '@mui/material';
 import { Button } from '@mui/material';
 import ReviewsList from "/components/ReviewsList"
+import AskSpecialistDialog from "/components/AskSpecialistDialog"
 
 export default function Specialist (props) {
   const [specialistData, setSpecialistData] = useState(null)
@@ -48,10 +49,10 @@ export default function Specialist (props) {
 
     <Stack
 direction={{xs:'column', md:'row'}}
-justifyContent="flex-start"
+justifyContent="space-evenly"
 alignItems={{xs:'center', md:'flex-start'}}
 sx={{mt:{xs:25}, mx: {xs: 2, md: 30}}}
-spacing={15}
+spacing={2}
 >
 
       <Stack
@@ -69,19 +70,16 @@ spacing={15}
           </Box>
 
           <Box sx={{mt: 2}}>
-          <Rating name="half-read-only" precision={0.2} value={specialistData.reviewsScore} readOnly />
+          <Rating color="background.contrastColor" name="half-read-only" precision={0.2} value={specialistData.reviewsScore} readOnly />
         </Box>
 
-          <Button variant="contained" color="secondary" size="large" sx={{color:"background.contrastColor"}}>
-              Ask me!
-          </Button>
+          <AskSpecialistDialog specialistData={specialistData}/>
 
       </Stack>
 
       <Stack
       direction="column"
-      justifyContent="center"
-      alignItems="center"
+      alignItems="flex-start"
       spacing={5}
       >
 
