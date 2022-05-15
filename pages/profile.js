@@ -10,13 +10,16 @@ import Typography from '@mui/material/Typography';
 import { Container, ListItemSecondaryAction } from "@mui/material";
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import ReviewsList from "/components/ReviewsList"
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress'
 import { Chip } from '@mui/material'
 import styled from "@emotion/styled";
+import EditIcon from '@mui/icons-material/Edit';
+
+import EditUsernameDialog from "/components/profile/EditUsernameDialog"
 
 
 
@@ -130,12 +133,20 @@ export default function Profile(props) {
       <Grid 
       container item xs={12} md={6} alignItems="center" direction="column">
         <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
-        <Typography variant="h5" color="background.contrastColor">{userData.name}</Typography>
-        <Typography variant="h5" color="background.contrastColor">{userData.email}</Typography>
+        <Stack direction="row" sx={{ml:4}} alignItems="center">
+          <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.name}</Typography>
+          <EditUsernameDialog getProfileData={getProfileData}></EditUsernameDialog>
+        </Stack>
+        <Typography sx={{mb:2}} variant="h5" color="background.contrastColor">{userData.email}</Typography>
+        {userData.role === "specialist" && <Typography variant="h5" color="background.contrastColor">Category: {userData.category}</Typography>}
+        {userData.role === "specialist" && <Typography variant="h5" color="background.contrastColor">Answer price: {userData.answerCost} {userData.answerCost === 1 ? "Coin" : "Coins"} </Typography>}
+        {userData.role !== "specialist" &&
         <Stack direction="row" alignItems="center" spacing={2} sx={{mt:2}}>
           <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">Coins: {userData.coins}</Typography>
           <Button href="/getCoins" sx={{borderRadius: 2}} variant="contained" color="secondary" >Buy Coins</Button>
         </Stack>
+        }
+
         <Stack direction="row" alignItems="center" spacing={1} sx={{mt:5}}>
           <Box>
             <Typography variant="h5" color="background.contrastColor">Rank: {userData.rank.name}</Typography>

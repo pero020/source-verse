@@ -102,9 +102,6 @@ export default function Post () {
   return <>
   <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
     <Stack direction="row" spacing={1} justifyContent="space-between">  
-      {/* <Button href="/q&a/public" sx={{mr: 1}}>
-       <ArrowBackIcon fontSize="large"></ArrowBackIcon>
-      </Button> */}
     </Stack>
     <Typography variant="h4">{postData.title}</Typography>
     <br/>
@@ -114,7 +111,7 @@ export default function Post () {
         avatar={<Avatar alt={postData.author.name} src={postData.author.image} />}
         label={postData.author.name}
         variant="outlined"
-        sx={{mr:1,bgcolor: 'background.paper'}}
+        sx={{mr:1, bgcolor: 'background.paper'}}
       />
       <Chip label={formatDate(postData.creationDate)} color="secondary" />
       
@@ -128,10 +125,10 @@ export default function Post () {
       
       </div>
     </Stack>
-    <Typography variant="subtitle1">{postData.description}</Typography>
+    <Typography variant="body1" sx={{mt: 2}}>{postData.description}</Typography>
     <br/>
 
-    <Stack direction="row" justifyContent="space-between" alignItems="baseLine">
+    <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{mb: 1}}>
         <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
         <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     </Stack>

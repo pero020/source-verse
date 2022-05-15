@@ -24,14 +24,10 @@ import { Avatar } from "@mui/material";
 export default function Home() {
   const { data: session, status } = useSession();
 
-   function detectMob() {
-    return ( ( window.innerWidth <= 900 ) && ( window.innerHeight <= 1000 ) );
-  }
-  const isMobile = detectMob()
-
  
  
     return <>
+    
     {status === "authenticated" &&
     <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
       <Stack
@@ -49,10 +45,10 @@ export default function Home() {
 
             
   }
-
+  <Container maxWidth="xl" >
       <Stack
       direction={{md:'row', xs:'column'}}
-      justifyContent="space-evenly"
+      justifyContent="space-between"
       alignItems="center"
       sx={{mt:{xs: 5, md: 15}}}
       mx={{xs:2}}
@@ -161,7 +157,7 @@ export default function Home() {
         sx={{mt: {md:55, xs:25}}}
         mx={{xs:2}}
         >
-          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px"}}>Improve Your digital literacy.</Typography>
+          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"12px"}}>Improve Your digital literacy.</Typography>
         </Stack>
 
         <Stack
@@ -199,7 +195,7 @@ export default function Home() {
   
   
   >
-    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B'}}>FAQ</Typography>
+    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: "8px"}}>FAQ</Typography>
   </Stack>
 
   <Stack
@@ -260,6 +256,7 @@ export default function Home() {
       <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
   </Stack>
+  </Container>
 
   </>
   }

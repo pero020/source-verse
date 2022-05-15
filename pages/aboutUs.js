@@ -32,7 +32,7 @@ export default function Learn() {
     direction={{md:'row', xs:'column'}}
     justifyContent={{md:'flex-start', xs:'center'}}
     alignItems="center"
-    sx={{mt:10}}
+    sx={{mt:{xs: 5, md: 10}}}
     mx={{xs:2,md:15}}
     >
       <Box>
@@ -45,14 +45,14 @@ export default function Learn() {
     direction={{xs:'column', md:'row'}}
     justifyContent={{md:'flex-start', xs:'center'}}
     alignItems="center"
-    sx={{mt:15}}
+    sx={{mt:{xs: 5, md: 15}}}
     mx={{xs:2,md:15}}
     >
       <Box>
         <Typography variant="h5" maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>We are a humble team of 3 software engineering students based in Zagreb, Croatia.</Typography>
         <Typography variant="h5" mt={{md:7, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}> Everything started back in March, 2022 when we entered the "TVZ Mc2", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
         <Typography variant="h5" mt={{md:3, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>Little did we know it would be a start of a great partnership and an even greater friendship.</Typography>
-        <Typography variant="h5" mt={{md:3, xs:3}} sx={{color:"text.softWhite"}}>We named ourselves after the goal of our idea.</Typography>
+        <Typography variant="h6" mt={{md:3, xs:3}} sx={{color:"text.softWhite"}}>We named ourselves after the goal of our idea.</Typography>
       </Box>
       
     </Stack>

@@ -95,7 +95,7 @@ export default function DemoProgressBar() {
       </List>
       <Typography sx={{mb:2}} variant="body1">Source: <a style={{color: "#42a862", textDecoration: "none"}} href="https://guides.lib.uw.edu/research/faq/reliable">University of Washington</a></Typography>
       <Typography variant="h6">Need more help? Contact our
-      <Button sx={{ml:2}} href="q&a/private/" variant="contained" color="primary">
+      <Button sx={{ml:{xs:0, sm:2}}} href="q&a/private/" variant="contained" color="primary">
         Specialists
       </Button></Typography>
       </TabPanel>

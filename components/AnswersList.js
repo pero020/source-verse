@@ -22,7 +22,7 @@ import ReportDialog from "/components/ReportDialog"
 
 const style = {
   width: '100%',
-  maxWidth: "md",
+  maxWidth: "xl",
   bgcolor: 'background.paper',
   borderRadius: '15px',
   p:1
