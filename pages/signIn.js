@@ -1,6 +1,7 @@
 import { getProviders, signIn } from "next-auth/react"
-
-import { Button, Container, Stack, Typography } from "@mui/material"
+import login from '/public/lotties/login';
+import { Button, Container, Stack, Typography,Box } from "@mui/material"
+import Lottie from 'react-lottie'
 
 export default function SignIn({ providers }) {
   const google = providers.google
@@ -13,6 +14,10 @@ export default function SignIn({ providers }) {
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"5px", mb: 5}}>Welcome!</Typography>
           <Typography sx={{mb: 5}} variant="h5" color="text.softWhite">Use your Google account for maximum security</Typography>
+          
+          <Box maxWidth={{md:'60%', xs:'100%'}} ml={{md:1}} >
+            <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: login}}/>
+          </Box>
 
           <Button color="success" variant="contained" onClick={() => signIn(google.id)}>
             Continue with {google.name}

@@ -18,6 +18,8 @@ import LinearProgress from '@mui/material/LinearProgress'
 import { Chip } from '@mui/material'
 import styled from "@emotion/styled";
 import EditIcon from '@mui/icons-material/Edit';
+import Lottie from 'react-lottie'
+import coin from '/public/lotties/coin';
 
 import EditUsernameDialog from "/components/profile/EditUsernameDialog"
 import SpecialistQuestionsList from "/components/SpecialistQuestionsList"

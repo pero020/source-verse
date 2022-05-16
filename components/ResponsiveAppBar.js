@@ -14,6 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import { useSession, useState } from "next-auth/react";
 import Link from 'next/link'
 import { Grid } from '@mui/material';
+import Lottie from 'react-lottie'
+import coin from '/public/lotties/coin';
+import Image from 'next/image';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -21,7 +24,10 @@ const ResponsiveAppBar = () => {
 
   const { data: session, status } = useSession();
 
-
+  function detectMob() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
+  }
+  const isMobile = detectMob()
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -111,12 +117,16 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
+          {isMobile == 0 ? <Box>
+          <Avatar src={'./images/logo.png'} />
+          </Box> : null}
+          
         <Link href="/">
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, ml:{md:2} }}
           >
             SourceVerse
           </Typography>
@@ -160,6 +170,9 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+          {isMobile == 1 ? <Box>
+          <Avatar sx={{mr:{xs:2}}} src={'./images/logo.png'} />
+          </Box> : null}
           <Link href="/">
           <Typography
             variant="h6"
@@ -183,6 +196,7 @@ const ResponsiveAppBar = () => {
             ))}
              
           </Box>
+
 
           <Box sx={{ flexGrow: 0 }}>
             

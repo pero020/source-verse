@@ -24,7 +24,7 @@ import { Avatar } from "@mui/material";
 export default function Home() {
   const { data: session, status } = useSession();
 
- 
+
  
     return <>
     
@@ -98,7 +98,7 @@ export default function Home() {
         </Box>
         <Box>
           <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Q&A filled only with source-backed solutions.</Typography>
-          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
@@ -137,7 +137,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
         <Box maxWidth={{md:'25%', xs:'100%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
@@ -166,7 +166,7 @@ export default function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{mt: {md:55, xs:25}}}
+        sx={{mt: {md:35, xs:25}}}
         mx={{xs:2}}
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "12px"}}}>Improve Your digital literacy.</Typography>
@@ -180,7 +180,7 @@ export default function Home() {
         mx={{xs:2}}
         >
           <Box>
-            <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="yellow" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
+            <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
           <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
             <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
@@ -199,6 +199,7 @@ export default function Home() {
           </Button>
       
       </Stack>
+      
   <Stack
   direction="row"
   justifyContent={{md:'center', xs:'center'}}

@@ -20,7 +20,7 @@ import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Divider } from "@mui/material";
 import ColorsTimeline from "../components/timeline"
-
+import { sizing } from '@mui/system';
 
 
 export default function Learn() {
@@ -81,7 +81,7 @@ export default function Learn() {
     mt={{xs:5, md:8}}
     >
       <Box>
-      <Image src="/images/pp.png" width="200" height="200" title="Welcome to Community!"></Image>
+      <Image src="/images/pp.png" width="200" height="200" minWidth="100" minHeight="100" title="Welcome to Community!"></Image>
       </Box>
       
       <Stack
