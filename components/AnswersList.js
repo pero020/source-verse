@@ -191,7 +191,6 @@ export default function PostsList(props) {
     <List sx={style} component="nav" aria-label="mailbox folders">
       {answers.map((answer, index) => (
         <div key={answer._id}>
-        {console.log(answer.databaseIndex)}
         <ListItem sx={{px: 0}}>
           
           <Grid container >
@@ -231,7 +230,7 @@ export default function PostsList(props) {
               {isMobile ? 
               <Stack direction="row" spacing={1} alignItems="center" sx={{mt:1}}>
                 <Chip
-                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".svg"} />}
+                  avatar={<Avatar alt={props.authorsData.find(author => author.email === answer.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === answer.author.email).rank.badge + ".svg"} />}
                   size="medium"
                   label={answer.author.name}
                   variant="outlined"
@@ -239,21 +238,21 @@ export default function PostsList(props) {
                 <Chip size="medium" label={formatDate(answer.creationDate)} color="secondary" />
                 {session && session.user.email === answer.author.email && 
                   <DeleteAnswerDialog getPost={props.getPost} answerId={answer._id} postId={props.postId}></DeleteAnswerDialog>}
-                  {session.user.email !== answer.author.email && 
+                  {session && session.user.email !== answer.author.email && 
                   <ReportDialog reportEmail={answer.author.email}></ReportDialog> }
               </Stack>
               :
               <Stack direction="row" spacing={1} justifyContent="right" alignItems="center" sx={{mt:1}}>
                 <Chip
-                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".svg"} />}
+                  avatar={<Avatar alt={props.authorsData.find(author => author.email === answer.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === answer.author.email).rank.badge + ".svg"} />}
                   size="medium"
                   label={answer.author.name}
                   variant="outlined"
                 />
                 <Chip size="medium" label={formatDate(answer.creationDate)} color="secondary" />
-                {session && session.user.email === answer.author.email && 
+                {(session && session.user.email === answer.author.email) && 
                   <DeleteAnswerDialog getPost={props.getPost} answerId={answer._id} postId={props.postId}></DeleteAnswerDialog>}
-                {session.user.email !== answer.author.email && 
+                {session && session.user.email !== answer.author.email && 
                   <ReportDialog reportEmail={answer.author.email}></ReportDialog> }
               </Stack>
               }

@@ -207,7 +207,7 @@ export default function Profile(props) {
       </Grid>
       <Grid item xs={12} md={6}>
       <Typography variant="h4" color="background.contrastColor" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}}>Your posts</Typography>
-        {userPosts ? <PostsList posts={userPosts} />: <CircularProgress />}
+        {userPosts ? <PostsList posts={userPosts} authorsData={Array(userData)} />: <CircularProgress />}
         {/* {Array.isArray(userPosts) && userPosts.length === 0 && <Typography variant="h5">You don't have any posts yet!</Typography> } */}
         {session.role === "specialist" &&
         ( userData.domainReviews.length !== 0 ?

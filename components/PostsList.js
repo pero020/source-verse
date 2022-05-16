@@ -43,6 +43,8 @@ export default function PostsList(props) {
     return newText
   }
 
+
+
   return (
     <List sx={style} component="nav" aria-label="mailbox folders">
     {posts.length === 0 && <Typography>No results</Typography>}
@@ -60,9 +62,9 @@ export default function PostsList(props) {
                 
                 <Stack direction="row" spacing={1} justifyContent="right" alignItems="center">
                   <Chip
-                    avatar={<Avatar alt={post.author.name} src={"/badges/" + post.author.badge + ".svg"} />}
+                    avatar={<Avatar alt={props.authorsData.find(author => author.email === post.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === post.author.email).rank.badge + ".svg"} />}
                     size="small"
-                    label={post.author.name}
+                    label={props.authorsData.find(author => author.email === post.author.email).name}
                     variant="outlined"
                   />
                   <Chip size="small" label={formatDate(post.creationDate)} color="secondary" />

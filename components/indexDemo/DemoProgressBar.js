@@ -100,10 +100,7 @@ export default function DemoProgressBar() {
       </Button></Typography>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        In front of you is a green + button that opens a new "Add a New Question" dialog. 
-        Here you can select which category question belongs to, e.g. general, IT, history and much more!
-        Then, you need to choose your question title and description. After you are done just click <br/><Send></Send><br/>or if you want to trow it all to trash, click this<br/>
-         <DeleteIcon></DeleteIcon><br/><br/><br/><Fab color="secondary"><AddIcon ></AddIcon></Fab>
+        <Typography sx={{mb:2}} variant="body1">What it means for a source to be credible/reliable can vary depending on the context of its use. Generally, a credible or reliable source is one that experts in your subject domain would agree is valid for your purposes. This can vary, so it is best to use one of the source evaluation methods that best fits your needs. Do remember that credibility is contextual!</Typography>
       </TabPanel>
 
       <TabPanel value={value} index={2}>

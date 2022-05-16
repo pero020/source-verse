@@ -21,8 +21,27 @@ export default function Public() {
 
   const { data: session } = useSession()
   const [isLoading, setIsLoading] = useState(true)
+  const [authorsData, setAuthorsData] = useState(null)
   const [postsData, setPostsData] = useState(null)
   const [filters, setFilters] = useState()
+
+  async function getAuthorsData(posts) {
+    let authors = posts.map(post => post.author.email)
+    const res = await fetch(`/api/posts/getUsersData`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(authors)
+    });
+    if (res.ok) {
+      const data = await res.json();
+      setAuthorsData(data)
+      setIsLoading(false)
+    } else {
+      return 1
+    }
+  }
 
   async function getAllPosts() {
     setFilters()
@@ -30,6 +49,10 @@ export default function Public() {
     const data = await res.json();
     setPostsData(data)
     setIsLoading(false)
+
+    getAuthorsData(data)
+
+    
   }
 
   async function getFilteredPosts(category, searchTerm) {
@@ -39,9 +62,12 @@ export default function Public() {
       const data = await res.json();
       setPostsData(data.posts)
       setIsLoading(false)
+      getAuthorsData(data.posts)
     } else {
       return 1
     }
+    
+
     
   }
 
@@ -61,7 +87,7 @@ export default function Public() {
         <Stack sx={{mb: 2}} direction="row" spacing={1}>
           {filters && filters.map((filter, index) => {if (filter) {return <Chip key={index} label={filter} />}})}
         </Stack>
-        {postsData ? <PostsList  getAllPosts={getAllPosts} posts={postsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
+        {(postsData && authorsData) ? <PostsList  getAllPosts={getAllPosts} posts={postsData} authorsData={authorsData} /> : <CircularProgress sx={{color: "secondary.main"}} /> }
       </Stack>
       
     </Container>

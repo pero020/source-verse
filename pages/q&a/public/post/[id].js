@@ -35,6 +35,8 @@ export default function Post () {
   const { data: session } = useSession()
   const [postData, setPostData] = useState(null)
   const [sortParam, setSortParam] = useState("votes")
+  const [authorsData, setAuthorsData] = useState(null)
+  const [authorData, setAuthorData] = useState(null)
 
   async function getPost() {
     try {
@@ -54,10 +56,38 @@ export default function Post () {
         data.answers = await sortByDate(data.answers)
       }
 
+      getAuthorData(data.author.email)
       setPostData(data)
+      getAuthorsData(data.answers)
     } catch (e) {
       console.log(e)
       Router.push('/q&a/public/')
+    }
+  }
+
+  async function getAuthorData(email) {
+    const res = await fetch("/api/getUser/" + email)
+    if (res.ok) {
+      const data = await res.json()
+      setAuthorData(data)
+    }
+
+  }
+
+  async function getAuthorsData(answers) {
+    let authors = answers.map(answer => answer.author.email)
+    const res = await fetch(`/api/posts/getUsersData`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(authors)
+    });
+    if (res.ok) {
+      const data = await res.json();
+      setAuthorsData(data)
+    } else {
+      return 1
     }
   }
 
@@ -93,7 +123,7 @@ export default function Post () {
 
 
 
-  if (!postData) {
+  if (!postData || !authorsData || !authorData) {
     return <>
       <CircularProgress sx={{color: "secondary.main"}}></CircularProgress>
     </>
@@ -108,8 +138,8 @@ export default function Post () {
     <Stack direction="row" spacing={1} justifyContent="left" alignItems="center">
       <div>
       <Chip
-        avatar={<Avatar alt={postData.author.name} src={postData.author.image} />}
-        label={postData.author.name}
+        avatar={<Avatar alt={authorData.name} src={authorData.image} />}
+        label={authorData.name}
         variant="outlined"
         sx={{mr:1, bgcolor: 'background.paper'}}
       />
@@ -118,7 +148,7 @@ export default function Post () {
       </div>
       <div>
         
-      {session && session.user.email === postData.author.email ?
+      {(session && session.user.email === postData.author.email) ?
         <DeletePostDialog postId={postData._id}/> : 
         <ReportDialog reportEmail={postData.author.email}></ReportDialog>
       }
@@ -133,8 +163,7 @@ export default function Post () {
         <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
     </Stack>
 
-    {console.log(postData.answers)}
-    <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers}></AnswersList>
+    <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers} authorsData={authorsData}></AnswersList>
     </Container>
   </>
   

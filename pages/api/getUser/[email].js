@@ -9,12 +9,21 @@ export default async function handler (req, res) {
 
   const email = req.query.email;
 
-  let userData = await db.collection("users").findOne({email: email});
+  try {
+    let userData = await db.collection("users").findOne({email: email});
 
-  if (userData.email === session.user.email) {
-    res.status(200).json(userData);
-  } else {
-    res.status(403).send("Forbidden")
+    // if (userData.email === session.user.email) {
+      res.status(200).json(userData);
+      // } else {
+      //   res.status(403).send("Forbidden")
+    // }
+  } catch (e) {
+    console.log(e)
+    res.status(500).send()
   }
+
+  
+
+  
   
 }
