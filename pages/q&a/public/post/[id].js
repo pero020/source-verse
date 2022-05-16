@@ -160,7 +160,7 @@ export default function Post () {
 
     <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{mb: 1}}>
         <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
-        <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog>
+        {session && <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog> }
     </Stack>
 
     <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers} authorsData={authorsData}></AnswersList>

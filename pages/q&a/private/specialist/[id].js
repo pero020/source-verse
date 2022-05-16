@@ -52,7 +52,7 @@ direction={{xs:'column', md:'row'}}
 justifyContent="space-evenly"
 alignItems={{xs:'center', md:'flex-start'}}
 sx={{mt:{xs:25}, mx: {xs: 2, md: 30}}}
-spacing={2}
+spacing={10}
 >
 
       <Stack

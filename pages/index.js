@@ -54,7 +54,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We authenticate solutions to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:"10px"}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions to <br/><Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:"10px"}}>Your problems</Typography>.</Typography>
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
@@ -67,7 +67,7 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:10, md:0}}>
+      mt={{xs:10, md:5}}>
 
           <Button variant="contained" color="success" size="large" href="#explore">
             Explore
@@ -97,11 +97,23 @@ export default function Home() {
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
-          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Choose a topic of Your interest, submit a solution and get rewarded for Your effort.</Typography>
-          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Earn Achievements</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Q&A filled only with source-backed solutions.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="yellow" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
+      <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      sx={{mt: 5}}
+      mx={{xs:2}}
+      >
+      <Button variant="contained" color="success" size="large" href="/q&a/private">
+        Browse
+      </Button>
+      </Stack>
+      
 
 
 

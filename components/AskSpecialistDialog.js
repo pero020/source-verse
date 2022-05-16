@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/router'
 import { useState } from "react"
+import { useSession } from "next-auth/react"
 import UploadImage from './InputImage';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -40,6 +41,7 @@ export default function NewQuestionDialog(props) {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [snackbarMissOpen, setSnackbarMissOpen] = React.useState(false);
   const [snackbarCoinsOpen, setSnackbarCoinsOpen] = React.useState(false);
+  const { data: session } = useSession()
 
   const router = useRouter()
 
@@ -55,6 +57,10 @@ export default function NewQuestionDialog(props) {
 
 
   const handleClickOpen = () => {
+    if (!session) {
+      router.push("/signIn")
+      return 1
+    }
     setOpen(true);
   };
 

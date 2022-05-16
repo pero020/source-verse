@@ -105,8 +105,6 @@ export default function Profile(props) {
   let current = userData.stats.score;
   let novimax = null;
 
-
-
   function leftToGo()
   {
     return novimax-current;
