@@ -54,7 +54,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions to <br/><Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:"10px"}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions to <br/><Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
@@ -125,7 +125,7 @@ export default function Home() {
       mx={{xs:2}}
       >
 
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px"}}>Get feedback from Specialists.</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Get feedback from Specialists.</Typography>
         
       </Stack>
         
@@ -169,7 +169,7 @@ export default function Home() {
         sx={{mt: {md:55, xs:25}}}
         mx={{xs:2}}
         >
-          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"12px"}}>Improve Your digital literacy.</Typography>
+          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "12px"}}}>Improve Your digital literacy.</Typography>
         </Stack>
 
         <Stack

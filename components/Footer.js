@@ -9,7 +9,7 @@ export default function Footer () {
       justifyContent="center"
       alignItems="flex-end"
       sx={{mt:5, mb: 2}}>
-        <Typography sx={{color:"background.contrastColor", mt:1}}>
+        <Typography variant="body2" sx={{color:"background.contrastColor", mt:1}}>
           Copyright © 2022 Team Vision All rights reserved.
         </Typography>
       </Stack>

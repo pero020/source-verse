@@ -40,7 +40,6 @@ export default function Post () {
 
   async function getPost() {
     try {
-      // setPostData(null)
       const res = await fetch("/api/posts/getOnePost/" + id);
       const data = await res.json();
 
