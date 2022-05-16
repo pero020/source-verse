@@ -116,13 +116,27 @@ export default function Profile(props) {
   {
     let lastLvl = null;
 
-    if(current>=250)
+    if(current>=1000)
     {
       novimax=999999; {/*maximalni level */}
-      lastLvl = 250;
+      lastLvl = 1000;
     }
-    else 
-    if(current >= 150)
+    else if(current >= 600)
+    {
+      lastLvl = 600;
+      novimax=1000;
+    }
+    else if(current >= 400)
+    {
+      lastLvl = 400;
+      novimax=600;
+    }
+    else if(current >= 250)
+    {
+      lastLvl = 250;
+      novimax=400;
+    }
+    else if(current >= 150)
     {
       lastLvl = 150;
       novimax=250;
@@ -177,7 +191,7 @@ export default function Profile(props) {
             <Typography variant="h5" color="background.contrastColor">Rank: {userData.rank.name}</Typography>
           </Box>
           <Box>
-            <Image src={"/badges/" + userData.rank.badge + ".png"} width="50" height="50"></Image>
+            <Image src={"/badges/" + userData.rank.badge + ".svg"} width="50" height="50"></Image>
           </Box>
           
         </Stack>

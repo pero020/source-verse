@@ -60,7 +60,7 @@ export default function PostsList(props) {
                 
                 <Stack direction="row" spacing={1} justifyContent="right" alignItems="center">
                   <Chip
-                    avatar={<Avatar alt={post.author.name} src={"/badges/" + post.author.badge + ".png"} />}
+                    avatar={<Avatar alt={post.author.name} src={"/badges/" + post.author.badge + ".svg"} />}
                     size="small"
                     label={post.author.name}
                     variant="outlined"

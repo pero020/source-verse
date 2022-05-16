@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
 
-import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
+import { Avatar, CircularProgress, ListItemSecondaryAction, Typography } from '@mui/material'
 import { Grid } from '@mui/material'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -92,7 +92,15 @@ export default function SpecialistQuestion() {
     </>
     }
 
-    {!questionData.answered && questionData.specialist.email === session.user.email && 
+    {!questionData.answered && 
+    <>
+    <Divider></Divider>
+    <Typography variant="h6">Answer pending...</Typography>
+    <CircularProgress sx={{m: 5}}></CircularProgress>
+    </>
+    }
+
+    {(!questionData.answered && questionData.specialist.email === session.user.email) && 
     <>
     <AnswerSpecialistQuestionDialog id={id} getQuestionData={getQuestionData}></AnswerSpecialistQuestionDialog>
     </>

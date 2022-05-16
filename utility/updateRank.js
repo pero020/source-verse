@@ -34,12 +34,31 @@ export default async function updateRank(score, currBadge, session) {
       newBadge = "silver2"
       newRankName = "Silver 2"
     }
-  } else if (score >= 250) {
+  } else if (score >= 250 && score < 400) {
     if (currBadge !== "silver3") {
       newBadge = "silver3"
       newRankName = "Silver 3"
     }
-  }
+  } else if (score >= 400 && score < 600) {
+    if (currBadge !== "gold1") {
+      newBadge = "gold1"
+      newRankName = "Gold 1"
+    }
+  } else if (score >= 600 && score < 1000) {
+    if (currBadge !== "gold2") {
+      newBadge = "gold2"
+      newRankName = "Gold 2"
+    }
+  } else if (score >= 1000 && score < 1500) {
+    if (currBadge !== "gold3") {
+      newBadge = "gold3"
+      newRankName = "Gold 3"
+    }
+  } 
+
+
+
+
 
   if (newBadge) {
     try {

@@ -231,7 +231,7 @@ export default function PostsList(props) {
               {isMobile ? 
               <Stack direction="row" spacing={1} alignItems="center" sx={{mt:1}}>
                 <Chip
-                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".png"} />}
+                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".svg"} />}
                   size="medium"
                   label={answer.author.name}
                   variant="outlined"
@@ -245,7 +245,7 @@ export default function PostsList(props) {
               :
               <Stack direction="row" spacing={1} justifyContent="right" alignItems="center" sx={{mt:1}}>
                 <Chip
-                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".png"} />}
+                  avatar={<Avatar alt={answer.author.name} src={"/badges/" + answer.author.badge + ".svg"} />}
                   size="medium"
                   label={answer.author.name}
                   variant="outlined"
