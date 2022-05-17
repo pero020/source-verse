@@ -23,6 +23,9 @@ let theme = createTheme({
     },
     text: {
       softWhite: alpha("#fff", 0.9)
+    },
+    green:{
+      main:"#52D17B",
     }
   },
 });
