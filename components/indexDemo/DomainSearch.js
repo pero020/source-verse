@@ -48,6 +48,7 @@ export default function DomainSearch() {
       label="Domain Search" 
       variant="standard"
       onChange={handleChange}
+      sx={{minWidth:"50%"}}
       />
       <Fab color="primary" aria-label="filter" onClick={handleSubmit} size="small">
         <ManageSearchIcon></ManageSearchIcon>
@@ -62,7 +63,7 @@ export default function DomainSearch() {
 
     {domainData && domainData.reviews.length !== 0 && 
     <>
-    <Typography sx={{mb:5}}>Total score: {domainData.score}</Typography>
+    <Typography align="center" sx={{my:5}}>Total score: {domainData.score > 3 ? <strong style={{color:"green"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>
     <ReviewsList reviews={domainData.reviews}></ReviewsList>
     </>
     }
