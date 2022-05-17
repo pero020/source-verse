@@ -118,7 +118,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
           {isMobile == 0 ? <Box>
-          <Avatar src={'./images/logo.png'} />
+          <Avatar sx={{width: 28, height: 28}} src={'./images/logo.png'} />
           </Box> : null}
           
         <Link href="/">
@@ -171,7 +171,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           {isMobile == 1 ? <Box>
-          <Avatar sx={{mr:{xs:2}}} src={'./images/logo.png'} />
+          <Avatar sx={{mr:{xs:2}, width: 28, height: 28}} src={'./images/logo.png'} />
           </Box> : null}
           <Link href="/">
           <Typography

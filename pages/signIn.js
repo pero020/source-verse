@@ -13,10 +13,10 @@ export default function SignIn({ providers }) {
         alignItems="center"
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"5px", mb: 5}}>Welcome!</Typography>
-          <Typography sx={{mb: 5}} variant="h5" color="text.softWhite">Use your Google account for maximum security</Typography>
+          <Typography variant="h5" color="text.softWhite">Use your Google account for maximum security</Typography>
           
-          <Box maxWidth={{md:'60%', xs:'100%'}} ml={{md:1}} >
-            <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: login}}/>
+          <Box maxWidth={{md:'25%', xs:'50%'}} ml={{md:1}} >
+            <Lottie isClickToPauseDisabled={true} options={{repeat: false, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: login}}/>
           </Box>
 
           <Button color="success" variant="contained" onClick={() => signIn(google.id)}>
