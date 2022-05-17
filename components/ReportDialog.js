@@ -14,6 +14,8 @@ import MuiAlert from '@mui/material/Alert';
 export default function DeletePostDialog(props) {
   const [open, setOpen] = React.useState(false);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+  const [snackbarSuccOpen, setSnackbarSuccOpen] = React.useState(false);
+
 
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -36,6 +38,14 @@ export default function DeletePostDialog(props) {
     setSnackbarOpen(false);
   };
 
+  const handleSnackbarSuccClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarSuccOpen(false);
+  };
+
   async function reportUser() {
     const res = await fetch("/api/reportUser", {
       method: "POST",
@@ -51,6 +61,8 @@ export default function DeletePostDialog(props) {
       setSnackbarOpen(true)
     } else if(!res.ok) {
       console.log(res)
+    } else {
+      setSnackbarSuccOpen(true)
     }
     handleClose()
     return
@@ -79,9 +91,14 @@ export default function DeletePostDialog(props) {
           </Button>
         </DialogActions>
       </Dialog>
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+      <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleSnackbarClose}>
         <Alert onClose={handleSnackbarClose} severity="info" sx={{ width: '100%' }}>
           User already reported!
+        </Alert>
+      </Snackbar>
+      <Snackbar open={snackbarSuccOpen} autoHideDuration={3000} onClose={handleSnackbarSuccClose}>
+        <Alert onClose={handleSnackbarSuccClose} severity="success" sx={{ width: '100%' }}>
+          User Successfully reported!
         </Alert>
       </Snackbar>
     </div>

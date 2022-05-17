@@ -4,7 +4,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
-import { CircularProgress} from "@mui/material"
+import { CircularProgress, LinearProgress } from "@mui/material"
 import { Grid } from '@mui/material'
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -126,17 +126,14 @@ export default function Post () {
 
   if (!authorData) {
     return <>
-      <CircularProgress sx={{color: "secondary.main"}}></CircularProgress>
+      <LinearProgress color="secondary"></LinearProgress>
     </>
   }
 
   return <>
   <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-    <Stack direction="row" spacing={1} justifyContent="space-between">  
-    </Stack>
     <Typography variant="h4">{postData.title}</Typography>
-    <br/>
-    <Stack direction="row" spacing={1} justifyContent="left" alignItems="center">
+    <Stack direction="row" sx={{mt: 2}} spacing={1} justifyContent="left" alignItems="center">
       <div>
       <Chip
         avatar={<Avatar alt={authorData.name} src={authorData.image} />}
@@ -156,8 +153,7 @@ export default function Post () {
       
       </div>
     </Stack>
-    <Typography variant="body1" sx={{mt: 2}}>{postData.description}</Typography>
-    <br/>
+    <Typography variant="body1" sx={{my: 2}}>{postData.description}</Typography>
 
     <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{mb: 1}}>
         <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>

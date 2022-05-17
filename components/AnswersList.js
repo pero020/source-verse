@@ -218,7 +218,7 @@ export default function PostsList(props) {
 
             <Divider orientation={"vertical"}></Divider>
 
-            <Grid item xs={10}>
+            <Grid item xs={10} sx={{overflow: "hidden"}}>
               <ListItemText primary={answer.description} />
               <Stack direction={{xs: "column", md: "row"}} spacing={1} alignItems="flex-start">
               <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
