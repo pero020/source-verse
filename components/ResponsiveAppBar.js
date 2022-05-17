@@ -178,7 +178,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, ml:{xs:1} }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             SourceVerse
           </Typography>
