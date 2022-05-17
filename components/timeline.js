@@ -175,10 +175,25 @@ export default function OppositeContentTimeline() {
 
           <TimelineSeparator>
             <TimelineDot color="secondary" />
-            
+          <TimelineConnector />
             
           </TimelineSeparator>
           <TimelineContent color="background.contrastColor">Domain reviews added</TimelineContent>
+
+</TimelineItem>
+
+<TimelineItem>
+
+          <TimelineOppositeContent color="background.contrastColor">
+            May 14, 2022
+          </TimelineOppositeContent>
+
+          <TimelineSeparator>
+            <TimelineDot color="secondary" />
+            
+            
+          </TimelineSeparator>
+          <TimelineContent color="background.contrastColor">Ranks added</TimelineContent>
 
 </TimelineItem>
 

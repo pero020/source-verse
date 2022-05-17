@@ -166,7 +166,6 @@ export default function Profile(props) {
 
 
   return <>
-
   <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, borderRadius: 2}} >
     <Grid container spacing={4} alignItems="center" justifyContent="center">
       <Grid 

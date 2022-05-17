@@ -20,6 +20,8 @@ import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
 
+import Link from "next/link"
+
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -97,8 +99,8 @@ export default function Home() {
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
-          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Q&A filled only with source-backed solutions.</Typography>
-          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4"bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Public Q&A filled only with source-backed solutions.</Typography>
+          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
@@ -202,11 +204,9 @@ export default function Home() {
       
   <Stack
   direction="row"
-  justifyContent={{md:'center', xs:'center'}}
-  alignItems="flex-start"
-  sx={{mt: {md:55, xs:25}}}
-  
-  
+  justifyContent={{xs:'center', md:'flex-start'}}
+  alignItems="flex-start"s
+  sx={{mt: {md:55, xs:25}, ml:{xs:0, md:2.5}}}
   >
     <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: "8px"}}>FAQ</Typography>
   </Stack>
@@ -214,7 +214,7 @@ export default function Home() {
   <Stack
   direction="column"
   justifyContent="flex-start"
-  alignItems="center"
+  alignItems="flex-start"
   spacing={5}
   sx={{mt:5, ml:2}}
   >
@@ -226,7 +226,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -235,8 +235,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>2. Where should I start?</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -245,8 +245,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>3. What Google data are you using?</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -255,8 +255,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>4. How do I rank up?</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -265,8 +265,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn how to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" sx={{color:"background.contrastColor"}}>5. Want to become a specialist?</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
     </Stack>
   </Stack>
   </Container>
