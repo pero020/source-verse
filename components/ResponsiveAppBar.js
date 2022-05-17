@@ -117,10 +117,6 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
-          {isMobile == 0 ? <Box>
-          <Avatar sx={{width: 28, height: 28}} src={'./images/logo.png'} />
-          </Box> : null}
-          
         <Link href="/">
           <Typography
             variant="h6"
@@ -170,9 +166,6 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          {isMobile == 1 ? <Box>
-          <Avatar sx={{mr:{xs:2}, width: 28, height: 28}} src={'./images/logo.png'} />
-          </Box> : null}
           <Link href="/">
           <Typography
             variant="h6"

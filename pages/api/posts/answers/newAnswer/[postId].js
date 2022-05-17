@@ -20,6 +20,10 @@ export default async function handler (req, res) {
       url = url.split(".")
       url = url[url.length-2] + "." + url[url.length-1]
 
+      if (!url) {
+        url="nourl"
+      }
+
       return url
     } catch (e) {
       return url
@@ -74,7 +78,7 @@ export default async function handler (req, res) {
 
     let newSourceScore = userData.stats.averageSourceScore
     if (!domainData) {
-      newSourceScore = (userData.stats.averageSourceScore * userData.stats.answersNum + 0) / (userData.stats.answersNum + 1)
+      newSourceScore = (userData.stats.averageSourceScore * userData.stats.answersNum + 1) / (userData.stats.answersNum + 1)
     } else {
       newSourceScore = (userData.stats.averageSourceScore * userData.stats.answersNum + domainData.score) / (userData.stats.answersNum + 1)
     }

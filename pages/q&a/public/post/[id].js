@@ -54,9 +54,11 @@ export default function Post () {
       if (sortParam === "date") {
         data.answers = await sortByDate(data.answers)
       }
-
-      getAuthorData(data.author.email)
+      setAuthorsData(null)
       setPostData(data)
+      if (authorData === null) {
+        getAuthorData(data.author.email)
+      }
       getAuthorsData(data.answers)
     } catch (e) {
       console.log(e)
@@ -122,7 +124,7 @@ export default function Post () {
 
 
 
-  if (!postData || !authorsData || !authorData) {
+  if (!authorData) {
     return <>
       <CircularProgress sx={{color: "secondary.main"}}></CircularProgress>
     </>
@@ -162,7 +164,7 @@ export default function Post () {
         {session && <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog> }
     </Stack>
 
-    <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers} authorsData={authorsData}></AnswersList>
+    {(postData && authorsData) && <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers} authorsData={authorsData}></AnswersList> }
     </Container>
   </>
   

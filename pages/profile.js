@@ -219,7 +219,7 @@ export default function Profile(props) {
         )
         }
         {specialistQuestions && session.role === "specialist" &&
-        ( userData.mySpecialistQuestions.length !== 0 ?
+        ( specialistQuestions.length !== 0 ?
         <Box>
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Specialist Questions to answer</Typography>
           <SpecialistQuestionsList questions={specialistQuestions.filter(question => !question.answered)}></SpecialistQuestionsList>

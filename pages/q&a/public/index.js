@@ -45,6 +45,7 @@ export default function Public() {
 
   async function getAllPosts() {
     setFilters()
+    setAuthorsData(null)
     const res = await fetch("/api/posts/getAllPosts");
     const data = await res.json();
     setPostsData(data)
@@ -57,6 +58,7 @@ export default function Public() {
 
   async function getFilteredPosts(category, searchTerm) {
     setFilters([category, searchTerm])
+    setAuthorsData(null)
     const res = await fetch(`/api/posts/getFilteredPosts?category=${category}&searchTerm=${searchTerm}`);
     if (res.ok) {
       const data = await res.json();
