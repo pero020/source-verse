@@ -20,6 +20,8 @@ import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
 
+import Link from "next/link"
+
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -234,7 +236,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>2. Where should I start?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Start by Logging in and checking your <a style={{color: "#42a862", textDecoration: "none"}} href="/profile">Profile page</a>. After that feel free to browse <a style={{color: "#42a862", textDecoration: "none"}} href="/q&a/public">Public Q&A</a>, <a style={{color: "#42a862", textDecoration: "none"}} href="/q&a/private">Private Q&A</a> and <a style={{color: "#42a862", textDecoration: "none"}} href="/learn">Learn</a> sections.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -244,7 +246,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>3. What Google data are you using?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>We only use your name, email and profile image. Feel free to change your username on the <a style={{color: "#42a862", textDecoration: "none"}} href="/profile">Profile page</a> ( it will not effect your Google name )</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -254,7 +256,7 @@ export default function Home() {
     >
 
       <Typography variant="h5" sx={{color:"background.contrastColor"}}>4. How do I rank up?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>You Rank up by providing quality answers in the <a style={{color: "success", textDecoration: "none"}} href="/q&a/public">Public Q&A</a> section.</Typography>
+      <Typography variant="h6" sx={{color:"text.softWhite"}}>You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
     </Stack>
     <Stack
     direction="column"
