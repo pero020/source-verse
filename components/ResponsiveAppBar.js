@@ -117,6 +117,10 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
+        {isMobile == 0 ? <Box>
+          <Image width="30%" height="30%" src={'/images/Logo.svg'} />
+          </Box> : null}
+          
         <Link href="/">
           <Typography
             variant="h6"
@@ -166,12 +170,15 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+          {isMobile == 1 ? <Box>
+          <Image width="30%" height="30%" src={'/images/Logo.svg'} />
+          </Box> : null}
           <Link href="/">
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, ml:{xs:1} }}
           >
             SourceVerse
           </Typography>

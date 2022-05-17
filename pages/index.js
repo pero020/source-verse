@@ -109,7 +109,7 @@ export default function Home() {
       sx={{mt: 5}}
       mx={{xs:2}}
       >
-      <Button variant="contained" color="success" size="large" href="/q&a/private">
+      <Button variant="contained" color="success" size="large" href="/q&a/public">
         Browse
       </Button>
       </Stack>

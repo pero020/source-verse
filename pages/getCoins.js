@@ -1,5 +1,4 @@
 import { useState, forwardRef } from "react"
-
 import { Container } from "@mui/material";
 import Box from '@mui/material/Box';
 import { Typography, Button } from "@mui/material"
@@ -31,6 +30,7 @@ export default function GetCoins() {
   const [coinsNum, setCoinsNum] = useState(5)
   const [coinCost, setCoinCost] = useState(0.8)
   const [snackbarAddedOpen, setSnackbarAddedOpen] = useState(false)
+
 
   const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -71,6 +71,7 @@ export default function GetCoins() {
       return 1
     }
     setSnackbarAddedOpen(true)
+
     return 0
   }
 
