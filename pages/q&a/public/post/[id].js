@@ -156,8 +156,8 @@ export default function Post () {
     <Typography variant="body1" sx={{my: 2}}>{postData.description}</Typography>
 
     <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{mb: 1}}>
-        <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
-        {session && <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog> }
+      <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>
+      {session && <NewAnswerDialog getPost={getPost} postId={postData._id}></NewAnswerDialog> }
     </Stack>
 
     {(postData && authorsData) && <AnswersList postId={postData._id} getPost={getPost} answers={postData.answers} authorsData={authorsData}></AnswersList> }
