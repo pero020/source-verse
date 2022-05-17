@@ -134,10 +134,10 @@ export default function DemoProgressBar() {
           <ListItem sx={{ display: 'list-item' }}>Search engine warnings</ListItem>
           <ListItem sx={{ display: 'list-item' }}>Spam</ListItem>
           <ListItem sx={{ display: 'list-item' }}>Redirects</ListItem>
-          <ListItem sx={{ display: 'list-item' }}>Pop-upss</ListItem>
+          <ListItem sx={{ display: 'list-item' }}>Pop-ups</ListItem>
         </List>
 
-        <Typography sx={{mb:2}} variant="body1">Sources: <a style={{color: "#42a862", textDecoration: "none"}} href="https://us.norton.com/internetsecurity-how-to-how-to-know-if-a-website-is-safe.html">us.norton.com</a>, <a style={{color: "#42a862", textDecoration: "none"}} href="https://www.avg.com/en/signal/website-safety">avd.com</a></Typography>
+        <Typography sx={{mb:2}} variant="body1">Sources: <a style={{color: "#42a862", textDecoration: "none"}} href="https://us.norton.com/internetsecurity-how-to-how-to-know-if-a-website-is-safe.html">us.norton.com</a>, <a style={{color: "#42a862", textDecoration: "none"}} href="https://www.avg.com/en/signal/website-safety">avg.com</a></Typography>
 
       </TabPanel>
 
