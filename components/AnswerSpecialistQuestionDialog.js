@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useRouter } from 'next/router'
 import { useState } from "react"
-import UploadImage from './InputImage';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -10,13 +9,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
-import { Grid, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
 import Snackbar from '@mui/material/Snackbar';

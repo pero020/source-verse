@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState } from "react"
-import UploadImage from './InputImage';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -15,7 +14,6 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
-import { Grid } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
 import Snackbar from '@mui/material/Snackbar';

@@ -7,7 +7,7 @@ export default function SignIn({ providers }) {
   const google = providers.google
   return (
     <>
-      <Container maxWidth="sm" sx={{mt: 2, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
+      <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
         <Stack
         justifyContent="center"
         alignItems="center"

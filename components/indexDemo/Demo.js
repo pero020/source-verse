@@ -1,10 +1,11 @@
 import DemoProgressBar from "/components/indexDemo/DemoProgressBar"
-import { Box } from "@mui/system"
-import { Grid } from "@mui/material";
+import Container from "@mui/material/Container"
 
 
 export default function IndexDemo () {
   return <>
+  <Container maxWidth="xl" disableGutters={true} sx={{mt: 1, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
     <DemoProgressBar></DemoProgressBar>
+  </Container>
   </>
 }

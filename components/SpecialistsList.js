@@ -7,7 +7,6 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import { useState } from "react"
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
@@ -68,10 +67,10 @@ export default function specialistsList(props) {
                   <Chip
                     size="small"
                     label={specialist.name}
-                    variant="outlined"
+                    variant="contained"
                   />
                   
-                  <Chip size="small" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " coins"} />
+                  <Chip size="small" color="secondary" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " coins"} />
                     
                 </Stack>
             </Grid>

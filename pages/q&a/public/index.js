@@ -11,7 +11,6 @@ import { Container } from "@mui/material";
 import PostsList from "/components/PostsList"
 import NewQuestionDialog from "/components/NewQuestionDialog"
 import QuestionFilters from "/components/QuestionFilters"
-import { ClassNames } from "@emotion/react";
 
 
 
@@ -78,11 +77,13 @@ export default function Public() {
   }, [])
 
   return <>
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
-      <Stack justifyContent="space-between" alignItems="center" direction="row">
-        <Typography color="white" variant="h5">Questions list</Typography>
-        {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
-      </Stack>
+    <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
+      <Container maxWidth="md">
+        <Stack justifyContent="space-between" alignItems="center" direction="row">
+          <Typography color="white" variant="h4">Questions list</Typography>
+          {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
+        </Stack>
+      </Container>
 
       <Stack alignItems="center">
         <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>

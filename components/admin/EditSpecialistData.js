@@ -9,12 +9,14 @@ import DialogContentText from '@mui/material/DialogContentText';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Slider from '@mui/material/Slider';
 
-export default function FormDialog() {
+export default function EditSpecialistData() {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
-    role: ""
+    category: "",
+    answerCost: ""
   });
 
   const handleClickOpen = () => {
@@ -39,10 +41,10 @@ export default function FormDialog() {
 
   const handleSubmit = async () => {
 
-    if (!formData.email || !formData.role) {return 1}
+    if (!formData.email || !formData.category) {return 1}
 
     try {
-      const res = await fetch("/api/admin/changeUserRole", {
+      const res = await fetch("/api/admin/updateSpecialistData", {
         method: "PATCH",
         headers: {
           'Content-Type': 'application/json'
@@ -50,9 +52,13 @@ export default function FormDialog() {
         body: JSON.stringify(formData)
       })
 
-      if (!res.ok) {
+      if (res.status === 405) {
+        console.log("not a specialist")
+        return 1
+      }
+      else if (!res.ok) {
         console.log(res)
-        return "Res not okay"
+        return 1
       }
 
       const data = await res.json()
@@ -61,7 +67,7 @@ export default function FormDialog() {
         return 1
       } else if (data.modifiedCount > 1) {
         console.log("Something is not right, I can feel it...")
-        return "1"
+        return 1
       }
       
     } catch (e) {
@@ -73,13 +79,13 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button color="white1" variant="outlined" onClick={handleClickOpen}>
-        Change User Role
+      <Button sx={{mt: 1}} color="white1" variant="outlined" onClick={handleClickOpen}>
+        Edit specialist data
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogContent>
-          <DialogContentText>
-            Change an existing users role:
+          <DialogContentText sx={{color: "white"}}>
+            Edit the category and answer cost data
           </DialogContentText>
           <TextField
             autoFocus
@@ -93,29 +99,37 @@ export default function FormDialog() {
             color="secondary"
             value={formData.email}
             onChange={handleChange}
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Category"
+            type="category"
+            fullWidth
+            variant="standard"
+            name="category"
+            color="secondary"
+            value={formData.category}
+            onChange={handleChange}
             sx={{mb:2}}
           />
-          <InputLabel id="demo-simple-select-label">Role</InputLabel>
+          <InputLabel id="demo-simple-select-label">Answer Cost</InputLabel>
           
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            variant="standard"
-            name="role"
-            value={formData.role}
-            label="role"
-            onChange={handleChange}
-            sx={{minWidth: 100}}
-            color="secondary"
-          >
-            <MenuItem value="user">User</MenuItem>
-            <MenuItem value="specialist">Specialist</MenuItem>
-            <MenuItem value="admin">Admin</MenuItem>
-          </Select>
+          <Slider
+          value={formData.answerCost}
+          min={1}
+          max={100}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          aria-labelledby="non-linear-slider"
+          name="answerCost"
+          color="white1"
+        />
         </DialogContent>
         <DialogActions>
           <Button color="white1" onClick={handleClose}>Cancel</Button>
-          <Button color="error" onClick={handleSubmit}>Change</Button>
+          <Button color="success" onClick={handleSubmit}>Change</Button>
         </DialogActions>
       </Dialog>
     </div>

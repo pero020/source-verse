@@ -7,21 +7,17 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
 import Typography from '@mui/material/Typography';
-import { Container, ListItemSecondaryAction } from "@mui/material";
+import { Container } from "@mui/material";
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
-import { Button, IconButton } from "@mui/material";
+import { Button } from "@mui/material";
 import ReviewsList from "/components/ReviewsList"
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress'
-import { Chip } from '@mui/material'
 import styled from "@emotion/styled";
-import EditIcon from '@mui/icons-material/Edit';
-import Lottie from 'react-lottie'
-import coin from '/public/lotties/coin';
 
 import EditUsernameDialog from "/components/profile/EditUsernameDialog"
+import EditTitleDialog from "/components/profile/EditTitleDialog"
 import SpecialistQuestionsList from "/components/SpecialistQuestionsList"
 
 
@@ -166,16 +162,26 @@ export default function Profile(props) {
 
 
   return <>
-  <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, borderRadius: 2}} >
+  <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor:"primary.main", borderRadius: 2}} >
     <Grid container spacing={4} alignItems="center" justifyContent="center">
       <Grid 
       container item xs={12} md={6} alignItems="center" direction="column">
         <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
-        <Stack direction="row" sx={{ml:4}} alignItems="center">
+        <Stack direction="row" sx={{ml:3}} alignItems="center">
           <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.name}</Typography>
-          <EditUsernameDialog getProfileData={getProfileData}></EditUsernameDialog>
+          <EditTitleDialog getProfileData={getProfileData}></EditTitleDialog>
         </Stack>
         <Typography sx={{mb:2}} variant="h5" color="background.contrastColor">{userData.email}</Typography>
+        {userData.role === "specialist" &&
+        <Stack direction="column" sx={{mb:2}} alignItems="center" justifyContent="center">
+          <Stack direction="row" sx={{ml:3}} alignItems="center" >
+          <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">Title:</Typography>
+          <EditTitleDialog getProfileData={getProfileData}></EditTitleDialog>
+          </Stack>
+          <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.title}</Typography>
+          
+          
+        </Stack>}
         {userData.role === "specialist" && <Typography variant="h5" color="background.contrastColor">Category: {userData.category}</Typography>}
         {userData.role === "specialist" && <Typography variant="h5" color="background.contrastColor">Answer price: {userData.answerCost} {userData.answerCost === 1 ? "Coin" : "Coins"} </Typography>}
         {userData.role !== "specialist" &&
@@ -212,7 +218,7 @@ export default function Profile(props) {
         ( userData.domainReviews.length !== 0 ?
         <Box>
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Your Domain Reviews</Typography>
-          <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList> : 
+          <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList>
         </Box> :
         <Typography variant="h5" color="background.contrastColor">You don't have any Reviews yet!</Typography>
         )

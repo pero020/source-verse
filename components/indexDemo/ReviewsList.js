@@ -4,12 +4,9 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
 import { Stack, Box } from "@mui/material"
 import Rating from '@mui/material/Rating';
 
-import DeleteReviewDialog from "/components/DeleteReviewDialog"
-  
 const style = {
   width: '100%',
   maxWidth: "md",

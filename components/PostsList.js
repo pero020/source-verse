@@ -20,26 +20,22 @@ const style = {
 export default function PostsList(props) {
   const posts = props.posts
 
-  function detectMob() {
-    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
-  }
-  const isMobile = detectMob()
-
   function formatDate(date) {
     let formatedDate = date.split("T")[0]
     return(formatedDate)
   }
-  function setLength(text) {
-    let newText
-    if (isMobile) {
 
-      newText = text.slice(0, window.innerWidth/10)
-    } else {
-      newText = text.slice(0, window.innerWidth/10)
-    }
-    if (newText.length < text.length ) {
+  function maxLength(text) {
+    let newText = null
+    if (text.length > 75) {
+
+      newText = text.slice(0, 75)
       newText = newText + "...";
+      console.log(newText)
+    } else {
+      newText = text
     }
+    
     return newText
   }
 
@@ -56,7 +52,7 @@ export default function PostsList(props) {
             <Grid item xs={12}>
               <Link underline={"none"} href={"/q&a/public/post/" + post._id}>
                 <Stack direction="row" spacing={1} justifyContent="space-between">
-                    <ListItemText nowrap={"true"} sx={{color: "white"}} primary={setLength(post.title )} />
+                    <ListItemText nowrap={"true"} sx={{color: "white"}} primary={maxLength(post.title)} />
                 </Stack>
               </Link>
                 
@@ -65,7 +61,7 @@ export default function PostsList(props) {
                     avatar={<Avatar alt={props.authorsData.find(author => author.email === post.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === post.author.email).rank.badge + ".svg"} />}
                     size="small"
                     label={props.authorsData.find(author => author.email === post.author.email).name}
-                    variant="outlined"
+                    variant="contained"
                   />
                   <Chip size="small" label={formatDate(post.creationDate)} color="secondary" />
                 </Stack>

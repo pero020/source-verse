@@ -9,18 +9,15 @@ let theme = createTheme({
       main: '#353C42',
     },
     secondary: {
-      main: '#52d17b',
+      main: '#50eb82',
     },
     success: {
       main: "#00ED64",
     },
-    error: {
-      main: "#DC143C",
-    },
     background: {
       container: alpha("#fff", 0.9),
       default: "#2b2b2b",
-      paper: "#363636",
+      paper: "#434c54",
       contrastColor:"#ffffff"
     },
     text: {

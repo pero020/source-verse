@@ -18,6 +18,7 @@ export default function NewDomainReviewForm() {
   })
   const [snackbarMissOpen, setSnackbarMissOpen] = useState(false);
   const [snackbarUrlOpen, setSnackbarUrlOpen] = useState(false);
+  const [snackbarHaveOpen, setSnackbarHaveOpen] = useState(false);
   const router = useRouter()
 
   const Alert = forwardRef(function Alert(props, ref) {
@@ -38,6 +39,13 @@ export default function NewDomainReviewForm() {
     }
 
     setSnackbarMissOpen(false);
+  };
+  const handleSnackbarHaveClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarHaveOpen(false);
   };
   const handleSnackbarUrlClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -72,10 +80,14 @@ export default function NewDomainReviewForm() {
     },
     body: JSON.stringify(formData)
    });
-   if (!res.ok) {
-     console.log(res);
-     return 1;
-   }
+    if (res.status === 405) {
+      setSnackbarHaveOpen(true)
+      return 1
+    }
+    else if (!res.ok) {
+      console.log(res);
+      return 1;
+    }
    console.log("Success");
    router.push("/profile")
    return 0;
@@ -140,6 +152,11 @@ export default function NewDomainReviewForm() {
   <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
     <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
       Please provide all of the required informaion
+    </Alert>
+  </Snackbar>
+  <Snackbar open={snackbarHaveOpen} autoHideDuration={6000} onClose={handleSnackbarHaveClose}>
+    <Alert onClose={handleSnackbarHaveClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
+      Already submitted a review for this domain!
     </Alert>
   </Snackbar>
   <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose}>

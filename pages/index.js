@@ -1,13 +1,9 @@
-import { LogoDev } from "@mui/icons-material";
 import { useSession } from "next-auth/react"
-import Image from "next/image";
-import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import Demo from "/components/indexDemo/Demo"
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
-import { Chip } from "@mui/material";
 import Lottie from 'react-lottie'
 import exampleAnimationData from '/public/lotties/animacija';
 import trophy from '/public/lotties/trophy';
@@ -16,39 +12,36 @@ import bronze from '/public/lotties/bronze';
 import information from '/public/lotties/information';
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
-import { positions } from '@mui/system';
-import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
 import silver from '/public/lotties/silver';
 import gold from '/public/lotties/gold';
-import lottie from "lottie-web";
 import Link from "next/link"
-import { create } from "@lottiefiles/lottie-interactivity";
+
 
 
 export default function Home() {
   
     return <>
-    
+    <Container maxWidth="xl" disableGutters={true} sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
     {status === "authenticated" &&
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
+    <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
       <Stack
       justifyContent="center"
       alignItems="center"
       spacing={5}
-      sx={{my:10}}>
+      sx={{my:5}}>
 
         <Avatar src={session.user.image} sx={{width: 150, height: 150}}></Avatar>
         <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}</Typography>
-        <Button variant="contained" color="success" size="large" href="/profile">Profile</Button> 
+        <Button variant="contained" color="secondary" size="large" href="/profile">Profile</Button> 
 
       </Stack>
     </Container>
 
             
   }
-  <Container maxWidth="xl" >
+  <Container maxWidth="xl" disableGutters={true} >
       <Stack
       direction={{md:'row', xs:'column'}}
       justifyContent="space-between"
@@ -57,7 +50,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions to <br/><Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions <br/>to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
@@ -72,7 +65,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10, md:5}}>
 
-          <Button variant="contained" color="success" size="large" href="#explore">
+          <Button variant="contained" color="secondary" size="large" href="#explore">
             Explore
           </Button>
           
@@ -132,7 +125,7 @@ export default function Home() {
       sx={{mt: 5}}
       mx={{xs:2}}
       >
-      <Button variant="contained" color="success" size="large" href="/q&a/public">
+      <Button variant="contained" color="secondary" size="large" href="/q&a/public">
         Browse
       </Button>
       </Stack>
@@ -175,7 +168,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10}}>
 
-          <Button variant="contained" color="success" size="large" href="/q&a/private">
+          <Button variant="contained" color="secondary" size="large" href="/q&a/private">
             Connect
           </Button>
       
@@ -190,7 +183,7 @@ export default function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{mt: {md:35, xs:25}}}
+        sx={{mt: {md:55, xs:25}}}
         mx={{xs:2}}
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "12px"}}}>Improve Your digital literacy.</Typography>
@@ -218,7 +211,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:0, md:10}}>
 
-          <Button variant="contained" color="success" size="large" href="/learn">
+          <Button variant="contained" color="secondary" size="large" href="/learn">
             Guide
           </Button>
       
@@ -291,6 +284,7 @@ export default function Home() {
       <Typography variant="h6" sx={{color:"text.softWhite"}}>Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
     </Stack>
   </Stack>
+  </Container>
   </Container>
 
   </>
