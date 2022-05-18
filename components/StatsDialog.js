@@ -43,7 +43,6 @@ export default function MaxWidthDialog(props) {
         Stats
       </Button>
       <Dialog
-        fullWidth={fullWidth}
         maxWidth={"md"}
         open={open}
         onClose={handleClose}
@@ -99,7 +98,7 @@ export default function MaxWidthDialog(props) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button sx={{color:'white'}} onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>
