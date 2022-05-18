@@ -92,7 +92,7 @@ export default function Learn() {
 
             <Box>
             <Typography variant="h4" mt={{md:-2, xs:5}} ml={{md:10, xs:5}} sx={{color:"background.contrastColor"}}>Petar Pržić</Typography>
-            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Back-End Development</Typography>
+            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Full-Stack Development</Typography>
             </Box>
 
       </Stack>

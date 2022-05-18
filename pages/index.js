@@ -21,14 +21,14 @@ export default function Home() {
 
  
     return <>
-    
+    <Container maxWidth="xl" disableGutters={true} sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
     {status === "authenticated" &&
-    <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
+    <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
       <Stack
       justifyContent="center"
       alignItems="center"
       spacing={5}
-      sx={{my:10}}>
+      sx={{my:5}}>
 
         <Avatar src={session.user.image} sx={{width: 150, height: 150}}></Avatar>
         <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}</Typography>
@@ -39,7 +39,7 @@ export default function Home() {
 
             
   }
-  <Container maxWidth="xl" >
+  <Container maxWidth="xl" disableGutters={true} >
       <Stack
       direction={{md:'row', xs:'column'}}
       justifyContent="space-between"
@@ -48,7 +48,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions to <br/><Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions <br/>to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
         </Box>
         
         <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
@@ -160,7 +160,7 @@ export default function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{mt: {md:35, xs:25}}}
+        sx={{mt: {md:55, xs:25}}}
         mx={{xs:2}}
         >
           <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "12px"}}}>Improve Your digital literacy.</Typography>
@@ -261,6 +261,7 @@ export default function Home() {
       <Typography variant="h6" sx={{color:"text.softWhite"}}>Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
     </Stack>
   </Stack>
+  </Container>
   </Container>
 
   </>
