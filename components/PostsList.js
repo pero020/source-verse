@@ -65,7 +65,7 @@ export default function PostsList(props) {
                     avatar={<Avatar alt={props.authorsData.find(author => author.email === post.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === post.author.email).rank.badge + ".svg"} />}
                     size="small"
                     label={props.authorsData.find(author => author.email === post.author.email).name}
-                    variant="outlined"
+                    variant="contained"
                   />
                   <Chip size="small" label={formatDate(post.creationDate)} color="secondary" />
                 </Stack>

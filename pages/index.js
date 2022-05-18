@@ -40,7 +40,7 @@ export default function Home() {
 
         <Avatar src={session.user.image} sx={{width: 150, height: 150}}></Avatar>
         <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}</Typography>
-        <Button variant="contained" color="success" size="large" href="/profile">Profile</Button> 
+        <Button variant="contained" color="secondary" size="large" href="/profile">Profile</Button> 
 
       </Stack>
     </Container>
@@ -71,7 +71,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10, md:5}}>
 
-          <Button variant="contained" color="success" size="large" href="#explore">
+          <Button variant="contained" color="secondary" size="large" href="#explore">
             Explore
           </Button>
       
@@ -111,7 +111,7 @@ export default function Home() {
       sx={{mt: 5}}
       mx={{xs:2}}
       >
-      <Button variant="contained" color="success" size="large" href="/q&a/public">
+      <Button variant="contained" color="secondary" size="large" href="/q&a/public">
         Browse
       </Button>
       </Stack>
@@ -153,7 +153,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10}}>
 
-          <Button variant="contained" color="success" size="large" href="/q&a/private">
+          <Button variant="contained" color="secondary" size="large" href="/q&a/private">
             Connect
           </Button>
       
@@ -196,7 +196,7 @@ export default function Home() {
       alignItems="center"
       mt={{xs:0, md:10}}>
 
-          <Button variant="contained" color="success" size="large" href="/learn">
+          <Button variant="contained" color="secondary" size="large" href="/learn">
             Guide
           </Button>
       
