@@ -28,7 +28,7 @@ export default function Learn() {
 
 
   return <>
-
+<Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
     <Stack
     direction={{md:'row', xs:'column'}}
     justifyContent={{md:'flex-start', xs:'center'}}
@@ -212,5 +212,6 @@ export default function Learn() {
 
     <Typography align="center" variant="h4" color="background.contrastColor" sx={{mt: 10, mb:5,textDecoration:'underline', textDecorationColor:'#52D17B',textUnderlineOffset:'5px'}}>Development Timeline</Typography>
     <ColorsTimeline></ColorsTimeline>
+    </Container>
   </>
 };

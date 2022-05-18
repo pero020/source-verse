@@ -23,7 +23,7 @@ export default function Home() {
     return <>
     
     {status === "authenticated" &&
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
+    <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
       <Stack
       justifyContent="center"
       alignItems="center"

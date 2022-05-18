@@ -77,7 +77,7 @@ export default function Public() {
   }, [])
 
   return <>
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
+    <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
       <Container maxWidth="md">
         <Stack justifyContent="space-between" alignItems="center" direction="row">
           <Typography color="white" variant="h4">Questions list</Typography>

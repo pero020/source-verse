@@ -54,7 +54,7 @@ export default function SpecialistQuestion() {
 
   return <>
     {console.log(questionData)}
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
+    <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
     <Typography variant="h4">{questionData.title}</Typography>
     <br/>
     <Stack direction="row" spacing={1} justifyContent="left" alignItems="center">

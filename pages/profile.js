@@ -17,6 +17,7 @@ import LinearProgress from '@mui/material/LinearProgress'
 import styled from "@emotion/styled";
 
 import EditUsernameDialog from "/components/profile/EditUsernameDialog"
+import EditTitleDialog from "/components/profile/EditTitleDialog"
 import SpecialistQuestionsList from "/components/SpecialistQuestionsList"
 
 
@@ -161,16 +162,26 @@ export default function Profile(props) {
 
 
   return <>
-  <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, borderRadius: 2}} >
+  <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor:"primary.main", borderRadius: 2}} >
     <Grid container spacing={4} alignItems="center" justifyContent="center">
       <Grid 
       container item xs={12} md={6} alignItems="center" direction="column">
         <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
-        <Stack direction="row" sx={{ml:4}} alignItems="center">
+        <Stack direction="row" sx={{ml:3}} alignItems="center">
           <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.name}</Typography>
-          <EditUsernameDialog getProfileData={getProfileData}></EditUsernameDialog>
+          <EditTitleDialog getProfileData={getProfileData}></EditTitleDialog>
         </Stack>
         <Typography sx={{mb:2}} variant="h5" color="background.contrastColor">{userData.email}</Typography>
+        {userData.role === "specialist" &&
+        <Stack direction="column" sx={{mb:2}} alignItems="center" justifyContent="center">
+          <Stack direction="row" sx={{ml:3}} alignItems="center" >
+          <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">Title:</Typography>
+          <EditTitleDialog getProfileData={getProfileData}></EditTitleDialog>
+          </Stack>
+          <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.title}</Typography>
+          
+          
+        </Stack>}
         {userData.role === "specialist" && <Typography variant="h5" color="background.contrastColor">Category: {userData.category}</Typography>}
         {userData.role === "specialist" && <Typography variant="h5" color="background.contrastColor">Answer price: {userData.answerCost} {userData.answerCost === 1 ? "Coin" : "Coins"} </Typography>}
         {userData.role !== "specialist" &&
