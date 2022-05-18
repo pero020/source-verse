@@ -1,25 +1,27 @@
 import { useSession } from "next-auth/react"
 import { Typography } from "@mui/material";
+import Demo from "/components/indexDemo/Demo"
 import React from 'react';
+import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
 import Lottie from 'react-lottie'
 import exampleAnimationData from '/public/lotties/animacija';
 import trophy from '/public/lotties/trophy';
 import specialist from '/public/lotties/specialist';
+import bronze from '/public/lotties/bronze';
 import information from '/public/lotties/information';
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
-
+import silver from '/public/lotties/silver';
+import gold from '/public/lotties/gold';
 import Link from "next/link"
 
 
+
 export default function Home() {
-  const { data: session, status } = useSession();
-
-
- 
+  
     return <>
     <Container maxWidth="xl" disableGutters={true} sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
     {status === "authenticated" &&
@@ -56,7 +58,7 @@ export default function Home() {
         </Box>
         
       </Stack>
-
+      
       <Stack
       direction="row"
       justifyContent="center"
@@ -66,8 +68,10 @@ export default function Home() {
           <Button variant="contained" color="secondary" size="large" href="#explore">
             Explore
           </Button>
+          
       
       </Stack>
+      
 <Box id="explore"></Box>
       <Stack
       direction="row"
@@ -87,10 +91,28 @@ export default function Home() {
       mx={{xs:2}}
       >
 
-        <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
-          <Lottie isClickToPauseDisabled={true} options={{loop: false, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
-        </Box>
-        <Box>
+        
+          {/*<Image src="/ranks.png" width="2328" height="566"></Image><Lottie isClickToPauseDisabled={true} options={{loop: false, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>*/}
+          <Stack
+      direction="row"
+      justifyContent="space-evenly"
+      alignItems="center"
+      spacing={0}
+      sx={{mt:{xs:5}}}
+      >
+
+<Box maxWidth={{xs:'70%', md:'40%'}}>
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: bronze}}/>
+          </Box>
+          <Box maxWidth={{xs:'70%', md:'40%'}}>
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: silver}}/>
+          </Box>
+          <Box maxWidth={{xs:'70%', md:'40%'}}>
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: gold}}/>
+          </Box>
+          </Stack>
+
+        <Box sx={{mt:{xs:5}}}>
           <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Public Q&A filled only with source-backed solutions.</Typography>
           <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
         </Box>
@@ -107,6 +129,7 @@ export default function Home() {
         Browse
       </Button>
       </Stack>
+      
       
 
 
