@@ -138,7 +138,7 @@ export default function Post () {
       <Chip
         avatar={<Avatar alt={authorData.name} src={authorData.image} />}
         label={authorData.name}
-        variant="outlined"
+        variant="contained"
         sx={{mr:1, bgcolor: 'background.paper'}}
       />
       <Chip label={formatDate(postData.creationDate)} color="secondary" />

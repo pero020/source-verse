@@ -20,7 +20,7 @@ let theme = createTheme({
     background: {
       container: alpha("#fff", 0.9),
       default: "#2b2b2b",
-      paper: "#363636",
+      paper: "#434c54",
       contrastColor:"#ffffff"
     },
     text: {

@@ -212,7 +212,7 @@ export default function Profile(props) {
         ( userData.domainReviews.length !== 0 ?
         <Box>
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Your Domain Reviews</Typography>
-          <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList> : 
+          <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList>
         </Box> :
         <Typography variant="h5" color="background.contrastColor">You don't have any Reviews yet!</Typography>
         )

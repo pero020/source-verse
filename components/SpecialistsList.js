@@ -68,10 +68,10 @@ export default function specialistsList(props) {
                   <Chip
                     size="small"
                     label={specialist.name}
-                    variant="outlined"
+                    variant="contained"
                   />
                   
-                  <Chip size="small" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " coins"} />
+                  <Chip size="small" color="secondary" label={specialist.answerCost === 1 ? specialist.answerCost + " Coin" : specialist.answerCost + " coins"} />
                     
                 </Stack>
             </Grid>

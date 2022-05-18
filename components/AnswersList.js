@@ -233,7 +233,7 @@ export default function PostsList(props) {
                   avatar={<Avatar alt={props.authorsData.find(author => author.email === answer.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === answer.author.email).rank.badge + ".svg"} />}
                   size="medium"
                   label={answer.author.name}
-                  variant="outlined"
+                  variant="contained"
                 />
                 <Chip size="medium" label={formatDate(answer.creationDate)} color="secondary" />
                 {session && session.user.email === answer.author.email && 
@@ -247,7 +247,7 @@ export default function PostsList(props) {
                   avatar={<Avatar alt={props.authorsData.find(author => author.email === answer.author.email).name} src={"/badges/" + props.authorsData.find(author => author.email === answer.author.email).rank.badge + ".svg"} />}
                   size="medium"
                   label={answer.author.name}
-                  variant="outlined"
+                  variant="contained"
                 />
                 <Chip size="medium" label={formatDate(answer.creationDate)} color="secondary" />
                 {(session && session.user.email === answer.author.email) && 

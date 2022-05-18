@@ -40,7 +40,7 @@ export default function DomainSearch() {
   }
 
   return <>
-    <Stack direction="row" alignItems="baseline" spacing={5} justifyContent="center">
+    <Stack sx={{mb: 1}} direction="row" alignItems="baseline" spacing={5} justifyContent="center">
       <TextField 
       id="domainSearch" 
       name="searchTerm" 
@@ -58,13 +58,13 @@ export default function DomainSearch() {
     
 
     {loadingStatus === 404 && 
-      <Typography>Domain data not found</Typography>
+      <Typography align="center">No data found for this domain</Typography>
     }
 
 
     {domainData && domainData.reviews.length !== 0 && 
     <>
-    <Typography align="center" sx={{my:5}}>Total score: {domainData.score > 3 ? <strong style={{color:"green"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>
+    <Typography align="center" sx={{my:5}}>Total score: {domainData.score > 3 ? <strong style={{color:"#52d17b"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>
     <ReviewsList reviews={domainData.reviews}></ReviewsList>
     </>
     }

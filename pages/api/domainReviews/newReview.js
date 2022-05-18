@@ -27,7 +27,7 @@ export default async function handler (req, res) {
         }
       })
       if (foundMatch) {
-        res.status(403).send()
+        res.status(405).send()
         return 1;
       }
 

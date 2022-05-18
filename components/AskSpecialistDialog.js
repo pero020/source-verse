@@ -142,7 +142,7 @@ export default function NewQuestionDialog(props) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <Typography variant="h6">Cost: {props.specialistData.answerCost} {props.specialistData.answerCost === 1 ? "Coin" : "Coins" }</Typography>
+            <Typography variant="body1" color="text.primary">Cost: {props.specialistData.answerCost} {props.specialistData.answerCost === 1 ? "Coin" : "Coins" }</Typography>
             <TextField 
               required
               sx={{width: {md: 500}, mt: 2}} 
