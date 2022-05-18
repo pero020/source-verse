@@ -198,7 +198,7 @@ export default function PostsList(props) {
               <Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
                 <Button onClick={() => handleUpVote(answer._id, index, answer.databaseIndex)}>
-                    <ArrowCircleUpIcon color={votedList[index]===1 ? "secondary" : "primary"} fontSize="large" />
+                    <ArrowCircleUpIcon color={votedList[index]===1 ? "secondary" : "white1"} fontSize="large" />
                 </Button>
                   
                   
@@ -208,7 +208,7 @@ export default function PostsList(props) {
                 </Grid>
                 <Grid item xs={12} container justifyContent={"center"}>
               <Button onClick={() => handleDownVote(answer._id, index, answer.databaseIndex)}>
-                <ArrowCircleUpIcon color={votedList[index]===-1 ? "error" : "primary"} fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
+                <ArrowCircleUpIcon color={votedList[index]===-1 ? "error" : "white1"} fontSize="large" style={{ transform: 'rotate(180deg)' }}/>
               </Button>
                 
 
@@ -221,7 +221,7 @@ export default function PostsList(props) {
             <Grid item xs={10} sx={{overflow: "hidden"}}>
               <ListItemText primary={answer.description} />
               <Stack direction={{xs: "column", md: "row"}} spacing={1} alignItems="flex-start">
-              <Typography variant="caption">Source: <Link href={answer.url}>{answer.url}</Link></Typography>
+              <Typography color="text.secondary" variant="caption">Source: <Link href={answer.url}><a style={{color:"#ffffffaa"}}>{answer.url}</a></Link></Typography>
               {answer.sourceScore ? 
               <Rating name="half-read-only" precision={0.2} value={answer.sourceScore} size="small" readOnly /> : 
               <Rating name="half-read-only" precision={0.2} value={0} size="small" readOnly />}

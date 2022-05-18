@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Typography from '@mui/material/Typography';
 import { Container } from "@mui/material";
 import { Grid } from '@mui/material';
-import { CircularProgress } from "@mui/material"
+import { LinearProgress } from "@mui/material"
 import { Avatar } from '@mui/material';
 import { Rating } from '@mui/material';
 import { Box } from '@mui/system';
@@ -51,7 +51,7 @@ export default function Specialist (props) {
 direction={{xs:'column', md:'row'}}
 justifyContent="space-evenly"
 alignItems={{xs:'center', md:'flex-start'}}
-sx={{mt:{xs:25}, mx: {xs: 2, md: 30}}}
+sx={{mt:{xs: 10, md:25}, mx: {xs: 2, md: 30}}}
 spacing={10}
 >
 
@@ -89,7 +89,7 @@ spacing={10}
           </Box>
           <Box>
             <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Domain Reviews: </Typography>
-            <ReviewsList reviews={specialistData.domainReviews}></ReviewsList>
+            {specialistData.domainReviews.length === 0 ? <Typography>Empty</Typography> : <ReviewsList reviews={specialistData.domainReviews}></ReviewsList>}
           </Box>
 
       </Stack>
@@ -99,7 +99,7 @@ spacing={10}
 
     </>
     :
-    <CircularProgress sx={{color: "secondary.main"}}></CircularProgress>
+    <LinearProgress color="secondary"></LinearProgress>
       }
       
       </>)

@@ -52,8 +52,8 @@ export default function AlertDialog(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>Cancle</Button>
-          <Button onClick={handleDelete}>
+          <Button color="white1" onClick={handleClose} autoFocus>Cancle</Button>
+          <Button color="error" onClick={handleDelete}>
             Delete
           </Button>
         </DialogActions>

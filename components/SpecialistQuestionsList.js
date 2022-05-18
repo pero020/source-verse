@@ -55,7 +55,7 @@ export default function questionsList(props) {
             <Grid item xs={12}>
               <Link underline={"none"} href={"/q&a/private/question/" + question._id}>
                 <Stack direction="row" spacing={1} justifyContent="space-between">
-                    <ListItemText nowrap={"true"} primary={setLength(question.title )} />
+                    <ListItemText sx={{color:"white"}} nowrap={"true"} primary={setLength(question.title )} />
                 </Stack>
               </Link>
                 

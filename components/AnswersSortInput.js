@@ -23,6 +23,8 @@ export default function SelectAutoWidth(props) {
           autoWidth
           label="Sort"
           variant="standard"
+          sx={{color: "white"}}
+          color="secondary"
         >
           <MenuItem value={"date"}>New</MenuItem>
           <MenuItem value={"votes"}>Best</MenuItem>

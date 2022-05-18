@@ -96,7 +96,7 @@ export default function Home() {
       >
 
         <Box sx={{mb:5}} maxWidth={{xs:'70%', md:'25%'}}>
-          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
+          <Lottie isClickToPauseDisabled={true} options={{loop: false, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>
         </Box>
         <Box>
           <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Public Q&A filled only with source-backed solutions.</Typography>

@@ -53,11 +53,12 @@ export default function FormDialog(props) {
             variant="standard"
             value={username}
             onChange={handleChange}
+            color="secondary"
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Submit</Button>
+          <Button color="white1" onClick={handleClose}>Cancel</Button>
+          <Button color="error" onClick={handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     </div>

@@ -67,7 +67,7 @@ export default function QuestionFilters(props) {
             })
             }
           }}
-          renderInput={(params) => <TextField {...params} label="Category" value={formData.title} variant="standard" />}
+          renderInput={(params) => <TextField {...params} label="Category" color="secondary" value={formData.title} variant="standard" />}
         />
         
       </Stack>
@@ -77,7 +77,8 @@ export default function QuestionFilters(props) {
         id="searchTerm" 
         name="searchTerm" 
         label="Search for key words" 
-        variant="standard"
+        variant="standard" 
+        color="secondary"
         sx={{minWidth: {xs: 250}, maxWidth: {md: 500}, mt: 1}}
         value={formData.title}
         onChange={handleChange}

@@ -131,8 +131,8 @@ export default function Post () {
   }
 
   return <>
-  <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-    <Typography variant="h4">{postData.title}</Typography>
+  <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
+    <Typography color="white" variant="h4">{postData.title}</Typography>
     <Stack direction="row" sx={{mt: 2}} spacing={1} justifyContent="left" alignItems="center">
       <div>
       <Chip
@@ -153,7 +153,7 @@ export default function Post () {
       
       </div>
     </Stack>
-    <Typography variant="body1" sx={{my: 2}}>{postData.description}</Typography>
+    <Typography variant="body1" color="white" sx={{my: 2}}>{postData.description}</Typography>
 
     <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{mb: 1}}>
       <AnswersSortInput style={sortParam} sortParam={sortParam} setSortParam={setSortParam} ></AnswersSortInput>

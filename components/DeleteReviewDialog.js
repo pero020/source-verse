@@ -52,8 +52,8 @@ export default function DeletePostDialog(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>Cancel</Button>
-          <Button onClick={deleteItem}>
+          <Button color="white1" onClick={handleClose} autoFocus>Cancel</Button>
+          <Button color="error" onClick={deleteItem}>
             Delete
           </Button>
         </DialogActions>

@@ -133,7 +133,7 @@ export default function NewQuestionDialog(props) {
                 "category": value.label
                 })
               }}
-              renderInput={(params) => <TextField {...params} label="Category" value={formData.title} />}
+              renderInput={(params) => <TextField {...params} label="Category" color="secondary" value={formData.title} />}
             />
             <TextField 
               required
@@ -143,6 +143,7 @@ export default function NewQuestionDialog(props) {
               name="title"
               value={formData.title}
               onChange={handleChange}
+              color="secondary"
             />
             <TextField
               id="outlined-multiline-flexible"
@@ -156,6 +157,7 @@ export default function NewQuestionDialog(props) {
               sx={{width: {md: 500}, mt: 2}}
               value={formData.description}
               onChange={handleChange}
+              color="secondary"
             />
             {/* <UploadImage sx={{mt: 2}}></UploadImage> */}
             
@@ -167,7 +169,7 @@ export default function NewQuestionDialog(props) {
         <DialogActions>
 
           
-          <Button variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
+          <Button color="white1" variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
             Discard
           </Button>
           <Button color="secondary" variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>

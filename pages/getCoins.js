@@ -78,7 +78,7 @@ export default function GetCoins() {
 
 
   return(<>
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
+    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
     <Stack alignItems="center">
       <Typography align="center" variant="h6">The more coins you get, lower the price per coin</Typography>
       <Slider
@@ -91,10 +91,11 @@ export default function GetCoins() {
         valueLabelDisplay="auto"
         marks={marks}
         sx={{maxWidth: 600, mt: 2}}
+        color="white1"
         onChange={handleSliderChange}
       />
       <Typography sx={{mt:2}} align="center" variant="h6">Price: {coinsNum} * {coinCost}$ = {(coinsNum * coinCost).toFixed(1)}$</Typography>
-      <Button sx={{borderRadius: 2, mt:2}} variant="contained" size="large" onClick={handleSubmit}>Buy Coins</Button>
+      <Button sx={{borderRadius: 2, mt:2}} color="secondary" variant="contained" size="large" onClick={handleSubmit}>Buy Coins</Button>
     </Stack>
 
     <Snackbar open={snackbarAddedOpen} autoHideDuration={6000} onClose={handleSnackbarAddedClose}>

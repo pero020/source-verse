@@ -4,8 +4,9 @@ import { alpha } from "@mui/material";
 let theme = createTheme({
 
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#333333',
+      main: '#353C42',
     },
     secondary: {
       main: '#52d17b',
@@ -19,6 +20,7 @@ let theme = createTheme({
     background: {
       container: alpha("#fff", 0.9),
       default: "#2b2b2b",
+      paper: "#363636",
       contrastColor:"#ffffff"
     },
     text: {
@@ -26,6 +28,9 @@ let theme = createTheme({
     },
     green:{
       main:"#52D17B",
+    },
+    white1:{
+      main:"#ffffff",
     }
   },
 });

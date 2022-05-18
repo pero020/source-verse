@@ -49,8 +49,9 @@ export default function DomainSearch() {
       variant="standard"
       onChange={handleChange}
       sx={{minWidth:"50%"}}
+      color="secondary"
       />
-      <Fab color="primary" aria-label="filter" onClick={handleSubmit} size="small">
+      <Fab color="secondary" aria-label="filter" onClick={handleSubmit} size="small">
         <ManageSearchIcon></ManageSearchIcon>
       </Fab>
     </Stack>

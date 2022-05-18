@@ -56,9 +56,7 @@ export default function SpecialistQuestion() {
 
   return <>
     {console.log(questionData)}
-    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'background.container', borderRadius: 2}} >
-    <Stack direction="row" spacing={1} justifyContent="space-between">  
-    </Stack>
+    <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
     <Typography variant="h4">{questionData.title}</Typography>
     <br/>
     <Stack direction="row" spacing={1} justifyContent="left" alignItems="center">
@@ -96,7 +94,7 @@ export default function SpecialistQuestion() {
     <>
     <Divider></Divider>
     <Typography variant="h6">Answer pending...</Typography>
-    <CircularProgress sx={{m: 5}}></CircularProgress>
+    <CircularProgress color="secondary" sx={{m: 5}}></CircularProgress>
     </>
     }
 

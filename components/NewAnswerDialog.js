@@ -145,6 +145,7 @@ export default function NewAnswerDialog(props) {
               sx={{width: {md: 500}, mt: 1}}
               value={formData.description}
               onChange={handleChange}
+              color="secondary"
             />
 
             <TextField 
@@ -156,6 +157,7 @@ export default function NewAnswerDialog(props) {
               name="url"
               value={formData.url}
               onChange={handleChange}
+              color="secondary"
             />        
 
           </DialogContentText>
@@ -165,7 +167,7 @@ export default function NewAnswerDialog(props) {
         <DialogActions>
 
           
-          <Button variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
+          <Button color="white1" variant="outlined" onClick={handleClose} startIcon={<DeleteIcon />}>
             Discard
           </Button>
           <Button color="secondary" variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>

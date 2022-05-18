@@ -221,7 +221,7 @@ export default function DemoProgressBar() {
       </TabPanel>
 
       <TabPanel value={value} index={2}>
-      <Container maxWidth="md" sx={{mt: 2, px:2, py:3, bgcolor: 'white', borderRadius: 2}}>
+      <Container maxWidth="md" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}}>
         <DomainSearch></DomainSearch>
         </Container>
       </TabPanel>

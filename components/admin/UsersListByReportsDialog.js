@@ -52,7 +52,7 @@ export default function FullScreenDialog() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen} sx={{mt: 1}}>
+      <Button color="white1" variant="outlined" onClick={handleClickOpen} sx={{mt: 1}}>
         List of Users by Reports
       </Button>
       <Dialog

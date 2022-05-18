@@ -94,6 +94,7 @@ export default function NewDomainReviewForm() {
   name="url"
   value={formData.url}
   onChange={handleChange}
+  color="secondary"
   />
   <TextField
   id="outlined-multiline-flexible"
@@ -107,6 +108,7 @@ export default function NewDomainReviewForm() {
   sx={{width: {md: 500}, mt: 2}}
   value={formData.description}
   onChange={handleChange}
+  color="secondary"
   />
   <Slider
   sx={{width: 250}}
@@ -116,6 +118,7 @@ export default function NewDomainReviewForm() {
   min={1}
   max={5}
   step={0.1}
+  color="white1"
   marks={[
     {
       value: 1,

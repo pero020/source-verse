@@ -75,7 +75,7 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button color="white1" variant="outlined" onClick={handleClickOpen}>
         Change User Role
       </Button>
       <Dialog open={open} onClose={handleClose}>
@@ -92,6 +92,7 @@ export default function FormDialog() {
             fullWidth
             variant="standard"
             name="email"
+            color="secondary"
             value={formData.email}
             onChange={handleChange}
             sx={{mb:2}}
@@ -107,6 +108,7 @@ export default function FormDialog() {
             label="role"
             onChange={handleChange}
             sx={{minWidth: 100}}
+            color="secondary"
           >
             <MenuItem value="user">User</MenuItem>
             <MenuItem value="specialist">Specialist</MenuItem>
@@ -114,8 +116,8 @@ export default function FormDialog() {
           </Select>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Change</Button>
+          <Button color="white1" onClick={handleClose}>Cancel</Button>
+          <Button color="error" onClick={handleSubmit}>Change</Button>
         </DialogActions>
       </Dialog>
     </div>
