@@ -76,11 +76,12 @@ export default function Learn() {
 
     <Stack
     direction={{md:'row', xs:'column'}}
-    justifyContent={{md:'flex-start', xs:'center'}}
+    justifyContent={{md:'space-between', xs:'center'}}
     alignItems="center"
     mx={{xs:2,md:18}}
     mt={{xs:5, md:8}}
     >
+    <Stack direction={{xs: "column", md: "row"}} alignItems={"center"}>
       <Box>
       <Image src="/images/pp.png" width="200" height="200" minWidth="100" minHeight="100" title="Welcome to Community!"></Image>
       </Box>
@@ -96,14 +97,14 @@ export default function Learn() {
             </Box>
 
       </Stack>
+      </Stack>
 
       <Stack
       direction="row"
       justifyContent="flex-end"
       alignItems="baseline"
       spacing={3}
-      mt={{md:1,xs:5}}
-      ml={{md:80}}>
+      mt={{md:1,xs:5}}>
 
       <Box>
         <a href="https://www.linkedin.com/in/petar-przic-1b682817a/"><Image src="/images/linkedIN.png" width="30" height="30" title="LinkedIN"></Image></a>
@@ -122,11 +123,13 @@ export default function Learn() {
 
     <Stack
     direction={{md:'row', xs:'column'}}
-    justifyContent={{md:'flex-start', xs:'center'}}
+    justifyContent={{md:'space-between', xs:'center'}}
     alignItems="center"
     mx={{xs:2,md:18}}
     mt={{xs:5, md:8}}
     >
+      <Box>
+      <Stack direction={{xs: "column", md: "row"}} alignItems={"center"}>
       <Box>
       <Image src="/images/rr.png" width="200" height="200" title="Welcome to Community!"></Image>
       </Box>
@@ -136,20 +139,21 @@ export default function Learn() {
       justifyContent="flex-start"
       alignItems="center">
 
-            <Box>
-            <Typography variant="h4" mt={{md:-2, xs:5}} ml={{md:10, xs:5}} sx={{color:"background.contrastColor"}}>Renato Rak</Typography>
-            <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Front-End Development</Typography>
-            </Box>
+        <Box>
+        <Typography variant="h4" mt={{md:-2, xs:5}} ml={{md:10, xs:5}} sx={{color:"background.contrastColor"}}>Renato Rak</Typography>
+        <Typography variant="h5" mt={{md:3, xs:5}} ml={{md:10}} sx={{color:"text.softWhite"}}>Front-End Development</Typography>
+        </Box>
 
       </Stack>
+      </Stack>
+      </Box>
 
       <Stack
       direction="row"
       justifyContent="flex-end"
       alignItems="baseline"
       spacing={3}
-      mt={{md:1,xs:5}}
-      ml={{md:80}}>
+      mt={{md:1,xs:5}}>
 
       <Box>
         <a href="https://www.linkedin.com/in/renato-rak-bb8895237/"><Image src="/images/linkedIN.png" width="30" height="30" title="LinkedIN"></Image></a>
@@ -167,11 +171,12 @@ export default function Learn() {
 
     <Stack
     direction={{md:'row', xs:'column'}}
-    justifyContent={{md:'flex-start', xs:'center'}}
+    justifyContent={{md:'space-between', xs:'center'}}
     alignItems="center"
     mx={{xs:2,md:18}}
     mt={{xs:5, md:8}}
     >
+    <Stack direction={{xs: "column", md: "row"}} alignItems={"center"}>
       <Box>
       <Image src="/images/ik.png" width="200" height="200" title="Welcome to Community!"></Image>
       </Box>
@@ -187,14 +192,14 @@ export default function Learn() {
             </Box>
 
       </Stack>
+      </Stack>
 
       <Stack
       direction="row"
       justifyContent="flex-end"
       alignItems="baseline"
       spacing={3}
-      mt={{md:1,xs:5}}
-      ml={{md:76}}>
+      mt={{md:1,xs:5}}>
 
       <Box>
         <a href="https://www.linkedin.com/in/ivan-kuli%C4%87-37b27a22a/"><Image src="/images/linkedIN.png" width="30" height="30" title="LinkedIN"></Image></a>
