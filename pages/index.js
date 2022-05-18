@@ -1,13 +1,7 @@
-import { LogoDev } from "@mui/icons-material";
 import { useSession } from "next-auth/react"
-import Image from "next/image";
-import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import Demo from "/components/indexDemo/Demo"
 import React from 'react';
-import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
-import { Chip } from "@mui/material";
 import Lottie from 'react-lottie'
 import exampleAnimationData from '/public/lotties/animacija';
 import trophy from '/public/lotties/trophy';
@@ -15,8 +9,6 @@ import specialist from '/public/lotties/specialist';
 import information from '/public/lotties/information';
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
-import { positions } from '@mui/system';
-import { BottomNavigation } from "@mui/material";
 import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
 

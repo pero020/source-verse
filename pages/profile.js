@@ -7,19 +7,14 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid'
 import PostsList from "/components/PostsList"
 import Typography from '@mui/material/Typography';
-import { Container, ListItemSecondaryAction } from "@mui/material";
+import { Container } from "@mui/material";
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
-import { Button, IconButton } from "@mui/material";
+import { Button } from "@mui/material";
 import ReviewsList from "/components/ReviewsList"
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress'
-import { Chip } from '@mui/material'
 import styled from "@emotion/styled";
-import EditIcon from '@mui/icons-material/Edit';
-import Lottie from 'react-lottie'
-import coin from '/public/lotties/coin';
 
 import EditUsernameDialog from "/components/profile/EditUsernameDialog"
 import SpecialistQuestionsList from "/components/SpecialistQuestionsList"

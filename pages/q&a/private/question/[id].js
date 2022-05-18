@@ -2,13 +2,11 @@ import {useState, useEffect} from "react"
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
 
-import { Avatar, CircularProgress, ListItemSecondaryAction, Typography } from '@mui/material'
-import { Grid } from '@mui/material'
+import {CircularProgress, Typography } from '@mui/material'
+
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import { Button } from "@mui/material";
 import { Container, Divider } from "@mui/material";
-import { Box } from "@mui/system";
 import { LinearProgress} from "@mui/material"
 
 import AnswerSpecialistQuestionDialog from "/components/AnswerSpecialistQuestionDialog"

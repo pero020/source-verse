@@ -5,16 +5,9 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
 import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import NewAnswerDialog from '/components/NewAnswerDialog';
-import NewQuestionDialog from '/components/NewQuestionDialog';
-import Send from '@mui/icons-material/Send';
-import DeleteIcon from '@mui/icons-material/Delete';
 import DomainSearch from "./DomainSearch"
 import { List, ListItem } from '@mui/material';
 import { Stack } from '@mui/material';
-import Link from 'next/link'
 import Button from '@mui/material/Button';
 
 function TabPanel(props) {

@@ -56,10 +56,6 @@ export default async function updateRank(score, currBadge, session) {
     }
   } 
 
-
-
-
-
   if (newBadge) {
     try {
       if (!session) {

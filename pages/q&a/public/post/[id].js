@@ -1,16 +1,12 @@
 import { useSession } from "next-auth/react"
 import Router from 'next/router'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Avatar, ListItemSecondaryAction, Typography } from '@mui/material'
+import { Avatar, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
-import { CircularProgress, LinearProgress } from "@mui/material"
-import { Grid } from '@mui/material'
+import { LinearProgress } from "@mui/material"
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import { Button } from "@mui/material";
 import { Container } from "@mui/material";
-import { Box } from "@mui/system";
 
 import AnswersList from "/components/AnswersList"
 import NewAnswerDialog from "/components/NewAnswerDialog"

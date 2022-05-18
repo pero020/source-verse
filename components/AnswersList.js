@@ -1,6 +1,5 @@
 import { useSession } from "next-auth/react"
 import { useState, useEffect } from "react"
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -9,9 +8,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Image from 'next/image';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
-import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleUp';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Rating } from '@mui/material';

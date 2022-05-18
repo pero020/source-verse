@@ -1,17 +1,13 @@
 import Router from 'next/router'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
-import Image from 'next/image';
 import Typography from '@mui/material/Typography';
-import { Container } from "@mui/material";
-import { Grid } from '@mui/material';
 import { LinearProgress } from "@mui/material"
 import { Avatar } from '@mui/material';
 import { Rating } from '@mui/material';
 import { Box } from '@mui/system';
 import * as React from 'react';
 import { Stack } from '@mui/material';
-import { Button } from '@mui/material';
 import ReviewsList from "/components/ReviewsList"
 import AskSpecialistDialog from "/components/AskSpecialistDialog"
 
