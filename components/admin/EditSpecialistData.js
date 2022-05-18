@@ -84,8 +84,8 @@ export default function EditSpecialistData() {
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogContent>
-          <DialogContentText>
-            Edit the data
+          <DialogContentText sx={{color: "white"}}>
+            Edit the category and answer cost data
           </DialogContentText>
           <TextField
             autoFocus
@@ -129,7 +129,7 @@ export default function EditSpecialistData() {
         </DialogContent>
         <DialogActions>
           <Button color="white1" onClick={handleClose}>Cancel</Button>
-          <Button color="error" onClick={handleSubmit}>Change</Button>
+          <Button color="success" onClick={handleSubmit}>Change</Button>
         </DialogActions>
       </Dialog>
     </div>

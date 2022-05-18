@@ -118,9 +118,9 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
         
-        {isMobile == 0 ? <Box>
-        <Image width="28" height="28" style={{borderRadius: 5}} src={'/images/Logo.svg'} />
-        </Box> : null}
+        <Box sx={{display: {xs:"none", md:"inline"}}}>
+          <Image width="28" height="28" style={{borderRadius: 5}} src={'/images/logo.png'} />
+        </Box>
           
         <Link href="/">
           <Typography
@@ -171,15 +171,15 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          {/* {isMobile == 1 ? <Box sx={{mr:1}}>
-          <Image width="24" height="24" style={{borderRadius: 5}} src={'/images/Logo.svg'} />
-          </Box> : null} */}
+          {/* <Box sx={{display: {xs:"inline", md:"none"}, mr:1 }}>
+            <Image width="28" height="28" style={{borderRadius: 5}} src={'/images/logo.png'} />
+          </Box> */}
           <Link href="/">
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}
           >
             SourceVerse
           </Typography>
