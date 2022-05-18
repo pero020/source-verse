@@ -87,7 +87,7 @@ export default function Home() {
       direction={{xs:'column', md:'row'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{mt:{xs: 0, md: 10}}}
+      sx={{my:{xs: 0, md: 10}}}
       mx={{xs:2}}
       >
 
