@@ -1,8 +1,7 @@
-import Router from 'next/router'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
 import Typography from '@mui/material/Typography';
-import { LinearProgress } from "@mui/material"
+import { LinearProgress, Container } from "@mui/material"
 import { Avatar } from '@mui/material';
 import { Rating } from '@mui/material';
 import { Box } from '@mui/system';
@@ -42,12 +41,12 @@ export default function Specialist (props) {
       {specialistData ?
       <>
 
-
+      <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor:"primary.main", borderRadius: 2}} >
     <Stack
 direction={{xs:'column', md:'row'}}
 justifyContent="space-evenly"
-alignItems={{xs:'center', md:'flex-start'}}
-sx={{mt:{xs: 10, md:25}, mx: {xs: 2, md: 30}}}
+alignItems={{xs:'center', md:'center'}}
+sx={{my:{xs: 10, md:20}, mx: {xs: 2, md: 30}}}
 spacing={10}
 >
 
@@ -85,14 +84,14 @@ spacing={10}
           </Box>
           <Box>
             <Typography variant="h4" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mb: 2}}>Domain Reviews: </Typography>
-            {specialistData.domainReviews.length === 0 ? <Typography>Empty</Typography> : <ReviewsList reviews={specialistData.domainReviews}></ReviewsList>}
+            {specialistData.domainReviews.length === 0 ? <Typography sx={{mt: 2}} variant="h6">No reviews yet!</Typography> : <ReviewsList reviews={specialistData.domainReviews}></ReviewsList>}
           </Box>
 
       </Stack>
 
 
 </Stack>
-
+    </Container>
     </>
     :
     <LinearProgress color="secondary"></LinearProgress>

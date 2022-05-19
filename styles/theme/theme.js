@@ -21,7 +21,8 @@ let theme = createTheme({
       contrastColor:"#ffffff"
     },
     text: {
-      softWhite: alpha("#fff", 0.9)
+      softWhite: alpha("#fff", 0.9),
+      secondary: alpha("#fff", 0.85)
     },
     green:{
       main:"#52D17B",

@@ -1,26 +1,13 @@
-import { LogoDev } from "@mui/icons-material";
-import { useSession } from "next-auth/react"
 import Image from "next/image";
-import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import Demo from "/components/indexDemo/Demo"
 import React from 'react';
-import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
-import { Chip } from "@mui/material";
-import Lottie from 'react-lottie'
-import exampleAnimationData from '/public/lotties/animacija';
-import trophy from '/public/lotties/trophy';
-import specialist from '/public/lotties/specialist';
-import information from '/public/lotties/information';
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
-import { positions } from '@mui/system';
-import { BottomNavigation } from "@mui/material";
-import { Button } from "@mui/material";
-import { Divider } from "@mui/material";
 import ColorsTimeline from "../components/timeline"
-import { sizing } from '@mui/system';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 
 
@@ -104,16 +91,17 @@ export default function Learn() {
       justifyContent="flex-end"
       alignItems="baseline"
       spacing={3}
+      ml={2}
       mt={{md:1,xs:5}}>
 
       <Box>
-        <a href="https://www.linkedin.com/in/petar-przic-1b682817a/"><Image src="/images/linkedIN.png" width="30" height="30" title="LinkedIN"></Image></a>
+        <a href="https://www.linkedin.com/in/petar-przic-1b682817a/"><LinkedInIcon color="white1"></LinkedInIcon></a>
       </Box>
       <Box>
-        <a href="https://github.com/pero020"><Image src="/images/git.png" width="30" height="30" title="GitHub"></Image></a>
+        <a href="https://github.com/pero020"><GitHubIcon color="white1"></GitHubIcon></a>
       </Box>
       <Box>
-        <Image src="/images/mail.png" width="43" height="30" title="petar.przic1@gmail.com"></Image>
+      <a href="https://www.instagram.com/source_verse/"><InstagramIcon color="white1"></InstagramIcon></a>
       </Box>
 
       </Stack>
@@ -126,6 +114,7 @@ export default function Learn() {
     justifyContent={{md:'space-between', xs:'center'}}
     alignItems="center"
     mx={{xs:2,md:18}}
+    ml={2}
     mt={{xs:5, md:8}}
     >
       <Box>
@@ -153,16 +142,17 @@ export default function Learn() {
       justifyContent="flex-end"
       alignItems="baseline"
       spacing={3}
+      ml={2}
       mt={{md:1,xs:5}}>
 
       <Box>
-        <a href="https://www.linkedin.com/in/renato-rak-bb8895237/"><Image src="/images/linkedIN.png" width="30" height="30" title="LinkedIN"></Image></a>
+        <a href="https://www.linkedin.com/in/renato-rak-bb8895237/"><LinkedInIcon color="white1"></LinkedInIcon></a>
       </Box>
       <Box>
-        <a href="https://github.com/RennSter20"><Image src="/images/git.png" width="30" height="30" title="GitHub"></Image></a>
+        <a href="https://github.com/RennSter20"><GitHubIcon color="white1"></GitHubIcon></a>
       </Box>
       <Box>
-        <Image src="/images/mail.png" width="43" height="30" title="renatorak20@gmail.com"></Image>
+        <a href="https://www.instagram.com/source_verse/"><InstagramIcon color="white1"></InstagramIcon></a>
       </Box>
 
       </Stack>
@@ -199,16 +189,17 @@ export default function Learn() {
       justifyContent="flex-end"
       alignItems="baseline"
       spacing={3}
+      ml={2}
       mt={{md:1,xs:5}}>
 
       <Box>
-        <a href="https://www.linkedin.com/in/ivan-kuli%C4%87-37b27a22a/"><Image src="/images/linkedIN.png" width="30" height="30" title="LinkedIN"></Image></a>
+        <a href="https://www.linkedin.com/in/ivan-kuli%C4%87-37b27a22a/"><LinkedInIcon color="white1"></LinkedInIcon></a>
       </Box>
       <Box>
-        <a href="https://github.com/1vankulic"><Image src="/images/git.png" width="30" height="30" title="Welcome to Community!"></Image></a>
+        <a href="https://github.com/1vankulic"><GitHubIcon color="white1"></GitHubIcon></a>
       </Box>
       <Box>
-        <Image src="/images/mail.png" width="43" height="30" title="kulicivan543@gmail.com"></Image>
+      <a href="https://www.instagram.com/source_verse/"><InstagramIcon color="white1"></InstagramIcon></a>
       </Box>
 
       </Stack>

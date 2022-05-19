@@ -177,7 +177,7 @@ export default function NewQuestionDialog(props) {
         </DialogActions>
       </Dialog>
 
-      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
           Please provide all of the required informaion
         </Alert>
@@ -188,7 +188,6 @@ export default function NewQuestionDialog(props) {
 
 const categories = [
   {label: "General"},
-  {label: "Hobbies"},
   {label: "Art"},
   {label: "Animals"},
   {label: "Business"},
@@ -198,6 +197,7 @@ const categories = [
   {label: "Math"},
   {label: "Natural Sciences"},
   {label: "Social Sciences"},
+  {label: "Hobbies"},
   {label: "Music"},
   {label: "Travel"},
   {label: "Self Improvement"},

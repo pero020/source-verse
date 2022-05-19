@@ -25,6 +25,9 @@ export default function FormDialog(props) {
   };
 
   const handleSubmit = async () => {
+    if (title == "") {
+      return 1
+    }
     const res = await fetch("/api/profile/updateTitle/" + title)
     if (!res.ok) {
       console.log(res)
@@ -40,7 +43,7 @@ export default function FormDialog(props) {
       <IconButton fontSize="small" onClick={handleClickOpen} sx={{display: "inline"}} color="secondary" aria-label="upload picture" component="span">
         <EditIcon />
       </IconButton>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>Change Title to:</DialogTitle>
         <DialogContent>
           <TextField
@@ -50,6 +53,7 @@ export default function FormDialog(props) {
             label="Title"
             name="title"
             fullWidth
+            mibWidth="sm"
             variant="standard"
             value={title}
             onChange={handleChange}

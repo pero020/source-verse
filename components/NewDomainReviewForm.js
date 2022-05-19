@@ -149,17 +149,17 @@ export default function NewDomainReviewForm() {
   </Button>
   </Stack>
 
-  <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+  <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
     <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
       Please provide all of the required informaion
     </Alert>
   </Snackbar>
-  <Snackbar open={snackbarHaveOpen} autoHideDuration={6000} onClose={handleSnackbarHaveClose}>
+  <Snackbar open={snackbarHaveOpen} autoHideDuration={6000} onClose={handleSnackbarHaveClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
     <Alert onClose={handleSnackbarHaveClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
       Already submitted a review for this domain!
     </Alert>
   </Snackbar>
-  <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose}>
+  <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
     <Alert onClose={handleSnackbarUrlClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
     Please only provide the top level domain name, example: "facebook.com"
     </Alert>

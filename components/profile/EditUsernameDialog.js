@@ -25,6 +25,9 @@ export default function FormDialog(props) {
   };
 
   const handleSubmit = async () => {
+    if (username == "") {
+      return 1
+    }
     const res = await fetch("/api/profile/updateUsername/" + username)
     if (!res.ok) {
       console.log(res)

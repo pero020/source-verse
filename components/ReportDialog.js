@@ -90,12 +90,12 @@ export default function DeletePostDialog(props) {
           </Button>
         </DialogActions>
       </Dialog>
-      <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleSnackbarClose}>
+      <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleSnackbarClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarClose} severity="info" sx={{ width: '100%' }}>
           User already reported!
         </Alert>
       </Snackbar>
-      <Snackbar open={snackbarSuccOpen} autoHideDuration={3000} onClose={handleSnackbarSuccClose}>
+      <Snackbar open={snackbarSuccOpen} autoHideDuration={3000} onClose={handleSnackbarSuccClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarSuccClose} severity="success" sx={{ width: '100%' }}>
           User Successfully reported!
         </Alert>

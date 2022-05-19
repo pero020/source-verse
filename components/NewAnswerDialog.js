@@ -174,12 +174,12 @@ export default function NewAnswerDialog(props) {
         </DialogActions>
       </Dialog>
 
-      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
           Please provide all of the required informaion
         </Alert>
       </Snackbar>
-      <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose}>
+      <Snackbar open={snackbarUrlOpen} autoHideDuration={6000} onClose={handleSnackbarUrlClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarUrlClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
         Please provide a full URL, including "https://"
         </Alert>

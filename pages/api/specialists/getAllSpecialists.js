@@ -7,7 +7,7 @@ export default async function handler (req, res) {
 
   try {
 
-    let specialists = await db.collection("users").find({ "role": "specialist" }).toArray();
+    let specialists = await db.collection("users").find({ "role": "specialist" }).sort({"domainReviewsScore": -1}).toArray();
     res.status(200).json(specialists)
 
   } catch (e) {

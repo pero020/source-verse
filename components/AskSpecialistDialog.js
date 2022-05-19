@@ -108,7 +108,6 @@ export default function NewQuestionDialog(props) {
     })
     if (res.status === 405) {
       setSnackbarCoinsOpen(true)
-      handleClose();
       return 1
     }
     if (!res.ok) {
@@ -123,7 +122,7 @@ export default function NewQuestionDialog(props) {
 
   return (
     <div>
-      <Button onClick={handleClickOpen} variant="contained" color="secondary" size="large" sx={{color:"background.contrastColor"}}>
+      <Button onClick={handleClickOpen} variant="contained" color="secondary" size="large">
         Ask me!
       </Button>
       <Dialog
@@ -137,7 +136,7 @@ export default function NewQuestionDialog(props) {
           Ask {props.specialistData.name} a question
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText> 
             <Typography variant="body1" color="text.primary">Cost: {props.specialistData.answerCost} {props.specialistData.answerCost === 1 ? "Coin" : "Coins" }</Typography>
             <TextField 
               required
@@ -183,12 +182,12 @@ export default function NewQuestionDialog(props) {
         </DialogActions>
       </Dialog>
 
-      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+      <Snackbar open={snackbarMissOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarMissClose} severity="warning" sx={{ width: '100%', backgroundColor: 'error.main' }}>
           Please provide all of the required informaion
         </Alert>
       </Snackbar>
-      <Snackbar open={snackbarCoinsOpen} autoHideDuration={6000} onClose={handleSnackbarMissClose}>
+      <Snackbar open={snackbarCoinsOpen} autoHideDuration={6000} onClose={handleSnackbarCoinsClose} anchorOrigin={{vertical: "bottom", horizontal: "center"}} sx={{ minWidth: "50%" }}>
         <Alert onClose={handleSnackbarCoinsClose} severity="error" sx={{ width: '100%', backgroundColor: 'error.main' }}>
           Not enough Coins
         </Alert>

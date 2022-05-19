@@ -169,16 +169,16 @@ export default function Profile(props) {
         <Avatar alt="" src={userData.image} sx={{ width: 175, height: 175 }}/><br/>
         <Stack direction="row" sx={{ml:3}} alignItems="center">
           <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.name}</Typography>
-          <EditTitleDialog getProfileData={getProfileData}></EditTitleDialog>
+          <EditUsernameDialog getProfileData={getProfileData}></EditUsernameDialog>
         </Stack>
-        <Typography sx={{mb:2}} variant="h5" color="background.contrastColor">{userData.email}</Typography>
+        <Typography sx={{mb:2}} variant="h5" color="text.secondary">{userData.email}</Typography>
         {userData.role === "specialist" &&
         <Stack direction="column" sx={{mb:2}} alignItems="center" justifyContent="center">
           <Stack direction="row" sx={{ml:3}} alignItems="center" >
           <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">Title:</Typography>
           <EditTitleDialog getProfileData={getProfileData}></EditTitleDialog>
           </Stack>
-          <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">{userData.title}</Typography>
+          <Typography sx={{display: "inline"}} align="center" variant="h5" color="text.secondary">{userData.title}</Typography>
           
           
         </Stack>}
@@ -204,7 +204,7 @@ export default function Profile(props) {
             <BorderLinearProgress size={10} sx={{mb:1}} color="secondary" variant="determinate" value={updateMax()}/>
           </Box>
           <Box>
-            <Typography color="background.contrastColor">{leftToGo() === 1 ? leftToGo() + " point until the next rank!" : leftToGo() + " points until the next rank!"}</Typography>
+            <Typography color="text.secondary">{leftToGo() === 1 ? leftToGo() + " point until the next rank!" : leftToGo() + " points until the next rank!"}</Typography>
           </Box>
           
         <StatsDialog userData={userData}></StatsDialog>
@@ -220,7 +220,7 @@ export default function Profile(props) {
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Your Domain Reviews</Typography>
           <ReviewsList reviews={userData.domainReviews} getProfileData={getProfileData}></ReviewsList>
         </Box> :
-        <Typography variant="h5" color="background.contrastColor">You don't have any Reviews yet!</Typography>
+        <Typography sx={{mt:2}} variant="h6" color="text.secondary">You don't have any Reviews yet!</Typography>
         )
         }
         {specialistQuestions && session.role === "specialist" &&
@@ -229,7 +229,7 @@ export default function Profile(props) {
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Specialist Questions to answer</Typography>
           <SpecialistQuestionsList questions={specialistQuestions.filter(question => !question.answered)}></SpecialistQuestionsList>
         </Box> :
-        <Typography variant="h5" color="background.contrastColor">No Specialist Questions yet!</Typography>
+        <Typography sx={{mt:2}} color="text.secondary" variant="h6">No Specialist Questions yet!</Typography>
         )
         }
         {specialistQuestions && session.role !== "specialist" &&
@@ -238,7 +238,7 @@ export default function Profile(props) {
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Specialist Questions</Typography>
           <SpecialistQuestionsList questions={specialistQuestions}></SpecialistQuestionsList>
         </Box> :
-        <Typography variant="h5" color="background.contrastColor">No Specialist Questions yet!</Typography>
+        <Typography sx={{mt:2}} color="text.secondary" variant="h6">No Specialist Questions yet!</Typography>
         )
         }
       </Grid>

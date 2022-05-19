@@ -28,6 +28,9 @@ export default async function handler (req, res) {
         $pull: 
         { "domainReviews": 
           { "url": url }
+        },
+        $inc: {
+          "domainReviewsScore": -1
         }
       } 
     );

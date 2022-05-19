@@ -1,12 +1,9 @@
 import { useSession } from "next-auth/react"
 import { Typography } from "@mui/material";
-import Demo from "/components/indexDemo/Demo"
 import React from 'react';
-import { Paper } from "@mui/material";
 import { Container } from "@mui/material";
 import Lottie from 'react-lottie'
 import exampleAnimationData from '/public/lotties/animacija';
-import trophy from '/public/lotties/trophy';
 import specialist from '/public/lotties/specialist';
 import bronze from '/public/lotties/bronze';
 import information from '/public/lotties/information';
@@ -21,10 +18,11 @@ import Link from "next/link"
 
 
 export default function Home() {
+  const { data: session } = useSession()
   
     return <>
     <Container maxWidth="xl" disableGutters={true} sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
-    {status === "authenticated" &&
+    {session &&
     <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
       <Stack
       justifyContent="center"
@@ -92,7 +90,6 @@ export default function Home() {
       >
 
         
-          {/*<Image src="/ranks.png" width="2328" height="566"></Image><Lottie isClickToPauseDisabled={true} options={{loop: false, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: trophy,}}/>*/}
           <Stack
       direction="row"
       justifyContent="space-evenly"
@@ -113,8 +110,8 @@ export default function Home() {
           </Stack>
 
         <Box sx={{mt:{xs:5}}}>
-          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'400px'}}>Browse our Public Q&A filled only with source-backed solutions.</Typography>
-          <Typography variant="h4" sx={{color:"text.softWhite",maxWidth:'400px'}}><Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h4" color="text.secondary" sx={{ maxWidth:'400px'}}>Browse our Public Q&A filled only with source-backed solutions.</Typography>
+          <Typography variant="h4" color="text.secondary" sx={{ maxWidth:'400px'}}><Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', color:'black', display:'inline'}}>Climb the Ranks</Typography> and display them on Your profile.</Typography>
         </Box>
         
       </Stack>
@@ -154,7 +151,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
+          <Typography variant="h4" color="text.secondary" sx={{maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
         <Box maxWidth={{md:'25%', xs:'100%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
@@ -197,7 +194,7 @@ export default function Home() {
         mx={{xs:2}}
         >
           <Box>
-            <Typography variant="h4" sx={{color:"text.softWhite", maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
+            <Typography variant="h4" color="text.secondary" sx={{maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
           <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
             <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
@@ -240,8 +237,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>1. Why are we here?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Typography variant="h5" >1. Why are we here?</Typography>
+      <Typography variant="h6" color="text.secondary">Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -250,8 +247,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>2. Where should I start?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
+      <Typography variant="h5" >2. Where should I start?</Typography>
+      <Typography variant="h6" color="text.secondary">Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -260,8 +257,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>3. What Google data are you using?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
+      <Typography variant="h5" >3. What Google data are you using?</Typography>
+      <Typography variant="h6" color="text.secondary">We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -270,8 +267,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>4. How do I rank up?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
+      <Typography variant="h5">4. How do I rank up?</Typography>
+      <Typography variant="h6" color="text.secondary">You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
     </Stack>
     <Stack
     direction="column"
@@ -280,8 +277,8 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" sx={{color:"background.contrastColor"}}>5. Want to become a specialist?</Typography>
-      <Typography variant="h6" sx={{color:"text.softWhite"}}>Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
+      <Typography variant="h5">5. Want to become a specialist?</Typography>
+      <Typography variant="h6" color="text.secondary">Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
     </Stack>
   </Stack>
   </Container>

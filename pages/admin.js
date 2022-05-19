@@ -20,7 +20,7 @@ export default function Admin() {
 
   return <>
   <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
-    <Typography variant="h4">Admin</Typography>
+    <Typography sx={{mb: 2}} variant="h4">Admin</Typography>
     <ChangeUserRole></ChangeUserRole>
     <UsersListByReportsDialog></UsersListByReportsDialog>
     <EditSpecialistData></EditSpecialistData>

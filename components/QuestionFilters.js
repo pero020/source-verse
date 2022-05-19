@@ -104,7 +104,6 @@ export default function QuestionFilters(props) {
 
 const categories = [
   {label: "General"},
-  {label: "Hobbies"},
   {label: "Art"},
   {label: "Animals"},
   {label: "Business"},
@@ -114,6 +113,7 @@ const categories = [
   {label: "Math"},
   {label: "Natural Sciences"},
   {label: "Social Sciences"},
+  {label: "Hobbies"},
   {label: "Music"},
   {label: "Travel"},
   {label: "Self Improvement"},
