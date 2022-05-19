@@ -33,6 +33,15 @@ export default async function handler (req, res) {
         }
       }
     )
+
+    let setspeciaistQ = await db.collection("users").updateOne(
+      {"email": session.user.email},
+      {
+        $inc: {
+          coins: specialistData.answerCost
+        }
+      }
+    )
     
     let newQuestion = await db.collection("specialistQuestions").insertOne(
       {

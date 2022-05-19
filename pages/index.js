@@ -42,7 +42,7 @@ export default function Home() {
   <Container maxWidth="xl" disableGutters={true} >
       <Stack
       direction={{md:'row', xs:'column'}}
-      justifyContent="space-between"
+      justifyContent="space-evenly"
       alignItems="center"
       sx={{mt:{xs: 5, md: 15}}}
       mx={{xs:2}}
@@ -51,7 +51,7 @@ export default function Home() {
           <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions <br/>to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
         </Box>
         
-        <Box maxWidth={{md:'25%', xs:'100%'}} ml={{xs:-5}}>
+        <Box maxWidth={{md:'35%', xs:'100%'}} ml={{xs:-5}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: exampleAnimationData,}}/>
         </Box>
         
@@ -98,13 +98,13 @@ export default function Home() {
       sx={{mt:{xs:5}}}
       >
 
-<Box maxWidth={{xs:'70%', md:'40%'}}>
+          <Box maxWidth={{xs:'50%', md:'25%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: bronze}}/>
           </Box>
-          <Box maxWidth={{xs:'70%', md:'40%'}}>
+          <Box maxWidth={{xs:'50%', md:'25%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: silver}}/>
           </Box>
-          <Box maxWidth={{xs:'70%', md:'40%'}}>
+          <Box maxWidth={{xs:'50%', md:'25%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: gold}}/>
           </Box>
           </Stack>
@@ -153,7 +153,7 @@ export default function Home() {
         <Box>
           <Typography variant="h4" color="text.secondary" sx={{maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
         </Box>
-        <Box maxWidth={{md:'25%', xs:'100%'}}>
+        <Box maxWidth={{md:'35%', xs:'100%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
         </Box>
 
@@ -196,7 +196,7 @@ export default function Home() {
           <Box>
             <Typography variant="h4" color="text.secondary" sx={{maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
           </Box>
-          <Box maxWidth={{md:'25%', xs:'100%'}} mr={{xs: 2}}>
+          <Box maxWidth={{md:'35%', xs:'100%'}} mr={{xs: 2}}>
             <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
           </Box>
         </Stack>
@@ -206,7 +206,7 @@ export default function Home() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      mt={{xs:0, md:10}}>
+      mt={{xs:0, md:0}}>
 
           <Button variant="contained" color="secondary" size="large" href="/learn">
             Guide
