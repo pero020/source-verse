@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import { ButtonBase } from "@mui/material";
+import { width } from "@mui/system";
+
 
 
 
@@ -92,6 +94,9 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function Forum() {
 
+
+  
+
   function detectMob() {
     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 1000 ) );
   }
@@ -109,11 +114,12 @@ if(isMobile)
             width: image.width,
           }}
           href={image.link}
+          
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
-          <ImageBackdrop className="MuiImageBackdrop-root" />
+          <ImageBackdrop className="MuiImageBackdrop-root"  />
           
-          <Image>
+          <Image >
             <Typography
               component="span"
               variant="subtitle1"
@@ -134,20 +140,27 @@ if(isMobile)
     </Box>
   </>
 }else{
+
+  
   return <>
   <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 150, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
+        
           focusRipple
           key={image.title}
           style={{
             width: image.width,
           }}
           href={image.link}
+          
         >
+          {/* imagesrc je pozadina-boja */}
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+          {/* imagebackdrop je hover efekt */}
           <ImageBackdrop className="MuiImageBackdrop-root" />
           
+          {/* image komponenta je tekst samo */}
           <Image>
             <Typography
               component="span"

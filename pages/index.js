@@ -13,8 +13,11 @@ import { Button } from "@mui/material";
 import { Avatar } from "@mui/material";
 import silver from '/public/lotties/silver';
 import gold from '/public/lotties/gold';
-import Link from "next/link"
-
+import { Link, animateScroll as scroll } from "react-scroll";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 export default function Home() {
@@ -63,20 +66,27 @@ export default function Home() {
       alignItems="center"
       mt={{xs:10, md:5}}>
 
-          <Button variant="contained" color="secondary" size="large" href="#explore">
-            Explore
-          </Button>
-          
-      
+           <Button variant="contained" color="secondary" size="large">
+           <Link
+    activeClass="active"
+    to="explore"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={800}
+>Explore</Link>
+          </Button>           
       </Stack>
       
-<Box id="explore"></Box>
+
       <Stack
       direction="row"
       justifyContent="center"
       alignItems="center"
       sx={{mt: {md:55, xs:20}}}
       mx={{xs:2}}
+
+      id="explore"
       >
         <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px"}}>Ask, Answer, Achieve!</Typography>
       </Stack>
@@ -218,16 +228,19 @@ export default function Home() {
   direction="row"
   justifyContent={{xs:'center', md:'flex-start'}}
   alignItems="flex-start"s
-  sx={{mt: {md:55, xs:25}, ml:{xs:0, md:2.5}}}
+  sx={{mt: {md:20, xs:25}, ml:{xs:0, md:2.5}}}
   >
     <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: "8px"}}>FAQ</Typography>
   </Stack>
+
+  
+
 
   <Stack
   direction="column"
   justifyContent="flex-start"
   alignItems="flex-start"
-  spacing={5}
+  spacing={3}
   sx={{mt:5, ml:2}}
   >
     <Stack
@@ -237,48 +250,100 @@ export default function Home() {
     spacing={1}
     >
 
-      <Typography variant="h5" >1. Why are we here?</Typography>
-      <Typography variant="h6" color="text.secondary">Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      <Accordion sx={{md:{maxWidth:'60.2%'}}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="h5" >1. Why are we here?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Typography variant="h6" color="text.secondary">Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+        </AccordionDetails>
+      </Accordion>
     </Stack>
+
     <Stack
     direction="column"
     justifyContent="center"
     alignItems="flex-start"
     spacing={1}
     >
-
-      <Typography variant="h5" >2. Where should I start?</Typography>
-      <Typography variant="h6" color="text.secondary">Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
+      <Accordion sx={{md:{maxWidth:'42.5%'}}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="h5" >2. Where should I start?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Typography variant="h6" color="text.secondary">Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
+        </AccordionDetails>
+      </Accordion>
     </Stack>
+
+
+
     <Stack
     direction="column"
     justifyContent="center"
     alignItems="flex-start"
     spacing={1}
     >
-
-      <Typography variant="h5" >3. What Google data are you using?</Typography>
-      <Typography variant="h6" color="text.secondary">We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
+      <Accordion sx={{md:{maxWidth:'38%'}}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="h5" >3. What Google data are you using?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Typography variant="h6" color="text.secondary">We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
+        </AccordionDetails>
+      </Accordion>
     </Stack>
+
     <Stack
     direction="column"
     justifyContent="center"
     alignItems="flex-start"
     spacing={1}
     >
-
-      <Typography variant="h5">4. How do I rank up?</Typography>
-      <Typography variant="h6" color="text.secondary">You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
+<Accordion sx={{md:{maxWidth:'76.7%'}}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="h5">4. How do I rank up?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Typography variant="h6" color="text.secondary">You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
+        </AccordionDetails>
+      </Accordion>
     </Stack>
+    
     <Stack
     direction="column"
     justifyContent="center"
     alignItems="flex-start"
     spacing={1}
     >
-
-      <Typography variant="h5">5. Want to become a specialist?</Typography>
-      <Typography variant="h6" color="text.secondary">Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
+<Accordion sx={{md:{maxWidth:'126%'}}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="h5">5. Want to become a specialist?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Typography variant="h6" color="text.secondary">Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
+        </AccordionDetails>
+      </Accordion>
     </Stack>
   </Stack>
   </Container>
