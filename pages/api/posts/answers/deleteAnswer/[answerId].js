@@ -89,7 +89,7 @@ export default async function handler (req, res) {
       }
     )
 
-    updateRank(userData.stats.score - 5, userData.rank.badge, session)
+    updateRank(userData.stats.score - 5, userData.rank.badge, session, session.user.email)
 
     res.status(200).send();
   } catch (e) {

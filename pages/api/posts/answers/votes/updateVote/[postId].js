@@ -37,7 +37,7 @@ export default async function handler (req, res) {
       }
     )
 
-    updateRank(userData.stats.score + voteChange - prevVote, userData.rank.badge, session)
+    updateRank(userData.stats.score + voteChange - prevVote, userData.rank.badge, session, postData.answers[index].author.email)
 
     res.status(200).send();
   } catch (e) {

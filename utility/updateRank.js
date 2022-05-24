@@ -1,7 +1,7 @@
 import clientPromise from "/lib/mongodb"
 import { getSession } from "next-auth/react";
 
-export default async function updateRank(score, currBadge, session) {
+export default async function updateRank(score, currBadge, session, email) {
 
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
@@ -63,7 +63,7 @@ export default async function updateRank(score, currBadge, session) {
         return 1;
       }
       let changedBadge = await db.collection("users").updateOne(
-        {"email": session.user.email},
+        {"email": email},
         {
           $set: {
             "rank.badge": newBadge,
