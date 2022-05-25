@@ -241,110 +241,78 @@ export default function Home() {
   justifyContent="flex-start"
   alignItems="flex-start"
   spacing={3}
-  sx={{mt:5, ml:2}}
+  sx={{mt:5, ml:{xs:0, md:2}}}
   >
-    <Stack
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
-    spacing={1}
-    >
 
-      <Accordion sx={{md:{maxWidth:'60.2%'}}}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="h5" >1. Why are we here?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <Typography variant="h6" color="text.secondary">Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
-        </AccordionDetails>
-      </Accordion>
-    </Stack>
-
-    <Stack
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
-    spacing={1}
-    >
-      <Accordion sx={{md:{maxWidth:'42.5%'}}}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="h5" >2. Where should I start?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <Typography variant="h6" color="text.secondary">Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
-        </AccordionDetails>
-      </Accordion>
-    </Stack>
+    <Accordion sx={{maxWidth:"xl", width: "100%"}}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography variant="h5" >1. Why are we here?</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+      <Typography variant="h6" color="text.secondary">Learn to find trustworthy information in the evermore growing pile of questionable data.</Typography>
+      </AccordionDetails>
+    </Accordion>
 
 
+    <Accordion sx={{maxWidth:"xl", width: "100%"}}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography variant="h5" >2. Where should I start?</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+      <Typography variant="h6" color="text.secondary">Start by Logging in and checking your <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}} >Profile page</a></Link>. After that feel free to browse <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link>, <Link href="/q&a/private"><a style={{color: "#52d17b", textDecoration: "none"}} >Private Q&A</a></Link> and <Link href="/learn"><a style={{color: "#52d17b", textDecoration: "none"}}>Learn</a></Link> sections.</Typography>
+      </AccordionDetails>
+    </Accordion>
 
-    <Stack
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
-    spacing={1}
-    >
-      <Accordion sx={{md:{maxWidth:'38%'}}}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="h5" >3. What Google data are you using?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <Typography variant="h6" color="text.secondary">We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
-        </AccordionDetails>
-      </Accordion>
-    </Stack>
 
-    <Stack
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
-    spacing={1}
-    >
-<Accordion sx={{md:{maxWidth:'76.7%'}}}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="h5">4. How do I rank up?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <Typography variant="h6" color="text.secondary">You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
-        </AccordionDetails>
-      </Accordion>
-    </Stack>
+    <Accordion sx={{maxWidth:"xl", width: "100%"}}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography variant="h5" >3. What Google data are you using?</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+      <Typography variant="h6" color="text.secondary">We only use your name, email and profile image. Feel free to change your username on the <Link href="/profile"><a style={{color: "#52d17b", textDecoration: "none"}}>Profile page</a></Link> ( it will not effect your Google name )</Typography>
+      </AccordionDetails>
+    </Accordion>
+
+
+    <Accordion sx={{maxWidth:"xl", width: "100%"}}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography variant="h5">4. How do I rank up?</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+      <Typography variant="h6" color="text.secondary">You Rank up by providing quality answers in the <Link href="/q&a/public"><a style={{color: "#52d17b", textDecoration: "none"}} >Public Q&A</a></Link> section.</Typography>
+      </AccordionDetails>
+    </Accordion>
     
-    <Stack
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
-    spacing={1}
-    >
-<Accordion sx={{md:{maxWidth:'126%'}}}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="h5">5. Want to become a specialist?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-        <Typography variant="h6" color="text.secondary">Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
-        </AccordionDetails>
-      </Accordion>
-    </Stack>
+    
+    
+    <Accordion sx={{maxWidth:"xl", width: "100%"}}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography variant="h5">5. Want to become a specialist?</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+      <Typography variant="h6" color="text.secondary">Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
+      </AccordionDetails>
+    </Accordion>
   </Stack>
   </Container>
   </Container>
