@@ -51,7 +51,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         <Box>
-          <Typography variant="h2" sx={{color: "background.contrastColor"}}>We provide credible solutions <br/>to <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Your problems</Typography>.</Typography>
+          <Typography variant="h2" sx={{color: "background.contrastColor"}}>A platform made for community  <br/> <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>information validation</Typography>.</Typography>
         </Box>
         
         <Box maxWidth={{md:'35%', xs:'100%'}} ml={{xs:-5}}>

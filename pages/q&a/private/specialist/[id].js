@@ -10,6 +10,7 @@ import { Stack } from '@mui/material';
 import ReviewsList from "/components/ReviewsList"
 import AskSpecialistDialog from "/components/AskSpecialistDialog"
 
+
 export default function Specialist (props) {
   const [specialistData, setSpecialistData] = useState(null)
  

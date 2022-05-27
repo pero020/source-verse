@@ -18,6 +18,7 @@ import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import Image from "next/image";
 
 function PaperComponent(props) {
   return (
@@ -122,6 +123,7 @@ export default function NewQuestionDialog(props) {
 
   return (
     <div>
+     
       <Button onClick={handleClickOpen} variant="contained" color="secondary" size="large">
         Ask me!
       </Button>
