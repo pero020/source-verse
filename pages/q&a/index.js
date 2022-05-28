@@ -120,11 +120,14 @@ if(isMobile)
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root"  />
           
-          <Image >
+          <Image sx={{'& .MuiTypography-root': {
+      border: '2px solid currentColor',
+    }}}>
             <Typography
+              align="center"
               component="span"
-              variant="subtitle1"
-              color="inherit"
+              variant="h6"
+              color="text.secondary"
               sx={{
                 position: 'relative',
                 p: 4,
@@ -140,11 +143,12 @@ if(isMobile)
 
           <Image>
             <Typography
+              align="center"
               component="span"
-              variant="subtitle1"
-              color="inherit"
+              variant="body1"
+              color="text.secondary"
               sx={{
-                mb:-10, maxWidth:220, ml:5
+                mt:10, maxWidth:220
               }}>
               {image.subtitle}
               
@@ -182,9 +186,10 @@ if(isMobile)
       border: '4px solid currentColor',
     }}}>
             <Typography
+              align="center"
               component="span"
-              variant="subtitle1"
-              color="inherit"
+              variant="h6"
+              color="text.secondary"
               sx={{
                 p: 4,
                 pt: 2,
@@ -200,9 +205,10 @@ if(isMobile)
 
           <Image>
             <Typography
+              align="center"
               component="span"
-              variant="subtitle1"
-              color="inherit"
+              variant="body1"
+              color="text.secondary"
               sx={{
                 mb:{md:-10, xs:30}, maxWidth:{md:300}
               }}

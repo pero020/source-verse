@@ -47,10 +47,10 @@ export default NextAuth({
 
       const client = await clientPromise;
       const db = client.db(process.env.MONGODB_DB);
-      const first = true;
       const userData = await db.collection("users").findOne({email: token.email});
       session.role = userData.role
       session.user.name = userData.name
+      session.first = true
 
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken;

@@ -44,7 +44,7 @@ export default function Home() {
             
   }
   
-  {session.first ? <Welcome>dwdw</Welcome>:null}
+  {/* {(session && session.first) ? <Welcome></Welcome>:null} */}
 
   <Container maxWidth="xl" disableGutters={true} >
       <Stack
