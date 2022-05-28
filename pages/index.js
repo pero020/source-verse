@@ -18,12 +18,13 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import Welcome from "../components/Welcome";
 
 export default function Home() {
   const { data: session } = useSession()
   
     return <>
+    
     <Container maxWidth="xl" disableGutters={true} sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2}} >
     {session &&
     <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
@@ -42,6 +43,9 @@ export default function Home() {
 
             
   }
+  
+  {session.first ? <Welcome>dwdw</Welcome>:null}
+
   <Container maxWidth="xl" disableGutters={true} >
       <Stack
       direction={{md:'row', xs:'column'}}

@@ -6,7 +6,8 @@ import Button from '@mui/material/Button';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import { ButtonBase } from "@mui/material";
-import { width } from "@mui/system";
+import { maxWidth, width } from "@mui/system";
+import { Stack } from "@mui/material";
 
 
 
@@ -16,12 +17,14 @@ const images = [
   {
     url: '/backgrounds/green.png',
     title: 'Public Q&A',
+    subtitle: 'Ask any kind of question, whether it is about art, fitness or travel. Anything You want, all in one place!',
     width: '50%',
     link: '/q&a/public'
   },
   {
     url: '/backgrounds/grey.png',
     title: 'Private Q&A',
+    subtitle: 'Perhaps, if You need greater assistance with your problem, You can get in touch with one of our best specialists.',
     width: '50%',
     link: '/q&a/private'
   },
@@ -43,9 +46,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
     '& .MuiImageMarked-root': {
       opacity: 0,
     },
-    '& .MuiTypography-root': {
-      border: '4px solid currentColor',
-    },
+    
   },
 }));
 
@@ -129,11 +130,26 @@ if(isMobile)
                 p: 4,
                 pt: 2,
                 pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                mb:20
               }}
             >
               {image.title}
               <ImageMarked className="MuiImageMarked-root" />
             </Typography>
+          </Image>
+
+          <Image>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              sx={{
+                mb:-10, maxWidth:220, ml:5
+              }}>
+              {image.subtitle}
+              
+            </Typography>
+            
           </Image>
         </ImageButton>
       ))}
@@ -161,22 +177,42 @@ if(isMobile)
           <ImageBackdrop className="MuiImageBackdrop-root" />
           
           {/* image komponenta je tekst samo */}
+          
+          <Image sx={{'& .MuiTypography-root': {
+      border: '4px solid currentColor',
+    }}}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              sx={{
+                p: 4,
+                pt: 2,
+                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                mb:{md:20, xs:30}
+              }}
+            >
+              {image.title}
+              <ImageMarked className="MuiImageMarked-root" />
+            </Typography>
+            
+          </Image>
+
           <Image>
             <Typography
               component="span"
               variant="subtitle1"
               color="inherit"
               sx={{
-                position: 'relative',
-                p: 4,
-                pt: 2,
-                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                mb:{md:-10, xs:30}, maxWidth:{md:300}
               }}
             >
-              {image.title}
-              <ImageMarked className="MuiImageMarked-root" />
+              {image.subtitle}
+              
             </Typography>
+            
           </Image>
+          
         </ImageButton>
       ))}
     </Box>

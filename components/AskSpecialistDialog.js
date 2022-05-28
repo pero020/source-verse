@@ -19,6 +19,7 @@ import Draggable from 'react-draggable';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Image from "next/image";
+import Slide from '@mui/material/Slide';
 
 function PaperComponent(props) {
   return (
@@ -30,6 +31,10 @@ function PaperComponent(props) {
     </Draggable>
   );
 }
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function NewQuestionDialog(props) {
   
@@ -133,6 +138,7 @@ export default function NewQuestionDialog(props) {
         onClose={handleClose}
         PaperComponent={PaperComponent}
         aria-labelledby="responsive-dialog-title"
+        TransitionComponent={Transition}
       >
         <DialogTitle gutterBottom={false}>
           Ask {props.specialistData.name} a question
