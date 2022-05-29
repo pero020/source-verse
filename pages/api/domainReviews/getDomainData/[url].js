@@ -15,8 +15,7 @@ export default async function handler (req, res) {
           "index": "domainSearch",
           "text": {
             "query": url,
-            "path": "url",
-            "fuzzy": {}
+            "path": "url"
           }
         }
       },
