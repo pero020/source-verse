@@ -38,6 +38,7 @@ export default function Post () {
     try {
       const res = await fetch("/api/posts/getOnePost/" + id);
       const data = await res.json();
+      console.log(data)
 
       data.answers.forEach((answer, index) => {
         answer.databaseIndex = index

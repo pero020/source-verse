@@ -77,6 +77,7 @@ export default async function handler (req, res) {
               "creationDate": new Date()
             }
           ],
+          "communityVotes": [],
           "score": Double(formData.score)
         }
 

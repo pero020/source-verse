@@ -222,6 +222,7 @@ export default function PostsList(props) {
               {answer.sourceScore ? 
               <Rating name="half-read-only" precision={0.2} value={answer.sourceScore} size="small" readOnly /> : 
               <Rating name="half-read-only" precision={0.2} value={0} size="small" readOnly />}
+              {answer.communityVotes && <Typography variant="caption">{answer.communityVotes.length} community {answer.communityVotes.length === 1 ? "approve" : "approves"}</Typography>}
               </Stack>
               
               {isMobile ? 

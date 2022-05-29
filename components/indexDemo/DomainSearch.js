@@ -62,7 +62,8 @@ export default function DomainSearch() {
 
     {domainData && domainData.reviews.length !== 0 && 
     <>
-    <Typography align="center" sx={{my:5}}>Total score: {domainData.score > 3 ? <strong style={{color:"#52d17b"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>
+    <Typography align="center"  sx={{my:2}} >Total score: {domainData.score > 3 ? <strong style={{color:"#52d17b"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>
+    {domainData.communityVotes && <Typography sx={{mb:5}} align="center" variant="body1"><strong>{domainData.communityVotes.length}</strong> community {domainData.communityVotes.length === 1 ? "approve" : "approves"}</Typography>}
     <ReviewsList reviews={domainData.reviews}></ReviewsList>
     </>
     }

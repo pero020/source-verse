@@ -139,7 +139,7 @@ if(isMobile)
               {image.title}
               <ImageMarked className="MuiImageMarked-root" />
             </Typography>
-          </Image>
+          </Image>  
 
           <Image>
             <Typography
