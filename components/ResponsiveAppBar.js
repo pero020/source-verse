@@ -17,6 +17,7 @@ import { Grid } from '@mui/material';
 import Lottie from 'react-lottie'
 import coin from '/public/lotties/coin';
 import Image from 'next/image';
+import { Stack } from '@mui/material';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -127,7 +128,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, ml:{md:2} }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, ml:{md:2},mb:{md:0.5} }}
           >
             SourceVerse
           </Typography>
@@ -184,6 +185,7 @@ const ResponsiveAppBar = () => {
             SourceVerse
           </Typography>
           </Link>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link href={page.link} key={page.name}>
@@ -197,7 +199,7 @@ const ResponsiveAppBar = () => {
             ))}
              
           </Box>
-
+          
 
           <Box sx={{ flexGrow: 0 }}>
             
