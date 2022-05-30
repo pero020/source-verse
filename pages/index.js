@@ -61,6 +61,17 @@ export default function Home() {
       >
         <Box sx={{mb:{md:60}}}>
           <Typography variant="h2" sx={{color: "background.contrastColor"}}>Platform made for <br/>  community <br/>  <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>information validation</Typography>.</Typography>
+          <Button sx={{mt:5}} variant="contained" color="secondary" size="large">
+            <Link
+            activeClass="active"
+            to="explore"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={800}
+            >Explore
+            </Link>
+        </Button>     
         </Box>
         
         <Box maxWidth={{md:'60%', xs:'100%'}} sx={{mt:{xs: 5, md: -20}, ml:{xs:-5}}}>
@@ -69,55 +80,25 @@ export default function Home() {
         
       </Stack>
       
-      <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      sx={{mt:{xs: 10, md: -55},mr:{md:160}}}>
-
-           <Button variant="contained" color="secondary" size="large">
-           <Link
-    activeClass="active"
-    to="explore"
-    spy={true}
-    smooth={true}
-    offset={-70}
-    duration={800}
->Join us</Link>
-          </Button>           
-      </Stack>
       
 
-      <Container sx={{mt:{md:57, xs:10}, px:2, py:3, bgcolor: "#52D17B",opacity:'80%', borderRadius: 2,}} maxWidth="xl" width="100%">
+      <Container sx={{mt:{md:40, xs:15}, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2,}} maxWidth="xl" width="100%">
       <Stack
       direction="center"
       justifyContent="center"
       alignItems="center">
 
-       <Typography variant="h4" sx={{color:"Background.contrastColor"}}>We provide  <Typography variant="h4" sx={{color:"#003B00"}} display="inline">educational</Typography> and <Typography display="inline" variant="h4" sx={{color:"#003B00"}}>consulting-based </Typography>reliable, 
+       <Typography align="center" variant="h4">We provide <Typography variant="h4" sx={{color:"#003B00"}} display="inline">educational</Typography> and <Typography display="inline" variant="h4" sx={{color:"#003B00"}}>consulting-based </Typography>reliable, 
        <br/>reputable and researched information.</Typography>      
       </Stack>
     </Container>
 
 
-
-    <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      sx={{mt: {md:20, xs:10}, mr:{md:150}}}
-      mx={{xs:2}}
-      >
-
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "10px"}}}>How to</Typography>
-        
-      </Stack>
-
       <Stack
       direction={{md:'row', xs:'column'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{mt:-5}}
+      sx={{mt: {xs: 15, md: 25}}}
       mx={{xs:2}}
       >
         <Stack
@@ -125,6 +106,7 @@ export default function Home() {
       justifyContent="flex-start"
       alignItems="flex-start"
        sx={{mb:{md:50}, mr:{md:10}, mt:{xs:10}}} spacing={2}>
+          <Typography variant="h2" sx={{mb:{xs: 2, md:8}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "10px"}}}>How to</Typography>
           <Typography variant="h3" color="#52D17B" sx={{maxWidth:720}}>1. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Choose a topic of </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>interest </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>expertise.</Typography></Typography>
           <Typography variant="h3" color="#52D17B" sx={{maxWidth:720}}>2. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Submit a </Typography><Typography variant="h4" color="#F43F48" sx={{maxWidth:720, display:"inline"}}>source-backed </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>answer. </Typography></Typography>
           <Typography variant="h3" color="#52D17B" sx={{maxWidth:720}}>3. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Ask </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>Users </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>Specialists.</Typography></Typography>
@@ -137,7 +119,7 @@ export default function Home() {
         
       </Stack>
 
-      <Container sx={{mt:{md:-20, xs:10}, px:2, py:3, bgcolor: "#52D17B",opacity:'80%', borderRadius: 2}}>
+      <Container sx={{mt:{md:-20, xs:10}, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2}}>
       <Stack
       direction="column"
       justifyContent="center"
@@ -160,7 +142,7 @@ export default function Home() {
   sx={{mt: {md:20, xs:25}, ml:{xs:0, md:2.5}}}
   id="explore"
   >
-        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px"}}>Ask, Answer, Achieve!</Typography>
+        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px", mb:{xs: 5, md: 0}}}>Ask, Answer, Achieve!</Typography>
       </Stack>
 
       <Stack
@@ -170,9 +152,12 @@ export default function Home() {
       sx={{my:{xs: 0, md: 10}}}
       mx={{xs:2}}
       >
-        <Box sx={{mt:{xs:5,md:-5}, ml:{md:15}}}>
+        <Box >
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Earn </Typography>
-          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Achievements</Typography> and display them on Your profile.</Typography>
+          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Achievements</Typography> and display them on Your profile.</Typography><br/>
+          <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
+            Learn more
+          </Button>
         </Box>
 
         <Container maxWidth="md" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2, ml:{md:30}, mt:{xs:3}}} >
@@ -195,18 +180,6 @@ export default function Home() {
           </Box>
           </Stack>
           </Container>
-      </Stack>
-      
-      <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      sx={{mt:{md:-20, xs:5}, mr:{md:142}}}
-      mx={{xs:2}}
-      >
-      <Button variant="contained" color="secondary" size="large" href="/q&a/public">
-        Learn more
-      </Button>
       </Stack>
       
       

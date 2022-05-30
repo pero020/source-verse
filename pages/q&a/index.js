@@ -28,7 +28,7 @@ const images = [
     width: '50%',
     link: '/q&a/private'
   },
- 
+
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
