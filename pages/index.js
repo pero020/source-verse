@@ -135,24 +135,16 @@ export default function Home() {
       </Stack>
     </Container>
 
-       <Stack
-  direction="row"
-  justifyContent={{xs:'center', md:'flex-start'}}
-  alignItems="flex-start"s
-  sx={{mt: {md:20, xs:25}, ml:{xs:0, md:2.5}}}
-  id="explore"
-  >
-        <Typography  variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px", mb:{xs: 5, md: 0}}}>Ask, Answer, Achieve!</Typography>
-      </Stack>
-
       <Stack
       direction={{xs:'column', md:'row'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{my:{xs: 0, md: 10}}}
+      sx={{my:{xs: 0, md: 10}, mt: {xs:15, md:25}}}
       mx={{xs:2}}
+      spacing={10}
       >
-        <Box >
+        <Box sx={{mb:{md:20}}}>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px", mb:{xs: 5, md: 10}}}>Ask, Answer, Achieve!</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Earn </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Achievements</Typography> and display them on Your profile.</Typography><br/>
           <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
@@ -160,7 +152,7 @@ export default function Home() {
           </Button>
         </Box>
 
-        <Container maxWidth="md" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2, ml:{md:30}, mt:{xs:3}}} >
+        <Container maxWidth="md" sx={{mt: 1, px:2, py:3, bgcolor: "primary.main", borderRadius: 2, mt:{xs:3}}} >
         <Stack
       direction="row"
       justifyContent="space-evenly"
@@ -169,7 +161,7 @@ export default function Home() {
       sx={{mt:{xs:1}}}
       >
 
-          <Box minWidth={{xs:'30%', md:'25%'}} maxWidth={{md:'40%'}}>
+          <Box minWidth={{xs:'30%', md:'25%'}}>
           <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: bronze}}/>
           </Box>
           <Box minWidth={{xs:'30%', md:'25%'}}>
