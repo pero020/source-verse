@@ -47,6 +47,11 @@ export default async function handler (req, res) {
       }
 
       answer["sourceScore"] = domainData.score;
+      if (domainData.communityVotes) {
+        answer["communityVotes"] = domainData.communityVotes;
+      } else {
+        answer["communityVotes"] = [];
+      }
     };
   }
 

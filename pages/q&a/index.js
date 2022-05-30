@@ -17,14 +17,14 @@ const images = [
   {
     url: '/backgrounds/green.png',
     title: 'Public Q&A',
-    subtitle: 'Ask any kind of question, whether it is about art, fitness or travel. Anything You want, all in one place!',
+    subtitle: 'Ask a question, get a Source-backed answer from our community and help others with your knowledge.',
     width: '50%',
     link: '/q&a/public'
   },
   {
     url: '/backgrounds/grey.png',
     title: 'Private Q&A',
-    subtitle: 'Perhaps, if You need greater assistance with your problem, You can get in touch with one of our best specialists.',
+    subtitle: 'Need professional knowledge? Get information and validate information with our Specialists.',
     width: '50%',
     link: '/q&a/private'
   },
@@ -139,7 +139,7 @@ if(isMobile)
               {image.title}
               <ImageMarked className="MuiImageMarked-root" />
             </Typography>
-          </Image>
+          </Image>  
 
           <Image>
             <Typography

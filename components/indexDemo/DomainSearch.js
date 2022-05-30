@@ -58,12 +58,13 @@ export default function DomainSearch() {
     {loadingStatus === 404 && 
       <Typography align="center">No data found for this domain</Typography>
     }
+    {console.log(domainData)}
 
-
-    {domainData && domainData.reviews.length !== 0 && 
+    {domainData && 
     <>
-    <Typography align="center" sx={{my:5}}>Total score: {domainData.score > 3 ? <strong style={{color:"#52d17b"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>
-    <ReviewsList reviews={domainData.reviews}></ReviewsList>
+    {domainData.reviews.length !== 0 && <Typography align="center"  sx={{my:2}} >Total score: {domainData.score > 3 ? <strong style={{color:"#52d17b"}}>{domainData.score}</strong> : <strong style={{color:"red"}}>{domainData.score}</strong>} Points</Typography>}
+    {domainData.communityVotes && <Typography sx={{my:2}} align="center" variant="body1">Commmunity Approved by { domainData.communityVotes.length < 50 ? <strong style={{color: "#f44336"}}>{domainData.communityVotes.length}</strong> : <strong style={{color: "#50eb82"}}>{domainData.communityVotes.length}</strong> } {domainData.communityVotes.length === 1 ? "user" : "users"}</Typography>}
+    {domainData.reviews.length !== 0 ? <ReviewsList reviews={domainData.reviews}></ReviewsList>  : <Typography align="center"  sx={{my:2}}>No specialist Reviews yet!</Typography>}
     </>
     }
   </>
