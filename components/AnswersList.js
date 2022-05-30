@@ -216,13 +216,15 @@ export default function PostsList(props) {
             <Divider orientation={"vertical"}></Divider>
 
             <Grid item xs={10} sx={{overflow: "hidden"}}>
-              <ListItemText primary={answer.description} />
-              <Stack direction={{xs: "column", md: "row"}} spacing={1} alignItems="flex-start">
+              <ListItemText sx={{mb: 1}} primary={answer.description} />
+              
               <Typography color="text.secondary" variant="caption">Source: <Link href={answer.url}><a style={{color:"#ffffffaa"}}>{answer.url}</a></Link></Typography>
-              {answer.sourceScore ? 
-              <Rating name="half-read-only" precision={0.2} value={answer.sourceScore} size="small" readOnly /> : 
-              <Rating name="half-read-only" precision={0.2} value={0} size="small" readOnly />}
-              {answer.communityVotes && <Typography variant="caption">{answer.communityVotes.length} community {answer.communityVotes.length === 1 ? "approve" : "approves"}</Typography>}
+              <Stack direction={{xs: "column", md: "row"}} sx={{mt:1}} spacing={1} alignItems="flex-start">
+                {answer.sourceScore ? 
+                <Rating name="half-read-only" precision={0.2} value={answer.sourceScore} size="small" readOnly /> : 
+                <Rating name="half-read-only" precision={0.2} value={0} size="small" readOnly />}
+                {answer.communityVotes && <Typography variant="caption">Commmunity Approved by { answer.communityVotes.length < 50 ? <strong style={{color: "#f44336"}}>{answer.communityVotes.length}</strong> : <strong style={{color: "#50eb82"}}>{answer.communityVotes.length}</strong> } {answer.communityVotes.length === 1 ? "user" : "users"}</Typography>}
+              
               </Stack>
               
               {isMobile ? 
