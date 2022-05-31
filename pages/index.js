@@ -20,10 +20,14 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Welcome from "../components/Welcome";
+import search from '/public/lotties/search';
+import ListItem from '@mui/material/ListItem';
+
 
 export default function Home() {
   const { data: session } = useSession()
   
+ 
     return <>
     
     
@@ -82,7 +86,7 @@ export default function Home() {
       
       
 
-      <Container sx={{mt:{md:40, xs:15}, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2,}} maxWidth="xl" width="100%">
+      <Container sx={{mt:{md:-3, xs:15}, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2,}} maxWidth="xl" width="100%">
       <Stack
       direction="center"
       justifyContent="center"
@@ -126,11 +130,11 @@ export default function Home() {
       alignItems="flex-start"
       spacing={2}>
 
-         <Typography variant="h4" sx={{color:"Background.contrastColor"}}><Typography variant="h4" sx={{color:"#003B00"}} display="inline">- Community generated</Typography><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> questions and answers on requested topics</Typography></Typography>  
-         <Typography variant="h4" sx={{color:"Background.contrastColor"}}><Typography variant="h4" sx={{color:"#003B00"}} display="inline">- Personally evaluated</Typography><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> questions and information</Typography></Typography>  
-         <Typography variant="h4" sx={{color:"Background.contrastColor"}}><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"#003B00"}} display="inline">-</Typography> Detailed </Typography><Typography variant="h4" sx={{color:"#003B00"}} display="inline">reviews of internet domains</Typography></Typography>
-         <Typography variant="h4" sx={{color:"Background.contrastColor"}}><Typography variant="h4" sx={{color:"#003B00"}} display="inline">- Digital literacy </Typography><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> education</Typography></Typography>   
-         <Typography variant="h4" sx={{color:"Background.contrastColor"}}><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"#003B00"}} display="inline">-</Typography> Chrome Extension for </Typography><Typography variant="h4" sx={{color:"#003B00"}} display="inline">browsing approved information</Typography></Typography>
+<ListItem sx={{ display: 'list-item' }}><Typography display="inline" variant="h4" sx={{color:"Background.contrastColor"}}><Typography variant="h4" sx={{color:"#003300"}} display="inline"> Community generated</Typography><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> questions and answers on requested topics</Typography></Typography></ListItem>
+<ListItem sx={{ display: 'list-item' }}><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"#003300"}} display="inline">Personally evaluated</Typography><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> questions and information</Typography></Typography>  </ListItem>
+<ListItem sx={{ display: 'list-item' }}><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> Detailed </Typography><Typography variant="h4" sx={{color:"#003300"}} display="inline">reviews of internet domains</Typography></Typography></ListItem>
+<ListItem sx={{ display: 'list-item' }}><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"#003300"}} display="inline">Digital literacy </Typography><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"> education</Typography></Typography>   </ListItem>
+<ListItem sx={{ display: 'list-item' }}><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"Background.contrastColor"}} display="inline"><Typography variant="h4" sx={{color:"#003300"}} display="inline"></Typography> Chrome Extension for </Typography><Typography variant="h4" sx={{color:"#003300"}} display="inline">browsing approved information</Typography></Typography></ListItem>
          
       </Stack>
     </Container>
@@ -143,6 +147,7 @@ export default function Home() {
       mx={{xs:2}}
       spacing={10}
       >
+        {/*Ask answer achieve*/}
         <Box sx={{mb:{md:20}}}>
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px", mb:{xs: 5, md: 10}}}>Ask, Answer, Achieve!</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Earn </Typography>
@@ -174,92 +179,58 @@ export default function Home() {
           </Container>
       </Stack>
       
-      
-
 
 
       <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      sx={{mt: {md:55, xs:20}}}
-      mx={{xs:2}}
-      >
-
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "10px"}}}>Get feedback from Specialists.</Typography>
-        
-      </Stack>
-        
-      <Stack
-      direction={{md:'row', xs:'column'}}
+      direction={{xs:'column', md:'row'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{mt:10}}
+      sx={{my:{xs: 0, md: 10}, mt: {xs:15, md:15}}}
       mx={{xs:2}}
+      spacing={10}
       >
-        <Box>
-          <Typography variant="h4" color="text.secondary" sx={{maxWidth:720}}>Connect with our <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{color:'black', display:'inline'}}>most reputable Specialists</Typography> dedicated to providing concrete results.</Typography>
-        </Box>
-        <Box maxWidth={{md:'35%', xs:'100%'}}>
-          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
+        <Box sx={{mb:{md:20}}}>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px", mb:{xs: 5, md: 10}}}>Improve Your digital literacy</Typography>
+          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Learn how to </Typography>
+          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>find trustworthy information </Typography> in the evermore growing pile of questionable data.</Typography><br/>
+          <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
+            Learn more
+          </Button>
         </Box>
 
+        <Box minWidth={{xs:'30%', md:'45%'}} >
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: search}}/>
+          </Box>
         
       </Stack>
-      <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      mt={{xs:10}}>
-
-          <Button variant="contained" color="secondary" size="large" href="/q&a/private">
-            Connect
-          </Button>
       
-      </Stack>
       <Stack
-      direction="column"
-      justifyContent="center"
+      direction={{xs:'column', md:'row'}}
+      justifyContent="space-evenly"
       alignItems="center"
+      sx={{my:{xs: 0, md: 10}, mt: {xs:15, md:15}}}
+      mx={{xs:2}}
+      spacing={10}
       >
-
-        <Stack
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        sx={{mt: {md:55, xs:25}}}
-        mx={{xs:2}}
-        >
-          <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "12px"}}}>Improve Your digital literacy.</Typography>
-        </Stack>
-
-        <Stack
-        direction={{md:'row', xs:'column'}}
-        justifyContent="space-evenly"
-        alignItems="center"
-        sx={{mt:10}}
-        mx={{xs:2}}
-        >
-          <Box>
-            <Typography variant="h4" color="text.secondary" sx={{maxWidth:'800px'}}>Learn how to <Typography variant="h4" bgcolor="#FFDF82" borderRadius={2} sx={{width:'210px', color:'black', display:'inline'}}>find trustworthy information</Typography> in the evermore growing pile of questionable data.</Typography>  
-          </Box>
-          <Box maxWidth={{md:'35%', xs:'100%'}} mr={{xs: 2}}>
-            <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData:information}}/>
-          </Box>
-        </Stack>
-
-  </Stack>
-  <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      mt={{xs:0, md:0}}>
-
-          <Button variant="contained" color="secondary" size="large" href="/learn">
-            Guide
+        <Box sx={{mb:{md:20}, maxWidth:700}}>
+        <Typography variant="h2" sx={{minWidth:{md:800}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px", mb:{xs: 5, md: 10}}}>Get feedback from Specialists</Typography>
+          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Connect with our<br/> </Typography>
+          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>most reputable Specialists </Typography> dedicated to providing <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">analized feedback</Typography>.</Typography><br/>
+          <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
+            Learn more
           </Button>
-      
+        </Box>
+
+        <Box minWidth={{xs:'30%', md:'45%'}} >
+          <Lottie isClickToPauseDisabled={true} options={{loop: true, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: specialist}}/>
+          </Box>
+        
       </Stack>
+
+
+      
+
+      
       
   <Stack
   direction="row"
@@ -267,7 +238,7 @@ export default function Home() {
   alignItems="flex-start"s
   sx={{mt: {md:20, xs:25}, ml:{xs:0, md:2.5}}}
   >
-    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: "8px"}}>FAQ</Typography>
+    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: "8px"}}>Frequently Asked Questions</Typography>
   </Stack>
 
   
