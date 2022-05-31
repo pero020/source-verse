@@ -32,8 +32,8 @@ export default function Home() {
     
     
     
-  {/*
-  {session &&
+  
+  {/* {session &&
     <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
       <Stack
       justifyContent="center"
@@ -49,10 +49,10 @@ export default function Home() {
     </Container>
 
             
-  } 
+  }  */}
   
   
-  {(session && session.first) ? <Welcome></Welcome>:null}  */}
+  {/* {(session && session.first) ? <Welcome></Welcome>:null}  */}
    
    
   <Container maxWidth="xl" disableGutters={true} sx={{p:0}}>
@@ -110,7 +110,7 @@ export default function Home() {
       justifyContent="flex-start"
       alignItems="flex-start"
        sx={{mb:{md:50}, mr:{md:10}, mt:{xs:10}}} spacing={2}>
-          <Typography variant="h2" sx={{mb:{xs: 2, md:8}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "6px", md: "10px"}}}>How to</Typography>
+          <Typography variant="h2" sx={{mb:{xs: 2, md:8}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}}}>How to</Typography>
           <Typography variant="h3" color="#52D17B" sx={{maxWidth:720}}>1. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Choose a topic of </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>interest </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>expertise.</Typography></Typography>
           <Typography variant="h3" color="#52D17B" sx={{maxWidth:720}}>2. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Submit a </Typography><Typography variant="h4" color="#F43F48" sx={{maxWidth:720, display:"inline"}}>source-backed </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>answer. </Typography></Typography>
           <Typography variant="h3" color="#52D17B" sx={{maxWidth:720}}>3. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Ask </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>Users </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#009BFF" sx={{maxWidth:720, display:"inline"}}>Specialists.</Typography></Typography>
@@ -149,7 +149,7 @@ export default function Home() {
       >
         {/*Ask answer achieve*/}
         <Box sx={{mb:{md:20}}}>
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"7px", mb:{xs: 5, md: 10}}}>Ask, Answer, Achieve!</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Ask, Answer, Achieve!</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Earn </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Achievements</Typography> and display them on Your profile.</Typography><br/>
           <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
@@ -190,7 +190,7 @@ export default function Home() {
       spacing={10}
       >
         <Box sx={{mb:{md:20}}}>
-        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px", mb:{xs: 5, md: 10}}}>Improve Your digital literacy</Typography>
+        <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Improve Your digital literacy</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Learn how to </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>find trustworthy information </Typography> in the evermore growing pile of questionable data.</Typography><br/>
           <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
@@ -213,7 +213,7 @@ export default function Home() {
       spacing={10}
       >
         <Box sx={{mb:{md:20}, maxWidth:700}}>
-        <Typography variant="h2" sx={{minWidth:{md:800}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px", mb:{xs: 5, md: 10}}}>Get feedback from Specialists</Typography>
+        <Typography variant="h2" sx={{minWidth:{md:800}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Get feedback from Specialists</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Connect with our<br/> </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#FFDF82" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>most reputable Specialists </Typography> dedicated to providing <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">analized feedback</Typography>.</Typography><br/>
           <Button sx={{mt: 5}} variant="contained" color="secondary" size="large" href="/q&a/public">
@@ -238,7 +238,7 @@ export default function Home() {
   alignItems="flex-start"s
   sx={{mt: {md:20, xs:25}, ml:{xs:0, md:2.5}}}
   >
-    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: "8px"}}>Frequently Asked Questions</Typography>
+    <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset: {xs: "7px", md: "10px"}}}>Frequently Asked Questions</Typography>
   </Stack>
 
   
