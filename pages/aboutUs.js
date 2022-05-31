@@ -24,7 +24,7 @@ export default function Learn() {
     mx={{xs:2,md:15}}
     >
       <Box>
-        <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Who? Why?</Typography>
+        <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>Who? Why? When? Where?</Typography>
       </Box>
       
     </Stack>
@@ -37,10 +37,10 @@ export default function Learn() {
     mx={{xs:2,md:15}}
     >
       <Box>
-        <Typography variant="h5" maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>We are a humble team of 3 software engineering students based in Zagreb, Croatia.</Typography>
-        <Typography variant="h5" mt={{md:7, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}> Everything started back in March, 2022 when we entered the "TVZ Mc2", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
-        <Typography variant="h5" mt={{md:3, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>Little did we know it would be a start of a great partnership and an even greater friendship.</Typography>
-        <Typography variant="h6" mt={{md:3, xs:3}} sx={{color:"text.softWhite"}}>We named ourselves after the goal of our idea.</Typography>
+        <Typography variant="h5" maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>A team of 3 software engineering students based in <Typography  variant="h5" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Zagreb, Croatia. </Typography></Typography>
+        <Typography variant="h5" mt={{md:5, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}> Everything started back in <Typography  variant="h5" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>March, 2022</Typography>  when we entered the "<Typography  variant="h5" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>TVZ Mc2</Typography>", Croatia's biggest Mobile, Web and IoT solutions competition.</Typography>
+        <Typography variant="h5" mt={{md:5, xs:5}} maxWidth={{md:1300}} sx={{color:"text.softWhite"}}>Little did we know it would be a start of a great partnership and an even greater friendship.</Typography>
+        
       </Box>
       
     </Stack>

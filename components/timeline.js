@@ -190,10 +190,37 @@ export default function OppositeContentTimeline() {
 
           <TimelineSeparator>
             <TimelineDot color="secondary" />
-            
+            <TimelineConnector />
             
           </TimelineSeparator>
           <TimelineContent color="background.contrastColor">Ranks added</TimelineContent>
+
+</TimelineItem>
+
+<TimelineItem>
+
+          <TimelineOppositeContent color="background.contrastColor">
+            May 19, 2022
+          </TimelineOppositeContent>
+
+          <TimelineSeparator>
+            <TimelineDot color="secondary" /><TimelineConnector />
+          </TimelineSeparator>
+          
+          <TimelineContent color="background.contrastColor">Rank calculation</TimelineContent>
+
+</TimelineItem>
+<TimelineItem>
+
+          <TimelineOppositeContent color="background.contrastColor">
+            May 30, 2022
+          </TimelineOppositeContent>
+
+          <TimelineSeparator>
+            <TimelineDot color="secondary" />
+          </TimelineSeparator>
+          
+          <TimelineContent color="background.contrastColor">New index layout</TimelineContent>
 
 </TimelineItem>
 
