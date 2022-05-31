@@ -2,7 +2,9 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { alpha } from "@mui/material";
 
 let theme = createTheme({
-
+  typography: {
+    "fontFamily": `"Roboto", "sans-serif"`
+  },
   palette: {
     mode: 'dark',
     primary: {
