@@ -211,11 +211,9 @@ export default function DemoProgressBar() {
 
       <TabPanel value={value} index={2}>
     
-      <Container maxWidth="md" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}}>
-      <Stack direction="column" justifyContent="center" alignItems="center">
-        <Typography variant="h4">Search for a domain that You are interested in.</Typography>
-        <DomainSearch></DomainSearch>
-        </Stack>
+        <Container maxWidth="md" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}}>
+          <Typography align="center" variant="h4">Domain Reviews</Typography>
+          <DomainSearch></DomainSearch>
         </Container>
       </TabPanel>
     </Box>

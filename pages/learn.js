@@ -5,8 +5,8 @@ export default function Learn() {
 
 
   return <>
-  
+  <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
     <Demo></Demo>
-
+  </Container>
   </>
 };
