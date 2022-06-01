@@ -4,7 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import { Stack, Box } from "@mui/material"
+import { Stack, Box, Chip } from "@mui/material"
 import Rating from '@mui/material/Rating';
 
 const style = {
@@ -26,12 +26,24 @@ export default function ReviewsList(props) {
       <ListItem>
         <Stack
         alignItems="flex-start"
+        spacing={1}
         >
           <Box>
             <ListItemText primary={review.url} secondary={review.description} />
           </Box>
           <Box>
-            <Rating name="half-read-only" precision={0.2} value={review.score} readOnly />
+            <Stack direction={{xs: "column", md: "row"}}>
+              <Box>
+                <Rating sx={{mr:2}} name="half-read-only" precision={0.2} value={review.score} readOnly />
+              </Box>
+              <Box>
+                <Chip
+                  size="medium"
+                  label={review.author.name}
+                  variant="contained"
+                />
+              </Box>
+            </Stack>
           </Box>
         </Stack>
         
