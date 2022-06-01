@@ -11,7 +11,7 @@ export default function SignIn({ providers }) {
       alignItems="center"
       >
       <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:"10px", mb: 5}}>See you soon!</Typography>
-      <Button color="secondary" variant="contained" onClick={() => signOut(google.id)}>
+      <Button sx={{borderRadius: 8, py:1.2, px:3}} color="secondary" variant="contained" onClick={() => signOut(google.id)}>
         Leave for now
       </Button>
       </Stack>

@@ -35,9 +35,9 @@ export default function Public() {
       <Stack direction="column" >
         <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
           <Typography variant="h5">Specialists</Typography>
-          {session && <Button href="/getCoins" color="secondary" sx={{borderRadius: 8, py:1.2, px: 3}} variant="contained" size="large">Buy Coins</Button> }
+          {session && <Button href="/getCoins" color="secondary" sx={{borderRadius: 8, py:1.2, opacity:0.9, px: 3}} variant="contained" size="large">Buy Coins</Button> }
         </Stack>
-        <Container sx={{ mt: 5, mb: 7, px:2, py:3, bgcolor: "#52d17b", borderRadius: 2,}} maxWidth="xl" width="100%">
+        <Container sx={{ mt: 5, mb: 7, px:2, py:3, bgcolor: "green.main", borderRadius: 2,}} maxWidth="xl" width="100%">
       <Stack
       direction="center"
       justifyContent="center"

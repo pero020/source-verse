@@ -77,15 +77,15 @@ export default function Public() {
   }, [])
 
   return <>
-    <Container maxWidth="xl" sx={{mt: 1, px:0, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
+    <Container maxWidth="xl" sx={{mt: 1, px:0, py:3, bgcolor: 'primary.main', borderRadius: 2, opacity:0.9}} >
       <Container maxWidth="md">
-        <Stack justifyContent="space-between" alignItems="center" direction="row" sx={{mb:2 }}>
+        <Stack justifyContent="space-between" alignItems="center" direction="row" sx={{mb:2}}>
           <Typography color="white" variant="h4">Questions list</Typography>
           {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
         </Stack>
       </Container>
 
-      <Container sx={{ mt: {xs: 5, md:7}, mb:3, px:2, py:3, bgcolor: "#52d17b", borderRadius: 2,}} maxWidth="xl" width="100%">
+      <Container sx={{ mt: {xs: 5, md:7}, mb:3, px:2, py:3, bgcolor: "green.main", borderRadius: 2,}} maxWidth="xl" width="100%">
       <Stack
       direction="center"
       justifyContent="center"

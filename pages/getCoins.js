@@ -95,7 +95,7 @@ export default function GetCoins() {
         onChange={handleSliderChange}
       />
       <Typography sx={{mt:2}} align="center" variant="h6">Price: {coinsNum} * {coinCost}$ = {(coinsNum * coinCost).toFixed(1)}$</Typography>
-      <Button sx={{borderRadius: 2, mt:2}} color="secondary" variant="contained" size="large" onClick={handleSubmit}>Buy Coins</Button>
+      <Button sx={{borderRadius: 8, py:1.2, px:3, mt:2}} color="secondary" variant="contained" size="large" onClick={handleSubmit}>Buy Coins</Button>
     </Stack>
 
     <Snackbar open={snackbarAddedOpen} autoHideDuration={6000} onClose={handleSnackbarAddedClose}>

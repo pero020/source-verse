@@ -19,7 +19,7 @@ export default function SignIn({ providers }) {
             <Lottie isClickToPauseDisabled={true} options={{repeat: false, autoplay: true, rendererSettings: {preserveAspectRatio: 'xMidYMid meet'}, animationData: login}}/>
           </Box>
 
-          <Button color="secondary" variant="contained" onClick={() => signIn(google.id)}>
+          <Button sx={{borderRadius: 8, py:1.2, px:3}} color="secondary" variant="contained" onClick={() => signIn(google.id)}>
             Continue with {google.name}
           </Button>
           <Typography sx={{mt: 1}} variant="body2" color="text.softWhite">Dont have a Google account? Create one <a style={{color: "#52d17b", textDecoration: "none"}} href="https://support.google.com/accounts/answer/27441?hl=en">here</a> in under 5 minutes</Typography>

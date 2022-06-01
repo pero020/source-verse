@@ -76,7 +76,7 @@ export default function Home() {
       
       
 
-      <Container sx={{mt:{md:-3, xs:15},opacity:0.8, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2,}} maxWidth="xl" width="100%">
+      <Container sx={{mt:{md:-3, xs:15},opacity:0.9, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2,}} maxWidth="xl" width="100%">
       <Stack
       direction="center"
       justifyContent="center"
@@ -137,7 +137,7 @@ export default function Home() {
         
       </Stack>
 
-      <Container sx={{mt:{md:-20, xs:10},opacity:0.8, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2}} maxWidth="xl">
+      <Container sx={{mt:{md:-20, xs:10},opacity:0.9, px:2, py:3, bgcolor: "#52D17B", borderRadius: 2}} maxWidth="xl">
         <Container maxWidth="lg">
           <Stack
           direction="column"
