@@ -23,7 +23,7 @@ export default function Layout({ children }) {
   }
   return (
     <>   
-    <Box sx={{minHeight:{md:'91.3vh', xs:'90.5vh'}}}>
+    <Box sx={{minHeight:{md:'95vh', xs:'98vh'}}}>
       <ResponsiveAppBar sx={{color: "secondary.main"}}></ResponsiveAppBar>
       <main>{children}</main>
     </Box>

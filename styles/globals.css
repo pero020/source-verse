@@ -2,7 +2,6 @@
 
 /* body {
     background: linear-gradient(100deg, #1e1e1e, #282828, #303030, #343434);
-
 }      */
 
 .tranzicija:hover
@@ -11,7 +10,3 @@
   transition: width 3s;
 }
 
-.custom-link:hover {
-  color: red;
-  text-decoration-color: red;
-}

@@ -220,8 +220,8 @@ export default function DemoProgressBar() {
 
       <TabPanel value={value} index={2}>
     
-        <Container maxWidth="md" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}}>
-          <Typography align="center" variant="h4">Search for Domain Reviews</Typography>
+        <Container maxWidth="md" sx={{mt: 2, px:2, pb:3, bgcolor: 'primary.main', borderRadius: 2}}>
+          <Typography align="center" variant="h3" sx={{mb:7, textDecoration:'underline', textDecorationColor:"#52d17b"}}>Search for Domain Reviews</Typography>
           <DomainSearch></DomainSearch>
         </Container>
       </TabPanel>

@@ -2,8 +2,6 @@ import { Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 import { Box } from "@mui/material";
 import { Container, Button } from "@mui/material";
-import Lottie from 'react-lottie'
-import Link from "react-scroll/modules/components/Link";
 
 export default function Footer () {
   return <>
@@ -20,9 +18,9 @@ export default function Footer () {
           
                 <Typography align="center" color="#003300" variant="h4" sx={{mb:2}}>Platform</Typography>
                 <Stack direction="column" alignItems="center">
-                  <Button sx={{ textTransform: 'none'}} href="q&a/public" variant="h6"><Typography variant="h6" color="text.primary">Public Q&A</Typography></Button>
-                  <Button sx={{ textTransform: 'none'}} href="q&a/private" variant="h6"><Typography variant="h6" color="text.primary">Private Q&A</Typography></Button>
-                  <Button sx={{ textTransform: 'none'}} variant="h6" href="learn"><Typography variant="h6" color="text.primary">Learn</Typography></Button>
+                  <Button sx={{ textTransform: 'none'}} href="/q&a/public" variant="h6"><Typography variant="h6" color="text.primary">Public Q&A</Typography></Button>
+                  <Button sx={{ textTransform: 'none'}} href="/q&a/private" variant="h6"><Typography variant="h6" color="text.primary">Private Q&A</Typography></Button>
+                  <Button sx={{ textTransform: 'none'}} variant="h6" href="/learn"><Typography variant="h6" color="text.primary">Learn</Typography></Button>
                 </Stack>
 
           </Box>
@@ -33,8 +31,8 @@ export default function Footer () {
             
               <Typography align="center" color="#003300" variant="h4" sx={{mb:2}}>Info</Typography>
               <Stack direction="column" alignItems="center">
-                <Button sx={{ textTransform: 'none'}} href="index"><Typography variant="h6" color="text.primary">Home</Typography></Button>
-                <Button sx={{ textTransform: 'none'}} href="aboutUs"><Typography variant="h6" color="text.primary">About Us</Typography></Button>
+                <Button sx={{ textTransform: 'none'}} href="/index"><Typography variant="h6" color="text.primary">Home</Typography></Button>
+                <Button sx={{ textTransform: 'none'}} href="/aboutUs"><Typography variant="h6" color="text.primary">About Us</Typography></Button>
               </Stack>
             
           </Box>
