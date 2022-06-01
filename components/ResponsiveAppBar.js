@@ -115,7 +115,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
         
-        <Box sx={{display: {xs:"none", md:"inline"}, ml:{md:2}}}>
+        <Box sx={{display: {xs:"none", md:"inline"}, ml:{md:1}}}>
           <Image width="28" height="28" style={{borderRadius: 5}} src={'/images/logo.png'} />
         </Box>
           

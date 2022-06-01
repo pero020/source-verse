@@ -144,7 +144,7 @@ export default function NewDomainReviewForm() {
   valueLabelDisplay="on"
   onChange={handleChange}
   />
-  <Button color="secondary" variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>
+  <Button sx={{py: 1.2, px: 3, borderRadius: 8}} color="secondary" variant="contained" endIcon={<SendIcon />} onClick={handleSubmit}>
     Post
   </Button>
   </Stack>
