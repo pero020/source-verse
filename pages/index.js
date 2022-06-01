@@ -26,15 +26,11 @@ import web from '/public/lotties/web';
 import ListItem from '@mui/material/ListItem';
 
 
+
 export default function Home() {
   const { data: session } = useSession()
-  
- 
+
     return <>
-    
-    
-    
-  
   {/* {session &&
     <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
       <Stack

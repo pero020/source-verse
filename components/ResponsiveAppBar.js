@@ -185,7 +185,7 @@ const ResponsiveAppBar = () => {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
             {pages.map((page) => (
-              <Link href={page.link} key={page.name}>
+              <Link href={page.link} className="custom-link" key={page.name}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ color: 'white', display: 'block', mx:1 }}
