@@ -61,7 +61,16 @@ export default function DemoProgressBar() {
       </Box>
       <TabPanel value={value} index={0}>
       <Container maxWidth="xl">
-      
+        <Stack direction="row" alignItems="center" justifyContent={{xs: "center", md: "flex-start"}}>
+          <Typography sx={{mb:8, mt: 2,color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}} variant="h3">Determining a trustworthy source:</Typography>
+        </Stack>
+      </Container>
+      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}}>
+      <Typography sx={{mb:2}} variant="body1" style={{color:"white"}}>What it means for a source to be credible/reliable can vary depending on the context of its use. Generally, a credible or reliable source is one that experts in your subject domain would agree is valid for your purposes. This can vary, so it is best to use one of the source evaluation methods that best fits your needs. Do remember that credibility is contextual!</Typography>
+      <Typography sx={{mb:2}} variant="body1" style={{color:"white"}}>It is important to critically evaluate sources because using credible/reliable sources makes you a more informed writer. Think about unreliable sources as pollutants to your credibility, if you include unreliable sources in your work, your work could lose credibility as a resul</Typography>
+      <Typography sx={{mb:2}} variant="body1" style={{color:"white"}}>There are certain frameworks that information professionals have put together to help people think critically about the information provided. </Typography>
+      </Container>
 
 <Stack sx={{mt:{md:10, xs:5}}} direction="column" justifyContent="center" alignItems='flex-start'>
      <Typography variant="h4"><a style={{color:"white", textDecoration: 'underline',textDecorationColor:'#52D17B',textUnderlineOffset:"7px"}} href="http://guides.lib.uw.edu/research/evaluate/5ws">5 W Questions (5Ws):</a></Typography>
@@ -113,7 +122,7 @@ export default function DemoProgressBar() {
     <Stack direction="column" alignItems="center" justifyContent="center" spacing={2} sx={{mt:5}}>
       <Typography style={{color:"white"}} variant="h6">Need more help?</Typography> 
       <Typography style={{color:"white"}} variant="h6">Contact our
-      <Button sx={{ml: 2}} href="q&a/private/" variant="contained" color="green">
+      <Button sx={{ml:2, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" href="q&a/private/">
         Specialists
       </Button></Typography> 
       </Stack>
@@ -129,7 +138,7 @@ export default function DemoProgressBar() {
 
       <Stack direction="column" alignItems="center" justifyContent="center" spacing={5}>
         <Box>
-        <Typography variant="h6" sx={{mb:4,color:'background.contrastColor', display:'inline', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>1. Check the SSL certificate</Typography>
+        <Typography variant="h6" sx={{mb:4, color:'background.contrastColor', display:'inline', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}}>1. Check the SSL certificate</Typography>
         <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}}>
         <Typography sx={{mb:2}} variant="body1" style={{color:"white"}}>If you only see <Typography display="inline" variant="body1" style={{color:'#52D17B'}}>HTTP</Typography> within a URL, you should know that the website is <Typography display="inline" variant="body1" style={{color:'#52D17B'}}>not encrypted</Typography>, meaning your activity could be visible to online predators. Essentially, HTTPS is a security feature provided by an <Typography display="inline" variant="body1" style={{color:'#52D17B'}}>SSL</Typography> certificate, which is the part of a URL that encrypts a website.</Typography>
         </Container>
@@ -212,7 +221,7 @@ export default function DemoProgressBar() {
       <TabPanel value={value} index={2}>
     
         <Container maxWidth="md" sx={{mt: 2, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}}>
-          <Typography align="center" variant="h4">Domain Reviews</Typography>
+          <Typography align="center" variant="h4">Search for Domain Reviews</Typography>
           <DomainSearch></DomainSearch>
         </Container>
       </TabPanel>

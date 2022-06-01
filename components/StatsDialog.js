@@ -37,7 +37,7 @@ export default function MaxWidthDialog(props) {
 
   return (
     <React.Fragment>
-      <Button sx={{mt: 2}} color="green" variant="contained" onClick={handleClickOpen}>
+      <Button sx={{borderRadius: 8, py:1.2, px:3, mt: 2}} color="secondary" variant="contained" onClick={handleClickOpen}>
         Stats
       </Button>
       <Dialog

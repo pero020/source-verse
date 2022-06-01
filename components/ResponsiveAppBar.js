@@ -11,13 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useSession, useState } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Link from 'next/link'
-import { Grid } from '@mui/material';
-import Lottie from 'react-lottie'
-import coin from '/public/lotties/coin';
 import Image from 'next/image';
-import { Stack } from '@mui/material';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -116,7 +112,7 @@ const ResponsiveAppBar = () => {
   return (
     
     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
-      <Container maxWidth="xxl" sx={{mt:1}}>
+      <Container maxWidth="xxl">
         <Toolbar disableGutters>
         
         <Box sx={{display: {xs:"none", md:"inline"}, ml:{md:2}}}>

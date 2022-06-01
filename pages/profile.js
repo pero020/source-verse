@@ -187,7 +187,7 @@ export default function Profile(props) {
         {userData.role !== "specialist" &&
         <Stack direction="row" alignItems="center" spacing={2} sx={{mt:2}}>
           <Typography sx={{display: "inline"}} variant="h5" color="background.contrastColor">Coins: {userData.coins}</Typography>
-          <Button href="/getCoins" sx={{borderRadius: 2}} variant="contained" color="secondary" >Buy Coins</Button>
+          <Button href="/getCoins" sx={{borderRadius: 8, py:1.2, px:3}} variant="contained" color="secondary" >Buy Coins</Button>
         </Stack>
         }
 

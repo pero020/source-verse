@@ -67,7 +67,7 @@ export default function Home() {
       >
         <Box sx={{mb:{md:60}}}>
           <Typography variant="h2" sx={{color: "background.contrastColor"}}>Platform made for <br/>  community <br/>  <Typography variant="h2" sx={{color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline', textUnderlineOffset:{xs: "6px", md: "10px"}}}>information validation</Typography>.</Typography>
-          <Button sx={{mt: 5, borderRadius:8}} variant="contained" color="green" size="large" href="q&a/public">
+          <Button sx={{mt: 5, py:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="q&a/public">
             Browse
           </Button>   
         </Box>
@@ -103,7 +103,7 @@ export default function Home() {
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Improve Your digital literacy</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Learn how to </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>find trustworthy information </Typography> in the evermore growing pile of questionable data.</Typography><br/>
-          <Button sx={{mt: 5, borderRadius:8}} variant="contained" color="green" size="large" href="/learn">
+          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="/learn">
             Learn
           </Button>
         </Box>
@@ -131,7 +131,7 @@ export default function Home() {
           <Typography variant="h2" sx={{mb:{xs: 2, md:8}, color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}}}>How to</Typography>
           <Typography variant="h3" color="#F8FFF8" sx={{maxWidth:720}}>1. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Choose a topic of </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>interest </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>expertise.</Typography></Typography>
           <Typography variant="h3" color="#F8FFF8" sx={{maxWidth:720}}>2. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Submit a </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>source-backed </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>answer. </Typography></Typography>
-          <Typography variant="h3" color="#F8FFF8" sx={{maxWidth:720}}>3. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Ask </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>Users </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>Experts.</Typography></Typography>
+          <Typography variant="h3" color="#F8FFF8" sx={{maxWidth:720}}>3. <Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>Ask </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>Users </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>or </Typography><Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>Specialists.</Typography></Typography>
           <Typography variant="h3" color="#F8FFF8" sx={{maxWidth:720}}>4. <Typography variant="h4" color="#52D17B" sx={{maxWidth:720, display:"inline"}}>Get rewarded </Typography><Typography variant="h4" color="#F8FFF8" sx={{maxWidth:720, display:"inline"}}>for Your effort. </Typography></Typography>
         </Stack>
         <Box minWidth={{md:'40%', xs:'100%'}} sx={{mb:{md:40}}}>
@@ -171,7 +171,7 @@ export default function Home() {
         <Box sx={{mb:{md:20}}} maxWidth={{md:1000}}>
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Carefree browsing with our Extension</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Enjoy the </Typography> functionality of SourceVerse<br/>in <Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Your browser</Typography>.</Typography><br/>
-          <Button sx={{mt: 5, borderRadius:8}} variant="contained" color="green" size="large" href="https://github.com/pero020/source-verse-extension">
+          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="https://github.com/pero020/source-verse-extension">
             Installation guide
           </Button>
         </Box>
@@ -229,12 +229,12 @@ export default function Home() {
       spacing={10}
       >
         <Box sx={{mb:{md:20}, maxWidth:800}}>
-        <Typography variant="h2" sx={{ color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Ask our Experts directly</Typography>
+        <Typography variant="h2" sx={{ color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Ask our Specialists directly</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Connect with Musicians, Lawyers, Athleets, Engineers...<br/><br/></Typography>
           <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Choose </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"> a field of study and <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">get feedback</Typography> from </Typography><Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">experts.</Typography><br/>
-          <Button sx={{mt: 5, borderRadius:8}} variant="contained" color="green" size="large" href="/q&a/private">
-            Find a expert
+          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="/q&a/private">
+            Find a Specialist
           </Button>
         </Box>
 
@@ -255,9 +255,9 @@ export default function Home() {
         <Box sx={{mb:{md:20}, maxWidth:800}}>
         <Typography variant="h2" sx={{ color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Review Internet Domains</Typography>
           <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Enter the Domain </Typography>
-          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"> You are concerned with and let our <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Experts</Typography> do the work for You. </Typography>
+          <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"> You are concerned with and let our <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Specialists</Typography> do the work for You. </Typography>
           <br/>
-          <Button sx={{mt: 5, borderRadius:8}} variant="contained" color="green" size="large" href="../learn">
+          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="../learn">
             Domain reviews
           </Button>
         </Box>
@@ -354,7 +354,7 @@ export default function Home() {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography variant="h5">5. Want to become a expert?</Typography>
+        <Typography variant="h5">5. Want to become a Specialist?</Typography>
       </AccordionSummary>
       <AccordionDetails>
       <Typography variant="h6" color="text.secondary">Contact us at <em style={{color: "#52d17b"}}>sourceverse@gmail.com</em></Typography>
