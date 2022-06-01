@@ -38,7 +38,7 @@ export default function DomainSearch() {
   }
 
   return <>
-    <Stack sx={{mb: 1}} direction="row" alignItems="baseline" spacing={5} justifyContent="center">
+    <Stack sx={{mb: 1, mt:{md:5}}} direction="row" alignItems="baseline" spacing={5} justifyContent="center">
       <TextField 
       id="domainSearch" 
       name="searchTerm" 

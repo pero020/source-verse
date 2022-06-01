@@ -116,10 +116,10 @@ const ResponsiveAppBar = () => {
   return (
     
     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
-      <Container maxWidth="xxl">
+      <Container maxWidth="xxl" sx={{mt:1}}>
         <Toolbar disableGutters>
         
-        <Box sx={{display: {xs:"none", md:"inline"}}}>
+        <Box sx={{display: {xs:"none", md:"inline"}, ml:{md:2}}}>
           <Image width="28" height="28" style={{borderRadius: 5}} src={'/images/logo.png'} />
         </Box>
           
@@ -186,7 +186,8 @@ const ResponsiveAppBar = () => {
           </Typography>
           </Link>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
             {pages.map((page) => (
               <Link href={page.link} key={page.name}>
               <Button
