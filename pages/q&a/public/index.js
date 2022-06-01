@@ -77,13 +77,23 @@ export default function Public() {
   }, [])
 
   return <>
-    <Container maxWidth="xl" sx={{mt: 1, px:2, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
+    <Container maxWidth="xl" sx={{mt: 1, px:0, py:3, bgcolor: 'primary.main', borderRadius: 2}} >
       <Container maxWidth="md">
-        <Stack justifyContent="space-between" alignItems="center" direction="row" sx={{mb:1 }}>
+        <Stack justifyContent="space-between" alignItems="center" direction="row" sx={{mb:2 }}>
           <Typography color="white" variant="h4">Questions list</Typography>
           {session && <NewQuestionDialog getAllPosts={getAllPosts} />}
         </Stack>
       </Container>
+
+      <Container sx={{ mt: {xs: 5, md:7}, mb:3, px:2, py:3, bgcolor: "#52d17b", borderRadius: 2,}} maxWidth="xl" width="100%">
+      <Stack
+      direction="center"
+      justifyContent="center"
+      alignItems="center">
+
+        <Typography align="center" color="white" variant="h6"><span style={{color: "black"}}> Community </span> questions and answers. Please place your questions in the <span style={{color: "black"}}> appropriate categories</span>.</Typography>
+      </Stack>
+    </Container>
 
       <Stack alignItems="center">
         <QuestionFilters getAllPosts={getAllPosts} getFilteredPosts={getFilteredPosts}></QuestionFilters>

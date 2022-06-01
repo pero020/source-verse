@@ -37,6 +37,15 @@ export default function Public() {
           <Typography variant="h5">Specialists</Typography>
           {session && <Button href="/getCoins" color="secondary" sx={{borderRadius: 2}} variant="contained" size="large">Buy Coins</Button> }
         </Stack>
+        <Container sx={{ mt: 5, mb: 7, px:2, py:3, bgcolor: "#52d17b", borderRadius: 2,}} maxWidth="xl" width="100%">
+      <Stack
+      direction="center"
+      justifyContent="center"
+      alignItems="center">
+
+        <Typography align="center" color="white" variant="h6">List of all our <span style={{color: "black"}}>specialists</span>. Once you find the perfect match, <span style={{color: "black"}}> purchase coins </span> and <span style={{color: "black"}}> ask </span> your question.</Typography>
+      </Stack>
+    </Container>
         <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
           {specialistsData ? <SpecialistsList  getAllSpecialists={getAllSpecialists} specialists={specialistsData}/> : <CircularProgress sx={{color: "secondary.main"}} /> }
         </Stack>
