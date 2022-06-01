@@ -62,7 +62,7 @@ export default function DemoProgressBar() {
       <TabPanel value={value} index={0}>
       <Container maxWidth="xl">
         <Stack direction="row" alignItems="center" justifyContent={{xs: "center", md: "flex-start"}}>
-          <Typography sx={{mb:8, mt: 2,color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}} variant="h3">Determining a trustworthy source:</Typography>
+          <Typography sx={{mb:8, mt: 2,color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}} variant="h3">Determining a Trustworthy Source:</Typography>
         </Stack>
       </Container>
       <Container maxWidth="xl">
@@ -133,7 +133,7 @@ export default function DemoProgressBar() {
       <TabPanel value={value} index={1}>
  <Container maxWidth="xl">
       <Stack direction="row" alignItems="center" justifyContent={{xs: "center", md: "flex-start"}}>
-        <Typography sx={{mb:8, mt: 2,color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}} variant="h3">10 safety steps to follow:</Typography>
+        <Typography sx={{mb:8, mt: 2,color:'background.contrastColor', textDecoration:'underline', textDecorationColor:"#52d17b", display:'inline'}} variant="h3">10 Safety Steps to Follow:</Typography>
       </Stack>
 
       <Stack direction="column" alignItems="center" justifyContent="center" spacing={5}>
@@ -201,7 +201,7 @@ export default function DemoProgressBar() {
         </Box>
         </Stack>
         <Box sx={{mt:5}}>
-          <Typography variant="h6" sx={{mb:4,color:'background.contrastColor', display:'inline'}}>10. Know the signs of unsecure websites </Typography>
+          <Typography variant="h6" sx={{mb:4,color:'background.contrastColor', display:'inline', textDecoration:'underline', textDecorationColor:"#52d17b"}}>10. Know the signs of unsecure websites </Typography>
             <Container maxWidth="xl" sx={{mt: 2, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}}>
               <List sx={{ listStyleType: 'disc', ml: 4}}>
                 <ListItem style={{color:"white"}} sx={{ display: 'list-item' }}>Search engine warnings</ListItem>
