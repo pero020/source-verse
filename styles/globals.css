@@ -11,3 +11,7 @@
   transition: width 3s;
 }
 
+.custom-link:hover {
+  color: red;
+  text-decoration-color: red;
+}
