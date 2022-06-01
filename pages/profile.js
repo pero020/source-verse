@@ -229,7 +229,7 @@ export default function Profile(props) {
           <Typography sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:"#52d17b", mt: 5, mb: 2}} color="background.contrastColor" variant="h4">Specialist Questions to answer</Typography>
           <SpecialistQuestionsList questions={specialistQuestions.filter(question => !question.answered)}></SpecialistQuestionsList>
         </Box> :
-        <Typography sx={{mt:2}} color="text.secondary" variant="h6">No Specialist Questions yet!</Typography>
+        <Typography sx={{mt:2}} color="text.secondary" variant="h6">No Expert Questions yet!</Typography>
         )
         }
         {specialistQuestions && session.role !== "specialist" &&

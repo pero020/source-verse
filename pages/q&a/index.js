@@ -24,7 +24,7 @@ const images = [
   {
     url: '/backgrounds/grey.png',
     title: 'Private Q&A',
-    subtitle: 'Need professional knowledge? Get information and validate information with our Specialists.',
+    subtitle: 'Need professional knowledge? Get information and validate information with our Experts.',
     width: '50%',
     link: '/q&a/private'
   },

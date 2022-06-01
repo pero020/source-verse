@@ -28,7 +28,7 @@ export default function ReviewsList(props) {
       <ListItem>
         <ListItemText primary={review.url} secondary={review.description} />
         <Stack direction="row" alignItems="center">
-        <Typography>{review.score}</Typography>
+        <Typography sx={{ml:5}}>{review.score}</Typography>
         {session && session.user.email === review.author.email && 
         <DeleteReviewDialog url={review.url} getProfileData={props.getProfileData}></DeleteReviewDialog>
         }

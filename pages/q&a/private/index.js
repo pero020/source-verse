@@ -34,7 +34,7 @@ export default function Public() {
     
       <Stack direction="column" >
         <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{mb: 2}}>
-          <Typography variant="h5">Specialists</Typography>
+          <Typography variant="h5">Experts</Typography>
           {session && <Button href="/getCoins" color="secondary" sx={{borderRadius: 2}} variant="contained" size="large">Buy Coins</Button> }
         </Stack>
         <Container sx={{ mt: 5, mb: 7, px:2, py:3, bgcolor: "#52d17b", borderRadius: 2,}} maxWidth="xl" width="100%">
