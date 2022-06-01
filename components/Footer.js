@@ -8,7 +8,7 @@ import Link from "react-scroll/modules/components/Link";
 export default function Footer () {
   return <>
     
-    <Container maxWidth="xl" sx={{mt:{xs: 5, md:15}, px:2, py:3, opacity:0.9, bgcolor: "secondary.main", borderRadius: 2}} >
+    <Container maxWidth="xxl" sx={{mt:{xs: 5, md:15}, px:2, py:3, opacity:0.9, bgcolor: "green.main", borderRadius: 2}} >
         <Stack
       direction="row"
       justifyContent="space-evenly"
