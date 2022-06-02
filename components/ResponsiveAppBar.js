@@ -190,7 +190,9 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ color: 'white', display: 'block', mx:1 }}
               >
+                <a class="left">
                 {page.name}
+                </a>
               </Button>
               </Link>
             ))}

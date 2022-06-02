@@ -29,30 +29,10 @@ import ListItem from '@mui/material/ListItem';
 
 export default function Home() {
   const { data: session } = useSession()
+  
 
     return <>
-  {/* {session &&
-    <Container maxWidth="sm" sx={{mt: 1, px:2, py:3, bgcolor: "background.paper", borderRadius: 2}} >
-      <Stack
-      justifyContent="center"
-      alignItems="center"
-      spacing={5}
-      sx={{my:5}}>
-
-        <Avatar src={session.user.image} sx={{width: 150, height: 150}}></Avatar>
-        <Typography sx={{color:"background.contrastColor"}} variant="h3">Hello {session.user.name}</Typography>
-        <Button variant="contained" color="secondary" size="large" href="/profile">Profile</Button> 
-
-      </Stack>
-    </Container>
-
-            
-  }  */}
   
-  
-  {/* {(session && session.first) ? <Welcome></Welcome>:null}  */}
-   
-   
   <Container maxWidth="xl" disableGutters={true} sx={{p:0}}>
       <Stack
       direction={{md:'row', xs:'column'}}
