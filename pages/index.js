@@ -79,7 +79,7 @@ export default function Home() {
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Improve Your digital literacy</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Learn how to </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>find trustworthy information </Typography> in the evermore growing pile of questionable data.</Typography><br/>
-          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="/learn">
+          <Button sx={{mt: 5, py:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="/learn">
             Learn
           </Button>
         </Box>
@@ -147,7 +147,7 @@ export default function Home() {
         <Box sx={{mb:{md:20}}} maxWidth={{md:1000}}>
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Carefree browsing with our Extension</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Enjoy the </Typography> functionality of SourceVerse<br/>in <Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Your browser</Typography>.</Typography><br/>
-          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="https://github.com/pero020/source-verse-extension">
+          <Button sx={{mt: 5, py:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="https://github.com/pero020/source-verse-extension">
             Installation guide
           </Button>
         </Box>
@@ -165,7 +165,7 @@ export default function Home() {
       mx={{xs:2}}
       >
         {/*Ask answer achieve*/}
-        <Box sx={{mb:{md:20}, mr:{md:70}, maxWidth:1200}}>
+        <Box sx={{mb:{md:10}, mr:{md:70}, maxWidth:1200}}>
         <Typography variant="h2" sx={{color:"background.contrastColor", textDecoration:'underline', textDecorationColor:'#52D17B', textUnderlineOffset:{xs: "7px", md: "10px"}, mb:{xs: 5, md: 10}}}>Ask, Answer, Achieve!</Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Earn </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"><Typography  variant="h3" color="#52D17B" borderRadius={2} sx={{maxWidth:'210px', display:'inline'}}>Badges</Typography> and display them on Your profile.</Typography><br/>
@@ -199,7 +199,7 @@ export default function Home() {
       direction={{xs:'column', md:'row'}}
       justifyContent="space-evenly"
       alignItems="center"
-      sx={{my:{xs: 0, md: 10}, mt: {xs:15, md:45}}}
+      sx={{my:{xs: 0, md: 10}, mt: {xs:15, md:35}}}
       mx={{xs:2}}
       spacing={10}
       >
@@ -208,7 +208,7 @@ export default function Home() {
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline">Connect with Musicians, Lawyers, Athleets, Engineers...<br/><br/></Typography>
           <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Choose </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"> a field of study and <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">get feedback</Typography> from </Typography><Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">experts.</Typography><br/>
-          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="/q&a/private">
+          <Button sx={{mt: 5, py:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="/q&a/private">
             Find a Specialist
           </Button>
         </Box>
@@ -232,7 +232,7 @@ export default function Home() {
           <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Enter the Domain </Typography>
           <Typography variant="h3" color="text.secondary" sx={{ maxWidth:'400px'}} display="inline"> You are concerned with and let our <Typography variant="h3" color="#52D17B" sx={{ maxWidth:'400px'}} display="inline">Specialists</Typography> do the work for You. </Typography>
           <br/>
-          <Button sx={{mt: 5, px:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="../learn">
+          <Button sx={{mt: 5, py:1.2, px:3, borderRadius:8}} variant="contained" color="secondary" size="large" href="../learn">
             Domain reviews
           </Button>
         </Box>

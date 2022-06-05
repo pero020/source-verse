@@ -129,7 +129,7 @@ export default function NewQuestionDialog(props) {
   return (
     <div>
      
-      <Button onClick={handleClickOpen} variant="contained" color="secondary" size="large">
+      <Button onClick={handleClickOpen} variant="contained" color="secondary" size="large" sx={{py:1.2, px:3, borderRadius:8}}>
         Ask me!
       </Button>
       <Dialog
