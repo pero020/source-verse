@@ -10,6 +10,10 @@
   transition: width 3s;
 }
 
+a {
+  text-decoration: none;
+}
+
 a.left {
 	background-position: left bottom;
   padding-top: 5%;
@@ -19,8 +23,8 @@ a:hover {
   offset: 10;
 }
 
-a {
+.navbar-link {
 	text-decoration: none;
-	background: linear-gradient(#52D17B, #52D17B) bottom / 0 .1em no-repeat;
+	background: linear-gradient(#52D17B, #52D17B) bottom / 0 .2em no-repeat;
 	transition: 1.2s background-size;
 }

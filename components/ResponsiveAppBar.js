@@ -191,7 +191,7 @@ const ResponsiveAppBar = () => {
                 sx={{ color: 'white', display: 'block', mx:1, fontSize:15 }}
                 
               >
-                <a class="left">
+                <a className="left navbar-link">
                 {page.name}
                 </a>
               </Button>
